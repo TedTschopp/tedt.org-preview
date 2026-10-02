@@ -1,0 +1,2 @@
+# Unified diff context lines retain their required space marker.
+_review/source.patch -whitespace
