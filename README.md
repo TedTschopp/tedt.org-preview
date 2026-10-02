@@ -17,7 +17,7 @@ The navigation groups the site into Essays, Stories & Folklore, Games & Worlds, 
 
 ## Review and Rebuild
 
-Start with the home page, follow each section hub, try tool filtering and site search, and open an existing article or assessment. Review on a phone and with the light/dark theme controls. The Public Workbench design uses Cal Sans and Inter, Paper and Night colors, painted shelf leads, dated writing rows with article images, accessible theme controls, and a text-based profile directory.
+Start with the home page, follow each section hub, try tool filtering and site search, and open an existing article or assessment. Review on a phone and with the light/dark theme controls. The Public Workbench design uses Cal Sans and Inter, Paper and Night colors, painted shelf leads, dated writing rows with article images, accessible theme controls, and an Elsewhere on the Web footer.
 
 For source changes, use the isolated `codex/ia-preview` branch in the original Jekyll repository. The source patch can also be applied to the baseline commit recorded in `_review/manifest.json` in a separate checkout. Build with `_config.yml,_config.preview.yml`, run the packager and preview checker in `_review/source/scripts/`, and replace `site/` with the resulting package. See `_review/source/docs/ia-preview.md` for the workflow and cutover instructions.
 
