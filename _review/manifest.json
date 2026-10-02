@@ -1,10 +1,10 @@
 {
   "source_repository": "https://github.com/TedTschopp/tedt.org",
   "source_base": "f186080942c1be1909bac3bc3ed309d04e7b338f",
-  "source_commit": "ec13fc584414f84dfaa4c5bf11d54318b62fca9b",
-  "render_source_commit": "ec13fc584414f84dfaa4c5bf11d54318b62fca9b",
+  "source_commit": "e1416c23a78000ffd1497cfd5a1a7c5688184afe",
+  "render_source_commit": "e1416c23a78000ffd1497cfd5a1a7c5688184afe",
   "local_branch": "codex/ia-preview",
-  "review_source_files": 70,
+  "review_source_files": 72,
   "preview_url": "https://preview.tedt.org/",
   "design_language": "tedtorg-preview-design / Public Workbench",
   "production_cutover": "Requires a separate explicit request"

@@ -493,7 +493,7 @@ index ef5d0f8a9..2a3f18992 100644
 +<script src="{{ '/js/information-architecture.js' | relative_url }}" defer></script>
 diff --git a/_includes/content/section-groups.html b/_includes/content/section-groups.html
 new file mode 100644
-index 000000000..51ee40dad
+index 000000000..063ecf923
 --- /dev/null
 +++ b/_includes/content/section-groups.html
 @@ -0,0 +1,8 @@
@@ -501,7 +501,7 @@ index 000000000..51ee40dad
 +{% for group in site.data.site_sections[include.section] %}
 +  <section class="ia-group" id="{{ group.id }}" aria-labelledby="{{ group.id }}-title">
 +    <div class="ia-group-intro"><h2 id="{{ group.id }}-title">{{ group.title | escape }}</h2><p>{{ group.description | escape }}</p></div>
-+    <ul class="ia-destination-list">{% for link in group.links %}<li><a href="{% if link.url contains '://' or link.url contains 'mailto:' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}">{{ link.title | escape }} <span aria-hidden="true">↗</span></a></li>{% endfor %}</ul>
++    <ul class="ia-destination-list">{% for link in group.links %}<li><a href="{% if link.url contains '://' or link.url contains 'mailto:' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}">{{ link.title | escape }} <span aria-hidden="true">{% include utility/arrow-up-right.html %}</span></a></li>{% endfor %}</ul>
 +  </section>
 +{% endfor %}
 +</div>
@@ -533,7 +533,7 @@ index 000000000..7d09b823c
 +<span class="ia-status ia-status--{{ status_class | escape }}">{{ status_label | escape }}</span>
 diff --git a/_includes/layout/elsewhere.html b/_includes/layout/elsewhere.html
 new file mode 100644
-index 000000000..c31d2acb2
+index 000000000..0a68dfb5b
 --- /dev/null
 +++ b/_includes/layout/elsewhere.html
 @@ -0,0 +1,24 @@
@@ -542,7 +542,7 @@ index 000000000..c31d2acb2
 +  <ul class="ia-elsewhere-list">
 +  {% for profile in site.data.elsewhere.primary %}
 +    {% for link in site.links %}{% assign link_key = link.Name | strip_html %}{% if link_key == profile.key %}
-+    <li><a class="u-url" rel="me" href="{% include utility/profile-url.html link=link %}"><span class="ia-profile-name">{{ profile.name | escape }}</span><span class="ia-profile-handle">{{ profile.handle | escape }}</span><span class="ia-profile-context">{{ profile.context | escape }}</span><span class="ia-profile-arrow" aria-hidden="true">↗</span></a></li>
++    <li><a class="u-url" rel="me" href="{% include utility/profile-url.html link=link %}"><span class="ia-profile-name">{{ profile.name | escape }}</span><span class="ia-profile-handle">{{ profile.handle | escape }}</span><span class="ia-profile-context">{{ profile.context | escape }}</span><span class="ia-profile-arrow" aria-hidden="true">{% include utility/arrow-up-right.html %}</span></a></li>
 +    {% endif %}{% endfor %}
 +  {% endfor %}
 +  </ul>
@@ -701,31 +701,29 @@ index fd12ee45b..093339e14 100644
 +{% include layout/library-footer.html %}
 diff --git a/_includes/layout/library-footer.html b/_includes/layout/library-footer.html
 new file mode 100644
-index 000000000..b7072283b
+index 000000000..3155e0edb
 --- /dev/null
 +++ b/_includes/layout/library-footer.html
-@@ -0,0 +1,13 @@
-+<footer class="ia-footer" aria-labelledby="elsewhere-title">
-+<div class="container ia-container h-card">
-+  {% include layout/elsewhere.html %}
-+  <div class="ia-footer-bottom">
-+    <div class="ia-footer-signature">
-+      <div class="ia-familymark"><img class="ia-familymark-light" src="{{ '/img/familymark/Family-Black-Brush-Calligraphy-3.png' | relative_url }}" width="1254" height="1254" alt="Tschopp family mark" loading="lazy"><img class="ia-familymark-dark" src="{{ '/img/familymark/Family-White-Brush-Calligraphy-3.png' | relative_url }}" width="1254" height="1254" alt="Tschopp family mark" loading="lazy"></div>
-+      <span>© {{ site.time | date: '%Y' }} <a class="u-url p-name" rel="me" href="{{ '/about-ted/' | relative_url }}">Ted Tschopp</a></span>
-+    </div>
-+    <nav class="ia-footer-utility" aria-label="Footer"><a href="{{ '/Copyright/' | relative_url }}">Copyright</a><a href="{{ '/' | relative_url }}">Back to Home <span aria-hidden="true">↑</span></a></nav>
+@@ -0,0 +1,11 @@
++<footer class="ia-footer" aria-label="Site Footer">
++<div class="container ia-container">
++  <div class="ia-footer-grid">
++    <div class="h-card"><a class="ia-footer-name u-url p-name" rel="me" href="{{ '/about-ted/' | relative_url }}">Ted Tschopp</a><p>Technology, faith, storytelling, and games.<br>One person’s public workbench.</p><p class="ia-small">Unless otherwise stated, these are my own views.</p><div class="ia-familymark"><img class="ia-familymark-light" src="{{ '/img/familymark/Family-Black-Brush-Calligraphy-3.png' | relative_url }}" width="1254" height="1254" alt="Tschopp family mark" loading="lazy"><img class="ia-familymark-dark" src="{{ '/img/familymark/Family-White-Brush-Calligraphy-3.png' | relative_url }}" width="1254" height="1254" alt="Tschopp family mark" loading="lazy"></div></div>
++    <nav aria-label="Explore the site"><h2 class="ia-footer-heading">Explore</h2><ul>{% for section in site.data.site_navigation %}<li><a href="{{ section.url | relative_url }}">{{ section.title | escape }}</a></li>{% endfor %}</ul></nav>
++    <nav aria-label="Keep in touch"><h2 class="ia-footer-heading">Keep in Touch</h2><ul><li><a href="{{ '/subscribe/' | relative_url }}">Subscribe</a></li><li><a href="{{ '/search/' | relative_url }}">Search</a></li><li><a href="{{ '/directory/' | relative_url }}">Site Directory</a></li><li><a href="{{ '/Copyright/' | relative_url }}">Copyright</a></li></ul></nav>
 +  </div>
-+  <p class="ia-footer-disclaimer">Unless otherwise stated, these are my own views.</p>
++  <div class="ia-footer-bottom"><span>© {{ site.time | date: '%Y' }} Ted Tschopp</span><a href="{{ '/' | relative_url }}">Back to Home <span aria-hidden="true">↑</span></a></div>
++  {% include layout/elsewhere.html %}
 +</div>
 +</footer>
 diff --git a/_includes/layout/preview-banner.html b/_includes/layout/preview-banner.html
 new file mode 100644
-index 000000000..a76818e57
+index 000000000..f792e5a99
 --- /dev/null
 +++ b/_includes/layout/preview-banner.html
 @@ -0,0 +1,3 @@
 +{% if site.preview %}
-+<aside class="site-preview-banner" aria-label="Site preview"><strong>Preview</strong><span>Explore the proposed layout.</span><a href="https://tedt.org/">View the Current Site <span aria-hidden="true">↗</span></a></aside>
++<aside class="site-preview-banner" aria-label="Site preview"><strong>Preview</strong><span>Explore the proposed layout.</span><a href="https://tedt.org/">View the Current Site <span aria-hidden="true">{% include utility/arrow-up-right.html %}</span></a></aside>
 +{% endif %}
 diff --git a/_includes/layout/section-nav-items.html b/_includes/layout/section-nav-items.html
 new file mode 100644
@@ -1097,6 +1095,13 @@ index 3e01d2a96..ea538d385 100644
  {% if page.noindex == true or page.noindex == 'true' or page.noindex == 1 or page.noindex == '1' %}
    {% assign noindex_requested = true %}
  {% endif %}
+diff --git a/_includes/utility/arrow-up-right.html b/_includes/utility/arrow-up-right.html
+new file mode 100644
+index 000000000..1c59cb0c5
+--- /dev/null
++++ b/_includes/utility/arrow-up-right.html
+@@ -0,0 +1 @@
++<svg class="ia-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="-1.5 -1.5 27 27" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M0 0H24V24M0 24L24 0"/></svg>
 diff --git a/_includes/utility/profile-url.html b/_includes/utility/profile-url.html
 new file mode 100644
 index 000000000..2342768a7
@@ -1136,7 +1141,7 @@ index 84a9da9c7..bfd046452 100644
    decoding="async"{% if _responsive_is_lcp %}
    fetchpriority="high"{% endif %}{% if include.extra_attributes %}
 diff --git a/_layouts/category.html b/_layouts/category.html
-index f21b1fe1e..30b4e1bc4 100644
+index f21b1fe1e..a7dbe77e0 100644
 --- a/_layouts/category.html
 +++ b/_layouts/category.html
 @@ -1,51 +1,7 @@
@@ -1420,7 +1425,7 @@ index f21b1fe1e..30b4e1bc4 100644
  
 +  <ol class="ia-category-list" aria-label="Posts in {{ registry_entry.title | default: __cat_source | escape }}">
 +    {% for post in posts_arr %}
-+    <li class="ia-writing-row"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time><div><h2 class="h3"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2><p>{{ post.teaser | default: post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 220 | escape }}</p></div><span aria-hidden="true">↗</span></li>
++    <li class="ia-writing-row"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time><div><h2 class="h3"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2><p>{{ post.teaser | default: post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 220 | escape }}</p></div><span aria-hidden="true">{% include utility/arrow-up-right.html %}</span></li>
 +    {% endfor %}
 +  </ol>
 +  <nav class="ia-category-browser" aria-label="All site categories"><h2>Browse Categories</h2><ul>
@@ -1888,8 +1893,21 @@ index 000000000..cc229c612
 +  {% include content/section-groups.html section=page.section %}
 +  {{ content }}
 +</div>
+diff --git a/_layouts/slide-deck.html b/_layouts/slide-deck.html
+index 67657e459..55656fb92 100644
+--- a/_layouts/slide-deck.html
++++ b/_layouts/slide-deck.html
+@@ -48,7 +48,7 @@
+         >
+           <span class="slide-deck-open-long">Open presentation</span>
+           <span class="slide-deck-open-short">Open</span>
+-          <span aria-hidden="true">↗</span>
++          <span aria-hidden="true">{% include utility/arrow-up-right.html %}</span>
+         </a>
+       {% endif %}
+     </header>
 diff --git a/_layouts/tool.html b/_layouts/tool.html
-index 342ca8034..40b81514c 100644
+index 342ca8034..c791f9963 100644
 --- a/_layouts/tool.html
 +++ b/_layouts/tool.html
 @@ -1,160 +1,35 @@
@@ -2061,7 +2079,7 @@ index 342ca8034..40b81514c 100644
 +    {% if page.summary %}<p class="ia-lead">{{ page.summary | escape }}</p>{% endif %}
 +    <div class="ia-tool-meta">{% include content/tool-status.html status=page.status %}<time datetime="{{ page.last_modified | default: page.date | date: '%Y-%m-%d' }}">Updated {{ page.last_modified | default: page.date | date: '%b %-d, %Y' }}</time></div>
 +    <nav class="ia-tool-actions" aria-label="Tool actions">
-+      {% if page.links.live %}<a href="{% if page.links.live contains '://' %}{{ page.links.live }}{% else %}{{ page.links.live | relative_url }}{% endif %}">{% if page.status == 'under development' %}View the Project{% else %}Live{% endif %} <span aria-hidden="true">↗</span></a>{% endif %}
++      {% if page.links.live %}<a href="{% if page.links.live contains '://' %}{{ page.links.live }}{% else %}{{ page.links.live | relative_url }}{% endif %}">{% if page.status == 'under development' %}View the Project{% else %}Live{% endif %} <span aria-hidden="true">{% include utility/arrow-up-right.html %}</span></a>{% endif %}
 +      {% if page.links.repo %}<a href="{{ page.links.repo }}">Code</a>{% endif %}
 +      {% if page.links.docs %}<a href="{{ page.links.docs }}">Docs</a>{% endif %}
 +      {% if page.links.download %}<a href="{{ page.links.download }}">Download</a>{% endif %}
@@ -2113,17 +2131,17 @@ index e9abb048d..9699e1d41 100644
  
 diff --git a/_sass/components/_information-architecture.scss b/_sass/components/_information-architecture.scss
 new file mode 100644
-index 000000000..3eadc3dd2
+index 000000000..53ad264b6
 --- /dev/null
 +++ b/_sass/components/_information-architecture.scss
-@@ -0,0 +1,279 @@
+@@ -0,0 +1,286 @@
 +/* Public Workbench: token-based editorial pages and shared chrome. */
 +@import "workbench-tokens";
 +.library-site { background: var(--ia-paper); color: var(--ia-ink); padding-top: 70px; font-family: var(--font-sans); font-size: 18px; line-height: 1.65; }
 +body:has(.site-preview-banner) { padding-top: 108px !important; }
 +.library-site a { color: var(--ia-link); text-underline-offset: .2em; }
 +.library-site a:hover { text-decoration-thickness: 3px; }
-+.library-site h1, .library-site h2, .library-site h3 { font-family: var(--font-display); font-weight: 400; color: var(--ia-ink); letter-spacing: -.025em; line-height: 1.15; }
++.library-site h1, .library-site h2, .library-site h3 { font-family: var(--font-display); font-weight: 400; color: var(--ia-ink); letter-spacing: -.025em; line-height: 1.15; --ia-arrow-stroke: 2.75; }
 +.library-site h1 { font-size: clamp(2.75rem, 5.8vw, 5.6rem); }
 +.library-site h2 { font-size: clamp(1.7rem, 2.3vw, 2.45rem); }
 +.library-site h3 { font-size: 1.3rem; }
@@ -2140,7 +2158,11 @@ index 000000000..3eadc3dd2
 +.ia-home-hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 3.5rem; padding-block: 4.5rem; align-items: center; }
 +.ia-home-hero h1 { margin-bottom: 1.75rem; }
 +.ia-actions { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; margin-top: 2rem; }
-+.ia-text-link { font-weight: 600; }
++.ia-text-link { font-weight: 600; --ia-arrow-stroke: 2.75; }
++.ia-arrow { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -.12em; font-weight: inherit; stroke-width: var(--ia-arrow-stroke, 2); }
++:is(strong, b, .fw-bold) .ia-arrow { --ia-arrow-stroke: 3; }
++.fw-medium .ia-arrow { --ia-arrow-stroke: 2.35; }
++.fw-semibold .ia-arrow { --ia-arrow-stroke: 2.75; }
 +.ia-hero-photo { margin: 0; }
 +.ia-hero-photo img { display: block; width: 100%; height: var(--hero-photo-h); object-fit: cover; object-position: 50% 60%; border-radius: .375rem; }
 +.ia-hero-photo figcaption { margin-top: .75rem; font-size: .82rem; color: var(--ia-muted); }
@@ -2185,6 +2207,10 @@ index 000000000..3eadc3dd2
 +.ia-destination-list a:hover { text-decoration: underline; }
 +.ia-group-list { padding-bottom: 3.5rem; }
 +.ia-footer { border-top: 1px solid var(--ia-rule); padding-block: 3rem 1.5rem; }
++.ia-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
++.ia-footer-name { font-family: var(--font-display); font-weight: 400; font-size: 1.75rem; text-decoration: underline; }
++.ia-footer-grid p { color: var(--ia-muted); margin-top: .75rem; font-size: .95rem; }
++.ia-footer-heading { font-size: 1.1rem !important; margin-bottom: 1rem; }
 +.ia-footer ul { list-style: none; padding: 0; font-size: .9rem; }
 +.ia-footer li { margin-bottom: .6rem; }
 +.ia-footer-bottom { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--ia-rule); display: flex; justify-content: space-between; font-size: .8rem; color: var(--ia-muted); }
@@ -2254,6 +2280,8 @@ index 000000000..3eadc3dd2
 +  .ia-writing-row > span { display: none; }
 +  .ia-about-strip { display: block; padding: 1.5rem; }
 +  .ia-about-strip .btn { margin-top: 1.25rem; }
++  .ia-footer-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
++  .ia-footer-grid > div { grid-column: 1 / -1; }
 +  .ia-tool-filters, .ia-search-form { grid-template-columns: 1fr; padding: 1rem; }
 +  .site-preview-banner { gap: .6rem; font-size: 11px; }
 +  .site-preview-banner > span { display: none; }
@@ -2299,11 +2327,8 @@ index 000000000..3eadc3dd2
 +:is([data-theme="dark"], [data-bs-theme="dark"]) .ia-familymark-dark { display: block; }
 +.ia-footer-bottom { flex-wrap: wrap; align-items: center; gap: var(--space-3); }
 +.ia-footer-bottom a { min-height: var(--target-min); display: inline-flex; align-items: center; gap: .35rem; }
-+.ia-footer-signature, .ia-footer-utility { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); }
-+.ia-footer-signature .ia-familymark { margin: 0; }
-+.ia-footer-disclaimer { margin: var(--space-3) 0 0; font-size: .8rem; color: var(--ia-muted); }
 +.ia-elsewhere { border-bottom: 1px solid var(--ia-rule); padding-bottom: var(--space-8); margin-bottom: var(--space-8); }
-+.ia-footer .ia-elsewhere { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
++.ia-footer .ia-elsewhere { border-top: 1px solid var(--ia-rule); border-bottom: 0; padding-top: var(--space-7); padding-bottom: 0; margin-top: var(--space-8); margin-bottom: 0; }
 +.ia-elsewhere h2 { font-size: 1.75rem; margin-bottom: var(--space-5); }
 +.ia-elsewhere-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 var(--space-7); margin: 0 0 var(--space-5); }
 +.ia-elsewhere-list li { border-top: 1px solid var(--ia-rule); min-width: 0; }
@@ -2311,7 +2336,7 @@ index 000000000..3eadc3dd2
 +.ia-profile-name { font-weight: 600; }
 +.ia-profile-handle { font-family: var(--font-mono); font-size: .75rem; color: var(--ia-muted); overflow-wrap: anywhere; grid-column: 1; }
 +.ia-profile-context { color: var(--ia-muted); font-size: .75rem; grid-column: 2; grid-row: 2; }
-+.ia-profile-arrow { grid-column: 2; grid-row: 1; text-align: right; }
++.ia-profile-arrow { grid-column: 2; grid-row: 1; text-align: right; font-weight: 600; --ia-arrow-stroke: 2.75; }
 +.ia-elsewhere-more { margin-block: var(--space-3); }
 +.ia-elsewhere-more summary { display: flex; align-items: center; gap: var(--space-2); min-height: var(--target-min); width: fit-content; cursor: pointer; color: var(--ia-link); text-decoration: underline; text-underline-offset: .2em; list-style: none; font-size: .9rem; }
 +.ia-elsewhere-more summary::-webkit-details-marker { display: none; }
@@ -2998,10 +3023,10 @@ index 000000000..c4de56642
 +This ADR remains Proposed until a production cutover is approved.
 diff --git a/docs/ia-preview.md b/docs/ia-preview.md
 new file mode 100644
-index 000000000..ed886f764
+index 000000000..55819b113
 --- /dev/null
 +++ b/docs/ia-preview.md
-@@ -0,0 +1,60 @@
+@@ -0,0 +1,62 @@
 +# Review the Information Architecture Preview
 +
 +The preview uses **GitHub Pages at https://preview.tedt.org/**. Cloudflare supplies its DNS record. Ted accepted an unlinked public preview without login protection; every HTML page receives noindex. Production cutover requires a separate explicit request.
@@ -3061,7 +3086,9 @@ index 000000000..ed886f764
 +
 +The navbar collapses below 1400px so six separate 44px disclosure buttons and the theme/TOC controls fit without crowding. The content grids retain the design system's 1200px and 768px breakpoints.
 +
-+The shared footer is the Elsewhere on the Web directory: primary profile links, a closed-by-default native disclosure for additional profiles, and the support link. Its closing row contains the family mark appropriate to each theme, linked name and copyright, Copyright, and Back to Home. Profile links retain `rel="me"`; no icon font is used in the library pages or shared footer.
++The shared footer opens with Ted’s linked name, description, views disclaimer and family mark, plus Explore and Keep in Touch navigation. Copyright and Back to Home follow. Elsewhere on the Web is the final section inside that same footer, with primary profile links, a closed-by-default native disclosure for additional profiles, and the support link. Profile links retain `rel="me"`; no icon font is used in the library pages or shared footer.
++
++The up-right link cue uses `_includes/utility/arrow-up-right.html`: an inline SVG with a full-length top edge, side edge and diagonal. It scales to one em, inherits the text color, and uses heavier strokes alongside Cal Sans headings and semibold links. The decorative glyph is hidden from screen readers and receives no keyboard focus.
 diff --git a/essays/index.html b/essays/index.html
 new file mode 100644
 index 000000000..2353146b8
@@ -3091,7 +3118,7 @@ index 000000000..41a9de39f
 +no_toc: true
 +---
 diff --git a/index.html b/index.html
-index 34cdbbb75..f48fdf334 100644
+index 34cdbbb75..09defaff4 100644
 --- a/index.html
 +++ b/index.html
 @@ -1,5 +1,65 @@
@@ -3110,7 +3137,7 @@ index 34cdbbb75..f48fdf334 100644
 +      <p class="ia-eyebrow">Ted Tschopp’s public workbench</p>
 +      <h1 class="display-1">Technology, Stories,<br>&amp; Imagined Worlds.</h1>
 +      <p class="ia-lead">I’m an enterprise architect, a storyteller, and a curious maker. This is where I share what I’m thinking about, what I’m building, and the worlds I’m exploring.</p>
-+      <div class="ia-actions"><a class="ia-text-link" href="{{ '/about-ted/' | relative_url }}">Meet Ted <span aria-hidden="true">↗</span></a></div>
++      <div class="ia-actions"><a class="ia-text-link" href="{{ '/about-ted/' | relative_url }}">Meet Ted <span aria-hidden="true">{% include utility/arrow-up-right.html %}</span></a></div>
 +    </div>
 +    <figure class="ia-hero-photo"><img src="{{ '/img/categories/home-hero-images/hero-lake.webp' | relative_url }}" alt="A figure seen from behind sits at the edge of a still mountain lake at sunset, cabins glowing among the pines." width="1904" height="640" fetchpriority="high"><figcaption>A place for reflection, exploration, and work in progress.</figcaption></figure>
 +  </header>
@@ -3120,7 +3147,7 @@ index 34cdbbb75..f48fdf334 100644
 +      {% for section in site.data.site_navigation %}{% unless section.key == 'about' %}
 +      <article class="ia-shelf">
 +        <span class="ia-shelf-number" aria-hidden="true">0{{ forloop.index }}</span>
-+        <h3><a href="{{ section.url | relative_url }}">{{ section.title | escape }} <span aria-hidden="true">↗</span></a></h3>
++        <h3><a href="{{ section.url | relative_url }}">{{ section.title | escape }} <span aria-hidden="true">{% include utility/arrow-up-right.html %}</span></a></h3>
 +        <p>{{ section.description | escape }}</p>
 +        <ul>{% for child in section.children limit: 3 %}<li><a href="{{ child.url | relative_url }}">{{ child.title | escape }}</a></li>{% endfor %}</ul>
 +      </article>
@@ -3138,7 +3165,7 @@ index 34cdbbb75..f48fdf334 100644
 +    </div>
 +  </section>
 +  <section class="ia-home-section" aria-labelledby="new-writing-title">
-+    <div class="ia-section-heading"><h2 id="new-writing-title">New Writing</h2><a href="{{ '/essays/' | relative_url }}">Browse Essays <span aria-hidden="true">↗</span></a></div>
++    <div class="ia-section-heading"><h2 id="new-writing-title">New Writing</h2><a href="{{ '/essays/' | relative_url }}">Browse Essays <span aria-hidden="true">{% include utility/arrow-up-right.html %}</span></a></div>
 +    <div class="ia-writing-list">
 +    {% assign shown = 0 %}
 +    {% for post in site.posts %}
@@ -3153,7 +3180,7 @@ index 34cdbbb75..f48fdf334 100644
 +          </a>
 +          {% endif %}
 +          <div><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3><p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 175 | escape }}</p></div>
-+          <span aria-hidden="true">↗</span>
++          <span aria-hidden="true">{% include utility/arrow-up-right.html %}</span>
 +        </article>
 +        {% assign shown = shown | plus: 1 %}{% if shown == 6 %}{% break %}{% endif %}
 +        {% endif %}
@@ -3769,10 +3796,10 @@ index f565e1ef8..5e72cbae9 100644
            await toggler.click();
 diff --git a/tests/a11y/public-workbench.spec.ts b/tests/a11y/public-workbench.spec.ts
 new file mode 100644
-index 000000000..cc6009ad7
+index 000000000..2e3f2b805
 --- /dev/null
 +++ b/tests/a11y/public-workbench.spec.ts
-@@ -0,0 +1,132 @@
+@@ -0,0 +1,165 @@
 +import { test, expect } from '@playwright/test';
 +import AxeBuilder from '@axe-core/playwright';
 +
@@ -3801,8 +3828,41 @@ index 000000000..cc6009ad7
 +    await expect(hero).toHaveAttribute('height', '640');
 +    await expect(page.locator('.ia-familymark-' + theme)).toBeVisible();
 +    await expect(page.locator('.ia-familymark-' + (theme === 'light' ? 'dark' : 'light'))).toBeHidden();
-+    const footer = page.getByRole('contentinfo', { name: 'Elsewhere on the Web' });
++    const footer = page.getByRole('contentinfo', { name: 'Site Footer' });
 +    await expect(footer).toHaveCount(1);
++    await expect(footer.getByRole('navigation', { name: 'Explore the site' }).getByRole('link')).toHaveCount(6);
++    await expect(footer.getByRole('navigation', { name: 'Keep in touch' }).getByRole('link')).toHaveCount(4);
++    const elsewhereIsLast = await footer.evaluate(el => {
++      const elsewhere = el.querySelector('.ia-elsewhere')!;
++      const earlierParts = [...el.querySelectorAll('nav'), el.querySelector('.ia-footer-bottom')!];
++      return elsewhere.parentElement?.lastElementChild === elsewhere && earlierParts.every(part =>
++        (part.compareDocumentPosition(elsewhere) & Node.DOCUMENT_POSITION_FOLLOWING) !== 0);
++    });
++    expect(elsewhereIsLast, 'Elsewhere must follow the restored navigation and copyright').toBe(true);
++    const arrowMetrics = await page.locator('.ia-text-link .ia-arrow, .ia-section-heading > a .ia-arrow').evaluateAll(icons =>
++      icons.map(icon => {
++        const style = getComputedStyle(icon);
++        const path = icon.querySelector('path') as SVGPathElement;
++        const bounds = path.getBBox();
++        const box = icon.getBoundingClientRect();
++        return {
++          fontWeight: Number(style.fontWeight), fontSize: Number.parseFloat(style.fontSize),
++          strokeWidth: Number.parseFloat(style.strokeWidth), color: style.color, stroke: style.stroke,
++          width: box.width, height: box.height, drawingWidth: bounds.width, drawingHeight: bounds.height,
++          length: path.getTotalLength(), hidden: icon.getAttribute('aria-hidden'), focusable: icon.getAttribute('focusable')
++        };
++      }));
++    expect(arrowMetrics).toHaveLength(2);
++    for (const arrow of arrowMetrics) {
++      expect(arrow.width).toBeCloseTo(arrow.fontSize, 1);
++      expect(arrow.height).toBeCloseTo(arrow.fontSize, 1);
++      expect(arrow.drawingWidth).toBe(arrow.drawingHeight);
++      expect(arrow.length).toBeCloseTo(arrow.drawingWidth + arrow.drawingHeight + Math.hypot(arrow.drawingWidth, arrow.drawingHeight), 1);
++      expect(arrow.stroke).toBe(arrow.color);
++      expect(arrow.hidden).toBe('true');
++      expect(arrow.focusable).toBe('false');
++    }
++    expect(arrowMetrics.find(arrow => arrow.fontWeight === 600)!.strokeWidth).toBeGreaterThan(arrowMetrics.find(arrow => arrow.fontWeight === 400)!.strokeWidth);
 +    await expect(footer.locator('.ia-elsewhere-list a')).toHaveCount(6);
 +    await expect(footer.locator('.ia-elsewhere-more')).not.toHaveAttribute('open');
 +    const summary = footer.locator('.ia-elsewhere-more summary');
