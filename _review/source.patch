@@ -1703,10 +1703,10 @@ index 000000000..c4de56642
 +This ADR remains Proposed until a production cutover is approved.
 diff --git a/docs/ia-preview.md b/docs/ia-preview.md
 new file mode 100644
-index 000000000..ea3e86deb
+index 000000000..643ce5cb4
 --- /dev/null
 +++ b/docs/ia-preview.md
-@@ -0,0 +1,45 @@
+@@ -0,0 +1,47 @@
 +# Review the Information Architecture Preview
 +
 +The preview uses **GitHub Pages at https://preview.tedt.org/**. Cloudflare supplies its DNS record. Ted accepted an unlinked public preview without login protection; every HTML page receives noindex. Production cutover requires a separate explicit request.
@@ -1722,6 +1722,8 @@ index 000000000..ea3e86deb
 +```
 +
 +On this Mac, the existing Ruby is 3.2.9 and the main checkout stores its installed gems under vendor/bundle. Set RBENV_VERSION and BUNDLE_PATH when building from an isolated worktree rather than changing the lockfile.
++
++For browser checks against a local preview server, set `PLAYWRIGHT_IA_PREVIEW=1`, `PLAYWRIGHT_SKIP_WEB_SERVER=1`, and `PLAYWRIGHT_BASE_URL` to that server's URL. Tests against `https://preview.tedt.org` recognize preview mode automatically. Without preview mode, the same navigation tests verify the banner and noindex directive are absent.
 +
 +The package reuses published img and media files from tedt.org, removes authoring files and operational reports, writes the preview CNAME, and disables service-worker delivery. Package only into a task-owned directory; the script refuses to replace an unmarked directory.
 +
@@ -2229,16 +2231,48 @@ index 000000000..35f2f319c
 +<section class="ia-group"><div class="ia-group-intro"><h2>Follow Along</h2><p>Find me where I share projects and join the conversation.</p></div><ul class="ia-destination-list"><li><a href="https://bsky.app/profile/tedt.org">Bluesky ↗</a></li><li><a href="https://github.com/TedTschopp">GitHub ↗</a></li><li><a href="https://twit.social/@TedT">Mastodon ↗</a></li></ul></section>
 +</div>
 +</div>
+diff --git a/tests/a11y/dropdown-smoke.spec.ts b/tests/a11y/dropdown-smoke.spec.ts
+index 678e7899d..e9dba0109 100644
+--- a/tests/a11y/dropdown-smoke.spec.ts
++++ b/tests/a11y/dropdown-smoke.spec.ts
+@@ -1,20 +1,19 @@
+ import { test, expect } from '@playwright/test';
+ 
+-// Smoke test for Bootstrap navbar dropdown on a prompt-details page
+-// Assumes local server at http://127.0.0.1:4000
+-// Prompt pages are generated under /prompts/:slug/
+-const LOCAL_URL = process.env.LOCAL_PROMPT_URL || 'http://127.0.0.1:4000/prompts/business-case-and-requirements-assistant/';
++// Smoke test for Bootstrap navigation on a local tool-details page.
++// Preserve the historical URL override for developers testing a specific page.
++const LOCAL_URL = process.env.LOCAL_PROMPT_URL || '/tools/plotto/';
+ 
+ test.describe('Navbar dropdown smoke test', () => {
+-  test('Career dropdown opens', async ({ page }) => {
++  test('Tools dropdown opens', async ({ page }) => {
+     await page.goto(LOCAL_URL, { waitUntil: 'domcontentloaded' });
+     // Wait a tick to ensure bootstrap JS attached
+     await page.waitForTimeout(500);
+-  const trigger = page.locator('button#careerDropdownToggle');
++    const trigger = page.locator('button#toolsDropdownToggle');
+     await expect(trigger).toBeVisible();
+     await trigger.click();
+     // After click, the menu (ul.dropdown-menu) associated should be visible
+-  const menu = page.locator('ul[aria-labelledby="careerDropdownToggle"]');
++    const menu = page.locator('ul[aria-labelledby="toolsDropdownToggle"]');
+     await expect(menu).toBeVisible();
+   });
+ });
 diff --git a/tests/a11y/information-architecture.spec.ts b/tests/a11y/information-architecture.spec.ts
 new file mode 100644
-index 000000000..9fbd2f652
+index 000000000..020eeb536
 --- /dev/null
 +++ b/tests/a11y/information-architecture.spec.ts
-@@ -0,0 +1,80 @@
+@@ -0,0 +1,88 @@
 +import { test, expect } from '@playwright/test';
 +import AxeBuilder from '@axe-core/playwright';
 +
 +const labels = ['Essays', 'Stories & Folklore', 'Games & Worlds', 'Tools', 'Learn', 'About', 'Search', 'Subscribe'];
++const isPreview = process.env.PLAYWRIGHT_IA_PREVIEW === '1' || (process.env.PLAYWRIGHT_BASE_URL || '').includes('preview.tedt.org');
 +const paths = ['/', '/essays/', '/stories/', '/games/', '/tools/', '/learn/', '/about-ted/', '/profile/', '/category/ai/', '/tools/plotto/', '/Gamma-World-Bestiary/Abomination.html', '/assessments/ai-coding-maturity-assessment/', '/assessments/enterprise-ai-maturity-assessment/'];
 +
 +for (const width of [1440, 390]) {
@@ -2252,8 +2286,13 @@ index 000000000..9fbd2f652
 +      if (width < 1200) await toggle.click();
 +      const links = nav.locator('.navbar-nav > .nav-item > a.menu-item');
 +      expect((await links.allTextContents()).map(t => t.trim())).toEqual(labels);
-+      await expect(page.locator('.site-preview-banner')).toBeVisible();
-+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
++      if (isPreview) {
++        await expect(page.locator('.site-preview-banner')).toBeVisible();
++        await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
++      } else {
++        await expect(page.locator('.site-preview-banner')).toHaveCount(0);
++        await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
++      }
 +      const disclosure = nav.locator('#toolsDropdownToggle');
 +      await disclosure.click();
 +      await expect(disclosure).toHaveAttribute('aria-expanded', 'true');
@@ -2310,7 +2349,9 @@ index 000000000..9fbd2f652
 +      await page.addInitScript(value => localStorage.setItem('color-scheme', value), theme);
 +      await page.goto(path);
 +      await expect(page.locator('.library-main')).toHaveCount(1);
-+      const result = await new AxeBuilder({ page }).include('.library-main').include('.ia-navbar').include('.site-preview-banner').analyze();
++      const audit = new AxeBuilder({ page }).include('.library-main').include('.ia-navbar');
++      if (isPreview) audit.include('.site-preview-banner');
++      const result = await audit.analyze();
 +      expect(result.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
 +    });
 +  }
