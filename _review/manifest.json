@@ -1,11 +1,12 @@
 {
   "source_repository": "https://github.com/TedTschopp/tedt.org",
   "source_base": "f186080942c1be1909bac3bc3ed309d04e7b338f",
-  "source_commit": "dc315b877e40ff2b3408593c12533e123c233322",
-  "render_source_commit": "dc315b877e40ff2b3408593c12533e123c233322",
+  "source_commit": "5e1b6384796e95e714234383fccf01f5101b78b5",
+  "render_source_commit": "5e1b6384796e95e714234383fccf01f5101b78b5",
   "local_branch": "codex/ia-preview",
   "review_source_files": 70,
   "preview_url": "https://preview.tedt.org/",
   "design_language": "tedtorg-preview-design / Public Workbench",
-  "production_cutover": "Requires a separate explicit request"
+  "production_cutover": "Requires a separate explicit request",
+  "render_note": "Homepage regenerated for this change; unaffected pages retain the validated dc315b877e40ff2b3408593c12533e123c233322 build."
 }
