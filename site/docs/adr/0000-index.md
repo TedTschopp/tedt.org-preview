@@ -1,0 +1,57 @@
+# ADR Index
+
+This directory contains Architecture Decision Records (ADRs) capturing significant, irreversible, or high-impact technical decisions for the site.
+
+## Numbering Scheme
+
+- Files are numbered with zero-padded 4-digit prefixes: `0001`, `0002`, etc.
+- `0000-index.md` (this file) is reserved as the stable index and MUST NOT be repurposed.
+- Numbers are assigned at ADR creation time and never renumbered—this preserves permalinks in commit history and external references.
+- Status keywords: `Proposed`, `Accepted`, `Deprecated`, `Superseded`.
+- When an ADR is superseded, update its status and add a `Superseded-By:` line referencing the replacement ADR number.
+
+## Workflow
+
+1. Draft ADR (`Proposed`) with context, decision, alternatives, consequences.
+2. Review + refine (optional lightweight discussion in PR).
+3. Mark `Accepted` once merged.
+4. If direction changes later, create a new ADR; do not edit historical decisions beyond status annotations / links.
+
+## Current ADRs
+
+| Number | Title | Status | Date | Summary |
+|--------|-------|--------|------|---------|
+| 0001 | [Prompt Details Page UX and Accessibility Improvements](0001-prompt-details-page-ux-improvements.md) | Accepted | 2025-??-?? | Improves mobile layout, accessibility, and interaction feedback on prompt details page. |
+| 0002 | [Dynamic Prompt Series Architecture](0002-dynamic-prompt-series-architecture.md) | Accepted | 2025-08-06 | Structure for multi-post prompt series with navigation & metadata cohesion. |
+| 0003 | [Random Carousel Start Position](0003-random-carousel-start-position.md) | Accepted | 2025-08-10 | Randomizes homepage category carousel start index for varied exposure. |
+| 0004 | [Prompt Library Jekyll Integration](0004-prompt-library-integration.md) | Proposed | 2025-08-05 | Replace static prompt cards with dynamic posts-driven library & tag filters. |
+| 0005 | [Multi-Scale Hex Overlay Visualization](0005-multi-scale-hex-overlay.md) | Proposed | 2025-08-07 | Layered hex grid visualization strategy for mapping content. |
+| 0006 | [Registry-Driven Category Carousel & Accessibility](0006-carousel-registry-driven-accessibility.md) | Accepted | 2025-08-14 | Central registry powering carousel; accessibility & maintainability improvements. |
+| 0007 | [Category Theming Unification](0007-category-theming-unification.md) | Accepted | 2025-08-14 | Unified category color/theme mapping across layouts & components. |
+| 0008 | [Memory Probe Instrumentation & Recent Content Caching](0008-memory-probe-and-caching.md) | Accepted | 2025-09-14 | Env-gated memory deltas + cached per-category recent posts reduce redundant loops & improve observability. |
+| 0009 | [Temporary Downgrade & Pin of ffi 1.16.3](0009-ffi-downgrade-stability-and-upgrade-path.md) | Accepted | 2025-09-14 | Pin `ffi` for build stability; documents upgrade path & security considerations. |
+| 0010 | [`no_toc` Front Matter Flag](0010-no-toc-front-matter-flag.md) | Accepted | 2025-09-14 | Per‑post suppression of Table of Contents card for concise content. |
+| 0011 | [`mermaid` Front Matter Flag](0011-mermaid-front-matter-flag.md) | Accepted | 2025-09-14 | Conditional loading of Mermaid diagrams only on opted-in posts. |
+| 0012 | [Posts-Based Slide Deck Architecture](0012-posts-based-slides.md) | Accepted | 2025-11-03 | Deprecates legacy `slides` collection; unifies decks under `_posts/Slides/`. |
+| 0013 | [Adopt Standalone HTML Artifacts for Slide Decks](0013-standalone-html-slide-decks.md) | Accepted | 2026-07-27 | Makes self-contained HTML the default deck format while retaining posts-based discovery and legacy Reveal URLs. |
+| 0014 | [Inside AI Browser Explainer](0014-inside-ai-browser-explainer.md) | Accepted | 2026-09-27 | Isolated Svelte/D3 application, browser-only inference and separately hosted immutable model assets. |
+| 0015 | [Add Account Images to Social Bot Check Previews](0015-add-account-images-to-social-bot-check-previews.md) | Accepted | 2026-10-01 | A narrow Cloudflare Worker route supplies account avatars in the initial sharing metadata. |
+
+| 0016 | [Introduce Section Navigation and an Isolated GitHub Preview](0016-introduce-section-navigation-and-github-preview.md) | Proposed | 2026-10-02 | Six reader-facing hubs and a separate GitHub Pages review site preserve production until cutover. |
+
+
+## Conventions
+
+- Use imperative mood in titles (e.g., "Adopt X", "Introduce Y").
+- Keep each ADR self-contained; link related ADRs in a `See Also` section when relevant.
+- Prefer concise rationale; move deep analysis to `/docs/planning/` if needed.
+
+## Future Candidates (Backlog)
+
+- Precompute prompt tag index.
+- Introduce unified post lookup map for cross-linking.
+- Add accessibility CI gating strategy.
+- Evaluate migration path if post volume grows 10x.
+
+---
+_This index is maintained manually to keep ordering explicit and reviewable._

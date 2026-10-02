@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+  <atom:link href="https://preview.tedt.org/rss.xml" rel="self" type="application/rss+xml" />
+    
+    <title>Ted Tschopp&apos;s Homepage - Articles</title>
+        
+    <description>Technology, theology, and creativity converge in this insightful exploration by Ted Tschopp, who navigates the intricate relationship between these topics in the digital age. From dissecting how technology is reshaping religious practices and ethics to sharing cutting-edge trends in UI/UX design, collaboration tools, and digital storytelling, the author provides a multifaceted analysis. Written with a unique and engaging blend of humor, reflection, and curiosity, this work invites readers to ponder and discuss these connections, offering a contemplative lens on modern innovation and cultural evolution.</description>
+    <link>https://preview.tedt.org</link>
+      
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>This Isn&amp;apos;t a Storm. This Is the Weather.</title>
+          <description>We are preparing for a storm when we should be learning to operate in the new weather.</description>
+          
+          <pubDate>Mon, 28 Sep 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/This-Isnt-a-Storm-This-Is-the-Weather/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/This-Isnt-a-Storm-This-Is-the-Weather/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>When AI Moves Faster Than the Organization</title>
+          <description>We should evaluate the capability of the organization we are assembling around AI, including the people who remain responsible for its work.</description>
+          
+          <pubDate>Sat, 26 Sep 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/When-AI-Moves-Faster-Than-the-Organization/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/When-AI-Moves-Faster-Than-the-Organization/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>When AI Evaluators Also Sell AI Adoption</title>
+          <description>When an AI evaluator also sells adoption, buyers need evidence that inconvenient findings can reach decision-makers and change a deployment decision.</description>
+          
+          <pubDate>Sat, 19 Sep 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/When-AI-Evaluators-Also-Sell-AI-Adoption/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/When-AI-Evaluators-Also-Sell-AI-Adoption/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>Beyond the Mirror: Principles for Work in the Age of AI</title>
+          <description>AI can take on more information work, but it cannot decide what work should mean for people. This manifesto argues for shared purpose, a living commons, coordinated autonomy, and shared gains as the foundations of communal work.</description>
+          
+          <pubDate>Fri, 11 Sep 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/Beyond-the-Mirror/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/Beyond-the-Mirror/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>OpenAI, Hugging Face &amp;amp; Wikis: Recent Developments</title>
+          <description>
+</description>
+          
+          <pubDate>Thu, 10 Sep 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/slides/openai-hugging-face-wiki/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/slides/openai-hugging-face-wiki/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>How Much Energy and Water Does AI Use?</title>
+          <description>AI uses electricity and water, but the impact depends on the task, the model, and the facility. Familiar comparisons help explain the scale.</description>
+          
+          <pubDate>Sun, 06 Sep 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/Energy-and-Water-Usage-for-Models/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/Energy-and-Water-Usage-for-Models/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>The Same Model, Different Rules</title>
+          <description>AI procurement must define not only which model is approved, but also its access rules, data custody, interruption response, and exit arrangements.</description>
+          
+          <pubDate>Sat, 05 Sep 2026 09:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/The-Same-Model-Different-Rules/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/The-Same-Model-Different-Rules/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>Model Portability Is Not AI Portability</title>
+          <description>Large enterprises are learning how to switch models. Moving a working business process without losing quality, controls, or money is a different problem.</description>
+          
+          <pubDate>Fri, 28 Aug 2026 09:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/Model-Portability-Is-Not-AI-Portability/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/Model-Portability-Is-Not-AI-Portability/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>Dev, Test, and Prod Still Matter: What Gets Deployed Has Changed</title>
+          <description>Dev, Test, and Prod still matter for AI agents, but promotion gates must now govern the artifact, authority, state, and evidence together.</description>
+          
+          <pubDate>Sat, 22 Aug 2026 08:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>The Cost of a Finished Job</title>
+          <description>Cheaper models do not automatically produce cheaper work. Enterprise AI economics depend on the total cost of delivering an accepted outcome.</description>
+          
+          <pubDate>Sun, 16 Aug 2026 09:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/The-Cost-of-a-Finished-Job/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/The-Cost-of-a-Finished-Job/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>The Sandbox Was Not the Boundary</title>
+          <description>
+</description>
+          
+          <pubDate>Thu, 13 Aug 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/slides/the-sandbox-was-not-the-boundary/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/slides/the-sandbox-was-not-the-boundary/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>The Sandbox Was Not the Boundary</title>
+          <description>The OpenAI–Hugging Face incident shows why an agent&apos;s boundary must include proxy services, persistent state, task-failure behavior, and the authority to restart after an incident.</description>
+          
+          <pubDate>Sat, 08 Aug 2026 09:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/The-Sandbox-Was-Not-the-Boundary/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/The-Sandbox-Was-Not-the-Boundary/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>How Much Work Can Your AI Safely Own?</title>
+          <description>Software delivery is only the first example. The same Levels 0–5 apply across enterprise value streams when leaders separate observed behavior, capability, control evidence and authorized AI responsibility.</description>
+          
+          <pubDate>Sat, 01 Aug 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/How-Much-Work-Can-Your-AI-Safely-Own/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/How-Much-Work-Can-Your-AI-Safely-Own/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>Principles of Effective Architecture</title>
+          <description>
+</description>
+          
+          <pubDate>Fri, 31 Jul 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/slides/principles-of-effective-architecture/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/slides/principles-of-effective-architecture/</guid>
+        </item>
+      
+        
+          
+          
+          
+         <!-- Calculate the pages Exerpt if one isn't present -->
+          
+        
+        <item>
+          <title>AI Strategy Discussion Starters</title>
+          <description>
+</description>
+          
+          <pubDate>Mon, 27 Jul 2026 00:00:00 -0700</pubDate>
+          <link>https://preview.tedt.org/slides/ai-strategy-discussion-starters/</link>
+          <guid isPermaLink="true">https://preview.tedt.org/slides/ai-strategy-discussion-starters/</guid>
+        </item>
+      
+        
+          
+          
+              
+  </channel>
+</rss>

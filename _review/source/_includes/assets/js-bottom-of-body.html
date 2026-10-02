@@ -1,0 +1,258 @@
+<!-- Bootstrap (jQuery is now loaded in head via scripts.html) -->
+    {% include assets/js-bootstrap.html %}
+
+    <!-- Native Light / Auto / Dark scheme toggle (pepelsbey-style UX) -->
+    {% include utility/color-scheme-toggle.html %}
+
+    <!-- Unified Toggle Module (Pilcrow, TOC Arrows, TOC Card) -->
+    <script>
+      const ToggleManager = (function(){
+        // --- Cookie helpers ---
+        function getCookie(name){
+          const value = '; ' + document.cookie;
+            const parts = value.split('; ' + name + '=');
+            if(parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+        function setCookie(name,val){ document.cookie = `${name}=${val}; path=/; max-age=31536000`; }
+
+        // State
+        let pilcrowVisible = getCookie('pilcrowVisible') === 'true';
+        let tocArrowsVisible = getCookie('tocArrowsVisible') === 'true';
+        let tocHideCount = parseInt(getCookie('tableOfContentsHideCount') || '0', 10);
+        const explicitTocCookie = getCookie('tableOfContentsVisible');
+        const userPrefersTocHidden = tocHideCount >= 3;
+        let tableOfContentsVisible = explicitTocCookie !== null ? (explicitTocCookie === 'true') : !userPrefersTocHidden || (window.matchMedia('(max-width: 991.98px)').matches);
+
+        // --- Utility DOM helpers ---
+        function swapIconWeight(iconEl, active, solidWhenActive=true){
+          if(!iconEl) return;
+          if(solidWhenActive){
+            if(active){ iconEl.classList.add('fa-solid'); iconEl.classList.remove('fa-regular'); }
+            else { iconEl.classList.add('fa-regular'); iconEl.classList.remove('fa-solid'); }
+          } else {
+            // Reverse logic if needed for a future toggle
+            if(active){ iconEl.classList.add('fa-regular'); iconEl.classList.remove('fa-solid'); }
+            else { iconEl.classList.add('fa-solid'); iconEl.classList.remove('fa-regular'); }
+          }
+        }
+        function setPressed(btn, pressed){
+          if(!btn) return;
+          btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+        }
+
+        // --- Pilcrow ---
+        function applyPilcrow(){
+          document.querySelectorAll('.Winerlink').forEach(l => l.style.display = pilcrowVisible ? 'inline' : 'none');
+          const btn = document.getElementById('btnTogglePilcrow');
+          if(btn){
+            setPressed(btn, pilcrowVisible);
+            swapIconWeight(btn.querySelector('i[data-swap-icon]'), pilcrowVisible);
+          }
+        }
+        function togglePilcrow(){
+          pilcrowVisible = !pilcrowVisible;
+          setCookie('pilcrowVisible', pilcrowVisible);
+          applyPilcrow();
+        }
+        function setupPilcrowObserver(){
+          const observer = new MutationObserver(muts => {
+            for(const m of muts){ if(m.addedNodes.length){ applyPilcrow(); break; } }
+          });
+          observer.observe(document.body, { childList:true, subtree:true });
+        }
+
+        // --- TOC Arrows ---
+        function applyTocArrows(){
+          document.querySelectorAll('h1 a[href="#Top-of-Table-of-Contents"], h2 a[href="#Top-of-Table-of-Contents"], h3 a[href="#Top-of-Table-of-Contents"], h4 a[href="#Top-of-Table-of-Contents"], h5 a[href="#Top-of-Table-of-Contents"], h6 a[href="#Top-of-Table-of-Contents"]').forEach(a => {
+            a.style.display = tocArrowsVisible ? 'inline-block' : 'none';
+          });
+          const btn = document.getElementById('btnToggleTocArrows');
+          if(btn){
+            setPressed(btn, tocArrowsVisible);
+            swapIconWeight(btn.querySelector('i[data-swap-icon]'), tocArrowsVisible);
+          }
+        }
+        function toggleTocArrows(){
+          tocArrowsVisible = !tocArrowsVisible;
+          setCookie('tocArrowsVisible', tocArrowsVisible);
+          applyTocArrows();
+        }
+        function setupTocArrowsObserver(){
+          const obs = new MutationObserver(applyTocArrows);
+          obs.observe(document.body, { childList:true, subtree:true });
+        }
+
+        // --- TOC Card ---
+
+        function setDisabled(el, disabled){
+          if(!el) return;
+          if(disabled){
+            el.setAttribute('aria-disabled', 'true');
+            el.setAttribute('disabled', 'disabled');
+          } else {
+            el.removeAttribute('aria-disabled');
+            el.removeAttribute('disabled');
+          }
+        }
+
+        function applyTocToggleButtons(disabled){
+          // New segmented control (Show/Hide) in navbar
+          const toggleGroup = document.getElementById('tocVisibilityToggle');
+          if(toggleGroup){
+            const toggleContainer = toggleGroup.closest('[data-toc-visibility-container]');
+            const showBtn = toggleGroup.querySelector('button[data-toc-visibility="show"]');
+            const hideBtn = toggleGroup.querySelector('button[data-toc-visibility="hide"]');
+
+            if(toggleContainer){
+              toggleContainer.hidden = !!disabled;
+              if(disabled){
+                toggleContainer.style.display = 'none';
+              } else {
+                toggleContainer.style.removeProperty('display');
+              }
+            }
+
+            setDisabled(showBtn, !!disabled);
+            setDisabled(hideBtn, !!disabled);
+
+            if(!disabled){
+              setPressed(showBtn, !!tableOfContentsVisible);
+              setPressed(hideBtn, !tableOfContentsVisible);
+            } else {
+              setPressed(showBtn, false);
+              setPressed(hideBtn, false);
+            }
+          }
+
+          // Back-compat: older single-button toggle (if present)
+          const legacyBtn = document.getElementById('btnToggleTocCard');
+          if(legacyBtn){
+            setDisabled(legacyBtn, !!disabled);
+            if(!disabled){
+              setPressed(legacyBtn, tableOfContentsVisible);
+              legacyBtn.title = tableOfContentsVisible ? 'Hide TOC' : 'Show TOC';
+              legacyBtn.setAttribute('aria-label', legacyBtn.title);
+            } else {
+              setPressed(legacyBtn, false);
+            }
+          }
+
+          // Inline TOC button within the TOC card header
+          const inlineBtn = document.getElementById('btnToggleTocInline');
+          if(inlineBtn){
+            setDisabled(inlineBtn, !!disabled);
+            if(!disabled){
+              inlineBtn.setAttribute('aria-pressed', tableOfContentsVisible ? 'true' : 'false');
+              inlineBtn.setAttribute('aria-expanded', tableOfContentsVisible ? 'true' : 'false');
+              inlineBtn.textContent = tableOfContentsVisible ? 'Hide' : 'Show';
+              inlineBtn.title = tableOfContentsVisible ? 'Hide table of contents' : 'Show table of contents';
+              inlineBtn.setAttribute('aria-label', inlineBtn.title);
+            } else {
+              inlineBtn.setAttribute('aria-pressed', 'false');
+              inlineBtn.setAttribute('aria-expanded', 'false');
+              inlineBtn.textContent = 'Show';
+            }
+          }
+        }
+
+        function applyTocCard(){
+          const tocCard = document.getElementById('table-of-contents-card');
+          const tocBody = document.getElementById('insert-table-of-contents-here');
+          if(!tocCard){
+            applyTocToggleButtons(true);
+            return;
+          }
+          if(!tocBody){
+            applyTocToggleButtons(true);
+            return;
+          }
+          applyTocToggleButtons(false);
+          // Manage visibility of the TOC content area (keep the header visible).
+          if(tableOfContentsVisible){
+            tocBody.classList.remove('d-none');
+          } else {
+            tocBody.classList.add('d-none');
+          }
+          // Button UI is managed by applyTocToggleButtons().
+        }
+
+        function setTocCardVisible(nextVisible){
+          tableOfContentsVisible = !!nextVisible;
+          setCookie('tableOfContentsVisible', tableOfContentsVisible);
+          if(!tableOfContentsVisible){
+            tocHideCount += 1;
+            setCookie('tableOfContentsHideCount', tocHideCount);
+          }
+          applyTocCard();
+        }
+        function toggleTocCard(){
+          setTocCardVisible(!tableOfContentsVisible);
+        }
+
+        function setupTocCardButtons(){
+          const toggleGroup = document.getElementById('tocVisibilityToggle');
+          if(!toggleGroup || toggleGroup.dataset.enhanced === 'true') return;
+
+          toggleGroup.addEventListener('click', function(e){
+            const btn = e.target && e.target.closest ? e.target.closest('button[data-toc-visibility]') : null;
+            if(!btn) return;
+            e.preventDefault();
+            const mode = (btn.getAttribute('data-toc-visibility') || '').toLowerCase();
+            if(mode === 'show') setTocCardVisible(true);
+            if(mode === 'hide') setTocCardVisible(false);
+          });
+
+          toggleGroup.dataset.enhanced = 'true';
+        }
+
+        // --- Public API ---
+        function init(){
+          applyPilcrow();
+          applyTocArrows();
+          applyTocCard();
+          setupPilcrowObserver();
+          setupTocArrowsObserver();
+          setupTocCardButtons();
+          // Expose global handlers expected by existing onclick attributes
+          window.togglePilcrow = togglePilcrow;
+          window.toggleBackToTableofContents = toggleTocArrows;
+          window.toggleShowTableOfContents = toggleTocCard;
+        }
+        return { init };
+      })();
+
+      document.addEventListener('DOMContentLoaded', ToggleManager.init);
+    </script>
+
+
+    <!-- Bottom of the Body include core JavaScript -->
+  {% assign this-url = site.url | append: page.url %}
+
+    {% if home-page-url == this-url %}
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                (function () {
+                    const hero = document.getElementById('hero-img');
+                    let ticking = false;
+                    window.addEventListener('scroll', onScroll, { passive: true });
+                    function onScroll() {
+                        if (!ticking) {
+                            window.requestAnimationFrame(() => {
+                                const y = window.scrollY;
+                                // scale scroll to desired range, then cap at 20px
+                                const offset = Math.min(y * 0.2, 20);
+                                hero.style.transform = `translateY(${offset}px)`;
+                                ticking = false;
+                            });
+                            ticking = true;
+                        }
+                    }
+                })();
+            });
+        </script>
+
+    {% else %}
+        <script src="/js/add-winer-links-and-header-links.js"></script>
+    {% endif %}
+<script src="{{ '/js/information-architecture.js' | relative_url }}" defer></script>

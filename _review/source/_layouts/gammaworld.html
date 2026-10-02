@@ -1,0 +1,424 @@
+<!doctype html>
+<html class="no-js" lang="en" data-bs-theme="light">
+
+<head>
+     <meta charset="utf-8">
+     {% include utility/calculate-variables.html %}
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="HandheldFriendly" content="True">
+     <meta name="MobileOptimized" content="320">
+
+     <!-- IndieAuth and WebMentions Metadata -->
+     {% include seo/indieauth-webmentions-metadata.html %}
+
+     <!-- SEO Metadata -->
+     {% include seo/meta-data-seo.html %}
+
+     <!-- PWA Header Includes -->
+     {% include pwa/pwa-header-includes.html %}
+
+     <!-- News Feed Meta Tags. -->
+     {% include feeds/feeds.html %}
+
+     <!-- CSS Includes -->
+     {% include assets/all-css-includes.html %}
+
+     <link href="/css/gamma-world-cards.css" rel="stylesheet">
+
+     <!-- Scripts that need to be at the end of the header -->
+     {% include assets/scripts.html %}
+     <script src="{{ site.url }}/js/jscii.js"></script>
+
+     <style>
+          a[hreflang]:after {
+               content: " [" attr(linkstatus) "]";
+               color: #999;
+               vertical-align: super;
+               font-size: 70%;
+          }
+     </style>
+</head>
+
+<body>
+     <header class="container-fluid py-2" role="banner">
+          {% include layout/top-nav-bar.html %}
+     </header>
+     
+     <main class="container" role="main" id="main-content" tabindex="-1">
+          <div class="row">
+               <aside class="d-none d-lg-block col-lg-1" id="papermargin_left" aria-hidden="true"></aside>
+               <section class="col-12 col-lg-10" id="paper_printarea">
+                    {% if page.title != "" %}
+                         {% assign __primary_category = page.categories | first %}
+                         {% if __primary_category %}
+                              {% capture __slug %}{% include category/map-category-to-registry.html key=__primary_category %}{% endcapture %}
+                              {% assign __slug = __slug | strip %}
+                              {% assign __primary_category_text = __primary_category | to_s | strip %}
+                              {% if __slug == '' and __primary_category_text != '' %}{% assign __slug = __primary_category_text | slugify %}{% endif %}
+                              {% assign __entry = site.data.category_registry[__slug] %}
+                         {% endif %}
+                         {% if __entry %}
+                              {% include category/category-palette-apply.html entry=__entry slug=__slug raw=__primary_category title=page.title title_tag='h1' title_class='MCC post-title' wrapper_class='gammaworld-hero category-theme no-underline' %}
+                         {% else %}
+                              <h1 class="MCC">{{ page.title }}</h1>
+                         {% endif %}
+                    {% endif %}
+
+                    {%- comment -%}
+                    Image path logic:
+                    Keep creature_image as a site-relative path (leading slash) so we can safely
+                    prepend site.url only where absolute URLs are required. Avoid double-prefix bugs.
+                    {%- endcomment -%}
+                    {%- comment -%}
+                    Resolve creature image with existence check.
+                    Strategy:
+                    1. If front matter supplies page.image AND it exists in site.static_files, use it.
+                    2. Else build candidate names from page.creature_name_index with normalization attempts:
+                         original, downcased with spaces->-, apostrophes removed, slugified.
+                    3. First candidate whose PNG exists under /RPG/MCC-GW/images/Monster-Manual/ is selected.
+                    4. If none exist, creature_image becomes empty (no img tag rendered) to avoid 404s.
+                    NOTE: site.static_files paths are site-root relative and begin with a single leading slash.
+                    {%- endcomment -%}
+
+                    {%- assign creature_image = '' -%}
+                    {%- assign supplied_image = page.image | strip -%}
+                    {%- if supplied_image != '' -%}
+                         {%- assign supplied_match = site.static_files | where: 'path', supplied_image | first -%}
+                         {%- if supplied_match -%}
+                              {%- assign creature_image = supplied_image -%}
+                         {%- endif -%}
+                    {%- endif -%}
+                    {%- if creature_image == '' -%}
+                         {%- assign base_raw = page.creature_name_index | strip -%}
+                         {%- assign cand_original = base_raw -%}
+                         {%- assign cand_downcase = base_raw | downcase | replace: ' ', '-' | replace: "'", '' | replace: '’', '' -%}
+                         {%- if base_raw != '' -%}
+                              {%- assign cand_slug = base_raw | slugify -%}
+                         {%- else -%}
+                              {%- assign cand_slug = '' -%}
+                         {%- endif -%}
+                         {%- assign candidate_string = cand_original | append: '||' | append: cand_downcase | append: '||' | append: cand_slug -%}
+                         {%- assign candidate_list = candidate_string | split: '||' | uniq -%}
+                         {%- assign found_image = '' -%}
+                         {%- for nm in candidate_list -%}
+                              {%- assign attempt_path = '/RPG/MCC-GW/images/Monster-Manual/' | append: nm | append: '.png' -%}
+                              {%- assign attempt_match = site.static_files | where: 'path', attempt_path | first -%}
+                              {%- if attempt_match -%}
+                                   {%- assign found_image = attempt_path -%}
+                                   {%- break -%}
+                              {%- endif -%}
+                         {%- endfor -%}
+                         {%- if found_image != '' -%}
+                              {%- assign creature_image = found_image -%}
+                         {%- endif -%}
+                    {%- endif -%}
+
+                    <!-- Creature Image and Overview -->
+                    <!-- creature_image: {{ creature_image }} -->
+
+                    <section class="row mb-4" aria-label="Creature Overview">
+                         <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center mb-3 mb-lg-0">
+                                   <figure class="w-100 overflow-hidden">
+                                        {%- if creature_image != '' -%}
+                                             {% assign _creature_alt = page['image-alt'] | default: page.title | default: 'Gamma World creature illustration' %}
+                                             {% include utility/responsive-image.html src=creature_image id="jscii-element-image" alt=_creature_alt class="img-fluid rounded shadow" sizes="(min-width: 992px) 33vw, 100vw" %}
+                                             <pre class="overflow-hidden" id="ascii-container-image" aria-hidden="true"></pre>
+                                             <figcaption class="visually-hidden">{{ page.title | default: "Creature image" }}</figcaption>
+                                        {%- else -%}
+                                             <div class="ratio ratio-1x1 bg-light d-flex align-items-center justify-content-center rounded shadow border text-muted small" style="min-height:200px">
+                                                  <span>No image available for {{ page.title | default: 'creature' }}</span>
+                                             </div>
+                                             <figcaption class="visually-hidden">No image available</figcaption>
+                                        {%- endif -%}
+                                   </figure>
+                              <p id="image-error-message" class="position-absolute text-danger fs-1 m-5 visually-hidden gw-image-error" aria-live="polite">
+                                   <!-- Filled dynamically on error -->
+                              </p>
+                         </div>
+                         <div class="col-12 col-lg-8">
+                              <section aria-label="Creature Details">
+                                   <section class="gw-stats" aria-labelledby="gw-meta-heading">
+                                   <h3 id="gw-meta-heading" class="visually-hidden">Creature Metadata</h3>
+                                   <dl class="row small">
+                                        <dt class="col-5 col-sm-4 col-md-3">Reported By</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">
+                                             {% if page.author != "" %}{{ page.author }}
+                                             {% elsif page.author_name != "" %}{{ page.author_name }}
+                                             {% else %}{{ site.data.gammaworld_fallbacks.reporter_missing | sample }}{% endif %}
+                                        </dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Source</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">
+                                             {% if page.source != "" %}{{ page.source }}{% else %}{{ site.data.gammaworld_fallbacks.source_missing | sample }}{% endif %}
+                                        </dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Role</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">
+                                             {% if page.role_in_gamma_world != "" %}{{ page.role_in_gamma_world }}{% else %}{{ site.data.gammaworld_fallbacks.role_missing | sample }}{% endif %}
+                                        </dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Base Stock</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.base_stock != "" %}{{ page.base_stock }}{% else %}Unknown{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">MCC Stat Block</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.normal_text != "" %}{{ page.normal_text }}{% else %}Conversion Not Complete{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Mutations</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.mutations != "" %}{{ page.mutations }}{% else %}Unknown{% endif %}</dd>
+                                   </dl>
+                                   </section>
+                                   <section class="gw-stats" aria-labelledby="gw-combat-heading">
+                                   <h3 id="gw-combat-heading" class="visually-hidden">Combat & Physical Stats</h3>
+                                   <dl class="row small">
+                                        <dt class="col-5 col-sm-4 col-md-3">Number Appearing</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.number_appearing_dice != "" %}{{ page.number_appearing_dice }}{% else %}More observations needed{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Morale</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.morale != "" %}{{ page.morale }}{% else %}More observations needed{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Hit Dice</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.new_hd_xdx_plus_minus != "" %}{{ page.new_hd_xdx_plus_minus }}{% else %}More observations needed{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Armor</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.armor != "" %}{{ page.armor }}{% if page.ac_xx %} ({{ page.ac_xx }}){% endif %}{% else %}More observations needed{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Size</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.size != "" %}{{ page.size }}{% if page.size_measurement != "" %} {{ page.size_measurement }}{% endif %}{% else %}Unknown{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Movement</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.mv_xx != "" %}{{ page.mv_xx }}{% else %}More observations needed{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Attack</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">
+                                             {% if page.new_attack_1 != "" %}
+                                                  {{ page.new_attack_1 }}{% if page.new_attack_2 != "" %}<br>{{ page.new_attack_2 }}{% if page.new_attack_3 != "" %}<br>{{ page.new_attack_3 }}{% endif %}{% endif %}
+                                             {% else %}More observations needed{% endif %}
+                                        </dd>
+                                   </dl>
+                                   </section>
+                                   <section class="gw-stats" aria-labelledby="gw-abilities-heading">
+                                   <h3 id="gw-abilities-heading" class="visually-hidden">Ability Scores</h3>
+                                   <dl class="row small">
+                                        <dt class="col-4 col-md-2">MS:</dt>
+                                        <dd class="col-8 col-md-4">{% if page.ms != "" %}{{ page.ms }}{% else %}More
+                                             observations needed{% endif %}</dd>
+                                        <dt class="col-4 col-md-2">PS:</dt>
+                                        <dd class="col-8 col-md-4">{% if page.ps != "" %}{{ page.ps }}{% else %}More
+                                             observations needed{% endif %}</dd>
+                                        <dt class="col-4 col-md-2">IN:</dt>
+                                        <dd class="col-8 col-md-4">{% if page.in != "" %}{{ page.in }}{% else %}More
+                                             observations needed{% endif %}</dd>
+                                        <dt class="col-4 col-md-2">DX:</dt>
+                                        <dd class="col-8 col-md-4">{% if page.dx != "" %}{{ page.dx }}{% else %}More
+                                             observations needed{% endif %}</dd>
+                                        <dt class="col-4 col-md-2">CH:</dt>
+                                        <dd class="col-8 col-md-4">{% if page.ch != "" %}{{ page.ch }}{% else %}More
+                                             observations needed{% endif %}</dd>
+                                        <dt class="col-4 col-md-2">CN:</dt>
+                                        <dd class="col-8 col-md-4">{% if page.cn != "" %}{{ page.cn }}{% else %}More
+                                             observations needed{% endif %}</dd>
+                                   </dl>
+                                   </section>
+                                   {% if page.role_in_gamma_world == "Robot" and page.mission != "" %}
+                                   <p><strong>Mission:</strong> {{ page.mission }}</p>
+                                   {% endif %}
+                                   <section class="gw-stats" aria-labelledby="gw-ecology-heading">
+                                   <h3 id="gw-ecology-heading" class="visually-hidden">Ecology & Logistics</h3>
+                                   <dl class="row small">
+                                        <dt class="col-5 col-sm-4 col-md-3">Frequency</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.frequency != "" %}{{ page.frequency }}{% else %}Unknown{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Organization</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.organization != "" %}{{ page.organization }}{% else %}Unknown{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Activity Cycle</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.activity_cycle != "" %}{{ page.activity_cycle }}{% else %}Unknown{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Diet</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.diet != "" %}{{ page.diet }}{% else %}Unknown{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Habitat</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.habitat != "" %}{{ page.habitat }}{% else %}Unknown{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Tech Level</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.tech_level and page.tech_level != 0 %}{{ page.tech_level }}{% if page.tech_max and page.tech_max != 0 %} - {{ page.tech_max }}{% endif %}{% else %}Unknown{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Artifacts</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.artifacts != "" %}{{ page.artifacts }}{% else %}Unknown{% endif %}</dd>
+                                   </dl>
+                                   </section>
+                                   {% if page.description != "" %}
+                                   <p><strong>Description (Initial Observations):</strong> {{ page.description }}</p>
+                                   {% if page.new_description != "" %}
+                                   <p><strong>Description (Additional Observations):</strong> {{ page.new_description }}
+                                   </p>
+                                   {% endif %}
+                                   {% endif %}
+                                   {% if page.equipment != "" %}
+                                   <p><strong>Equipment:</strong> {{ page.equipment }}</p>
+                                   {% endif %}
+                                   <section class="gw-stats" aria-labelledby="gw-behavior-heading">
+                                   <h3 id="gw-behavior-heading" class="visually-hidden">Behavior & Society</h3>
+                                   <dl class="row small">
+                                        <dt class="col-5 col-sm-4 col-md-3">Reactions</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.reactions != "" %}{{ page.reactions }}{% else %}No known interactions{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Behavior</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.behavior != "" %}{{ page.behavior }}{% else %}Behavior modeling incomplete{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Repair & Healing</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.repair_and_healing != "" %}{{ page.repair_and_healing }}{% else %}Behavior not recorded{% endif %}</dd>
+                                        <dt class="col-5 col-sm-4 col-md-3">Society</dt>
+                                        <dd class="col-7 col-sm-8 col-md-9">{% if page.society != "" %}{{ page.society }}{% else %}Anthropological studies incomplete{% endif %}</dd>
+                                   </dl>
+                                   </section>
+                              </section>
+                         </div>
+                    </section>
+
+                    <hr>
+
+                    <!-- Next and Previous Articles -->
+                    {% if page.previous.url %}
+                    {% assign previous_url = page.previous.url %}
+                    {% assign previous_title = page.previous.title %}
+                    {% else %}
+                    {% assign previous_url = site.url %}
+                    {% assign previous_title = "Home" %}
+                    {% endif %}
+                    {% if page.next.url %}
+                    {% assign next_url = page.next.url %}
+                    {% assign next_title = page.next.title %}
+                    {% else %}
+                    {% assign next_url = site.url %}
+                    {% assign next_title = "Home" %}
+                    {% endif %}
+
+                    {%- comment -%}
+                    Build Additional Creatures listing:
+                    Use where_exp to filter posts containing both categories (Gamma World + Bestiary), then group by source.
+                    {%- endcomment -%}
+                    {% assign bestiary_posts = site.posts | where_exp: "post", "post.categories contains 'Gamma World' and post.categories contains 'Bestiary'" %}
+                    {% if bestiary_posts and bestiary_posts != empty %}
+                    <section aria-label="Additional Creatures">
+                         <h2 class="MCC">Additional Creatures</h2>
+
+                         {%- comment -%}
+                         Group posts by their 'source' front matter, then alphabetize by the group name so
+                         the listing order is deterministic. Blank / nil source values (becoming an empty
+                         string) will naturally sort first; we leave that behavior to surface missing data.
+                         {%- endcomment -%}
+
+                         {% assign grouped_sources = bestiary_posts | group_by: "source" | sort: 'name' %}
+                         {% for group in grouped_sources %}
+                              <h3 class="text-dark">{{ group.name | default: 'Unknown Source' }}</h3>
+                              {%- assign sorted_items = group.items | safe_sort: 'title' -%}
+                              <div class="text-dark w-100 mb-2 mt-1 gw-bestiary-columns" role="list">{%- for Bestiary in sorted_items -%}<div class="gw-bestiary-item" role="listitem">{%- if Bestiary.title != page.title -%}<a href="{{ Bestiary.url | relative_url }}" class="text-primary">{{ Bestiary.title }}</a>{%- else -%}<strong aria-current="page">{{ Bestiary.title }}</strong>{%- endif -%}</div>{%- endfor -%}</div>
+                         {% endfor %}
+
+                    </section>
+                    {% endif %}
+
+                    <nav aria-label="Page navigation" class="my-4">
+                         <div class="row">
+                              <div class="col-md-6 text-center">
+                                   <a class="btn btn-outline-primary" href="{{ previous_url }}">&laquo; {{
+                                        previous_title }}</a>
+                              </div>
+                              <div class="col-md-6 text-center">
+                                   <a class="btn btn-outline-primary" href="{{ next_url }}">{{ next_title }} &raquo;</a>
+                              </div>
+                         </div>
+                    </nav>
+
+                    <hr>
+                    {% if page.mastodon-post-id and page.mastodon-post-id != '' %}
+                         {% include social/comments-mastodon-tree.html %}
+                    {% endif %}
+
+                    {% include social/comments-webmentions.html %}
+               </section>
+               <aside class="d-none d-lg-block col-lg-1" id="papermargin_right" aria-hidden="true"></aside>
+          </div>
+     </main>
+
+     <footer>
+          {% include layout/footer.html %}
+     </footer>
+     {% include assets/js-bottom-of-body.html %}
+     <script>
+     document.addEventListener('DOMContentLoaded', function() {
+          const imgEl = document.getElementById('jscii-element-image');
+          if (!imgEl) { return; } // No image rendered (no valid file found); abort JS image logic
+          const asciiEl = document.getElementById('ascii-container-image');
+          const errorMsg = document.getElementById('image-error-message');
+          const relativeImagePath = "{{ creature_image }}"; // site-relative path (may start with one or more leading slashes)
+          // Normalize to ensure exactly one slash between site.url and path (avoid https://example.com//path)
+          const absoluteImageUrl = ("{{ site.url | append: '/' }}") + relativeImagePath.replace(/^\/+/, '');
+          const errorImageNumber = Math.floor(Math.random() * 12) + 1; // 1..12 per visit
+          const errorMessages = [
+               'Image file not found.',
+               'Corrupted image file detected.',
+               'Unsupported image format.',
+               'Image load failed due to missing file.',
+               'Error: Unable to display image.',
+               'Image file is incomplete or damaged.',
+               'File path does not point to a valid image.',
+               'Failed to decode image.',
+               'Image data corrupted or unreadable.',
+               'Error: Image cannot be rendered.',
+               'Invalid image file header.',
+               'Image display error: Resource unavailable.'
+          ];
+
+          function checkImage(url, onSuccess, onError) {
+               const probe = new Image();
+               probe.onload = onSuccess;
+               probe.onerror = onError;
+               probe.src = url;
+          }
+
+          // Initialize Jscii AFTER successful load so image remains visible if load fails
+          function initAscii() {
+               // Respect user reduced motion preference (avoid flicker ASCII effect)
+               if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    return; // Skip ASCII conversion
+               }
+               try {
+                    /* global Jscii */
+                    // When ASCII rendering succeeds we hide the original image (visual layer only)
+                    // to avoid showing both at the same time. Accessibility notes:
+                    // 1. We transfer the descriptive alt text to the ASCII <pre> via aria-label.
+                    // 2. We keep the original <img> in the DOM but mark it aria-hidden so screen readers
+                    //    do not announce duplicate content.
+                    // 3. We only hide after we have non-empty ASCII output to avoid a blank state.
+                    let jsciiRendered = false;
+                    new Jscii({
+                         width: 150,
+                         color: true,
+                         el: imgEl,
+                         fn: function (str) {
+                              // Jscii returns HTML (e.g., <span style="color:#...">) when color:true.
+                              // We intentionally assign via innerHTML so colorized ASCII renders.
+                              // The library output is constrained to span/br tags for coloration; if
+                              // future sanitization is needed, whitelist only span/br before assigning.
+                              asciiEl.innerHTML = str;
+                              if (!jsciiRendered && str && str.trim().length > 0) {
+                                   jsciiRendered = true;
+                                   // Reveal ASCII for assistive tech
+                                   asciiEl.removeAttribute('aria-hidden');
+                                   asciiEl.setAttribute('role', 'img');
+                                   asciiEl.setAttribute('aria-label', imgEl.alt || 'ASCII rendering');
+                                   asciiEl.classList.add('jscii-active');
+                                   // Visually hide original image while keeping it in DOM.
+                                   imgEl.classList.add('d-none');
+                                   imgEl.setAttribute('aria-hidden', 'true');
+                              }
+                         }
+                    });
+               } catch (e) {
+                    // Fail silently if Jscii not available
+               }
+          }
+
+          checkImage(
+               absoluteImageUrl,
+               function() {
+                    imgEl.src = absoluteImageUrl;
+                    errorMsg.classList.add('visually-hidden');
+                    initAscii();
+               },
+               function() {
+                    const fallback = "{{ site.url }}/RPG/MCC-GW/images/Monster-Manual/Creature Image Error " + errorImageNumber + ".png";
+                    imgEl.src = fallback;
+                    errorMsg.textContent = errorMessages[errorImageNumber - 1];
+                    errorMsg.classList.remove('visually-hidden');
+                    initAscii();
+               }
+          );
+     });
+     </script>
+</body>
+
+</html>

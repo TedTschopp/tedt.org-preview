@@ -1,0 +1,15 @@
+{% comment %}
+  This include is shared by several layouts, but the hero-media worker belongs
+  only to the homepage. Its root scope is unavoidable because the homepage is
+  served from `/`; sw.js therefore also ignores fetches from non-homepage pages.
+{% endcomment %}
+{% if page.url == '/' and site.preview != true %}
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .catch(err => console.warn('Homepage service-worker registration failed', err));
+      });
+    }
+  </script>
+{% endif %}

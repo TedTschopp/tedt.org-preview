@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" class="layout-post-debug">
+  <head>
+    <meta charset="utf-8">
+
+    {% include utility/calculate-variables.html %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <!-- IndieAuth and WebMentions Metadata -->
+    {% include seo/indieauth-webmentions-metadata.html %}
+
+    <!-- SEO Metadata -->
+    {% include seo/meta-data-seo.html %}
+
+    <!-- PWA Header Includes -->
+    {% include pwa/pwa-header-includes.html %}
+
+    <!-- News Feed Meta Tags. -->
+    {% include feeds/feeds.html %}
+
+    {% include assets/all-css-includes.html %}
+
+
+    <!-- Scripts that need to be at the end of the header -->
+        {% include assets/scripts.html %}
+        {% capture __math_flag %}{{ page.math | default: '' }}{% endcapture %}
+        {% capture __mathjax_flag %}{{ page.mathjax | default: '' }}{% endcapture %}
+        {% assign __math_flag = __math_flag | strip | downcase %}
+        {% assign __mathjax_flag = __mathjax_flag | strip | downcase %}
+        {% if page.math == true or __math_flag == 'true' or __math_flag == '1' or page.mathjax == true or __mathjax_flag == 'true' or __mathjax_flag == '1' %}
+            {% include assets/mathjax.html %}
+        {% endif %}
+                {% if page.mermaid == true or page.mermaid == 'true' %}
+                    {% include assets/mermaid.html %}
+                {% endif %}
+        <style>
+            #table-of-contents-card .btn-outline-secondary {
+                --bs-btn-color: var(--bs-primary-text-emphasis);
+                --bs-btn-border-color: var(--bs-primary-text-emphasis);
+                --bs-btn-hover-color: var(--bs-white);
+                --bs-btn-hover-bg: var(--bs-primary);
+                --bs-btn-hover-border-color: var(--bs-primary);
+                --bs-btn-active-color: var(--bs-white);
+                --bs-btn-active-bg: var(--bs-primary-text-emphasis);
+                --bs-btn-active-border-color: var(--bs-primary-text-emphasis);
+                --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+            }
+        </style>
+  </head>
+    <body style="scroll-padding-top: 70px;" data-bs-spy="scroll" data-bs-target="#navbarNavDarkDropdown" data-bs-offset="70">
+    {%- comment -%} Removed skip link per user request. (Previously: a11y shortcut 'Skip to content'). {%- endcomment -%}
+    {% include layout/top-nav-bar.html %}
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row w-100">
+            <!-- Blog Post Content Column -->
+            <div class="col-12 col-lg-12 col-xxl-12" id="content-column">
+                <!-- Blog Post -->
+                {% capture __article_class %}{{ page.article_class | default: '' }}{% endcapture %}
+                {% assign __article_class = __article_class | strip %}
+                <main id="main-content" tabindex="-1" class="h-entry" role="main">
+
+                    <div class="card h-100 no-padding">
+                        {% include utility/resolve-image-variables.html item=page fallback_alt=page.title fallback_credits_title='In Search of an Image - "No Image Associated with this article"' fallback_credits=site.author.name fallback_credits_artist_url=site.author.url %}
+                        {% include utility/resolve-video-variables.html item=page %}
+                        <div class="card rounded-bottom-0 h-100">
+                            {% if video_has_resolved_source %}
+                                {% include components/video-player.html provider=video_provider id=video_id src=video_source type=video_type poster=video_poster label=video_label title=video_title description=video_description aspect=video_aspect class="video-player-alert article-hero-video m-0 p-0 border-0 rounded-bottom-0 bg-body" body_class="p-0" description_wrapper_class="px-3 py-2" %}
+                            {% else %}
+                                {% include utility/responsive-image.html src=image_URL alt=image_alt class="card-img-top w-100 d-block" sizes="(min-width: 1400px) 960px, (min-width: 992px) 75vw, 100vw" lcp=true %}
+                            {% endif %}
+                            <div class="card-body pt-3 pb-3 ps-4 pe-4">
+                                {% unless page.layout == 'tool' %}
+                                <div class="post-hero mb-2">
+                                    <h1 class="p-name card-title post-title mb-1">{{ page.title }}</h1>
+                                    {% if page.subtitle %}
+                                    <p class="card-subtitle h2 mb-2 fw-normal post-subtitle text-body-secondary">{{ page.subtitle }}</p>
+                                    {% endif %}
+                                </div>
+                                {% endunless %}
+                                <div class="small text-body-secondary mb-1">
+                                    <span class="card-text">{% include utility/content-credits.html page=page %}</span>
+                                </div>
+                                {% unless video_has_resolved_source %}
+                                    <div class="small text-body-secondary image-credits">
+                                        {% include utility/render-image-credit.html %}
+                                    </div>
+                                {% endunless %}
+                            </div>
+                        </div>
+                        <div class="card-body rounded-top-0 p-0 h-100{% if __article_class != '' %} {{ __article_class | escape }}{% endif %}">
+                           
+                            <span class="hidden aria-hidden u-url">{{ site.url }}{{ page.url }}</span>
+
+                                {%- comment -%}
+                                    TOC placement experiment: Move TOC into normal flow (full-width) directly above
+                                    the article content. This avoids float-driven awkward whitespace and makes the
+                                    TOC feel more like a deliberate section rather than a sidebar.
+                                {%- endcomment -%}
+                                <div id="main_content_col" class="col-12">
+                                    {% unless page.no_toc == true or page.no_toc == 'true' %}
+                                        <aside id="table-of-contents-card" class="mb-3">
+                                            <div class="card h-100 no-padding">
+                                                {%- comment -%} TOC header (no image) with inline show/hide toggle. {%- endcomment -%}
+                                                <div class="card-body pt-3 pb-2 ps-4 pe-4">
+                                                    <div class="d-flex align-items-center justify-content-between gap-3">
+                                                        {% capture __toc_slug %}{% include category/map-category-to-registry.html key=category %}{% endcapture %}
+                                                        {% assign __toc_slug = __toc_slug | strip %}
+                                                        {% assign __toc_category_text = category | to_s | strip %}
+                                                        {% if __toc_slug == '' and __toc_category_text != '' %}{% assign __toc_slug = __toc_category_text | slugify %}{% endif %}
+                                                        {% assign __toc_entry = site.data.category_registry[__toc_slug] %}
+                                                        {% if __toc_entry and __toc_entry.category_home_page %}
+                                                            {% assign __toc_href = __toc_entry.category_home_page %}
+                                                        {% else %}
+                                                            {% assign __toc_href = '#' %}
+                                                        {% endif %}
+                                                        {% if __toc_href == '#' or __toc_href == '' %}
+                                                            {% assign __toc_final_href = '#Top-of-Table-of-Contents' %}
+                                                        {% else %}
+                                                            {% assign __toc_final_href = site.url | append: __toc_href %}
+                                                        {% endif %}
+
+                                                        <a class="text-decoration-none h3 mb-0" name="Top-of-Table-of-Contents" id="Top-of-Table-of-Contents" href="{{ __toc_final_href }}">Table of Contents</a>
+
+                                                        <button id="btnToggleTocInline" type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleShowTableOfContents()" aria-pressed="true" aria-controls="insert-table-of-contents-here" aria-label="Hide table of contents">Hide</button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card-body pt-0 ps-4" id="insert-table-of-contents-here"></div>
+                                            </div>
+                                        </aside>
+                                    {% endunless %}
+                                    <div class="article rounded-top-0 e-content position-relative" id="main_content">
+                                        {% if page.layout == 'tool' %}
+                                            {{ content | lazy_images_except_first }}
+                                        {% else %}
+                                            {% assign __article_content = content | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' | replace: '<H1', '<H2' | replace: '</H1>', '</H2>' %}
+                                            {{ __article_content | lazy_images_except_first }}
+                                        {% endif %}
+                                        {% include content/topic-cluster-related.html page=page %}
+                                    </div>
+                                </div>
+                            {%- comment -%}
+                                Apply lazy loading to all images except the first without duplicating the
+                                entire content multiple times (handled by custom filter).
+                            {%- endcomment -%}
+                        </div>
+                    </div>
+                </main>
+
+                {% if page.mastodon-post-id and page.mastodon-post-id != '' %}
+                    {% include social/comments-mastodon-tree.html %}
+                {% endif %}
+
+                {% include social/comments-webmentions.html %}
+
+                <!--Next and Previous Articles -->
+                {% include content/next-and-previous.html %}
+
+            </div>
+
+        </div>
+        <hr>
+    </div>
+
+    <!-- Footer -->
+    {% include layout/footer.html %}
+
+    <!-- Bootstrap core JavaScript -->
+    {% include assets/js-bottom-of-body.html %}
+
+  </body>
+</html>

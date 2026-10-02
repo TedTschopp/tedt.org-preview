@@ -1,0 +1,304 @@
+
+    {% include security/content-security-policy.html %}
+    <link rel="stylesheet" href="{{ '/css/information-architecture.css' | relative_url }}">
+
+    {% include utility/color-scheme-head.html %}
+
+    <!-- Font Awesome CDN (primary icon set). Local fallback removed per request; restore by uncommenting include below if ever needed. -->
+    {% include assets/css-fontawesome.html %}
+    {%- comment -%} Legacy fallback: {% include assets/css-fa-fallback.html %} {%- endcomment -%}
+
+
+    <!-- Global Bootstrap 5.3 CSS File from SCSS-->
+        <!-- NOTE: Keep the three base CSS includes (bootstrap + fonts) in sync with /tools/lib/tedt-org-tools.css.
+            Enforced by: tests/check_tools_css_sync.rb -->
+    <link rel="stylesheet" type="text/css" href="{{ '/css/bootstrap-build.css' | relative_url }}">
+
+    <!-- Shared fonts: keep the sitewide bundle lean; decorative fonts load conditionally below. -->
+    <link rel="stylesheet" type="text/css" href="{{ '/css/shared-fonts.css' | relative_url }}">
+
+    <!-- Logos: Consolidate all Logo Fonts here -->
+    <link rel="stylesheet" type="text/css" href="{{ '/css/logo-and-company-fonts.css' | relative_url }}">
+
+    <!-- Custom CSS -->
+    {% assign use_homepage_design = false %}
+    {% if full-page-url == home-page-url %}
+        {% assign use_homepage_design = true %}
+    {% endif %}
+    {% if page.homepage_design == true or page.homepage_design == 'true' %}
+        {% assign use_homepage_design = true %}
+    {% endif %}
+    {% if use_homepage_design %}
+        <link rel="stylesheet" type="text/css" href="{{ '/css/content-decorative-fonts.css' | relative_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ '/css/homepage-display-fonts.css' | relative_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ '/css/main-landing-page.css' | relative_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ '/css/timeline.css' | relative_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ '/css/Link-Tree.css' | relative_url }}"> 
+        <style>
+            h1, .h1  { 
+                font-family:  "Sofia Sans Extra Condensed", "Optima", "ManukaCondensed", "Manuka", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-weight: 600;
+                letter-spacing: -3px;
+                font-size: 60px;
+                font-stretch: extra-condensed;
+        }
+            h2, .h2 { 
+                font-family:  "Sofia Sans Extra Condensed", "Optima", "ManukaCondensed", "Manuka", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-weight: 600;
+                letter-spacing: -3px;
+                font-size: 60px;
+                font-stretch: extra-condensed;
+            }
+
+            a { 
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+            }
+            a:hover, a:focus { 
+                text-decoration: underline;
+                text-decoration-thickness: 3px;
+            }
+
+            h3.three-line-clamp {
+                display: -webkit-box;
+                -webkit-line-clamp: 3; 
+                line-clamp: 3;
+                -webkit-box-orient: vertical;  
+                overflow: hidden;
+                height: calc(1.2em * 3);         /* exactly line-height × number of lines (1.2em × 3) */
+            }
+            h5.three-line-clamp {
+                display: -webkit-box;
+                -webkit-line-clamp: 3; 
+                line-clamp: 3;
+                -webkit-box-orient: vertical;  
+                overflow: hidden;
+                height: calc(1.2em * 3);         /* exactly line-height × number of lines (1.2em × 3) */
+            }
+            p.three-line-clamp {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+
+                line-height: var(--bs-body-line-height);
+                height: calc(var(--bs-body-font-size) * var(--bs-body-line-height) * 3); /* exactly line-height × number of lines */
+            }
+        </style>
+    {% else %}    
+        <link rel="stylesheet" type="text/css" href="{{ '/css/content-decorative-fonts.css' | relative_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ '/css/blog-post.css' | relative_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ '/css/solarized-dark.css' | relative_url }}" >
+        <link rel="stylesheet" type="text/css" href="{{ '/css/comments-Mastodon.css' | relative_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ '/css/web-mention.css' | relative_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ '/css/Winerlink.css' | relative_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ '/css/table-of-contents.css' | relative_url }}">
+    {% endif %}
+
+    {% if this_is_a_draft == true %}
+        {# removed draft blog post progress styles #}
+    {% endif %}
+
+    <style>
+        .text-truncate-5 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            line-clamp: 5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 5 lines to keep card heights consistent */
+            line-height: 1.5em; /* line height basis */
+            height: 7.5em;      /* 1.5em * 5 */
+            min-height: 7.5em;  /* enforce minimum to avoid shrinking if shorter */
+        }
+        .text-truncate-4 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 4 lines */
+            line-height: 1.5em;
+            height: 6em;       /* 1.5em * 4 */
+            min-height: 6em;
+        }
+        .text-truncate-3 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;  
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 3 lines */
+            line-height: 1.5em;
+            height: 4.5em;    /* 1.5em * 3 */
+            min-height: 4.5em;
+        }
+        .text-truncate-2 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 2 lines */
+            line-height: 1.5em;
+            height: 3em;      /* 1.5em * 2 */
+            min-height: 3em;
+        }
+        .text-truncate-1 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 1 line */
+            line-height: 1.5em;
+            height: 1.5em;    /* 1.5em * 1 */
+            min-height: 1.5em;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .stroke-glow-text {
+                color: rgb(176, 175, 172);
+                text-shadow:
+                    -1px -1px 0 rgb(0,0,0),
+                    1px -1px 0 rgb(0,0,0),
+                    -1px  1px 0 rgb(0,0,0),
+                    1px  1px 0 rgb(0,0,0),
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .stroke-glow-text {
+                color: rgb(176, 175, 172);
+                text-shadow:
+                    -1px -1px 0 rgb(0,0,0),
+                    1px -1px 0 rgb(0,0,0),
+                    -1px  1px 0 rgb(0,0,02),
+                    1px  1px 0 rgb(0,0,0),
+            }
+        }
+
+        /* --- Accessibility Contrast Helpers (WCAG) --- */
+        .category-title.wrapped-by-theme { text-shadow: 0 0 2px rgba(0,0,0,0.75), 0 0 3px rgba(0,0,0,0.85); }
+        [data-bs-theme="dark"] .category-title.wrapped-by-theme { mix-blend-mode: normal; }
+        /* Specific contrast tuning for problematic palette tokens (axe color-contrast) */
+        .category-title.wrapped-by-theme.MCC { filter: brightness(1.05) saturate(1.1); }
+        .category-title.wrapped-by-theme.GammaWorld { filter: brightness(0.92); }
+
+        /* Smooth reflow when toggling Table of Contents */
+        #main_content_col { transition: width .25s ease, flex-basis .25s ease; }
+        /* Remove the internal ms-4 gap when TOC card is hidden to avoid orphaned space */
+        #table-of-contents-card.hidden { display:none !important; }
+        /* If additional margin adjustments needed, hook via .toc-hidden-margin */
+        .toc-hidden-margin { margin-left:0 !important; }
+
+        /* TOC Card fade / slide animation */
+        #table-of-contents-card { transition: opacity .28s ease, transform .28s ease; }
+        #table-of-contents-card.toc-animating-in-start { opacity:0; transform: translateY(8px); }
+        #table-of-contents-card.toc-animating-in { opacity:1; transform: translateY(0); }
+        #table-of-contents-card.toc-animating-out { opacity:0; transform: translateY(-8px); }
+
+        /* Toggle button pressed state (persistent) */
+        button[aria-pressed] {
+            transition: background-color .15s ease, box-shadow .15s ease, transform .08s ease;            
+            position: relative;
+        }
+        /* Base override to ensure consistent starting background (respect existing text-bg-secondary classes) */
+        button[aria-pressed="false"].text-bg-secondary {
+            background-color: var(--bs-secondary-bg) !important;
+            color: var(--bs-secondary-color) !important;
+        }
+        /* Pressed state: swap to primary color & subtle inset shadow to simulate a depressed surface */
+        button[aria-pressed="true"].text-bg-secondary {
+            background-color: var(--bs-primary) !important;
+            color: var(--bs-light) !important;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,.35), inset 0 0 0 1px rgba(0,0,0,.4);
+            transform: translateY(1px) scale(.96);
+        }
+        /* Icon inherits text color */
+        button[aria-pressed] i { color: inherit !important; }
+        /* Focus outline kept for accessibility; enhance contrast on pressed */
+        button[aria-pressed="true"].text-bg-secondary:focus-visible { outline: 2px solid var(--bs-light); outline-offset: 2px; }
+            /* Hover states */
+            button[aria-pressed="false"].text-bg-secondary:hover {
+                background-color: var(--bs-secondary) !important;
+                filter: brightness(1.25);
+                color: var(--bs-nav-link-color) !important;
+                z-index: 2; /* prevent overlap visual bleed into neighbor */
+            }
+            button[aria-pressed="true"].text-bg-secondary:hover {
+                filter: brightness(1.08);
+            }
+            button[aria-pressed].text-bg-secondary:focus-visible { outline: 2px solid var(--bs-primary); outline-offset: 2px; }
+            button[aria-pressed="true"].text-bg-secondary:focus-visible { outline-color: var(--bs-light); }
+
+        /* --- Light / Auto / Dark segmented switcher (pepelsbey-style, Bootstrap colors) --- */
+        .scheme-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            padding: 2px;
+            border: 2px solid var(--bs-nav-link-color);
+            border-radius: var(--bs-border-radius-pill);
+            background: transparent;
+            /* Keep visible regardless of surrounding background */
+            color: var(--bs-white);
+        }
+        .scheme-switcher .scheme-switcher__button {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            border-radius: var(--bs-border-radius-pill);
+            color: inherit;
+            font: inherit;
+            line-height: 1;
+            padding: 0 .65rem;
+            min-height: 44px;
+            cursor: pointer;
+            transition: background-color .15s ease, color .15s ease;
+        }
+        .scheme-switcher .scheme-switcher__button:hover {
+            color: var(--bs-navbar-hover-color, var(--bs-body-color));
+        }
+        .scheme-switcher .scheme-switcher__button[aria-pressed="true"] {
+            background-color: var(--bs-primary);
+            color: var(--bs-light);
+        }
+        .scheme-switcher .scheme-switcher__button[aria-pressed="true"]:hover {
+            filter: brightness(1.05);
+        }
+        .scheme-switcher .scheme-switcher__button:focus-visible {
+            outline: 2px solid var(--bs-primary);
+            outline-offset: 2px;
+        }
+        .scheme-switcher--icons .scheme-switcher__button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            padding: 0;
+        }
+        .scheme-switcher--icons .scheme-switcher__icon {
+            display: inline-block;
+            line-height: 1;
+            font-size: 1.1rem;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .scheme-switcher .scheme-switcher__button { transition: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            button[aria-pressed] { transition: none; }
+        }
+
+    </style>
+
+    <!-- WCAG contrast utility styles -->
+    <link rel="stylesheet" href="{{ '/css/WCAG.css' | relative_url }}">
+
+    <!-- Prompts/mobile overflow fixes (plain CSS, keep last to win specificity by order) -->
+    <link rel="stylesheet" type="text/css" href="{{ '/css/prompts-overrides.css' | relative_url }}">

@@ -1,0 +1,9 @@
+{
+  "source_repository": "https://github.com/TedTschopp/tedt.org",
+  "source_base": "f186080942c1be1909bac3bc3ed309d04e7b338f",
+  "source_commit": "ce3c42109874e126b9e39b95520008b1120689e0",
+  "local_branch": "codex/ia-preview",
+  "review_source_files": 57,
+  "preview_url": "https://preview.tedt.org/",
+  "production_cutover": "Requires a separate explicit request"
+}

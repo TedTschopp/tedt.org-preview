@@ -1,0 +1,79 @@
+<h1 id="adr-0012-posts-based-slide-deck-architecture-deprecate-slides-collection">ADR 0012: Posts-Based Slide Deck Architecture (Deprecate <code class="language-plaintext highlighter-rouge">slides</code> Collection)</h1>
+
+<h2 id="context">Context</h2>
+
+<p>Historically the site experimented with a dedicated <code class="language-plaintext highlighter-rouge">slides</code> collection (<code class="language-plaintext highlighter-rouge">site.slides</code>) to hold Reveal.js decks. Over time this introduced maintenance overhead (collection-specific loops, nil guard complexity, duplication of metadata logic) and conflicted with the established pattern of keeping standard content in <code class="language-plaintext highlighter-rouge">_posts/</code> for uniform indexing, theming, and feed considerations. During recent refactors the <code class="language-plaintext highlighter-rouge">slides</code> collection was fully removed; templates now filter <code class="language-plaintext highlighter-rouge">site.posts</code> for paths under <code class="language-plaintext highlighter-rouge">_posts/Slides/</code>.</p>
+
+<h2 id="decision">Decision</h2>
+
+<p>Adopt a purely posts‑based slide deck model:</p>
+
+<ul>
+  <li>All decks reside in <code class="language-plaintext highlighter-rouge">_posts/Slides/</code>.</li>
+  <li>Listing &amp; topic filtering source: <code class="language-plaintext highlighter-rouge">site.posts | where_exp: 'p', "p.relative_path contains '_posts/Slides/'"</code>.</li>
+  <li>No <code class="language-plaintext highlighter-rouge">slides</code> collection declared in <code class="language-plaintext highlighter-rouge">_config.yml</code>.</li>
+  <li>Agents and contributors MUST NOT reintroduce <code class="language-plaintext highlighter-rouge">site.slides</code> without a future ADR proposing and justifying the change.</li>
+</ul>
+
+<h2 id="rationale">Rationale</h2>
+
+<ol>
+  <li>Simplicity: Eliminates conditional logic and nil checks around an optional collection.</li>
+  <li>Consistency: Reuses established post front matter parsing, date handling, and permalink patterns.</li>
+  <li>Performance: Avoids parallel indexing structures; one pass over <code class="language-plaintext highlighter-rouge">site.posts</code> with a narrow filter.</li>
+  <li>Documentation Clarity: Single, canonical storage location reduces contributor confusion.</li>
+  <li>Maintenance Risk Reduction: Fewer custom code paths; decreases chance of Liquid errors (e.g., sorting a null object).</li>
+</ol>
+
+<h2 id="front-matter-schema-reference">Front Matter Schema (Reference)</h2>
+
+<p>Required: <code class="language-plaintext highlighter-rouge">layout: reveal-integrated</code>, <code class="language-plaintext highlighter-rouge">date</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">description</code>.</p>
+
+<p>Optional: <code class="language-plaintext highlighter-rouge">topics</code> (array), <code class="language-plaintext highlighter-rouge">image</code>, <code class="language-plaintext highlighter-rouge">image-alt</code>, <code class="language-plaintext highlighter-rouge">preview_html</code>, <code class="language-plaintext highlighter-rouge">aspect_ratio</code>, <code class="language-plaintext highlighter-rouge">last_modified</code>, <code class="language-plaintext highlighter-rouge">deck-style</code>.</p>
+
+<p>Explicit permalink pattern enforced per deck: <code class="language-plaintext highlighter-rouge">permalink: /slides/{slug}/</code>.</p>
+
+<h2 id="alternatives-considered">Alternatives Considered</h2>
+
+<ul>
+  <li>Retain collection + fallback: Rejected (complexity w/o benefit).</li>
+  <li>New plugin to auto-index decks: Out of scope; GitHub Pages safe-mode restricts custom plugins.</li>
+  <li>Tag-based auto-discovery: Less precise than path-based scoping; path keeps taxonomy explicit.</li>
+</ul>
+
+<h2 id="consequences">Consequences</h2>
+
+<p>Positive:</p>
+
+<ul>
+  <li>Cleaner templates (<code class="language-plaintext highlighter-rouge">slides/index.html</code> &amp; filter include) with one deterministic source.</li>
+  <li>Reduced future regression risk.</li>
+</ul>
+
+<p>Negative / Trade-offs:</p>
+
+<ul>
+  <li>Mixing posts and decks under <code class="language-plaintext highlighter-rouge">site.posts</code> may marginally increase loop scan size; mitigated by tight path filter.</li>
+</ul>
+
+<h2 id="migration-notes">Migration Notes</h2>
+
+<ul>
+  <li>Remove any lingering references to <code class="language-plaintext highlighter-rouge">site.slides</code> in templates, includes, docs (completed in this change set).</li>
+  <li>Ensure old collection configuration absent from <code class="language-plaintext highlighter-rouge">_config.yml</code>.</li>
+  <li>Verify build after refactor (HTML Proofer internal links green) – completed.</li>
+</ul>
+
+<h2 id="future-considerations">Future Considerations</h2>
+
+<p>If deck volume or querying needs grow substantially (e.g., multi-thousand decks) reconsider a collection only with:</p>
+
+<ul>
+  <li>Benchmarked build impact.</li>
+  <li>Clear separation advantages (feed exclusion, indexing optimization).</li>
+  <li>A new ADR outlining performance instrumentation.</li>
+</ul>
+
+<h2 id="status">Status</h2>
+
+<p>Accepted and implemented as of 2025-11-03.</p>

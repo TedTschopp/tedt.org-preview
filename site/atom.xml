@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
+  <link href="https://preview.tedt.org/atom.xml" rel="self" type="application/atom+xml" />
+  <link href="https://preview.tedt.org/" rel="alternate" type="text/html" />
+  <updated>2026-10-02T08:46:15-07:00</updated>
+  <id>https://preview.tedt.org/</id>
+
+  
+    <title type="html">Ted Tschopp</title>
+  
+
+  
+    <subtitle>Technology, theology, and creativity converge in this insightful exploration by Ted Tschopp, who navigates the intricate relationship between these topics in the digital age. From dissecting how technology is reshaping religious practices and ethics to sharing cutting-edge trends in UI/UX design, collaboration tools, and digital storytelling, the author provides a multifaceted analysis. Written with a unique and engaging blend of humor, reflection, and curiosity, this work invites readers to ponder and discuss these connections, offering a contemplative lens on modern innovation and cultural evolution.</subtitle>
+  
+
+  
+    <author>
+        <name>Ted Tschopp</name>
+      
+        <email>ted@tschopp.org</email>
+      
+      
+        <uri>https://tedt.org/profile/</uri>
+      
+    </author>
+  
+
+  
+  
+    
+    
+    <entry>
+      <title type="html">This Isn’t a Storm. This Is the Weather.</title>
+      <link href="https://preview.tedt.org/This-Isnt-a-Storm-This-Is-the-Weather/" rel="alternate" type="text/html" title="This Isn&apos;t a Storm. This Is the Weather." />
+      <published>2026-09-28T00:00:00-07:00</published>
+      <updated>2026-09-28T00:00:00-07:00</updated>
+      <id>https://preview.tedt.org/This-Isnt-a-Storm-This-Is-the-Weather</id>
+      <content type="html" xml:base="https://preview.tedt.org/This-Isnt-a-Storm-This-Is-the-Weather/">&lt;p&gt;Sophocles was a playwright in fifth-century BCE Athens, whose tragedies explored the difficult choices people make when duty, loyalty, and power collide. Nearly 2,500 years later, those choices remain familiar. His play &lt;em&gt;Antigone&lt;/em&gt; begins after a battle for Thebes. Antigone, the principal character’s two brothers have died fighting on opposite sides, and their uncle, King Creon, has ordered that one be denied burial. Antigone defies the king, believing her obligation to her brother outweighs the decree. The king condemns her to death. The Prince, Haemon, who is engaged to Antigone, comes to persuade his father to reconsider. Their conversation becomes an argument about leadership: whether a person in authority can listen, learn, and change a decision during changing times without looking weak and treating that accommodation as a surrender.&lt;/p&gt;
+
+&lt;p&gt;During the discussion Haemon offers the example of a sailor who keeps the sail pulled tight and refuses to loosen it, until the boat overturns. Experience and determination can only carry us so far when we refuse to adjust to the conditions around us. The wind does not become more agreeable because the person holding the ropes is certain they are right.&lt;/p&gt;
+
+&lt;p&gt;I think about that when I hear people describe what AI is bringing into our organizations. A storm of new code. A storm of patches. A storm of generated images, documents, and “AI slop” that someone still has to sort through. Calling these things storms carries an assumption: eventually, they will pass, we will catch up, and work will return to normal. But the ability to produce all of this faster and more cheaply will still be there when we finish today’s backlog. More code creates more maintenance obligations. More content creates more work deciding what deserves our attention and trust. These are becoming the conditions under which we work. We are preparing for a storm when we should be learning to operate in the new weather.&lt;/p&gt;
+
+&lt;p&gt;That means adapting the whole process. If we accelerate creation, we also need to improve how we review, test, patch, maintain, and retire what we create. We need to decide what is worth producing in the first place. Asking the same people to absorb an ever-growing volume through extraordinary effort is a poor plan for ordinary operations. Back in &lt;em&gt;Antigone&lt;/em&gt;, Haemon asks his father, the king, to remain willing to learn. His sailor gives us something concrete to remember: keeping the boat on its journey requires adjusting the sail. We should build that adjustment into the way we work, because this weather is now part of the journey.&lt;/p&gt;
+
+&lt;p&gt;Keep this in mind when you are thinking if the chaos we are experiencing is a one time event or if this is just the weather.  I believe that this isn’t a storm.  This is now weather.  This is just the normal we need to operate within, and like the sailor, the prince, and the king, we all need to adapt or we will definitely look weak, foolish, and unprepared for the conditions we face.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+        
+          <uri>https://tedt.org/</uri>
+        
+      </author>
+
+      
+
+      
+        <category term="Sophocles" />
+      
+        <category term="Antigone" />
+      
+        <category term="leadership" />
+      
+        <category term="organizational change" />
+      
+        <category term="AI adoption" />
+      
+        <category term="operating model" />
+      
+        <category term="adaptability" />
+      
+
+      
+        <summary type="html">We are preparing for a storm when we should be learning to operate in the new weather.</summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tedt.org/img/2026-09/Weather-vs-Storm.webp" />
+      
+    </entry>
+  
+    
+    
+    <entry>
+      <title type="html">When AI Moves Faster Than the Organization</title>
+      <link href="https://preview.tedt.org/When-AI-Moves-Faster-Than-the-Organization/" rel="alternate" type="text/html" title="When AI Moves Faster Than the Organization" />
+      <published>2026-09-26T00:00:00-07:00</published>
+      <updated>2026-09-26T00:00:00-07:00</updated>
+      <id>https://preview.tedt.org/When-AI-Moves-Faster-Than-the-Organization</id>
+      <content type="html" xml:base="https://preview.tedt.org/When-AI-Moves-Faster-Than-the-Organization/">&lt;p&gt;My daughter Hannah saved for months to buy a Lego Tuxedo Cat. When it arrived, she had the pieces, the instructions, and a great deal of enthusiasm. She also discovered that a complicated model could ask more of her than she had expected.&lt;/p&gt;
+
+&lt;p&gt;She turned to her brother and sister and me for help. We had built similar models before. Our experience gave her another way to approach the work, and her confidence grew as she learned. I &lt;a href=&quot;https://tedt.org/Building-a-Lego-Cat/&quot;&gt;wrote about that experience&lt;/a&gt; as a lesson in helping people through change.&lt;/p&gt;
+
+&lt;p&gt;Lately, I have been thinking about it as a lesson in how we recognize progress.&lt;/p&gt;
+
+&lt;p&gt;You could count pieces handled, pages read, or the number of people helping. Each might tell you something useful. None would establish that the next assembly fit where it belonged. For that, you would have to look at what was being built.&lt;/p&gt;
+
+&lt;p&gt;That distinction is becoming important in enterprise AI. We are acquiring more capable models, giving them tools, and arranging them into teams. We need to understand what the resulting organization can accomplish, where its work gets stuck, and what evidence should cause us to change the plan.&lt;/p&gt;
+
+&lt;p&gt;The paper &lt;a href=&quot;https://arxiv.org/abs/2606.12683v2&quot;&gt;&lt;em&gt;From AGI to ASI&lt;/em&gt;&lt;/a&gt;, by Tim Genewein and colleagues, gives us a reason to examine those questions. It considers how artificial general intelligence might develop beyond human-level performance. Its definition of superintelligence is demanding: a system whose cognitive abilities exceed those of large groups of human experts across virtually all domains.&lt;/p&gt;
+
+&lt;p&gt;Among its possible pathways is collective intelligence. Many coordinated AI agents might achieve capabilities beyond those of any individual member. The authors also examine scaling, algorithmic change, and recursive improvement. These pathways could interact. They remain uncertain, and the paper does not establish an inevitable transition or a reliable arrival date.&lt;/p&gt;
+
+&lt;p&gt;For an enterprise architect, the collective possibility has an immediate implication. We should evaluate the capability of the organization we are assembling around AI, including the people who remain responsible for its work.&lt;/p&gt;
+
+&lt;h2 id=&quot;capability-belongs-to-the-working-system&quot;&gt;Capability belongs to the working system&lt;/h2&gt;
+
+&lt;p&gt;A model can answer a question about a supplier. A working procurement system must establish which supplier we mean, retrieve the relevant records, recognize a conflict in those records, apply the right policy from the document desk procedures, and leave evidence someone can examine and audit.  You may also need to stop, find the right person, and ask that person to resolve a disagreement.&lt;/p&gt;
+
+&lt;p&gt;It’s that information, documented, repeatable, and measured, in the system, that enables the system to work effectively.&lt;/p&gt;
+
+&lt;p&gt;All of this applies when you add AI agents to the mix, except now you also have to make all that information available to them in a usable format as well.  Giving one agent research, another analysis, and a third review creates a division of labor. Whether that division helps depends on the task, the information they share, and how their results are reconciled. Three agents repeating the same unsupported assumption have given us three versions of the same problem.&lt;/p&gt;
+
+&lt;p&gt;The DeepMind Institute essay &lt;a href=&quot;https://institute.deepmind.com/essays/artificial-symbiotic-intelligence/&quot;&gt;&lt;em&gt;Artificial Symbiotic Intelligence&lt;/em&gt;&lt;/a&gt; develops this institutional view. Its authors argue that capability may emerge through arrangements of models, tools, people, and governing structures. It is a conceptual argument about a possible future. We still need experiments that show which arrangements work.&lt;/p&gt;
+
+&lt;p&gt;There is relevant empirical evidence. &lt;a href=&quot;https://arxiv.org/abs/2512.08296v3&quot;&gt;&lt;em&gt;Towards a Science of Scaling Agent Systems&lt;/em&gt;&lt;/a&gt; examines 260 configurations across six benchmarks. Relative to single-agent baselines, results range from an 80.8 percent improvement on decomposable financial reasoning to a 70 percent decline on sequential planning. Those findings apply to the tested systems and tasks. They demonstrate why adding agents requires an architectural decision about the work.&lt;/p&gt;
+
+&lt;p&gt;I would therefore ask a team proposing an agent workforce to show its dependencies. All of them.  They need to demonstrate which tasks can proceed independently.  Where must one result be correct before the next action begins?  What happens when two agents disagree? Who can tell whether the final answer rests on evidence or on repeated agreement?&lt;/p&gt;
+
+&lt;p&gt;These questions give us something concrete to design. They also give us something to test when a new model arrives and changes things.  A stronger model may make a particular review step unnecessary, or expose a weakness elsewhere. We need to know which happened.&lt;/p&gt;
+
+&lt;h2 id=&quot;be-precise-about-what-improved&quot;&gt;Be precise about what improved&lt;/h2&gt;
+
+&lt;p&gt;AI discussions that I participate in compress several changes into the word “better.” That makes it difficult to decide what to fund or authorize. I would keep four questions visible.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Throughput&lt;/strong&gt; asks how much acceptable work the system completes in a given period. Producing more drafts can help, but we also need to count how many become usable results and how long they wait along the way.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Intelligence&lt;/strong&gt; asks whether the system can handle harder or unfamiliar problems. Completing more examples of a familiar task does not, by itself, demonstrate that broader capability.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Autonomy&lt;/strong&gt; asks how much work the system can carry without intervention. That requires recording the help it receives, including corrections and cleanup after it reports completion. The authority we grant it remains a separate decision.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Business value&lt;/strong&gt; asks what changed for the organization and the people it serves. Lower cost, shorter waits, fewer errors, or a service that becomes possible for the first time can all matter. Their importance depends on the purpose of the work.&lt;/p&gt;
+
+&lt;p&gt;The distinction is visible in NVIDIA’s recent &lt;a href=&quot;https://arxiv.org/abs/2609.20519&quot;&gt;SoL-Pi research&lt;/a&gt;. On its 51-task EdgeBench evaluation, the researchers report comparable performance to the Pi coding harness while reducing recorded token traffic by roughly 45 to 49 percent and API cost by about a third. The improvements came from the surrounding execution system. That is evidence of greater efficiency under the reported conditions. It does not establish a corresponding increase in general intelligence or savings across every business workflow.&lt;/p&gt;
+
+&lt;p&gt;A team could make a worthwhile investment on exactly that basis. We do not need to turn every efficiency gain into a claim about workforce replacement, general intelligence, or superintelligence to justify it.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://tedt.org/The-Cost-of-a-Finished-Job/&quot;&gt;&lt;em&gt;The Cost of a Finished Job&lt;/em&gt;&lt;/a&gt;, I argued for measuring cost per accepted outcome. That measure includes the work people perform around the machine: review, correction, support, and recovery. It also forces us to define acceptance before we celebrate production.&lt;/p&gt;
+
+&lt;p&gt;If two configurations finish the same work at the same quality, and one requires less money and less supervision, we have learned something useful. If one handles previously unsolvable cases but costs more, we have learned something different. A single adoption score would hide the decision we need to make.&lt;/p&gt;
+
+&lt;h2 id=&quot;follow-the-work-to-its-next-constraint&quot;&gt;Follow the work to its next constraint&lt;/h2&gt;
+
+&lt;p&gt;Once a task becomes faster, the rest of the process receives its output sooner. That can shorten delivery. It can also create a queue somewhere else.&lt;/p&gt;
+
+&lt;p&gt;Anthropic provides a concrete example in its September 14, 2026 account of &lt;a href=&quot;https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic&quot;&gt;agentic coding straining continuous integration&lt;/a&gt;. The company reports a 25-fold increase in CI jobs over six months. Its service for selecting relevant tests struggled to keep up. Three successive fixes lasted 70 days, 29 days, and less than a day before the team moved to a more scalable design.&lt;/p&gt;
+
+&lt;p&gt;This is Anthropic reporting on its own environment. Its growth rate is not a forecast for every engineering organization. But the account illustrates a failure mode worth testing for: accelerated production can overwhelm the machinery used to establish whether the work is ready.&lt;/p&gt;
+
+&lt;p&gt;The responses also cost more to operate. Solving a bottleneck can improve the service while increasing expenses. We need to measure the whole result before declaring either success or waste.&lt;/p&gt;
+
+&lt;p&gt;For people who work in companies that have a robust physical component to their value stream, such as the utility I work for, this is easy to recognize. An AI system might prepare an engineering planning package faster. Components still have to be manufactured and delivered. A crew still needs access to the site. The heavy equiptment to do the work, still needs to routed to the work location.  And someone still has to establish that the work can proceed safely. Improved analysis can help with those constraints, but generating the analysis does not move the atoms around in the real world, nor create complete the actual change in reality.&lt;/p&gt;
+
+&lt;p&gt;Some delays deserve to be removed. Others contain essential steps that need to remain to ensure safety and to allow for human judgement in order to avoid a consequential mistake. Calling every delay “friction” makes it too easy to treat them as interchangeable.&lt;/p&gt;
+
+&lt;p&gt;The people with boots on the ground will help you distinguish between them. They know when an approval catches a real issue and when it merely sends the same information to another inbox. They also know which unofficial repair keeps a supposedly automated process running.&lt;/p&gt;
+
+&lt;p&gt;I explored this movement of scarce work in &lt;a href=&quot;https://tedt.org/When-Output-Becomes-Abundant/&quot;&gt;&lt;em&gt;When Output Becomes Abundant&lt;/em&gt;&lt;/a&gt;. The practical next step for almost every organization I have observed is to make all of this more visible. Measure time spent working, waiting, reviewing, and repairing. Follow a sample of jobs until the intended outcome occurs. Include the cases that fail, get abandoned, or return later with a problem.&lt;/p&gt;
+
+&lt;p&gt;Otherwise, an impressive productivity gain in one department can become an unmeasured burden in another.  All too often, I have seen cases where someone wants to automate a task to benefit some local maximum while negatively impacting the enterprise as a whlie.  In such situations, the costs and delays shift and potentially multiply rather than disappear, creating friction that can undermine the overall efficiency of the organization.&lt;/p&gt;
+
+&lt;h2 id=&quot;give-each-scenario-evidence-that-could-change-it&quot;&gt;Give each scenario evidence that could change it&lt;/h2&gt;
+
+&lt;p&gt;This is where scenario planning becomes useful. An organization needs several plausible accounts of how its work could change with the introduction of AI, with observations that would help distinguish between them.&lt;/p&gt;
+
+&lt;p&gt;Suppose model capability improves slowly, while lower costs and better tooling make familiar tasks economical to automate. That future favors careful workflow engineering. We would look for stable quality at lower total cost and sustained reductions in human effort.&lt;/p&gt;
+
+&lt;p&gt;Suppose coordinated systems begin completing longer, more difficult assignments reliably. That future could justify changes to roles and delegated responsibility. We would need evidence from complete assignments, including exceptions, recovery, and performance on work that differs from the examples used to tune the system.&lt;/p&gt;
+
+&lt;p&gt;Suppose generation accelerates while verification, integration, or physical delivery remains constrained. That future calls for investment in the limiting stages. Rising queues, older unfinished work, repeated corrections, and delayed customer outcomes would be signals to investigate.&lt;/p&gt;
+
+&lt;p&gt;These possibilities can coexist. Software maintenance, procurement, and field engineering may develop at different rates inside the same company. An enterprise-wide label for AI maturity would conceal those differences.&lt;/p&gt;
+
+&lt;p&gt;Each scenario should connect to a decision. What would persuade us to expand delegation? What would cause us to invest in testing capacity? What result would tell us to stop adding agents and simplify the workflow? Which commitment would be expensive to reverse if our assumptions proved wrong?&lt;/p&gt;
+
+&lt;p&gt;Set thresholds before the pilot. A team should agree on acceptable quality, cost, intervention, and recovery requirements while it can still discuss them without defending a rollout. The thresholds will differ by class of work and consequence.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://tedt.org/How-Much-Work-Can-Your-AI-Safely-Own/&quot;&gt;&lt;em&gt;How Much Work Can Your AI Safely Own?&lt;/em&gt;&lt;/a&gt;, I distinguished capability, evidence, and authority. Demonstrated ability contributes to a decision about responsibility. It does not make that decision for us.&lt;/p&gt;
+
+&lt;h2 id=&quot;collect-evidence-that-can-survive-a-change-of-mind&quot;&gt;Collect evidence that can survive a change of mind&lt;/h2&gt;
+
+&lt;p&gt;So how would you begin; I would begin with one important class of work and its current baseline. Record the time, cost, quality, and human effort required today. Then compare the proposed AI arrangement on representative cases, including difficult exceptions.&lt;/p&gt;
+
+&lt;p&gt;Keep the model version, instructions, tools, permissions, and relevant data changes with the results. If several of those change together, be careful about attributing the improvement to one of them. Preserve failed attempts and escalations alongside successes, with access and retention appropriate to the information involved. If you do not track that information, or you fail to account for this, you will not have a reliable basis for evaluating progress.&lt;/p&gt;
+
+&lt;p&gt;This also means you should track the consequences after acceptance too. A support case that reopens, a code change that requires repair, or a document that creates confusion downstream is a type of failure that belongs in the evaluation. The reporting boundary should follow the processes already established lines of responsibility starting with the customers request all the way to the customer getting their need answered.  In other words, the full and complete Value Stream should be considered when evaluating the impact of AI on work.&lt;/p&gt;
+
+&lt;p&gt;This evidence collection needs an owner and a place in ordinary operations. The development team that’s building the solution needs to have access to it.  The operational teams that are supporting the technology need to have access to it.  Every relevant team should review it often enough to act before a growing queue or recurring error becomes normal. Material changes to the model, workflow, or workload should trigger another look at the assumptions behind the plan.&lt;/p&gt;
+
+&lt;p&gt;The purpose is to make changing course less expensive. We should be able to discover that one agent works better than five, that a stronger model earns its higher price, or that an apparently successful automation moved too much work onto someone else. Each finding should have a route into a decision.&lt;/p&gt;
+
+&lt;p&gt;The part of Hannah’s Lego project I keep returning to is her willingness to change how she approached it. The instructions were available from the beginning. Progress also involved recognizing when help would be useful and learning how to use the experience around her.&lt;/p&gt;
+
+&lt;p&gt;There are limits to the comparison. A Lego set comes with a known design. An enterprise adopting AI is still discovering some of what it can build. That makes it even more important to examine the work as it takes shape and to preserve what we learn.&lt;/p&gt;
+
+&lt;p&gt;Hannah had saved for a cat she wanted to build. My help mattered because it supported that purpose and her growing ability to carry it forward. When we decide how to organize AI at work, I want us to keep an equally clear view of the people we are helping, the outcome they need, and the evidence that we are getting closer to it.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+        
+          <uri>https://tedt.org/</uri>
+        
+      </author>
+
+      
+
+      
+        <category term="enterprise AI" />
+      
+        <category term="agentic AI" />
+      
+        <category term="collective intelligence" />
+      
+        <category term="operating model" />
+      
+        <category term="scenario planning" />
+      
+        <category term="AI governance" />
+      
+        <category term="value stream" />
+      
+        <category term="evidence-based evaluation" />
+      
+
+      
+        <summary type="html">We should evaluate the capability of the organization we are assembling around AI, including the people who remain responsible for its work.</summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tedt.org/img/2026-09/Lego-cat-story.webp" />
+      
+    </entry>
+  
+    
+    
+    <entry>
+      <title type="html">When AI Evaluators Also Sell AI Adoption</title>
+      <link href="https://preview.tedt.org/When-AI-Evaluators-Also-Sell-AI-Adoption/" rel="alternate" type="text/html" title="When AI Evaluators Also Sell AI Adoption" />
+      <published>2026-09-19T00:00:00-07:00</published>
+      <updated>2026-09-19T00:00:00-07:00</updated>
+      <id>https://preview.tedt.org/When-AI-Evaluators-Also-Sell-AI-Adoption</id>
+      <content type="html" xml:base="https://preview.tedt.org/When-AI-Evaluators-Also-Sell-AI-Adoption/">&lt;p&gt;When I bought my house, one of the inspectors sold us on a roof inspection.&lt;/p&gt;
+
+&lt;p&gt;That seemed like a sensible thing for a new homeowner to buy. We needed help understanding the house. An inspection was supposed to give us information we could use to make a decision.&lt;/p&gt;
+
+&lt;p&gt;The inspection turned out to be an on-ramp into a sales system. The inspection team also had roofing solutions to sell, and the company’s intention was to move us toward buying those solutions and adding the costs of those solutions to the homeloan. Helping a new homeowner understand the roof had become secondary to creating another sale.&lt;/p&gt;
+
+&lt;p&gt;The problem was the purpose the inspection served.&lt;/p&gt;
+
+&lt;p&gt;That experience is a useful place to begin with AI evaluation. When someone hands you an assessment, whose decision is it designed to improve? What happens when the evidence points toward buying less, delaying the work or walking away?&lt;/p&gt;
+
+&lt;p&gt;Those questions became more concrete on Sept. 18, when Anthropic announced &lt;a href=&quot;https://www.anthropic.com/news/accenture-embedded-evaluation&quot;&gt;“Partnering with Accenture on embedded evaluation.”&lt;/a&gt; What’s going to happen under this partnership is that Accenture’s specialist AI business, will lead the work, with Anthropic funding it directly. The stated scope includes evaluating models, examining alignment and testing safeguards.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-evaluation-meets-an-existing-sales-relationship&quot;&gt;When Evaluation Meets an Existing Sales Relationship&lt;/h2&gt;
+
+&lt;p&gt;There is an existing commercial relationship behind that announcement. In &lt;a href=&quot;https://www.anthropic.com/news/anthropic-accenture-partnership&quot;&gt;December 2025, Accenture and Anthropic announced a partnership&lt;/a&gt; that included a dedicated Claude practice and joint offerings to help enterprises adopt AI. That earlier announcement is useful context: the organizations already had a business relationship oriented toward expanding deployment.&lt;/p&gt;
+
+&lt;p&gt;Now there is an evaluation relationship too.&lt;/p&gt;
+
+&lt;p&gt;That combination deserves examination. It does not establish that Accenture or Faculty has compromised an assessment, suppressed a finding or failed to act independently. My roof inspection supplies a question to investigate. It supplies no evidence about their conduct.&lt;/p&gt;
+
+&lt;p&gt;The question is whether an evaluator can deliver a commercially inconvenient judgment about Anthropic or Accenture, and whether the people who are going to pay for that that judgment will receive it reliably.&lt;/p&gt;
+
+&lt;h2 id=&quot;independence-has-to-survive-ordinary-pressures&quot;&gt;Independence Has to Survive Ordinary Pressures&lt;/h2&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/&quot;&gt;“Dev, Test, and Prod Still Matter: What Gets Deployed Has Changed,”&lt;/a&gt; I argued that independent evaluation requires attention to the machinery around the test: access, isolation, evidence retention and responsibility when something goes wrong.&lt;/p&gt;
+
+&lt;p&gt;There is another layer around that machinery. People choose the questions, negotiate the scope, assign the staff, renew the contract and decide where the report goes.&lt;/p&gt;
+
+&lt;p&gt;A technically excellent test can sit inside a relationship that makes some questions difficult to ask. An evaluator might have access to the model while lacking a protected route for escalating a disagreement. A customer might hear that an evaluation occurred without learning which important questions it left unanswered.&lt;/p&gt;
+
+&lt;p&gt;These are possibilities to investigate, not findings about the new partnership. They explain why the commercial arrangement belongs in the assessment.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://tedt.org/Winning-the-Intelligence-Inversion/&quot;&gt;“Winning the Intelligence Inversion,”&lt;/a&gt; I described independent risk governance as part of the operating model for AI. This development brings that principle into a purchasing decision. Independence has to survive the ordinary pressures of an organization: budgets, reporting lines, important accounts and the desire to keep work moving.&lt;/p&gt;
+
+&lt;p&gt;Nobody has to be dishonest for those pressures to matter.&lt;/p&gt;
+
+&lt;p&gt;Suppose an evaluation raises a problem that would delay a major rollout. The immediate issue is technical. The consequences reach account teams, delivery commitments, customer expectations and revenue. A credible arrangement should already explain who decides what happens next. Leaving that decision until everyone is under pressure makes the evaluator’s job harder.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-case-for-embedded-evaluation&quot;&gt;The Case for Embedded Evaluation&lt;/h2&gt;
+
+&lt;p&gt;But there is a strong argument for the arrangement Anthropic has announced.&lt;/p&gt;
+
+&lt;p&gt;People who help organizations deploy AI may understand failures that a distant reviewer misses. They may recognize the difference between a convincing demonstration and a workflow that breaks when permissions change, records conflict or a user does something unexpected. Embedded access could also reveal decisions and practices that cannot be reconstructed from a finished model.&lt;/p&gt;
+
+&lt;p&gt;Distance can protect judgment. It can also limit understanding.  Another aspect to consider in addition to distance is the longevity of the evaluation.  Just because a model passes an evaluation at one point in time does not guarantee it will continue to meet the same standards as it evolves. Long-term monitoring and repeated assessments are necessary to maintain confidence in the model’s behavior.&lt;/p&gt;
+
+&lt;p&gt;Will Knight’s Sept. 18 WIRED article, &lt;a href=&quot;https://www.wired.com/story/heres-how-an-ai-slowdown-could-actually-work/&quot;&gt;“Here’s How an AI Slowdown Could Actually Be Enforced,”&lt;/a&gt; captures this disagreement. Geoffrey Irving argues that inspections can help constrain development; Raymond Douglas emphasizes unresolved questions about effective controls. The reporting offers reasons to investigate inspection methods carefully, alongside a credible case for using them.&lt;/p&gt;
+
+&lt;p&gt;Payment alone cannot settle these question either. Evaluation takes skilled people, time and access. Someone must fund it. Moving the invoice to a nonprofit, a pooled fund or a government body changes the incentives without eliminating the need to examine them.&lt;/p&gt;
+
+&lt;p&gt;Anthropic acknowledges that access, reporting, and funding standards remain unsettled. It describes a nonexclusive arrangement, plans for additional evaluators and discussions about other funding approaches. Those are relevant commitments. Their practical value will depend on how they operate.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-protects-an-uncomfortable-finding&quot;&gt;What Protects an Uncomfortable Finding?&lt;/h2&gt;
+
+&lt;p&gt;There are also proposed protections that deserve a fair hearing.&lt;/p&gt;
+
+&lt;p&gt;In his September essay, &lt;a href=&quot;https://darioamodei.com/post/we-must-pace-the-frontier&quot;&gt;“We Must Pace the Frontier,”&lt;/a&gt; Dario Amodei proposes allowing embedded reviewers to publish key findings without Anthropic’s editorial control. He describes limited redactions for specified sensitive information and says reviewers should be able to disclose when a redaction materially affects their conclusions.&lt;/p&gt;
+
+&lt;p&gt;Those proposals address a central concern in this article. They would give an evaluator a way to make an uncomfortable conclusion visible.&lt;/p&gt;
+
+&lt;p&gt;They should also be described accurately. A proposed protection is different from a verified provision in a particular signed agreement. The public partnership announcement does not spell out appointment and removal protections, commercial separation or the complete publication arrangement. That leaves questions for reporting. It does not prove those safeguards are absent.&lt;/p&gt;
+
+&lt;p&gt;Disclosure itself needs judgment.&lt;/p&gt;
+
+&lt;p&gt;A report could contain customer information, exploitable vulnerabilities or other material that should not be published openly. Demanding unrestricted publication would create problems of its own. Buyers should instead ask who can receive detailed findings through protected channels, how redactions are reviewed, how disagreements are escalated and whether a public summary can explain the assessment’s limits.&lt;/p&gt;
+
+&lt;p&gt;The useful distinction is between protecting sensitive information and preventing an adverse conclusion from reaching someone who can act on it.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-model-assessment-is-not-a-deployment-decision&quot;&gt;A Model Assessment Is Not a Deployment Decision&lt;/h2&gt;
+
+&lt;p&gt;There is a further limit to the roof-inspection comparison. In my case, we were the customers buying the inspection. An enterprise relying on a model developer’s evaluation may have no direct contractual relationship with the evaluator. It may receive a summary intended for a different audience and a different decision.&lt;/p&gt;
+
+&lt;p&gt;That makes scope especially important.&lt;/p&gt;
+
+&lt;p&gt;An assessment of a model developer’s safeguards can be valuable while leaving many questions about a customer’s deployment unanswered. Which records does the application retrieve? Whose permissions does it use? What can it change? Can an affected person challenge the result? Does the system behave acceptably in the languages and operating conditions where the organization uses it?&lt;/p&gt;
+
+&lt;p&gt;A model-level assessment cannot answer those questions simply by existing.&lt;/p&gt;
+
+&lt;p&gt;The Electronic Frontier Foundation supplies a useful challenge to a narrow view of safety. Its Sept. 18 &lt;a href=&quot;https://www.eff.org/deeplinks/2026/09/eff-statement-california-governors-executive-order-ai&quot;&gt;“Statement on California Governor’s Executive Order on AI”&lt;/a&gt; supports third-party investigations while calling attention to present harms involving employment, benefits, surveillance and pricing. EFF is an advocacy organization; its statement identifies priorities rather than proving the effectiveness of a particular inspection method.&lt;/p&gt;
+
+&lt;p&gt;The distinction matters for an enterprise reader. A bank, an employer and a public agency can use the same model and create quite different consequences. Their customers and employees encounter the whole service, including the policies and decisions wrapped around the model.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://tedt.org/How-Much-Work-Can-Your-AI-Safely-Own/&quot;&gt;“How Much Work Can Your AI Safely Own?”&lt;/a&gt; I separated capability, evidence and authority. An external assessment can contribute evidence. The organization still has to decide what work to authorize and remain responsible for that decision. Anthropic likewise states that embedded evaluation does not transfer its responsibility for model safety.&lt;/p&gt;
+
+&lt;h2 id=&quot;five-questions-for-enterprise-buyers&quot;&gt;Five Questions for Enterprise Buyers&lt;/h2&gt;
+
+&lt;p&gt;So what should an enterprise buyer actually request?&lt;/p&gt;
+
+&lt;p&gt;Start with the decision the evidence is supposed to support. Expanding an internal drafting assistant and allowing an agent to change customer records require different cases. Then ask for enough information to understand five things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Scope:&lt;/strong&gt; What system, version, configuration and use cases were examined? Which relevant questions were excluded?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Access:&lt;/strong&gt; What could the evaluator inspect, and what limitations affected its conclusions?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Commercial safeguards:&lt;/strong&gt; Who appoints, pays and can remove the evaluator? How are related implementation interests disclosed and managed?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Reporting:&lt;/strong&gt; Who receives adverse findings, who can redact them and where can an unresolved disagreement go?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Follow-through:&lt;/strong&gt; Who owns remediation, what evidence demonstrates improvement and what changes trigger another assessment?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are proposed purchasing questions, not claims about a universal standard already in place. Their depth should match the consequence of the work.&lt;/p&gt;
+
+&lt;h2 id=&quot;useful-scrutiny-has-to-be-affordable&quot;&gt;Useful Scrutiny Has to Be Affordable&lt;/h2&gt;
+
+&lt;p&gt;There is a cost argument here that should not be waved away. A medium-sized organization cannot necessarily commission a bespoke investigation of every supplier. An elaborate assurance requirement could favor established providers and leave smaller buyers dependent on reports they have little ability to question. EFF’s call to make investigations accessible to smaller developers points toward the same concern.&lt;/p&gt;
+
+&lt;p&gt;Reusable evidence, common reporting formats and proportionate reviews could help. A shared assessment should make its boundaries easy to understand so each customer can concentrate on the remaining questions in its own deployment. Repeating the same expensive inspection everywhere is not the only way to obtain useful scrutiny.&lt;/p&gt;
+
+&lt;p&gt;Nor is waiting for perfect independence a satisfactory plan. It could leave organizations relying on less evidence while institutions and methods develop. The practical task is to improve the arrangement, expose its limitations and keep testing whether it works.&lt;/p&gt;
+
+&lt;h2 id=&quot;keep-the-option-to-say-no&quot;&gt;Keep the Option to Say No&lt;/h2&gt;
+
+&lt;p&gt;The evidence could ultimately support the Anthropic–Accenture approach. Protected disclosure, meaningful separation of commercial interests, sufficient access and a record of consequential findings would make a stronger case for embedded evaluation. Deployment expertise could prove to be one of its advantages.&lt;/p&gt;
+
+&lt;p&gt;That possibility belongs in the argument. The purpose of scrutiny is to learn whether an arrangement deserves trust.&lt;/p&gt;
+
+&lt;p&gt;The roof inspection failed us because the process served the next roofing sale more than it served a new homeowner. We needed help making a decision about our house. The inspection team had built a way to sell us more “solutions.”&lt;/p&gt;
+
+&lt;p&gt;An enterprise needs an assessment that leaves several choices open: proceed, narrow the deployment, repair the problem, obtain more evidence or decline the purchase.&lt;/p&gt;
+
+&lt;p&gt;A useful evaluator must be able to support any of those choices. The people making the decision must be able to see why.&lt;/p&gt;
+
+&lt;p&gt;Before accepting the next AI assessment, ask what happens if its most useful conclusion would reduce the next sale.&lt;/p&gt;
+
+&lt;p&gt;That was the question inside our roof inspection. It belongs inside the AI contract too.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+        
+          <uri>https://tedt.org/</uri>
+        
+      </author>
+
+      
+
+      
+        <category term="AI evaluation" />
+      
+        <category term="AI governance" />
+      
+        <category term="AI safety" />
+      
+        <category term="embedded evaluation" />
+      
+        <category term="evaluator independence" />
+      
+        <category term="enterprise procurement" />
+      
+        <category term="Anthropic" />
+      
+        <category term="Accenture" />
+      
+
+      
+        <summary type="html">When an AI evaluator also sells adoption, buyers need evidence that inconvenient findings can reach decision-makers and change a deployment decision.</summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tedt.org/img/2026-09/AI-Evaluators-Selling-Adoption.webp" />
+      
+    </entry>
+  
+    
+    
+    <entry>
+      <title type="html">Beyond the Mirror: Principles for Work in the Age of AI</title>
+      <link href="https://preview.tedt.org/Beyond-the-Mirror/" rel="alternate" type="text/html" title="Beyond the Mirror: Principles for Work in the Age of AI" />
+      <published>2026-09-11T00:00:00-07:00</published>
+      <updated>2026-09-11T00:00:00-07:00</updated>
+      <id>https://preview.tedt.org/Beyond-the-Mirror</id>
+      <content type="html" xml:base="https://preview.tedt.org/Beyond-the-Mirror/">&lt;p&gt;In 2001, I sat in Bob’s Big Boy in Burbank, talking with &lt;a href=&quot;https://en.wikipedia.org/wiki/Erik_Davis&quot;&gt;Erik Davis&lt;/a&gt; of WIRED about plans to camp out with Tolkien Online fans before a movie premiere. I told him, “People want to participate in the universe they love.” &lt;a href=&quot;https://www.wired.com/2001/10/lotr/&quot;&gt;He recorded the conversation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Take that same sentance and instead of talking about movies, books, and fandom, frame it into a discussion about the future of work. Put that sentence in a meeting with colleagues and it becomes a surprising idea.&lt;/p&gt;
+
+&lt;p&gt;Participation means having something to contribute. It means being able to affect what happens. It means that someone would notice the difference between your presence and your absence. An organization can give a person an account, a title, a queue of tasks, and a full calendar, but it doesn’t always give them meaningful work.  It doesn’t give them a “universe” that they love.&lt;/p&gt;
+
+&lt;p&gt;But that was in 2001.  Today things are very different.  Today we are building artificially intelligent machines which take on work and be members of that team.  They can handle a larger share of the tasks in the queue.&lt;/p&gt;
+
+&lt;p&gt;So, what happens to the person?&lt;/p&gt;
+
+&lt;p&gt;I think that question is going to require us to reconsider something much older than artificial intelligence. It asks what we believe work is for, what holds a community together, and how much of our current organization exists to compensate for limitations our technology is learning to remove.&lt;/p&gt;
+
+&lt;p&gt;The question becomes urgent when we confuse a person’s place in a process with their place among other people.&lt;/p&gt;
+
+&lt;p&gt;In the video, &lt;a href=&quot;https://www.youtube.com/watch?v=QecDVkcGPxY&quot;&gt;&lt;em&gt;Why Bullsh✲t Jobs are (Finally) Dying&lt;/em&gt;&lt;/a&gt;, the narrator approaches this from the economics of corporate work. They describe layers of people once needed to move information through large organizations. The argument is that digital communication weakened that need, while cheap capital and organizational incentives helped preserve the layers. And now, AI adds another source of pressure on routine reports and summaries.&lt;/p&gt;
+
+&lt;p&gt;The useful question the video leaves me with is whether we still need every agreement, process, and approach we inherited. Its &lt;a href=&quot;https://doi.org/10.1177/09500170211015067&quot;&gt;broader claims about useless jobs deserve more scrutiny&lt;/a&gt;. A company continuing to operate after layoffs does not establish that everything those people did was unnecessary. Maintenance, accumulated knowledge, and relationships can take time to reveal their absence.&lt;/p&gt;
+
+&lt;p&gt;But there is something worth following here. We can remove the technical reason for a particular kind of work and continue organizing people around it for years.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://tedt.org/a-model-for-collaboration-tools/&quot;&gt;my 2009 writing on collaboration&lt;/a&gt;, I described what happens when knowledge cannot be preserved, found, or checked against its purpose. People compensate. They schedule another meeting, ask someone who knows someone, or carry information from one tool into the next. The informal network becomes the way the formal organization gets anything done.&lt;/p&gt;
+
+&lt;p&gt;Those people are often holding the organization together. Their effort is real. So is the possibility that we have made them responsible for a problem we should have solved in a different way.&lt;/p&gt;
+
+&lt;p&gt;We gave the office electronic forms(files) and electronic filing cabinets(folders). We also kept a great many people busy moving the contents between them. AI makes it harder to avoid asking why.&lt;/p&gt;
+
+&lt;p&gt;I think AI may be the final general-purpose layer of Information Age technology.&lt;/p&gt;
+
+&lt;p&gt;That is a large claim, so let me say what I mean by it. We have learned to store information, calculate with it, search it, and move it around the world. We are now learning to delegate more of the work of interpreting it and acting on it. We can describe an intended result and give a system some responsibility for finding a way to produce it.&lt;/p&gt;
+
+&lt;p&gt;That ability is incomplete and uneven. A system that handles a well-defined task can still fail when the context changes. But the direction suggests a culminating capability: information becomes something we can ask machines to use toward an outcome, with less of the method supplied by a person at every step.&lt;/p&gt;
+
+&lt;p&gt;An earlier version of this argument appears in &lt;a href=&quot;https://tedt.org/From-Industrial-Age-Utility-to-AI-Centric-Utility/&quot;&gt;my white paper on moving beyond Industrial Age utility practices&lt;/a&gt;. The practical concern there was preserving context as information moves through an organization. AI brings another possibility into view. The information can increasingly carry work with it.&lt;/p&gt;
+
+&lt;p&gt;If that is the direction, much of what comes next may look like operational improvement: better memory, stronger reasoning, lower cost, more reliable execution, clearer interfaces, and wider access. The word “operational” can make this sound smaller than it is. A capability becoming dependable enough for ordinary use can change far more lives than its first impressive demonstration.&lt;/p&gt;
+
+&lt;p&gt;I am making a claim about the direction of information technology. Scientific discovery remains open. There may be another transformation beyond the one I can see. This argument does not require us to declare invention finished.&lt;/p&gt;
+
+&lt;p&gt;It requires us to notice that we already have enough new capability to question the organization of work. An organizing structure, which was put in place to manage the limitations of the Industrial Revolution, may no longer be optimal.  Waiting for a more perfect model is a way of postponing decisions about ourselves.&lt;/p&gt;
+
+&lt;p&gt;Consider the phrase: agents swarm; humans click.&lt;/p&gt;
+
+&lt;p&gt;It captures a difference in how work gets arranged. An agent system can divide a question into parts, send those parts to other agents, and bring their results together. Meanwhile, a person opens a ticket, copies a number into a spreadsheet, asks for access, attaches a document, and waits for the next person to do much the same thing.&lt;/p&gt;
+
+&lt;p&gt;That is a description of a working environment, not a limit on human nature. People have always organized around shared problems. Scientific communities, volunteer projects, and open-source software show how much can happen when contributions can accumulate across many participants. We are quite capable of finding one another and building something together.  Yet much of enterprise work places that ability inside a succession of private inboxes and departmental queues.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://tedt.org/Agents-Dont-Click/&quot;&gt;&lt;em&gt;Agents Don’t Click&lt;/em&gt;&lt;/a&gt;, I argued that software changes when agents become its operators. The visible interface becomes less central to routine execution, while authoritative records, permissions, and evidence become more consequential. The next question is what happens to the organization built around those interfaces.&lt;/p&gt;
+
+&lt;p&gt;Swarming does not make coordination free. Anthropic’s &lt;a href=&quot;https://www.anthropic.com/engineering/multi-agent-research-system&quot;&gt;account of building a system with multiple research agents&lt;/a&gt; describes a lead agent assigning parallel investigations and bringing the results together. It also describes duplicated effort, coordination costs, and difficulties when tasks depend heavily on one another. Useful cooperation requires the work to be defined and the results to be checked.&lt;/p&gt;
+
+&lt;p&gt;There is a lesson for us in that. We must &lt;a href=&quot;/The-IT-Adaptive-Factory/&quot;&gt;organize around the actual dependencies of the work&lt;/a&gt;. Those dependencies determine the order in which tasks should be performed. In order to do that effectively, we need to understand the relationships between tasks. Best practices here include mapping out task dependencies, identifying critical paths, and continuously reworking the team structure and workflow until you have all those dependencies built into the team and the flow of work.&lt;/p&gt;
+
+&lt;p&gt;The distinction can be difficult to see from inside a familiar job. A handoff may contain an essential judgment, an obsolete copying step, or both. You find out by involving the person who does it and examining what changes because of their contribution.&lt;/p&gt;
+
+&lt;p&gt;We see this early in IT because code, requests, documentation, tests, and changes already have digital forms. Some outcomes can be checked quickly, and some mistakes can be reversed. That makes parts of our work accessible to agents before work that requires a physical presence or carries consequences that are harder to evaluate.&lt;/p&gt;
+
+&lt;p&gt;The same pressure can spread as &lt;a href=&quot;https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure&quot;&gt;other kinds of work become accessible&lt;/a&gt;. Cheaper execution changes which arrangements are economical. Organizations redesign roles and boundaries in response. The choices they make about ownership, responsibility, and the gains determine what that redesign means for people.&lt;/p&gt;
+
+&lt;p&gt;That is a causal path toward much of the economic disruption people fear. It is also a place where human decisions still matter.&lt;/p&gt;
+
+&lt;p&gt;The dread makes sense. A person may have spent twenty years becoming the one who can assemble the answer. Their authority, income, friendships, and sense of usefulness may all be connected to that role. Telling them that a machine can assemble the answer in minutes raises questions that a productivity chart cannot answer.&lt;/p&gt;
+
+&lt;p&gt;An exponential curve makes those questions harder. We can extend a line on a graph beyond our ability to imagine the institutions that would exist at its far end. We put today’s job descriptions, income arrangements, and professional identities underneath tomorrow’s capability and watch them stop fitting.&lt;/p&gt;
+
+&lt;p&gt;Then we look for ourselves in that future.&lt;/p&gt;
+
+&lt;p&gt;This is the mirror I think we are standing in front of. It reflects the arrangements we recognize and the things we are afraid of losing. It gives us a picture of our present under pressure. It cannot show us every way people might learn to belong and contribute after those arrangements change.&lt;/p&gt;
+
+&lt;p&gt;A prediction can correctly identify a failure in the current system without exhausting the possibilities beyond it.&lt;/p&gt;
+
+&lt;p&gt;That does not make every warning mistaken. Losing a livelihood is a real loss. Concentrating power in the hands of those who own the machines is a real political choice. Technical failures and misuse need their own answers. No metaphor makes those problems disappear.&lt;/p&gt;
+
+&lt;p&gt;But the end of a familiar arrangement does not tell us that human possibility ends there.&lt;/p&gt;
+
+&lt;p&gt;Reaching through the mirror means taking responsibility for arrangements we have not built yet. It means asking who gets a say, who gets access, what contribution earns recognition, and how people can remain secure while their work changes. Hope has to take a form someone can live inside.&lt;/p&gt;
+
+&lt;p&gt;That is why I keep coming back to community.&lt;/p&gt;
+
+&lt;p&gt;Years ago, in &lt;a href=&quot;https://tedt.org/the-purpose-of-community-protection-of-the-commons/&quot;&gt;&lt;em&gt;Defending the Commons&lt;/em&gt;&lt;/a&gt;, I used a garden to distinguish a community from the resource it cares for and the value that resource produces. The people, their shared ground, and its fruit are different things. A useful organization has to care about all three.&lt;/p&gt;
+
+&lt;p&gt;In knowledge work, that shared ground includes what we know, how we arrived at it, what we have tried, what failed, and which promises we have made. It includes the experience of the person who notices an exception before it becomes an incident. It includes the conditions that let a newcomer ask a question without first earning entry to an insider network.&lt;/p&gt;
+
+&lt;p&gt;We can call this &lt;a href=&quot;https://mitpress.mit.edu/9780262516037/understanding-knowledge-as-a-commons/&quot;&gt;a living commons&lt;/a&gt;: knowledge that people can find, question, improve, and use within legitimate boundaries. Someone must maintain it. Someone must notice when a once-correct answer becomes wrong. Its value depends on continued participation.&lt;/p&gt;
+
+&lt;p&gt;AI can make that commons easier to search and more useful in doing the work. It can also generate so much plausible material that finding what deserves trust becomes harder. A pile of generated documents is not a community’s memory until people have a way to establish what belongs there and why.&lt;/p&gt;
+
+&lt;p&gt;This is the distinction I explored in &lt;a href=&quot;https://tedt.org/When-Output-Becomes-Abundant/&quot;&gt;&lt;em&gt;When Output Becomes Abundant&lt;/em&gt;&lt;/a&gt;. Production can accelerate while judgment and agreement become more demanding. Removing the need to relay a status update does not remove the need to hear an objection, make a commitment, or take responsibility for someone affected by a decision.&lt;/p&gt;
+
+&lt;p&gt;That human work deserves time. It also deserves a better setting than an endless procession of meetings whose purpose nobody can quite explain.&lt;/p&gt;
+
+&lt;p&gt;The original &lt;a href=&quot;https://agilemanifesto.org/&quot;&gt;Agile Manifesto&lt;/a&gt; challenged rigid approaches to software development by emphasizing people, collaboration, and adaptation. Its &lt;a href=&quot;https://agilemanifesto.org/principles.html&quot;&gt;principles&lt;/a&gt; included self-organization, trust, and a sustainable pace. There is a great deal there worth carrying forward.&lt;/p&gt;
+
+&lt;p&gt;I want to extend that approach to the community of work itself, beginning with capabilities that now exist. Knowledge can persist beyond a conversation. Contributions can arrive across time and distance. Agents can take on bounded work. The results of one effort can become the starting point for the next.&lt;/p&gt;
+
+&lt;p&gt;If we began there, what would we choose to value?&lt;/p&gt;
+
+&lt;h2 id=&quot;principles-for-work-in-the-age-of-ai&quot;&gt;Principles for Work in the Age of AI&lt;/h2&gt;
+
+&lt;p&gt;We begin with knowledge that can be shared, work that can proceed in parallel, and learning that can outlast any one participant. We organize people and agents around purposes the community can understand and help shape.&lt;/p&gt;
+
+&lt;p&gt;We value:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Shared purpose over inherited boundaries.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;A living commons over isolated experts.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Coordinated and Collaborative autonomy over serial handoffs.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Shared capability and gains over isolated productivity.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Roles, expertise, handoffs, and individual achievement remain useful. We judge them by how well they serve these principles.&lt;/p&gt;
+
+&lt;p&gt;Shared purpose means the people involved can explain who the work serves and what would make it worthwhile. They can also question it. If participation amounts to helping execute a decision nobody is allowed to examine, we have given the old arrangement a more appealing name. The people who do the work and the people who live with its consequences need a voice in defining success.&lt;/p&gt;
+
+&lt;p&gt;A living commons means &lt;a href=&quot;https://www.nber.org/papers/w31161&quot;&gt;expertise becomes something others can build upon&lt;/a&gt;. A useful decision leaves its reasoning behind. A corrected error improves the shared method. The person who documents a difficult exception receives credit for making everyone more capable. Privacy and confidentiality still apply, but access should not depend on knowing the right person to have a drink with after work.&lt;/p&gt;
+
+&lt;p&gt;Coordinated autonomy means giving people and agents room to act &lt;a href=&quot;/How-Much-Work-Can-Your-AI-Safely-Own/#set-the-right-authority-for-the-work&quot;&gt;within a clear purpose and appropriate limits&lt;/a&gt;. Independent work can proceed together. Dependencies stay visible. Someone has authority to accept the result, and someone can interrupt the work when it goes wrong. Accountability is a responsibility we name and support, not something we hope will emerge from the group.&lt;/p&gt;
+
+&lt;p&gt;Shared capability and shared gains mean asking what happens to the benefit. A team that teaches a system how its work really operates has contributed more than training data. Its members have supplied judgment, history, and ways of recognizing trouble. They should help decide how the recovered capacity is used, whether that means better service, time to learn, new responsibilities, or a more sustainable working day. When a role does disappear, that conversation must include paid time to retrain, support between roles, and how the affected people share in the benefit.&lt;/p&gt;
+
+&lt;p&gt;This is where the manifesto becomes more demanding than a call for efficiency.&lt;/p&gt;
+
+&lt;p&gt;If AI makes an organization more productive, leaders need to decide how the collective will benefit. That could mean better pay, greater job security, time to learn, or more control over their work. Employees should help shape those decisions. Promising that AI will eventually make their work more valuable is not enough; people need meaningful influence now.&lt;/p&gt;
+
+&lt;p&gt;AI agents may work around the clock, but people need reasonable hours and time away. Faster machines should not create an expectation that employees constantly review results, answer questions, or take on more work. Organizations should define what a completed job looks like and recognize its completion. Finishing sooner with AI should count as success, rather than automatically creating another obligation for more human effort.&lt;/p&gt;
+
+&lt;p&gt;You can test these commitments without reorganizing an entire company.&lt;/p&gt;
+
+&lt;p&gt;Imagine a recurring customer problem that needs a policy answer, an operational correction, and a clear explanation. In the familiar arrangement, three teams prepare three versions of the response. Each waits for information held by another.  Giving everyone an AI assistant might make the documents arrive faster while leaving the customer in the same queue.&lt;/p&gt;
+
+&lt;p&gt;Now organize the work around one shared outcome with, the relevant evidence, and the unresolved questions visible to the people authorized to work on it. Let agents investigate independent parts of the problem. Bring people together where the work requires judgment or agreement. Preserve the resolution and its reasoning so the next customer who is stuck in this problem can benefit.&lt;/p&gt;
+
+&lt;p&gt;The most revealing part may be what happens to the employee who used to carry the case between those teams. That person may know why the handoffs fail, which information is usually missing, and which exceptions cannot be treated as routine. Give them a role in changing the process. Their knowledge can become a contribution to the whole process instead of a skill the process keeps privately consuming.&lt;/p&gt;
+
+&lt;p&gt;Then examine the result. Did the customer receive a better outcome? Did the team spend less time recovering the context of the customer’s predicament? Did errors and rework decline? Could a new colleague understand what needed to be done?  Did the participants gain useful time and influence over their work?&lt;/p&gt;
+
+&lt;p&gt;If all we can demonstrate is that the system produced more text faster, we have more work to do.&lt;/p&gt;
+
+&lt;p&gt;I have argued before that &lt;a href=&quot;https://tedt.org/Beyond-the-Light-Bulb/&quot;&gt;AI adoption requires a change in the operating model&lt;/a&gt;. The communal question goes further. It asks what the new model owes to the people whose contributions make it possible. It asks whether a more capable institution can also become a place where people have a more meaningful part to play.&lt;/p&gt;
+
+&lt;p&gt;There is no guarantee that we will make that choice. Technology gives us possibilities, and institutions decide which ones become way of everyday life. We can use cheaper information work to preserve the same private authority with fewer people around it. We can also use it to widen access to knowledge, bring more experience into decisions, to spend more time making hard decisions, and make participation less dependent on where someone happens to sit in the building or in the organization.&lt;/p&gt;
+
+&lt;p&gt;The machinery alone cannot decide which future is worthwhile.&lt;/p&gt;
+
+&lt;p&gt;I come back to that conversation at Bob’s Big Boy, where we were talking about our plans for bringing Tolkien fans together.&lt;/p&gt;
+
+&lt;p&gt;There is a particular pleasure in finding people who care about a story you love. You can ask the question nobody else around you understands. Someone remembers a passage you missed. Someone else sees a character differently. What began as reading becomes a conversation, and the conversation gives people something to build together.&lt;/p&gt;
+
+&lt;p&gt;That is the possibility I want us to carry into the next age of work. Machines can help us find the information, prepare the work, and make more things possible. We still have to make room for one another in deciding what those possibilities are for. A person should be able to bring what they know, learn from someone else, and have a hand in what happens next.&lt;/p&gt;
+
+&lt;p&gt;The future beyond the mirror is difficult to picture. We can begin with something familiar: people gathering around a shared purpose, each with something to contribute. We can build the next part together.&lt;/p&gt;
+
+&lt;p&gt;Fellowship seems like a good word for that.&lt;/p&gt;
+
+&lt;p&gt;So I invite you, come and join the conversation; pull up a chair!&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+        
+          <uri>https://tedt.org/</uri>
+        
+      </author>
+
+      
+
+      
+        <category term="future of work" />
+      
+        <category term="human-ai collaboration" />
+      
+        <category term="knowledge commons" />
+      
+        <category term="organizational design" />
+      
+        <category term="coordinated autonomy" />
+      
+        <category term="shared gains" />
+      
+        <category term="community" />
+      
+
+      
+        <summary type="html">AI can take on more information work, but it cannot decide what work should mean for people. This manifesto argues for shared purpose, a living commons, coordinated autonomy, and shared gains as the foundations of communal work.</summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tedt.org/img/2026-09/Thru-the-Mirror-The-Future-of-work.webp" />
+      
+    </entry>
+  
+    
+    
+    <entry>
+      <title type="html">OpenAI, Hugging Face &amp;amp; Wikis: Recent Developments</title>
+      <link href="https://preview.tedt.org/slides/openai-hugging-face-wiki/" rel="alternate" type="text/html" title="OpenAI, Hugging Face &amp; Wikis: Recent Developments" />
+      <published>2026-09-10T00:00:00-07:00</published>
+      <updated>2026-09-10T00:00:00-07:00</updated>
+      <id>https://preview.tedt.org/slides/openai-hugging-face-wiki</id>
+      <content type="html" xml:base="https://preview.tedt.org/slides/openai-hugging-face-wiki/"></content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+          <email>ted@tschopp.org</email>
+        
+        
+          <uri>https://tedt.org/profile/</uri>
+        
+      </author>
+
+      
+
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://preview.tedt.org/slides/decks/openai-hugging-face-wiki/slide-preview.png" />
+      
+    </entry>
+  
+    
+    
+    <entry>
+      <title type="html">How Much Energy and Water Does AI Use?</title>
+      <link href="https://preview.tedt.org/Energy-and-Water-Usage-for-Models/" rel="alternate" type="text/html" title="How Much Energy and Water Does AI Use?" />
+      <published>2026-09-06T00:00:00-07:00</published>
+      <updated>2026-09-06T00:00:00-07:00</updated>
+      <id>https://preview.tedt.org/Energy-and-Water-Usage-for-Models</id>
+      <content type="html" xml:base="https://preview.tedt.org/Energy-and-Water-Usage-for-Models/">&lt;p&gt;I was asked how much electricity and water AI uses, and what that means. These are shared resources, and questions about their use deserve clear answers. The numbers vary, but familiar comparisons can help put them in context.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For a short text answer, the electricity use can be quite small.&lt;/strong&gt; A 2026 study estimated about &lt;strong&gt;0.3 watt-hours&lt;/strong&gt;, roughly enough to run a &lt;strong&gt;10-watt LED lightbulb for two minutes&lt;/strong&gt;. A longer reasoning response in the same study was estimated to use about &lt;strong&gt;4 watt-hours&lt;/strong&gt;, equivalent to keeping that bulb on for &lt;strong&gt;24 minutes&lt;/strong&gt;. These estimates describe particular text-based tasks and computing systems; individual requests can use more or less. &lt;a href=&quot;https://doi.org/10.1016/j.joule.2026.102430&quot;&gt;Research study&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;At the shorter-response estimate, asking 100 questions every day for a year would use around &lt;strong&gt;11 kilowatt-hours&lt;/strong&gt;—about what a 1,500-watt space heater uses in seven hours. A small amount per answer can still add up to substantial demand when millions of people use these services.&lt;/p&gt;
+
+&lt;p&gt;Training an AI model is a larger, separate undertaking. Training GPT-3, released in 2020, was estimated to require &lt;strong&gt;1.3 million kilowatt-hours&lt;/strong&gt;: roughly a year’s electricity purchases for &lt;strong&gt;120 average U.S. homes&lt;/strong&gt;, using the government’s 2022 household benchmark. Developing and updating a model can involve several training stages and experiments, but answering an ordinary question does not restart that process. &lt;a href=&quot;https://arxiv.org/pdf/2104.10350&quot;&gt;Training estimate&lt;/a&gt;, &lt;a href=&quot;https://www.eia.gov/tools/faqs/faq.php?id=97&amp;amp;t=7&quot;&gt;household benchmark&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Water use is harder to describe with one number.&lt;/strong&gt; Google estimated about &lt;strong&gt;five drops of cooling water&lt;/strong&gt; for its typical Gemini text response in May 2025. Mistral reported &lt;strong&gt;45 milliliters—about three tablespoons—for a roughly 300-word response&lt;/strong&gt;, using a broader calculation that includes impacts beyond cooling, such as manufacturing equipment. These figures describe different systems and count different things, so they cannot establish which service uses less water overall. &lt;a href=&quot;https://arxiv.org/html/2508.15734v1&quot;&gt;Google study&lt;/a&gt;, &lt;a href=&quot;https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai/&quot;&gt;Mistral disclosure&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Training also has a water footprint. One research scenario estimated &lt;strong&gt;5.4 million liters&lt;/strong&gt; for GPT-3’s training when cooling and electricity generation were included. That is &lt;strong&gt;just over two Olympic-size swimming pools&lt;/strong&gt;, assuming 2.5 million liters per pool. Another way of thinking about this at SCE is that this is the amount of water it would take to fill the pools of water that cooled the spent fuel at SONGS Unit 2 4x when it was operational.  Another SONGS compairson is that this was the amount of salt water SONGS Unit 2 and 3 processed in roughly 51 seconds to generate power.  That 5.4 million liters of water is a research estimate, rather than a disclosed measurement of water consumed during the actual training run. &lt;a href=&quot;https://arxiv.org/html/2304.03271v5&quot;&gt;Water study&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The water is &lt;strong&gt;not destroyed&lt;/strong&gt;. Evaporated water enters the atmosphere and eventually returns as precipitation, but it may return somewhere else or much later. A community experiencing drought still needs water in its own reservoirs and groundwater supplies today. That local availability is an important part of the environmental impact. &lt;a href=&quot;https://www.usgs.gov/mission-areas/water-resources/science/water-use-terminology&quot;&gt;USGS explanation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There are practical ways to reduce demand. Some cooling systems circulate the same water repeatedly, much like a car’s radiator. Microsoft reports that more than 90 percent of its Fairwater facility’s capacity uses a system with &lt;strong&gt;no evaporation losses&lt;/strong&gt;. That illustrates what newer facilities can achieve. &lt;a href=&quot;https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/&quot;&gt;Microsoft’s description&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Some escaping water can also be recovered. In 2021, MIT described demonstrations at its power facilities of equipment that collects water droplets from cooling-tower plumes and returns them for reuse. &lt;a href=&quot;https://news.mit.edu/2021/infinite-cooling-nuclear-0803&quot;&gt;MIT demonstration&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Cooling water can also carry useful heat from the computers.&lt;/strong&gt; Recovering that heat can warm buildings and reduce their need for other heating sources. In a 2024 report, Meta said its Odense data center supplied recovered heat through a local heating network to about &lt;strong&gt;7,000 households&lt;/strong&gt;. This makes further use of the energy consumed by computers; it does not recover all that energy or turn it back into electricity. &lt;a href=&quot;https://datacenters.atmeta.com/wp-content/uploads/2024/10/Denmark-Odense.pdf&quot;&gt;Meta’s facility report&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pacific Gas and Electric Company and developer Westbank announced plans in April 2025 for a San Jose development with &lt;strong&gt;three data centers and up to 4,000 homes&lt;/strong&gt;. The project would reuse data-center heat through a network serving surrounding buildings. &lt;a href=&quot;https://investor.pgecorp.com/news-events/press-releases/press-release-details/2025/PGE-Begins-Energy-Infrastructure-Upgrades-to-Bring-San-Joses-Net-Zero-Community-to-Life/default.aspx&quot;&gt;PG&amp;amp;E announcement&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For text, “tokens” are the small pieces of words and punctuation an AI processes. Electricity and water use can be expressed per million tokens, but those figures depend on the model, the task, and the facilities serving it. They are useful accounting measures when those conditions are specified.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+        
+          <uri>https://tedt.org/</uri>
+        
+      </author>
+
+      
+
+      
+        <category term="AI energy use" />
+      
+        <category term="AI water use" />
+      
+        <category term="model training" />
+      
+        <category term="AI inference" />
+      
+        <category term="data centers" />
+      
+        <category term="cooling" />
+      
+        <category term="heat recovery" />
+      
+        <category term="sustainability" />
+      
+
+      
+        <summary type="html">AI uses electricity and water, but the impact depends on the task, the model, and the facility. Familiar comparisons help explain the scale.</summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tedt.org/img/2026-09/Energy-and-Water-Usage-for-Models.webp" />
+      
+    </entry>
+  
+    
+    
+    <entry>
+      <title type="html">The Same Model, Different Rules</title>
+      <link href="https://preview.tedt.org/The-Same-Model-Different-Rules/" rel="alternate" type="text/html" title="The Same Model, Different Rules" />
+      <published>2026-09-05T09:00:00-07:00</published>
+      <updated>2026-09-05T09:00:00-07:00</updated>
+      <id>https://preview.tedt.org/The-Same-Model-Different-Rules</id>
+      <content type="html" xml:base="https://preview.tedt.org/The-Same-Model-Different-Rules/">&lt;h1 id=&quot;the-same-model-different-rules&quot;&gt;The Same Model, Different Rules&lt;/h1&gt;
+
+&lt;h2 id=&quot;a-broken-iphone-and-a-slowly-charging-blackberry&quot;&gt;A Broken iPhone and a Slowly Charging BlackBerry&lt;/h2&gt;
+
+&lt;p&gt;In 2007, &lt;a href=&quot;https://tedt.org/sucks-to-be-me-from-blackberry-to-iphone-to-blackberry-again/&quot;&gt;I dropped my iPhone at lunch&lt;/a&gt;. The glass shattered.&lt;/p&gt;
+
+&lt;p&gt;At the Apple Store, I was told the repair would cost $250. I asked for a loaner. They didn’t have one. I asked to have the repaired phone shipped to my home. One employee said they couldn’t do that. Another corrected him: they could. A refurbished replacement wasn’t an option either.&lt;/p&gt;
+
+&lt;p&gt;So I was back on my BlackBerry, which was charging slowly, while I waited for an iPhone expected back in two or three business days.&lt;/p&gt;
+
+&lt;p&gt;The broken glass was easy to see. The other dependencies became visible one question at a time. What would the store repair? What could it replace? Who knew the shipping rules? What could I use while the phone was gone?&lt;/p&gt;
+
+&lt;p&gt;The answers determined how I would get through the interruption.&lt;/p&gt;
+
+&lt;p&gt;An enterprise choosing an AI service faces a version of that same problem. The technology may be impressive. But the work also depends on arrangements around it: who can use it, who can change the conditions, and what remains available when the preferred option disappears.&lt;/p&gt;
+
+&lt;p&gt;Those arrangements deserve attention before something breaks.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;AI procurement now includes the conditions under which work can start, continue, and stop.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;On June 9, Anthropic released Claude Fable 5 and its restricted-access counterpart, Mythos 5. Three days later, access to both was suspended.&lt;/p&gt;
+
+&lt;p&gt;In its account of the interruption, Anthropic said newly imposed export controls required restrictions based on nationality. Unable to verify nationality reliably in real time, it suspended access for everyone. Fable access was restored on July 1. &lt;a href=&quot;https://www.anthropic.com/news/redeploying-fable-5&quot;&gt;Anthropic’s account&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A team evaluating the model could have tested its answers, measured its speed, and calculated its cost. Those tests would have helped determine whether it could do useful work. They would not have established whether the team could keep using it when the conditions of access changed.&lt;/p&gt;
+
+&lt;p&gt;That is the purchasing question the September announcements bring into sharper focus.&lt;/p&gt;
+
+&lt;p&gt;An enterprise needs to approve a service configuration: the model, the route to it, the people permitted to use it, the data arrangements, and the response when any of those conditions changes. A model name alone cannot describe that purchase.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-differences-are-already-reaching-buyers&quot;&gt;The Differences Are Already Reaching Buyers&lt;/h2&gt;
+
+&lt;p&gt;Anthropic describes Fable 5.1 and Mythos 5.1 as the same underlying model with different safeguards. Fable is generally available; Mythos is offered through trusted-access arrangements supporting sensitive cybersecurity and life-sciences work. Access remains program-dependent. &lt;a href=&quot;https://www.anthropic.com/claude-fable-and-mythos-5-1&quot;&gt;Anthropic’s September announcement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Google describes Gemini 3.8 Flash and Flash Cyber as sharing foundational intelligence, with different safeguards and deployment arrangements. Flash Cyber is restricted to trusted defenders through Fairwind. Google’s wording does not establish identical model weights, so the two companies’ claims should not be treated as interchangeable. &lt;a href=&quot;https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/&quot;&gt;Google’s announcement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Restricted access is not new. What these releases make increasingly visible is how much of the product sits around the intelligence.&lt;/p&gt;
+
+&lt;p&gt;The differences also extend beyond the model companies’ announcements.&lt;/p&gt;
+
+&lt;p&gt;Harvey’s Sept. 1 notice makes Fable 5.1 an opt-in offering. It warns that the model’s processing practices may differ from commitments in existing customer agreements, describes a time-bound zero-retention arrangement for eligible customers, and says processing occurs in the United States. Those statements describe Harvey’s published offering; they should not be generalized to every distribution channel. &lt;a href=&quot;https://www.harvey.ai/blog/fable-5-1-in-harvey&quot;&gt;Harvey’s implementation notice&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Cursor documents a different set of operating decisions. Enterprise customers need explicit approval to enable Fable 5.1. Cursor’s own Privacy Mode does not eliminate Anthropic’s separate retention requirements. Requests that trigger safeguards can automatically fall back to Opus. &lt;a href=&quot;https://cursor.com/docs/models/claude-fable-5-1&quot;&gt;Cursor’s documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;These are commercially interested providers describing their implementations, not independent studies of customer outcomes. They nevertheless establish something useful: choosing the model does not settle the terms under which an employee encounters it.&lt;/p&gt;
+
+&lt;p&gt;The route matters. So does the agreement attached to that route.&lt;/p&gt;
+
+&lt;h2 id=&quot;write-down-the-service-you-are-approving&quot;&gt;Write Down the Service You Are Approving&lt;/h2&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://tedt.org/Model-Portability-Is-Not-AI-Portability/&quot;&gt;“Model Portability Is Not AI Portability,”&lt;/a&gt; I argued that moving a model does not automatically move the complete working system. The newer question is what happens when parts of that system change while the model name stays the same.&lt;/p&gt;
+
+&lt;p&gt;Anthropic’s versioning documentation provides a concrete example. A model ID pins the model’s weights and configuration, but surrounding infrastructure—including routing, safety classifiers, and sampling logic—can change. The documentation says those changes can affect observable behavior. &lt;a href=&quot;https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions&quot;&gt;Model IDs and versioning&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A fixed model version is useful. It is not a frozen service.&lt;/p&gt;
+
+&lt;p&gt;The enterprise catalog therefore needs to record more than “approved model.” It needs to describe the approved use of that model and the evidence supporting the approval.&lt;/p&gt;
+
+&lt;p&gt;Consider a hypothetical internal source-code review service. Its purpose is to inspect approved repositories and propose repairs. The following is a proposed approval record, not a claim that a particular product already satisfies every requirement.&lt;/p&gt;
+
+&lt;table class=&quot;well table table-striped&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Boundary&lt;/th&gt;
+      &lt;th&gt;Proposed Configuration&lt;/th&gt;
+      &lt;th&gt;Owner and Evidence&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Model and routing&lt;/td&gt;
+      &lt;td&gt;Fable 5.1 through the company gateway to the Claude API; no unapproved fallback&lt;/td&gt;
+      &lt;td&gt;The platform owner records the exact model ID, interface, routing settings, and test results. Supplier-controlled changes are tracked separately.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Eligible users and entities&lt;/td&gt;
+      &lt;td&gt;One corporate entity’s internal security team; no assumed access for affiliates or contractors&lt;/td&gt;
+      &lt;td&gt;Procurement confirms applicable access rights. The identity team enforces membership. Unconfirmed coverage blocks access.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Permitted actions&lt;/td&gt;
+      &lt;td&gt;Read isolated copies of two approved repositories and draft patches; no merging or production deployment&lt;/td&gt;
+      &lt;td&gt;The application owner enforces tool permissions and tests attempted actions outside that scope.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Data handling&lt;/td&gt;
+      &lt;td&gt;Only approved source code, with processing, storage, review locations, and retention explicitly accepted&lt;/td&gt;
+      &lt;td&gt;Privacy and security owners retain the applicable terms and verified data-flow description. Unknown locations or retention conditions block approval.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Monitoring and evidence&lt;/td&gt;
+      &lt;td&gt;Company-held records of requests, actions, approvals, and unfinished work, limited to necessary information&lt;/td&gt;
+      &lt;td&gt;Security identifies authorized reviewers and tests whether required evidence remains retrievable after supplier access is lost.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Interruption and recovery&lt;/td&gt;
+      &lt;td&gt;Pause affected jobs; use a separately approved alternative or manual review&lt;/td&gt;
+      &lt;td&gt;The service owner names the person authorized to resume work and records a tested recovery procedure.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Each row needs a status: documented, contractually confirmed where necessary, or not yet tested. A public description of a feature is not evidence that the enterprise has enabled it correctly.&lt;/p&gt;
+
+&lt;p&gt;There are also two different owners to record. One can change the condition. The other decides whether the enterprise can continue operating after that change.&lt;/p&gt;
+
+&lt;p&gt;The supplier may change a classifier. Your architecture board cannot prevent that merely by approving a design. It can decide what evidence is needed afterward and whether the affected workflow must pause.&lt;/p&gt;
+
+&lt;p&gt;That distinction turns an inventory into an operating record.&lt;/p&gt;
+
+&lt;h2 id=&quot;keep-control-of-the-actions&quot;&gt;Keep Control of the Actions&lt;/h2&gt;
+
+&lt;p&gt;Provider permission and enterprise authority still answer different questions.&lt;/p&gt;
+
+&lt;p&gt;A supplier may permit vulnerability analysis. That does not authorize an agent to inspect every system reachable from your network. An employee may be allowed to read a repository without being allowed to deploy a repair.&lt;/p&gt;
+
+&lt;p&gt;The earlier &lt;a href=&quot;https://tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/&quot;&gt;capability-versus-authority argument&lt;/a&gt; remains the foundation. The purchasing decision now needs to establish which controls the enterprise can enforce independently of the supplier’s judgment.&lt;/p&gt;
+
+&lt;p&gt;For consequential workflows, those controls should include user identity, permitted tools and targets, approval before consequential changes, records of completed actions, and a way to stop further execution. Their effectiveness should not depend on the model agreeing that a request is inappropriate.&lt;/p&gt;
+
+&lt;p&gt;Google’s Fairwind requirements illustrate the division. Google controls program admission, while participants must implement user authentication, phishing-resistant multifactor authentication, applicable access controls, and tracking of employee access and use. Access is limited to specified internal security teams. &lt;a href=&quot;https://deepmind.google/fairwind-program/&quot;&gt;Fairwind’s governance requirements&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This does not mean every enterprise should rebuild the provider’s safeguards.&lt;/p&gt;
+
+&lt;p&gt;A managed service may be sufficient when it can demonstrate the required controls and the customer can administer and audit them. An enterprise-controlled harness becomes necessary where the workflow requires permissions, approvals, evidence, or recovery that the managed service cannot reliably provide.&lt;/p&gt;
+
+&lt;p&gt;“Controlled” does not have to mean “built from scratch.” It means the organization can establish and enforce the required boundary. If neither the purchased service nor an integration can do that, the consequential action should remain outside the automation.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-custody-is-another-operating-responsibility&quot;&gt;Data Custody Is Another Operating Responsibility&lt;/h2&gt;
+
+&lt;p&gt;Anthropic’s planned Enterprise Frontier Safeguards would allow monitoring data to reside in customer-controlled cloud infrastructure, with options for customer-managed keys and customer review of flagged activity. Rollout is planned in phases later this fall. The storage, key-management, and review options are separately configurable; the announcement should not be read as proof that every customer already has them. &lt;a href=&quot;https://www.anthropic.com/news/enterprise-frontier-safeguards&quot;&gt;Enterprise Frontier Safeguards&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Its interim zero-retention arrangement also has limits. Anthropic describes it as temporary and restricted to eligible uses. Real-time safeguards and enforcement continue to apply, and the company says it may modify or withdraw the arrangement. &lt;a href=&quot;https://support.claude.com/en/articles/15425695-covered-models&quot;&gt;Covered Models guidance&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Moving records into the customer’s environment changes custody. It does not remove the need to monitor activity, investigate problems, or establish who can suspend service.&lt;/p&gt;
+
+&lt;p&gt;Someone must receive the alert. Someone must have permission to examine the evidence. Someone must distinguish misuse from legitimate work that was incorrectly flagged.&lt;/p&gt;
+
+&lt;p&gt;For a multinational organization, the approval record should separately identify the contracting entity, eligible users, inference locations, stored-data locations, and locations from which people may review the data. An approved storage region does not answer all those questions.&lt;/p&gt;
+
+&lt;p&gt;Harvey’s processing notice supplies one concrete reason to ask. It does not establish what every organization in Europe, the United Kingdom, or Asia-Pacific may lawfully or contractually do. Those decisions require the exact service configuration and applicable agreement, not a general claim of global availability.&lt;/p&gt;
+
+&lt;h2 id=&quot;purchase-the-change-and-exit-arrangements&quot;&gt;Purchase the Change and Exit Arrangements&lt;/h2&gt;
+
+&lt;p&gt;The contract discussion should describe events, not merely desirable qualities.&lt;/p&gt;
+
+&lt;p&gt;Anthropic’s public commercial terms, for example, allow suspension in specified circumstances and describe reasonable efforts to provide written notice and restore access after a curable cause is resolved. That is different from a guaranteed advance-warning period or a fixed recovery time. Customer-specific agreements may differ. &lt;a href=&quot;https://www.anthropic.com/legal/commercial-terms&quot;&gt;Public commercial terms, Section I&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Procurement, legal, security, and the service owner should resolve four practical matters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Changes and versions:&lt;/strong&gt; What is pinned, what can change around it, what notice is available, and what testing is required before affected work continues?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scope and location:&lt;/strong&gt; Which entities, employees, contractors, purposes, and processing arrangements are covered? Does an approval survive a change in any of them?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Evidence and review:&lt;/strong&gt; What information can the customer obtain during an incident, who reviews disputed flags, and what remains accessible if the account is suspended?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Revocation and exit:&lt;/strong&gt; What can trigger loss of eligibility, how can a decision be challenged, and what export, transition assistance, charges, and time limits apply?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are matters to confirm or negotiate, not assurances that suppliers necessarily offer.&lt;/p&gt;
+
+&lt;p&gt;The purchasing decision must also survive an unwelcome answer. If the provider cannot guarantee advance notice, a critical workflow needs a tested interruption response. If the evidence needed to reconstruct a transaction cannot be obtained, that workflow may need different architecture.&lt;/p&gt;
+
+&lt;p&gt;A contract cannot prevent every interruption. It can make the responsibilities clearer before people are trying to recover under pressure.&lt;/p&gt;
+
+&lt;h2 id=&quot;rehearse-losing-access&quot;&gt;Rehearse Losing Access&lt;/h2&gt;
+
+&lt;p&gt;Now take the hypothetical code-review service and interrupt it.&lt;/p&gt;
+
+&lt;p&gt;The supplier suspends the organization’s access while several reviews are underway. Some draft patches have been saved. Other jobs are waiting. This is a planning scenario, not a reported customer incident.&lt;/p&gt;
+
+&lt;p&gt;The platform should stop dispatching affected work and preserve the records it is authorized to retain. The service owner should establish which jobs completed, which produced partial work, and which never started.&lt;/p&gt;
+
+&lt;p&gt;Paused does not mean rolled back.&lt;/p&gt;
+
+&lt;p&gt;Next, determine the scope and reason for the restriction. A service interruption, suspected credential misuse, and a prohibition on the requested activity require different responses. An alternative model is appropriate only when the work remains permitted and the replacement’s access rights, data handling, quality, and controls have been approved. Changing accounts to evade a restriction is not recovery.&lt;/p&gt;
+
+&lt;p&gt;If no approved alternative exists, route the work to manual review or hold it. The owner should know how much work that alternative can absorb and when delays become unacceptable.&lt;/p&gt;
+
+&lt;p&gt;This is where the &lt;a href=&quot;https://tedt.org/Why-AI-Needs-a-Harness/&quot;&gt;harness around the model&lt;/a&gt; earns its cost. It preserves the organization’s ability to understand and manage unfinished work, even when the supplier is unavailable.&lt;/p&gt;
+
+&lt;p&gt;The rehearsal should also produce a cost estimate.&lt;/p&gt;
+
+&lt;p&gt;Suppose a switch requires 80 engineering hours and 40 review hours at an assumed blended rate of $150 an hour. That is $18,000 before additional licenses, parallel operation, service charges, or delayed work. These are illustrative assumptions, not measured customer costs.&lt;/p&gt;
+
+&lt;p&gt;Use your own drill to replace them.&lt;/p&gt;
+
+&lt;p&gt;Record the effort required to reconstruct work, validate the replacement, obtain approvals, and clear the backlog. Compare that expense with the cost of maintaining a ready alternative. Some workflows will justify the investment. Others will be adequately served by a documented manual procedure.&lt;/p&gt;
+
+&lt;p&gt;Token prices alone cannot make that decision.&lt;/p&gt;
+
+&lt;h2 id=&quot;keep-the-claim-proportionate&quot;&gt;Keep the Claim Proportionate&lt;/h2&gt;
+
+&lt;p&gt;The public evidence supports a narrower conclusion than a sweeping transformation of every enterprise purchase.&lt;/p&gt;
+
+&lt;p&gt;Specialized access may remain concentrated in sensitive domains. Providers may be better equipped than individual customers to operate sophisticated safeguards. A routine drafting workflow may need little beyond existing access controls and a human fallback.&lt;/p&gt;
+
+&lt;p&gt;There is also an evidence boundary. Harvey and Cursor document real service arrangements, but their notices are not independent evaluations of enterprise outcomes. Public documentation does not establish the full regional eligibility of restricted programs, negotiated customer commitments, or measured switching costs. Those parts of the original reporting brief remain open.&lt;/p&gt;
+
+&lt;p&gt;The practical conclusion does not require pretending otherwise.&lt;/p&gt;
+
+&lt;p&gt;Before placing consequential work behind a model endpoint, describe the complete service, identify who can change its conditions, and test how the work will be recovered. Scale that preparation to the consequence of interruption.&lt;/p&gt;
+
+&lt;p&gt;We don’t need to return to June.  This week OpenAI launched a new set of models, including those that are restricted to people working in the cyber security space.  If you intend to apply for access to these systems, you need to understand the eligibility requirements and prepare the necessary documentation, the question was no longer simply how well the model could perform.  It also needs to include how you will handle interruptions, maintain continuity, and ensure that critical work can proceed even if access is temporarily unavailable.&lt;/p&gt;
+
+&lt;p&gt;The work still needs somewhere to go.&lt;/p&gt;
+
+&lt;p&gt;A useful AI purchasing decision gives it that place: a permitted route, a recoverable state, and a person who knows what happens next.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-practical-lesson&quot;&gt;The Practical Lesson&lt;/h2&gt;
+
+&lt;p&gt;I broke that iPhone, and for a while lost access to my brand new phone.  A shattered screen and a supplier suspending model access are different failures.&lt;/p&gt;
+
+&lt;p&gt;But both lead to a practical question: what can you do while the thing you depend on is unavailable?&lt;/p&gt;
+
+&lt;p&gt;I had asked for a loaner. What I actually had was my old phone, aslowly charging BlackBerry. Returning to it was inconvenient, but it gave me something to use while I waited.&lt;/p&gt;
+
+&lt;p&gt;For an enterprise, the equivalent deserves more preparation. The alternative needs the right permissions, access to the necessary work, and someone authorized to decide when it is safe to continue. Its limitations need to be understood before people are depending on it.&lt;/p&gt;
+
+&lt;p&gt;Choose the capable model. Test what it can accomplish. Then give the arrangements around it the same attention.&lt;/p&gt;
+
+&lt;p&gt;Before handing over important work, know what your BlackBerry is.&lt;/p&gt;
+
+&lt;p&gt;And make sure it is charged.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+        
+          <uri>https://tedt.org/</uri>
+        
+      </author>
+
+      
+
+      
+        <category term="enterprise AI" />
+      
+        <category term="AI procurement" />
+      
+        <category term="AI governance" />
+      
+        <category term="model access" />
+      
+        <category term="operational resilience" />
+      
+        <category term="service continuity" />
+      
+        <category term="vendor risk" />
+      
+        <category term="data custody" />
+      
+        <category term="access controls" />
+      
+        <category term="AI portability" />
+      
+
+      
+        <summary type="html">AI procurement must define not only which model is approved, but also its access rules, data custody, interruption response, and exit arrangements.</summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tedt.org/img/2026-09/iPhone-Pearl.webp" />
+      
+    </entry>
+  
+    
+    
+    <entry>
+      <title type="html">Model Portability Is Not AI Portability</title>
+      <link href="https://preview.tedt.org/Model-Portability-Is-Not-AI-Portability/" rel="alternate" type="text/html" title="Model Portability Is Not AI Portability" />
+      <published>2026-08-28T09:00:00-07:00</published>
+      <updated>2026-08-28T09:00:00-07:00</updated>
+      <id>https://preview.tedt.org/Model-Portability-Is-Not-AI-Portability</id>
+      <content type="html" xml:base="https://preview.tedt.org/Model-Portability-Is-Not-AI-Portability/">&lt;h1 id=&quot;model-portability-is-not-ai-portability&quot;&gt;Model Portability Is Not AI Portability&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Large enterprises are learning how to switch models. Moving a working business process without losing quality, controls, or money is a different problem.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;When I was a child, I loved trains. I still do. To me, they are the Industrial Revolution made visible: steel, power, motion, and human coordination assembled into machines capable of carrying people and freight across great distances. A train is not merely a machine. It is an entire system moving through the world.  They made the world a smaller and more connected place.&lt;/p&gt;
+
+&lt;p&gt;My dad would take me to the model train exhibits at the LA County Fair and to the train store in Pasadena on Route 66. Fairplex offered both ends of the experience. It had a collection of full-sized trains outside and an entire section devoted to model railroads.&lt;/p&gt;
+
+&lt;p&gt;For my parents, this was a wonderfully efficient arrangement. They could settle into the shade while I remained occupied for most of the day. They watched me watch the model trains travel round and round their carefully built layouts. I could also go and climb over those enormous beasts of steel and by the end of the day, I was exhausted, happy, and if I had been paying attention, I would have learned something about how the system worked.&lt;/p&gt;
+
+&lt;p&gt;You see as I moved back and forth between two versions of the same world. On one side of Fairplex, I could stand over an entire railway and watch the system operate in miniature. But over on the other side, I was the miniature, climbing through locomotives built on a scale that made a child look very small.&lt;/p&gt;
+
+&lt;p&gt;The difference was scale. The resemblance was the system.&lt;/p&gt;
+
+&lt;p&gt;The locomotives were what drew the eye, whether they were small enough to hold or large enough to climb through. But even a model train cannot make a journey by itself.&lt;/p&gt;
+
+&lt;p&gt;The locomotive needs track of the right gauge. It needs compatible power and controls. Its couplers must fit the cars. Switches must send it down the intended line. Signals must keep it from colliding with something already there. Behind the entire layout is someone who built it, maintains it, and knows what to do when a train stops where it should not.&lt;/p&gt;
+
+&lt;p&gt;You can place two locomotives beside the same track and say that you have a choice of engines. That does not mean you can move the same set of rail cars to another railway and expect the journey to work unchanged.&lt;/p&gt;
+
+&lt;p&gt;The engine may be replaceable. The journey still depends on the system around it that makes up the locomotive, the switches, the signals, and the layout of the tracks.&lt;/p&gt;
+
+&lt;p&gt;Those model railways offer a useful parable for Enterprise AI. Companies are adding second and third models, putting gateways in front of them, and declaring themselves vendor independent.&lt;/p&gt;
+
+&lt;p&gt;What they have usually gained is model choice.&lt;/p&gt;
+
+&lt;p&gt;Whether they have gained AI portability is a much harder question.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-model-is-the-visible-part&quot;&gt;The Model Is the Visible Part&lt;/h2&gt;
+
+&lt;p&gt;A multi-model gateway can route requests to models from OpenAI, Anthropic, Google, or an open-weight provider. It can centralize authentication, monitor usage, apply cost controls, ensure DLP policies are adhered to and redirect traffic when one provider is unavailable.&lt;/p&gt;
+
+&lt;p&gt;That is useful. In many enterprises, it is also necessary.&lt;/p&gt;
+
+&lt;p&gt;But it is not the same as moving a business workflow.  Model portability means that an application can call another model.  AI portability means that another model can complete the same business task without unacceptable losses in quality, permissions, observability, recovery, regulatory control, or cost.  The first is an interface problem.  The second is a systems problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://engineering.zalando.com/posts/2026/08/agentic-engineering-at-zalando-a-snapshot.html&quot;&gt;Zalando&lt;/a&gt;offers a useful example. Its engineering platform gives more than 250 teams access to models through a LiteLLM-based proxy connected to OpenAI, Amazon Bedrock, and Google Vertex. Their proxy centralizes adoption measurements, cost tracking, caching, client configuration, and model retirement.&lt;/p&gt;
+
+&lt;p&gt;But that proxy is only part of the story.&lt;/p&gt;
+
+&lt;p&gt;Around it, Zalando has developed authentication injection, Model Context Protocol access, shared agent skills, configuration management, and other supporting services. The company is also working on an identity broker, token vault, agent sandboxing, and model routing.&lt;/p&gt;
+
+&lt;p&gt;Even then, it reports that users become attached to particular coding tools and model styles. They rarely switch models unless a limit or error forces the issue. This is not a criticism of Zalando. It is evidence of how the work really evolves.&lt;/p&gt;
+
+&lt;p&gt;The gateway solved a lot of problems.  It centralized and simplified access.  Adoption created a platform. The platform created new operating responsibilities.  Human habits created a dependency.&lt;/p&gt;
+
+&lt;p&gt;And dependencies that can not disappear, create risk.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-harness-is-part-of-the-product&quot;&gt;The Harness Is Part of the Product&lt;/h2&gt;
+
+&lt;p&gt;I have argued before that an AI harness gives a model tools, memory, permissions, verification, and recovery. It turns a model that can discuss work into a system that can participate in the work. &lt;a href=&quot;https://tedt.org/Why-AI-Needs-a-Harness/&quot;&gt;Why AI Needs a Harness&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;What is now clear is that the harness determines how replaceable the model really is.&lt;/p&gt;
+
+&lt;p&gt;NVIDIA recently reported that its Agentic Variation Operators system completed all 183 levels in the public ARC-AGI-3 set. The system paired a frontier model with persistent memory, tools, supervision, feedback, and recovery mechanisms.&lt;/p&gt;
+
+&lt;p&gt;The important point was not simply the benchmark score. NVIDIA argued that long-running performance belonged to the complete agent system, not to the model alone. &lt;a href=&quot;https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/&quot;&gt;NVIDIA’s AVO report&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;That result requires repeatability.  This was vendor-reported, and only applies to the public benchmark set.  It was not a controlled measurement of the harness’s individual contribution. NVIDIA acknowledges those limitations.&lt;/p&gt;
+
+&lt;p&gt;Still, the architectural lesson is useful and a warning for enterprises.&lt;/p&gt;
+
+&lt;p&gt;If memory, tools, instructions, evaluation, and recovery materially affect the result, replacing the model while changing nothing else may be impossible. A prompt tuned for one model may fail with another. A tool-calling pattern may behave differently. A safety filter may block a previously accepted workflow. A replacement model may produce the correct answer while losing the evidence required to trust it.&lt;/p&gt;
+
+&lt;p&gt;Performance and portability belong to the whole system and so does risk.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-must-the-enterprise-own&quot;&gt;What Must the Enterprise Own?&lt;/h2&gt;
+
+&lt;p&gt;Does this mean the enterprise must build and own the entire AI stack?&lt;/p&gt;
+
+&lt;p&gt;No.&lt;/p&gt;
+
+&lt;p&gt;An enterprise does not need to own every model, user interface, orchestration framework, or piece of infrastructure. It does need to control the assets that define successful work.&lt;/p&gt;
+
+&lt;p&gt;The first is the workflow contract. This describes what the task is, which inputs it requires, what the agent may do, what it may not do, what the output should contain, and how the organization knows the work is complete.&lt;/p&gt;
+
+&lt;p&gt;The second is the evaluation set. This includes representative cases, known edge conditions, failure examples, adversarial tests, acceptance thresholds, and situations requiring human review. If a vendor owns the only credible test of the system, the enterprise cannot independently determine whether a replacement works.&lt;/p&gt;
+
+&lt;p&gt;The third is identity and authorization. An agent acting for an employee, customer, or business process must carry the correct permissions and delegation history. Those controls cannot quietly disappear when the model changes.&lt;/p&gt;
+
+&lt;p&gt;The fourth is operational evidence. The enterprise needs usable traces showing what information the system accessed, which tools it called, what actions it attempted, what failed, and how it produced the final result.&lt;/p&gt;
+
+&lt;p&gt;Finally, the enterprise must own the recovery process. The business must decide when the system stops, when a person intervenes, what gets rolled back, what gets retried, and what evidence is retained.&lt;/p&gt;
+
+&lt;p&gt;These assets form the trusted action surface around AI. That is where much of the durable enterprise value now lives. &lt;a href=&quot;https://tedt.org/AI-Value-Stream/&quot;&gt;The AI Value Stream&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The model supplies capability.&lt;/p&gt;
+
+&lt;p&gt;The enterprise must retain control over meaning, authority, and proof.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-do-you-measure-a-switch&quot;&gt;How Do You Measure a Switch?&lt;/h2&gt;
+
+&lt;p&gt;Portability should be tested, not declared or assumed. If the workflow is critical to the company the enterprise should have metrics around how much it costs to move.&lt;/p&gt;
+
+&lt;p&gt;Choose one bounded production workflow. Establish a baseline using the current model and platform. Measure whether the system completes the task correctly, how often a person must intervene, how long the work takes, what it costs, and what happens when something goes wrong.&lt;/p&gt;
+
+&lt;p&gt;Then move that workflow to another model or provider.&lt;/p&gt;
+
+&lt;p&gt;Do not stop when the new endpoint returns a response. Record the complete portability delta:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Migration time:&lt;/strong&gt; How long did the change take, including security review, integration, testing, deployment, and employee preparation?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Engineering effort:&lt;/strong&gt; How many instructions, skills, tool definitions, integrations, and recovery routines had to be rewritten?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Quality change:&lt;/strong&gt; Did completion rates, factual errors, policy violations, or human corrections improve or decline?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Control loss:&lt;/strong&gt; Were permissions, regional restrictions, logs, citations, retention rules, and rollback capabilities preserved?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Economic change:&lt;/strong&gt; Did the cost of a completed and accepted result improve, or did a lower model price create more retries and human review?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Behavioral change:&lt;/strong&gt; Could employees use the replacement effectively, or had the existing tool become part of how they understood the work?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The organization should not compress these measures into a single portability score. It needs enough evidence to see where the dependency actually resides.&lt;/p&gt;
+
+&lt;p&gt;It may reside in the model. It may reside in a proprietary tool interface, a vendor-specific memory system, a skill library, an evaluation service, or the accumulated habits of the workforce.&lt;/p&gt;
+
+&lt;p&gt;The economic measure is especially important. Token prices are easy to compare because vendors publish them. The meaningful unit is the cost of a finished job. &lt;a href=&quot;https://tedt.org/The-Cost-of-a-Finished-Job/&quot;&gt;The Cost of a Finished Job&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A cheaper engine does not lower the cost of the journey if every car must be rebuilt before it can move.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-is-an-internal-harness-worth-building&quot;&gt;When Is an Internal Harness Worth Building?&lt;/h2&gt;
+
+&lt;p&gt;An internal harness makes sense when the workflow differentiates the business, crosses several enterprise systems, handles sensitive or regulated information, or operates at enough scale to justify a shared platform.&lt;/p&gt;
+
+&lt;p&gt;It may also be necessary when the enterprise needs to move between providers or regions for resilience, sovereignty, negotiating leverage, or legal compliance.&lt;/p&gt;
+
+&lt;p&gt;But an internal harness is not automatically the mature answer.&lt;/p&gt;
+
+&lt;p&gt;For standardized work, an integrated vendor platform may be the better decision. &lt;a href=&quot;https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/&quot;&gt;Salesforce and Anthropic&lt;/a&gt;, for example, are combining Claude with Salesforce data, permissions, business rules, workflows, and prebuilt skills. Salesforce says authentication and permissions can be managed centrally while actions continue to pass through Salesforce controls.&lt;/p&gt;
+
+&lt;p&gt;Some of those capabilities remain in pilot or planned availability, and the claims come from the vendors themselves. Still, the attraction is easy to understand especially if you are already invested heavily into Salesforce and believe that the vendor’s controls meet your business needs.&lt;/p&gt;
+
+&lt;p&gt;If the business process already lives inside one platform, the integrated option may reduce implementation time, preserve an established security boundary, and provide a more coherent user experience.&lt;/p&gt;
+
+&lt;p&gt;The decision therefore depends on the value of the option.&lt;/p&gt;
+
+&lt;p&gt;Build or configure with the vendor’s platform or retain an enterprise-controlled harness so that when you switch suppliers, you can preserve specialized workflows, or control critical business actions has material value.&lt;/p&gt;
+
+&lt;p&gt;Choose the integrated platform when the workflow is standard, the provider’s controls meet the business need, and the organization would gain little from operating another internal platform.&lt;/p&gt;
+
+&lt;p&gt;Portability is not a moral virtue. It is an option that will cost you.&lt;/p&gt;
+
+&lt;p&gt;The enterprise should purchase that option when the likely cost of disruption, regulatory change, supplier failure, or strategic dependence exceeds the cost of maintaining the vendor / model lock-in.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-belongs-in-the-contract&quot;&gt;What Belongs in the Contract?&lt;/h2&gt;
+
+&lt;p&gt;If a model or platform is supposed to be replaceable, the commercial agreement should preserve the evidence and assets needed to replace it.&lt;/p&gt;
+
+&lt;p&gt;That includes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Access to prompts, skills, workflow configurations, and evaluation results&lt;/li&gt;
+  &lt;li&gt;Export of logs, traces, business state, and system-generated records&lt;/li&gt;
+  &lt;li&gt;Ownership and permitted reuse of derived artifacts&lt;/li&gt;
+  &lt;li&gt;Notice before model retirement or material behavioral changes&lt;/li&gt;
+  &lt;li&gt;Access to fixed model versions when reproducibility matters&lt;/li&gt;
+  &lt;li&gt;Clear rules for data retention, model training, subprocessors, and regional processing&lt;/li&gt;
+  &lt;li&gt;Tool-call and application programming interface compatibility commitments&lt;/li&gt;
+  &lt;li&gt;The right to test alternative models against enterprise evaluation sets&lt;/li&gt;
+  &lt;li&gt;Transition assistance when the contract ends&lt;/li&gt;
+  &lt;li&gt;Rollback procedures when an upgrade changes workflow behavior&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A contract cannot make two models behave identically.&lt;/p&gt;
+
+&lt;p&gt;It can prevent the enterprise from discovering, too late, that the information needed to perform a migration belongs to the supplier.&lt;/p&gt;
+
+&lt;p&gt;It should be noted that if a vendor refuses to provide these rights, the enterprise may have to accept that the model is not replaceable and that the business process is now dependent on a single supplier.  This actually might be that vendor’s strategy, and it is not necessarily a bad one for either party.  It is just a business decision that you need to make for your enterprise and completely understand before it invests in a lock-in.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-does-the-harness-become-the-new-risk&quot;&gt;When Does the Harness Become the New Risk?&lt;/h2&gt;
+
+&lt;p&gt;There is one more complication.&lt;/p&gt;
+
+&lt;p&gt;An enterprise may reduce its dependence on a model provider and create a new dependency on its own internal platform.&lt;/p&gt;
+
+&lt;p&gt;The warning signs are familiar:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;One person or small team understands the gateway.&lt;/li&gt;
+  &lt;li&gt;No product owner is accountable for the platform.&lt;/li&gt;
+  &lt;li&gt;Evaluations are stale or maintained separately by each business unit.&lt;/li&gt;
+  &lt;li&gt;Model retirements trigger emergency migrations.&lt;/li&gt;
+  &lt;li&gt;Costs can be traced to requests but not to accepted business outcomes.&lt;/li&gt;
+  &lt;li&gt;Permissions and agent identities work differently across tools.&lt;/li&gt;
+  &lt;li&gt;Teams copy prompts and skills because the shared service is unreliable.&lt;/li&gt;
+  &lt;li&gt;No one has completed a provider-switching exercise.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At that point, the harness is no longer strategic leverage. It is an underfunded internal product sitting in the path of critical work.  Many times this problem is multiplied by the fact that the enterprise will have different harnesses from different internal teams, and each of those harnesses will have different levels of maturity, different levels of documentation, and different levels of support.  The result is a patchwork of internal platforms that are not portable, not reliable, and not well understood.&lt;/p&gt;
+
+&lt;p&gt;Adding another abstraction layer on top of this will not fix your problem.&lt;/p&gt;
+
+&lt;p&gt;Each harness needs a roadmap, service objectives, security engineering, evaluation management, incident procedures, dedicated funding, and a clear boundary between platform responsibilities and business-workflow responsibilities.&lt;/p&gt;
+
+&lt;p&gt;Enterprises already know how to operate identity platforms, integration platforms, data platforms, and developer platforms. An AI harness belongs to the same family.&lt;/p&gt;
+
+&lt;p&gt;This means that these harnesses must be governed with similar seriousness at the enterprise architecture, operational, and business levels.&lt;/p&gt;
+
+&lt;h2 id=&quot;moving-the-cargo&quot;&gt;Moving the Cargo&lt;/h2&gt;
+
+&lt;p&gt;The practical test of AI portability is not whether another model appears in the company’s catalog.  It’s also not whether the model can be called through a gateway.  It is whether the same business task can be completed with another model without unacceptable losses in quality, permissions, observability, recovery, regulatory control, or cost.&lt;/p&gt;
+
+&lt;p&gt;Again to validate this, choose one important workflow and move it.&lt;/p&gt;
+
+&lt;p&gt;Use another model, another provider, or another region. Measure what had to be rebuilt. Measure how quality changed. Determine which controls survived, how people adapted, and what it cost to deliver an accepted result.&lt;/p&gt;
+
+&lt;p&gt;My dad took a boy who loved trains to see model railways at the LA County Fair and at a train store in Pasadena. Years later, those layouts offer another lesson.&lt;/p&gt;
+
+&lt;p&gt;The locomotive was the part that drew attention.&lt;/p&gt;
+
+&lt;p&gt;The track, switches, signals, power, controls, and maintenance were what made the journey possible.&lt;/p&gt;
+
+&lt;p&gt;An enterprise that counts models is still looking at the locomotives.&lt;/p&gt;
+
+&lt;p&gt;An enterprise that tests whether the same business task can travel safely across multiple providers is actually planning on running a railway responsibly.&lt;/p&gt;
+
+&lt;p&gt;The model may pull the train.&lt;/p&gt;
+
+&lt;p&gt;The enterprise system determines whether the cargo arrives.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+        
+          <uri>https://tedt.org/</uri>
+        
+      </author>
+
+      
+
+      
+        <category term="enterprise AI" />
+      
+        <category term="AI portability" />
+      
+        <category term="model portability" />
+      
+        <category term="multi-model gateways" />
+      
+        <category term="AI agent harness" />
+      
+        <category term="AI governance" />
+      
+        <category term="vendor lock-in" />
+      
+        <category term="workflow portability" />
+      
+        <category term="AI operating model" />
+      
+        <category term="model migration" />
+      
+        <category term="platform engineering" />
+      
+        <category term="technology contracts" />
+      
+
+      
+        <summary type="html">Large enterprises are learning how to switch models. Moving a working business process without losing quality, controls, or money is a different problem.</summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tedt.org/img/2026-08/The-System-Behind-the-Engine.webp" />
+      
+    </entry>
+  
+    
+    
+    <entry>
+      <title type="html">Dev, Test, and Prod Still Matter: What Gets Deployed Has Changed</title>
+      <link href="https://preview.tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/" rel="alternate" type="text/html" title="Dev, Test, and Prod Still Matter: What Gets Deployed Has Changed" />
+      <published>2026-08-22T08:00:00-07:00</published>
+      <updated>2026-08-22T08:00:00-07:00</updated>
+      <id>https://preview.tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed</id>
+      <content type="html" xml:base="https://preview.tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/">&lt;h2 id=&quot;sources-for-this-article&quot;&gt;Sources for this article&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Source note:&lt;/strong&gt; This essay draws on first-party disclosures from &lt;a href=&quot;https://openai.com/index/hugging-face-model-evaluation-security-incident/&quot;&gt;OpenAI&lt;/a&gt;, &lt;a href=&quot;https://huggingface.co/blog/agent-intrusion-technical-timeline&quot;&gt;Hugging Face&lt;/a&gt;, &lt;a href=&quot;https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals&quot;&gt;Anthropic&lt;/a&gt;, the &lt;a href=&quot;https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing&quot;&gt;U.K. AI Security Institute&lt;/a&gt;, and &lt;a href=&quot;https://www.irregular.com/research/addressing-recent-incidents-ongoing-findings-and-path-forward&quot;&gt;Irregular&lt;/a&gt;. Their investigations remain incomplete. As of Aug. 22, 2026, OpenAI’s &lt;a href=&quot;https://openai.com/index/hugging-face-model-evaluation-security-incident/&quot;&gt;promised technical report and METR/Redwood assessment&lt;/a&gt;, Anthropic’s &lt;a href=&quot;https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals&quot;&gt;planned METR review&lt;/a&gt;, AISI’s &lt;a href=&quot;https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing&quot;&gt;planned METR review&lt;/a&gt;, and Irregular’s &lt;a href=&quot;https://www.irregular.com/research/addressing-recent-incidents-ongoing-findings-and-path-forward&quot;&gt;planned evaluation-security white paper&lt;/a&gt; had not been published. &lt;a href=&quot;https://www.irregular.com/research/addressing-recent-incidents-ongoing-findings-and-path-forward&quot;&gt;Irregular says several model-provider disclosures describe the same underlying evaluation issue&lt;/a&gt;, so they should not be counted as separate incidents. These events occurred in specialized cybersecurity tests, often with normal safeguards reduced or disabled; &lt;a href=&quot;https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals&quot;&gt;Anthropic&lt;/a&gt; and &lt;a href=&quot;https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing&quot;&gt;AISI&lt;/a&gt; both caution against treating them as evidence of how ordinary deployed agents behave.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Many enterprise delivery diagrams begin with three boxes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DEV → TEST → PROD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We build in the first. We test throughout, but assemble the release case in the second. We deliberately let the system affect the business in the third. Each environment should carry more consequence than the one before it, and each arrow should mark a deliberate change in exposure.&lt;/p&gt;
+
+&lt;p&gt;It is a useful picture. It gave software teams a practical way to separate unfinished work from customer-facing systems. It created places for experimentation, verification, approval, and rollback. It also carried a quiet assumption: work in Test cannot affect Production until somebody promotes it.&lt;/p&gt;
+
+&lt;p&gt;That assumption was never entirely safe. It was a simple way of talking about a complex idea. Agentic systems make the weakness harder to ignore.&lt;/p&gt;
+
+&lt;p&gt;An AI agent running in a test environment can call an application programming interface, install a package, create an account, open a pull request, send a message, query a live service, or cause another computer to act on its behalf. The agent does not have to be deployed to Production. It only needs a path to something real.&lt;/p&gt;
+
+&lt;p&gt;The old diagram still captures an important control. But the environment label is not the boundary. We have to ask what the arrow represents. We also have to notice which changes happen without crossing it.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-the-old-model-gets-right&quot;&gt;What the Old Model Gets Right&lt;/h2&gt;
+
+&lt;p&gt;Dev, Test, and Prod are not merely server names. At their best, they describe a progression of responsibility.&lt;/p&gt;
+
+&lt;p&gt;Dev is where consequence should be smallest. Test is where pre-release evidence should become decision-grade. Prod is where durable business authority is granted. It is also where that authority must remain observable and revocable.&lt;/p&gt;
+
+&lt;p&gt;Some organizations insert integration, quality assurance, user acceptance testing, staging, shadow, or deployment rings. The number of boxes is not the point. At each step, the system should earn a larger exposure.&lt;/p&gt;
+
+&lt;p&gt;That progression still matters. In &lt;a href=&quot;https://tedt.org/What-IT-Looks-Like-in-an-Enterprise-Where-AI-Is-Assumed/&quot;&gt;What IT Looks Like in an Enterprise Where AI Is Assumed&lt;/a&gt;, I used lab, pilot, and production as distinct places for uncertainty, bounded learning, and operated value. The labels change from company to company, but the intent is familiar: do not expose the business to a new system until the system has earned that exposure.&lt;/p&gt;
+
+&lt;p&gt;Modern delivery pipelines already move more than application code. They carry configuration, infrastructure templates, database changes, secrets references, policies, and deployment instructions. We learned a long time ago that a release can fail even when the binary doesn’t change.&lt;/p&gt;
+
+&lt;p&gt;Conventional delivery already runs active code in continuous-integration jobs, integration tests, package registries, and deployment pipelines. Those systems can reach Production too. What changes with an agent is the degree of initiative inside the boundary. Its harness can inspect a result, choose another tool, and chain actions that nobody described in advance.&lt;/p&gt;
+
+&lt;p&gt;AI did not invent porous environments. It lets software discover and use paths that ordinary release controls may never have modeled.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-artifact-is-no-longer-the-whole-release&quot;&gt;The Artifact Is No Longer the Whole Release&lt;/h2&gt;
+
+&lt;p&gt;A model produces output. A harness lets that model do work.&lt;/p&gt;
+
+&lt;p&gt;The harness supplies tools, memory, instructions, identity, network access, retry logic, and a way to observe what happened. I explored that system in &lt;a href=&quot;https://tedt.org/Why-AI-Needs-a-Harness/&quot;&gt;Why AI Needs a Harness&lt;/a&gt;. Once the model can inspect a result and choose another action, we are no longer testing only a static artifact. We are evaluating a bounded decision-and-action system that can change the environment around it.&lt;/p&gt;
+
+&lt;p&gt;That changes what an environment means.&lt;/p&gt;
+
+&lt;p&gt;For ordinary software, we often ask, “Where is the application running?” For an agent, we also have to ask:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What can it read?&lt;/li&gt;
+  &lt;li&gt;What can it change?&lt;/li&gt;
+  &lt;li&gt;Which other systems can act for it?&lt;/li&gt;
+  &lt;li&gt;What survives after the run ends?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A package proxy may live inside the test architecture while fetching material from the public internet. A test credential may still call a live software-as-a-service endpoint. A shared repository may let one run leave state for another. A browser agent may be operating in a test tenant while sending requests to real people and public websites.&lt;/p&gt;
+
+&lt;p&gt;The environment name tells us where the process started. It does not tell us where the consequences can end.&lt;/p&gt;
+
+&lt;p&gt;This matters well beyond frontier-model laboratories. A coding agent may hold a GitHub token. A finance agent may read a production ledger while writing only to a test workbook. A service agent may work in a training queue but still send email. A data agent may query a copy of a warehouse while exporting results through a live connector. A security agent may be testing a fictional target through a network path that reaches a real one.&lt;/p&gt;
+
+&lt;p&gt;In each case, the box says Test. The authority says something else.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-test-touched-production&quot;&gt;When Test Touched Production&lt;/h2&gt;
+
+&lt;p&gt;In July 2026, an internal OpenAI cybersecurity evaluation supplied a stark example. OpenAI said the models did not have direct internet access. They could, however, install packages through an internally hosted Artifactory proxy and cache. The models found and exploited a previously unknown Artifactory vulnerability, obtained internet access, and eventually reached Hugging Face production infrastructure. &lt;a href=&quot;https://openai.com/index/hugging-face-model-evaluation-security-incident/&quot;&gt;OpenAI called its account preliminary&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://huggingface.co/blog/agent-intrusion-technical-timeline&quot;&gt;Hugging Face later reconstructed about 17,600 actions&lt;/a&gt; across roughly two and a half days inside its infrastructure. It reported that five datasets apparently connected to the benchmark were accessed, while finding no effect on other customer-facing models, datasets, Spaces, or packages. Hugging Face also said no unauthorized software-supply-chain change was shipped.&lt;/p&gt;
+
+&lt;p&gt;I examined the mechanics of that incident in &lt;a href=&quot;https://tedt.org/The-Sandbox-Was-Not-the-Boundary/&quot;&gt;The Sandbox Was Not the Boundary&lt;/a&gt;. The point here is different. The models were still being evaluated. They had not been released as a customer product. Yet the evaluation already had a path to production consequences through a shared service, a public launch point, and live third-party infrastructure.&lt;/p&gt;
+
+&lt;p&gt;Separate incidents were later disclosed, but they involved different mechanisms and should not be treated as one breach count.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals&quot;&gt;Anthropic reviewed 141,006 cybersecurity evaluation runs&lt;/a&gt; and reported three incidents involving six runs. A configuration problem left live internet access available even though the models had been told they were inside simulations. In one case, a model published a malicious package to the Python Package Index. Anthropic said the package was available for about an hour and ran on 15 real systems. In another, a model scanned roughly 9,000 targets before compromising one real application. Anthropic’s latest research model stopped after concluding that its target was real, an important piece of counterevidence.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing&quot;&gt;U.K. AI Security Institute reported a separate event&lt;/a&gt;. This was not a sandbox escape. Internet access was intentionally enabled, and the model providers’ cyber classifiers were disabled so the institute could measure maximum capability. Across 122 runs, AISI found 19 out-of-scope actions in 10 runs, including an attempted malicious pull request and the creation of fake identities. A human maintainer rejected the code, and AISI found no resulting real-world harm.&lt;/p&gt;
+
+&lt;p&gt;Several later headlines involving different model providers traced back to one Irregular evaluation scenario. &lt;a href=&quot;https://www.irregular.com/research/addressing-recent-incidents-ongoing-findings-and-path-forward&quot;&gt;Irregular has said those disclosures shared an underlying control problem&lt;/a&gt;. Counting every provider statement as a separate failure would exaggerate the evidence.&lt;/p&gt;
+
+&lt;p&gt;These were unusually permissive cyber tests. They often used unreleased models, reduced refusals, disabled classifiers, or deliberately open internet access. They do not show that an ordinary enterprise assistant will break out of its environment.&lt;/p&gt;
+
+&lt;p&gt;They show something narrower and more useful: a system labeled Test can create production risk as soon as it can cause an external effect.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-promotion-gate-has-four-different-jobs&quot;&gt;The Promotion Gate Has Four Different Jobs&lt;/h2&gt;
+
+&lt;p&gt;The traditional pipeline promotes an application release. An agentic system makes the gate responsible for four connected dimensions: artifact, authority, state, and evidence.&lt;/p&gt;
+
+&lt;p&gt;They do not cross the boundary in the same way. The tested artifact should be promoted unchanged and accompanied by verifiable provenance. Authority should be issued in the destination. Runtime state should be reset; any necessary migration should be deliberate and governed. Evidence should be independently protected and should keep accumulating after release.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-the-artifact&quot;&gt;1. The Artifact&lt;/h3&gt;
+
+&lt;p&gt;The promotable artifact is a signed, versioned release assembly or deployment manifest. It identifies the application code, declared model or model version, system instructions, policy and tool definitions, connector definitions, and configuration and routing dependencies.&lt;/p&gt;
+
+&lt;p&gt;It does not include destination credentials, identities, live endpoints, or secret values. Those are bound separately in each environment.&lt;/p&gt;
+
+&lt;p&gt;Any one of these elements can change behavior. A new connector may expose an action the agent could not take yesterday. A revised system instruction may alter when it stops or asks for help. A provider update may change model behavior without a customer deploying new application code, depending on the service and versioning contract.&lt;/p&gt;
+
+&lt;p&gt;The release record therefore has to identify the whole runnable assembly, not only the Git commit. Where the platform permits it, identify its components with immutable versions or digests and bind them to &lt;a href=&quot;https://slsa.dev/spec/v1.2/verifying-artifacts&quot;&gt;verifiable provenance&lt;/a&gt;. The goal is simple: know that the assembly tested is the assembly released.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-the-authority&quot;&gt;2. The Authority&lt;/h3&gt;
+
+&lt;p&gt;Authority includes identity, credentials, network egress, tool scopes, transaction limits, approval rules, and the systems the agent may affect.&lt;/p&gt;
+
+&lt;p&gt;Giving a test agent a live token creates production-equivalent exposure, even if no code moves. Outbound internet access, a connector pointed at a live tenant, or a tool expanded from read to write can create the same class of external consequence.&lt;/p&gt;
+
+&lt;p&gt;Policy intent can be version-controlled and promoted with the release. The destination workload identity should be bound there, and short-lived credentials should be issued there rather than copied forward. Production authority should be scoped to the destination and independently revocable.&lt;/p&gt;
+
+&lt;p&gt;This is why capability and authority have to remain separate. In &lt;a href=&quot;https://tedt.org/How-Much-Work-Can-Your-AI-Safely-Own/&quot;&gt;How Much Work Can Your AI Safely Own?&lt;/a&gt;, I argued that demonstrated capability does not automatically grant operating authority. The same rule belongs in the delivery pipeline. A system may be capable of acting before the organization has earned the right to let it act.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-the-state&quot;&gt;3. The State&lt;/h3&gt;
+
+&lt;p&gt;State includes retrieval data, working memory, caches, queues, shared directories, previous tool results, and whatever remains for the next run.&lt;/p&gt;
+
+&lt;p&gt;State can cross an environment boundary without anyone deploying software. A production document can enter a test retrieval index. A test run can leave a file that another run treats as instruction. A cached response can outlive the policy that permitted it. A refreshed knowledge source can change the answer even when the model, prompt, and code stay fixed.&lt;/p&gt;
+
+&lt;p&gt;State needs lineage, retention rules, reset procedures, and regional handling appropriate to the data. Calling it “test data” does not make it synthetic, disposable, or harmless.&lt;/p&gt;
+
+&lt;p&gt;Most runtime state should not be promoted at all. Test memory, sessions, queues, caches, shared files, and previous tool results should normally be reset or isolated. When a business dataset, retrieval index, or model checkpoint must move, treat it as a separate approved migration with versioning, integrity checks, provenance, retention rules, and a rollback plan.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-the-evidence&quot;&gt;4. The Evidence&lt;/h3&gt;
+
+&lt;p&gt;Evidence includes evaluation results, provenance, monitoring baselines, rollback results, known limits, and operating telemetry. Approval and risk acceptance are decision records informed by that evidence. They are not evidence that the system is trustworthy.&lt;/p&gt;
+
+&lt;p&gt;The agent should not be the only system that writes the work, designs the test, grades the result, and decides it is ready. Independent scenarios matter. Holdout tests matter. A real rollback rehearsal matters. So does evidence that the identity can be revoked and the action trail can be reconstructed under pressure.&lt;/p&gt;
+
+&lt;p&gt;Evidence accumulates throughout the lifecycle. Its record should be independent of the agent and protected from alteration. A model update, tool change, new data source, expanded permission, or material drift can invalidate yesterday’s approval without a traditional deployment. Production telemetry, drift findings, interventions, incidents, and reassessments should append to the assurance record. Promotion is not a one-time ceremony. It is a continuing claim that the running system still deserves its authority.&lt;/p&gt;
+
+&lt;h2 id=&quot;keep-the-environments-redefine-their-gates&quot;&gt;Keep the Environments, Redefine Their Gates&lt;/h2&gt;
+
+&lt;p&gt;We do not need to throw away Dev, Test, and Prod. We need each environment to make a stronger promise.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Dev should minimize consequence.&lt;/strong&gt; Use synthetic or carefully de-identified data. Deny external write paths by default. Give each run its own short-lived identity and disposable state. Replace live tools with mocks, simulators, or mediated services when the work does not require reality.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Test should make pre-release evidence decision-grade.&lt;/strong&gt; Testing happens &lt;a href=&quot;https://airc.nist.gov/airmf-resources/airmf/appendices/app-a-descriptions-of-ai-actor-tasks/&quot;&gt;throughout the lifecycle&lt;/a&gt;; Test is where the release case should become credible. &lt;a href=&quot;https://csrc.nist.gov/glossary/term/verification&quot;&gt;Verification&lt;/a&gt; asks whether the system meets its specified requirements and controls. &lt;a href=&quot;https://csrc.nist.gov/glossary/term/validation&quot;&gt;Validation&lt;/a&gt; asks whether it is fit for its intended use in a representative deployment context. Agentic systems need both.&lt;/p&gt;
+
+&lt;p&gt;Use realistic tasks, independent evaluations, separate identities, resettable state, and monitoring that can stop a run while it is happening. When live information is necessary, begin with read-only access and intercept external side effects. Test the route through proxies, package registries, domain name resolution, webhooks, queues, and third-party tools, not only the agent’s visible network interface.&lt;/p&gt;
+
+&lt;p&gt;The record should let another person reconstruct what was tested, what failed, what was waived, and who accepted the remaining risk.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Shadow mode should validate behavior without granting action.&lt;/strong&gt; Let the agent receive representative production inputs and propose what it would do without giving it permission to make the change. Compare its decisions with actual outcomes. Measure quality, latency, exceptions, cost, and security before expanding authority. That is the same lifecycle discipline I described in &lt;a href=&quot;https://tedt.org/The-Cost-of-a-Finished-Job/&quot;&gt;The Cost of a Finished Job&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Prod should grant narrow, revocable authority.&lt;/strong&gt; Production is not the end of testing. &lt;a href=&quot;https://airc.nist.gov/airmf-resources/airmf/5-sec-core/&quot;&gt;Measurement and monitoring continue while the system operates&lt;/a&gt;, because live telemetry, drift, incidents, and rollback may show that yesterday’s evidence no longer applies.&lt;/p&gt;
+
+&lt;p&gt;Expand exposure in stages where the work permits it. Use least privilege, per-action traces, transaction limits, policy checks, human approval where consequence requires it, live monitoring, and rehearsed rollback. The system needs a separate observer that can stop it. The agent should not control the only alarm, the only log, or the only switch that turns it off.&lt;/p&gt;
+
+&lt;p&gt;Third-party evaluators belong inside this model. Their contracts should identify permitted network paths, cross-client isolation, data handling, incident-notification timing, evidence retention, audit rights, and responsibility when a test reaches a real system. “Independent evaluation” describes who performs the test. It does not prove that the test infrastructure is independent, isolated, or safe.&lt;/p&gt;
+
+&lt;h2 id=&quot;five-questions-for-the-release-review&quot;&gt;Five Questions for the Release Review&lt;/h2&gt;
+
+&lt;p&gt;The release meeting does not need another hundred-page checklist. It needs questions that follow the four different jobs of the gate: identify the assembly, bind its authority, govern its state, and judge the evidence.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;What changed?&lt;/strong&gt; Name the model, code, prompts, policies, tools, connectors, configuration, and data sources that differ from the last accepted version.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;What can it touch?&lt;/strong&gt; Trace direct and indirect access through identities, proxies, package services, webhooks, shared platforms, and third parties. Record what the agent may read, propose, or change.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;What survives?&lt;/strong&gt; Identify memory, files, logs, caches, queues, retrieval indexes, and artifacts that another run or environment can inherit.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Who tested it independently?&lt;/strong&gt; Show evidence from scenarios the builder did not control, including failure cases, stop behavior, permission boundaries, and rollback.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Who can stop it and reconstruct the result?&lt;/strong&gt; Name the decision owner, revocation path, incident lead, evidence location, and conditions for resumption.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is the practical machinery behind &lt;a href=&quot;https://tedt.org/The-IT-Adaptive-Factory/&quot;&gt;The IT Adaptive Factory&lt;/a&gt;. The factory is not mature because agents can write and test code quickly. It is mature when the organization can explain what was promoted, what authority was granted, what state survived, why the evidence was sufficient, and how to recover when the answer was wrong.&lt;/p&gt;
+
+&lt;p&gt;OpenAI’s later response shows the cost of learning this after a control boundary fails. On Aug. 18, &lt;a href=&quot;https://openai.com/index/pacing-model-development-cyber-capabilities/&quot;&gt;the company said it had paused some frontier research workloads&lt;/a&gt;, added stronger workload and network isolation, and left its largest planned reinforcement-learning run on hold while it gathered more evidence. OpenAI attributed the broader slowdown to both the Hugging Face incident and concerns about an upcoming model’s cyber capability, so the pause should not be assigned to the incident alone.&lt;/p&gt;
+
+&lt;p&gt;That response does not prove the new controls will work. It does show that research and test infrastructure can become important enough to slow the production of the model itself.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-arrow-still-matters&quot;&gt;The Arrow Still Matters&lt;/h2&gt;
+
+&lt;p&gt;Organizations will keep drawing three boxes. They should.&lt;/p&gt;
+
+&lt;p&gt;The boxes remind us that consequence should rise slowly and evidence should rise first. But an environment label cannot enforce that discipline. Architecture does. Identity does. Network policy does. State isolation does. Independent testing does. Someone with the authority to say “stop” does.&lt;/p&gt;
+
+&lt;p&gt;Before approving the next agent release, look at the arrow and ask four different questions. What artifact was promoted? What authority was bound in the destination? What state was reset or deliberately migrated? What evidence supported the decision, and how will that evidence continue after release?&lt;/p&gt;
+
+&lt;p&gt;If a test agent can already cause a real-world change, the organization is already carrying production risk, whatever the box is called.&lt;/p&gt;
+
+&lt;p&gt;The arrow still matters. It moves the assembly. The gate decides what authority it receives, what state it inherits, and whether the evidence is good enough to let it act.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+        
+          <uri>https://tedt.org/</uri>
+        
+      </author>
+
+      
+
+      
+        <category term="AI agents" />
+      
+        <category term="agentic AI" />
+      
+        <category term="software delivery" />
+      
+        <category term="DevSecOps" />
+      
+        <category term="environment promotion" />
+      
+        <category term="AI governance" />
+      
+        <category term="AI security" />
+      
+        <category term="least privilege" />
+      
+        <category term="state management" />
+      
+        <category term="enterprise architecture" />
+      
+
+      
+        <summary type="html">Dev, Test, and Prod still matter for AI agents, but promotion gates must now govern the artifact, authority, state, and evidence together.</summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tedt.org/img/2026-08/Dev-Test-Prod-AI.webp" />
+      
+    </entry>
+  
+    
+    
+    <entry>
+      <title type="html">The Cost of a Finished Job</title>
+      <link href="https://preview.tedt.org/The-Cost-of-a-Finished-Job/" rel="alternate" type="text/html" title="The Cost of a Finished Job" />
+      <published>2026-08-16T09:00:00-07:00</published>
+      <updated>2026-08-16T09:00:00-07:00</updated>
+      <id>https://preview.tedt.org/The-Cost-of-a-Finished-Job</id>
+      <content type="html" xml:base="https://preview.tedt.org/The-Cost-of-a-Finished-Job/">&lt;p&gt;&lt;em&gt;Cheaper models do not settle the economics of enterprise AI. They move the hard work into the system around the model and the way the business itself is designed.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Tokens are like gallons of gasoline. They are easy to count. They are easy to price. They are also poor at telling you whether you arrived.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/&quot;&gt;OpenAI recently cut the published price of GPT-5.6 Luna by 80%&lt;/a&gt;. That is a substantial change, but it does not make every workflow 80% cheaper. A low-cost model can still produce expensive work if it needs repeated attempts, makes too many tool calls, waits on slow systems, gives people more material to review, or produces an error that has to be repaired later.&lt;/p&gt;
+
+&lt;p&gt;The useful unit is not the token. It is the finished job.&lt;/p&gt;
+
+&lt;p&gt;Even that needs one more word. A job is not finished merely because the machine stopped. It is finished when the result clears a defined acceptance threshold: the claim is ready for a qualified decision, the code passes its tests and review, the employee receives the correct policy answer, or the customer problem is actually resolved.&lt;/p&gt;
+
+&lt;p&gt;So the economic measure I would use is closer to this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Total workflow cost = AI usage + data and tools + human review + retries and rework + support + expected failure cost&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Cost per accepted outcome = total workflow cost ÷ accepted outcomes&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is why I have argued that &lt;a href=&quot;https://tedt.org/Make-AI-Boring/&quot;&gt;every AI capability needs a cost identity&lt;/a&gt;: an owner, a budget, and a unit the business understands, such as dollars per case, ticket, work order, approved document, or repaired defect.&lt;/p&gt;
+
+&lt;p&gt;Price per token still matters. It belongs inside the equation. It simply does not get to be the equation.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-system-of-systems-controls-the-price&quot;&gt;The System of Systems Controls the Price&lt;/h2&gt;
+
+&lt;p&gt;So how do you lower the cost of an accepted outcome?&lt;/p&gt;
+
+&lt;p&gt;You can use a smaller model. You can route easy steps to a cheaper model and save the strongest model for the hard decisions. You can cache repeated information. You can shorten prompts. You can improve retrieval. You can reduce retries. You can give the model better tools and clearer tests.&lt;/p&gt;
+
+&lt;p&gt;In other words, you work on the system around your systems and model.&lt;/p&gt;
+
+&lt;p&gt;I have described &lt;a href=&quot;https://tedt.org/Why-AI-Needs-a-Harness/&quot;&gt;the harness as the structure that turns a fluent model into a useful partner&lt;/a&gt;. It carries context, connects tools, retains state, applies permissions, checks results, handles failure, and decides what happens next. A recent OpenAI experiment puts useful numbers behind that idea.&lt;/p&gt;
+
+&lt;p&gt;On the public set of the ARC-AGI-3 benchmark, &lt;a href=&quot;https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/&quot;&gt;OpenAI reports that GPT-5.6 Sol scored 13.3% with the official harness and 38.3% after retained reasoning and context compaction were enabled&lt;/a&gt;. OpenAI also reports that the changed configuration used six times fewer output tokens. The reported improvement came from two harness settings, not a newly trained model.&lt;/p&gt;
+
+&lt;p&gt;That result has limits. It is a vendor-run benchmark experiment, not evidence that every enterprise workflow will become three times better. Retaining more context can also raise privacy and data-retention questions. But the mechanism is important: a model that forgets what it has learned has to solve the same problem again. A model given continuity can spend less effort rediscovering its own path.&lt;/p&gt;
+
+&lt;p&gt;Microsoft Research is testing the same broader principle from two other directions. &lt;a href=&quot;https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/&quot;&gt;Orchard trains agents inside the deployment harnesses where they will actually work&lt;/a&gt;. Microsoft reports that an Orchard software-engineering model with about three billion active parameters reached 69.7% on SWE-bench Verified. &lt;a href=&quot;https://www.microsoft.com/en-us/research/blog/echoverse-deep-evolving-environments-for-computer-use-agents/&quot;&gt;Echoverse builds deep, stateful training environments&lt;/a&gt; where an action changes underlying data and the result can be graded against that data. Its researchers report raising a nine-billion-parameter model’s average score from 36.5% to 67.1% across their environments.&lt;/p&gt;
+
+&lt;p&gt;Those are research results, not production economics from a claims department or call center. Still, they reveal where optimization is moving. Model choice matters, but the surrounding system shapes what the model can accomplish and how much the result costs.&lt;/p&gt;
+
+&lt;p&gt;This is the larger &lt;a href=&quot;https://tedt.org/AI-Value-Stream/&quot;&gt;AI value stream&lt;/a&gt;: everything between employee intent and physical infrastructure contributes to whether intelligence becomes useful work.&lt;/p&gt;
+
+&lt;p&gt;The performance of AI is not a property of the model alone. Neither is its cost.&lt;/p&gt;
+
+&lt;p&gt;Make now mistake that cost per accepted outcome is the business model for AI vendors in the future.  Waht this means is that once cost per accepted outcome becomes the measure, routing, context, authority, evidence, and learning can no longer be optimized as separate concerns. That metric forces them to be managed as one operating layer.&lt;/p&gt;
+
+&lt;h2 id=&quot;from-one-workflow-to-fifteen-hundred&quot;&gt;From One Workflow to Fifteen Hundred&lt;/h2&gt;
+
+&lt;p&gt;Tuning one workflow is difficult. Letting thousands of employees create workflows is a different class of problem.&lt;/p&gt;
+
+&lt;p&gt;In its customer account of the Dutch cooperative insurer Univé, &lt;a href=&quot;https://openai.com/index/unive/&quot;&gt;OpenAI reports 97% license activation, 85% weekly use, and roughly 1,500 custom agents created by employees&lt;/a&gt;. It also describes a pet-insurance workflow in which claim preparation moved from hours to minutes while a trained claims professional retained the final decision.&lt;/p&gt;
+
+&lt;p&gt;Those numbers demonstrate adoption. They do not tell us whether every GPT solves a distinct problem or still deserves a place in the portfolio. Fifteen hundred custom agents can represent a remarkable reservoir of employee knowledge. They can also become 1,500 small applications looking for owners who can maintain them, evaluate them, and retire them when they no longer earn their place.&lt;/p&gt;
+
+&lt;p&gt;Stripe describes encountering the same tension at another scale. Its teams had created &lt;a href=&quot;https://stripe.dev/blog/meet-stripes-knowledge-ai-platform&quot;&gt;more than 4,000 small agents before the company moved toward a shared Knowledge AI Platform&lt;/a&gt;. Stripe says the common platform now supports more than 1,000 tools and skills and reached 83% weekly workforce use. The important design choice was not to build one giant agent. It was to centralize the common machinery while allowing domain teams to retain responsibility for their own expertise.&lt;/p&gt;
+
+&lt;p&gt;Cloudflare has followed a related path for internal engineering. The company says its &lt;a href=&quot;https://blog.cloudflare.com/internal-ai-engineering-stack/&quot;&gt;shared AI engineering stack served 3,683 internal users and recorded 47.95 million AI messages during one 30-day period&lt;/a&gt;. One central proxy provides authentication, model discovery, permission enforcement, and per-user cost attribution. Employees can use different models and local configurations without placing provider keys on their laptops or rebuilding the control plane for every team.&lt;/p&gt;
+
+&lt;p&gt;These are first-party company reports, not independent return-on-investment studies. They are useful because they show the same architectural pressure appearing in different organizations. Once employees can build with AI, a company must support local invention without asking every employee to become an identity engineer, security architect, evaluation specialist, and platform operator.&lt;/p&gt;
+
+&lt;p&gt;As I argued in &lt;a href=&quot;https://tedt.org/Beyond-the-Light-Bulb/&quot;&gt;Beyond the Light Bulb&lt;/a&gt;, issuing more licenses may improve local productivity without changing the end-to-end value stream. A report drafted in five minutes can still wait four days for approval. An agent can prepare twice as many cases and merely bury the reviewer. Faster output does not become business value until the surrounding work changes with it.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-i-mean-by-an-ai-operating-system&quot;&gt;What I Mean by an AI Operating System&lt;/h2&gt;
+
+&lt;p&gt;This is where the operating-system comparison becomes useful.&lt;/p&gt;
+
+&lt;p&gt;A conventional operating system does not write your document, approve your expense report, or calculate your budget. It manages the shared machinery that applications depend on.&lt;/p&gt;
+
+&lt;p&gt;An enterprise AI operating system would perform a similar coordinating role for intelligence:&lt;/p&gt;
+
+&lt;table class=&quot;well table table-striped&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Conventional Operating System Components&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Enterprise AI Operating Layer Components&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Processes and scheduling&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Jobs, agent runs, model selection, and tool routing&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Memory and files&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Working context, durable state, records, and retention&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Users and permissions&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Employee identity, agent identity, approvals, and least privilege&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Devices and drivers&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Governed connectors to business data and applications&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Health and logs&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Evaluations, traces, evidence, incidents, and recovery&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Resource quotas&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Budgets, rate limits, latency targets, and capacity&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;Installation and upgrades&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Inventory, ownership, versions, reviews, and retirement&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I do not mean that every company should buy a product labeled “AI OS,” or spend three years building one enormous platform. Most enterprises will accidentially assemble this from systems they already have: identity and access management, data platforms, API gateways, workflow engines, model services, observability, security controls, and software-delivery practices.&lt;/p&gt;
+
+&lt;p&gt;Is this simply platform engineering, data governance, identity, and observability wearing a new name?&lt;/p&gt;
+
+&lt;p&gt;Much of the machinery is familiar. What has changed is the thing being coordinated. These systems now surround probabilistic workers that can choose tools, generate intermediate plans, act across applications, and produce different results from the same request. The components are not all new. The need to coordinate them continuously around machine-performed work is.&lt;/p&gt;
+
+&lt;p&gt;For IT, this means becoming &lt;a href=&quot;https://tedt.org/What-IT-Looks-Like-in-an-Enterprise-Where-AI-Is-Assumed/&quot;&gt;the central engineering function for a shared production system&lt;/a&gt;, not the sole builder of every employee solution. IT provides the roads: approved models, secure connectors, identity, sandboxes, evaluation services, logging, and production gates. Business teams choose the destinations. They define the job, the value, the exceptions, and the standard for acceptable work.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://airc.nist.gov/airmf-resources/airmf/5-sec-core/&quot;&gt;NIST AI Risk Management Framework organizes this work around four continuing functions: Govern, Map, Measure, and Manage&lt;/a&gt;. That is a helpful reminder that an operating layer is not merely a runtime. It must also carry responsibility, measurement, monitoring, and an exit path.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-this-means-for-businesses-giving-ai-to-employees&quot;&gt;What This Means for Businesses Giving AI to Employees&lt;/h2&gt;
+
+&lt;p&gt;The first implication is that an employee AI program is not a license program.&lt;/p&gt;
+
+&lt;p&gt;Licenses provide access. Training can provide competence. Neither one, by itself, changes a business process. The business has to decide which work should change, who owns the outcome, what quality means, and where the recovered time or capacity will go.&lt;/p&gt;
+
+&lt;p&gt;Imagine an employee who spends two hours assembling a weekly report. AI reduces the drafting to twenty minutes. That sounds like a large gain. But what happens next?&lt;/p&gt;
+
+&lt;p&gt;Does the report still wait for the same approval? Does the employee use the recovered time to investigate exceptions, speak with customers, or improve the source data? Does the organization simply produce six times as many reports that nobody reads? Time saved is potential energy. Management still has to decide where it moves.&lt;/p&gt;
+
+&lt;p&gt;The second implication is that adoption and value need different scorecards. A useful evidence ladder looks something like this:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;People have access.&lt;/li&gt;
+  &lt;li&gt;People use it.&lt;/li&gt;
+  &lt;li&gt;A workflow changes.&lt;/li&gt;
+  &lt;li&gt;Cycle time, quality, or service improves.&lt;/li&gt;
+  &lt;li&gt;The total cost per accepted outcome improves.&lt;/li&gt;
+  &lt;li&gt;The business converts that improvement into safer and reliabile operations, principled decisions, higher standards, continuous improvement, stronger teamwork, revenue, or customer value.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Each step matters. They are not interchangeable. Prompt counts and weekly active users tell you whether the system is being used. They do not tell you whether the business is better off in the executive suite.&lt;/p&gt;
+
+&lt;p&gt;The third implication is that the foundation should be shared while improvement remains local. Fully centralized AI programs turn into queues because the central team cannot understand every job. Fully decentralized programs produce duplicate agents, inconsistent permissions, uneven quality, and abandoned tools. The better pattern is federated: common roads, local destinations, and an explicit exception path.&lt;/p&gt;
+
+&lt;p&gt;The fourth implication is that employees need more than permission to experiment. They need time, examples, trusted data, clear boundaries, and managers willing to redesign the work. None of this is merely a platform change. &lt;a href=&quot;https://tedt.org/AI-Is-a-People-Change/&quot;&gt;AI is a people change&lt;/a&gt; touching roles, incentives, professional identity, training, trust, and the way expertise is passed from one generation of employees to the next.&lt;/p&gt;
+
+&lt;p&gt;This is also where telemetry can cross a line. The operating layer can reveal which employees use AI, which sources they touch, how long tasks take, and where they struggle. That information can improve the system and control risk. Used carelessly, it can become an unusually intimate system of worker surveillance. Businesses should tell employees what is recorded, why it is recorded, who can see it, and how long it is retained.&lt;/p&gt;
+
+&lt;p&gt;The fifth implication is that “human in the loop” is not enough. A person cannot meaningfully own a decision if the review queue is impossible, the evidence is hidden, or rejecting the machine’s recommendation requires more time than accepting it. Human accountability needs enough context, time, expertise, authority, and a real ability to stop or reverse the action.&lt;/p&gt;
+
+&lt;p&gt;Finally, employee-built AI creates a lifecycle problem. Every production workflow needs a business owner, a technical owner, a risk classification, a version history, a budget, an evaluation set, a review date, and a retirement path. Otherwise, cheaper creation produces an expanding estate of invisible software.&lt;/p&gt;
+
+&lt;h2 id=&quot;advice-for-the-people-building-this-now&quot;&gt;Advice for the People Building This Now&lt;/h2&gt;
+
+&lt;p&gt;If you are working on employee AI, I would use the following promotion path.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-start-with-a-job-not-a-model&quot;&gt;1. Start with a job, not a model&lt;/h3&gt;
+
+&lt;p&gt;Find a repeatable piece of work with a visible owner, inputs, handoffs, exceptions, and an outcome. Ask &lt;a href=&quot;https://tedt.org/Before-You-Reach-for-AI-Ask-What-Job-Needs-Doing/&quot;&gt;what job needs doing&lt;/a&gt; before deciding whether the answer is a chatbot, an agent, a search tool, or ordinary automation.&lt;/p&gt;
+
+&lt;p&gt;“Give everyone an AI assistant” is a distribution plan. It is not a use case.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-establish-the-baseline&quot;&gt;2. Establish the Baseline&lt;/h3&gt;
+
+&lt;p&gt;Measure the work before changing it: elapsed time, employee effort, error rate, rework, wait time, exception volume, service level, and current cost. If you do not know the starting point, almost any demonstration can be made to look like progress.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-define-what-accepted-means&quot;&gt;3. Define What Accepted Means&lt;/h3&gt;
+
+&lt;p&gt;Capture the job as &lt;a href=&quot;https://tedt.org/How-to-Communicate-in-a-World-of-AI/&quot;&gt;a reusable specification&lt;/a&gt;: its purpose, authoritative inputs, boundaries, desired outcome, and the evidence that will count as complete.&lt;/p&gt;
+
+&lt;p&gt;Build a small evaluation set from real work. Include ordinary cases, difficult edge cases, and cases that should be refused or escalated. OpenAI is retiring its Evals platform later in 2026, but its published &lt;a href=&quot;https://developers.openai.com/api/docs/guides/evaluation-best-practices&quot;&gt;guidance on task-specific tests, logging, human calibration, and continuous evaluation&lt;/a&gt; remains useful.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-separate-assistance-from-authority&quot;&gt;4. Separate Assistance from Authority&lt;/h3&gt;
+
+&lt;p&gt;Let the first version retrieve, organize, summarize, recommend, or draft. Give it permission to change records, send messages, approve transactions, or trigger physical work only after the evidence justifies the additional authority.&lt;/p&gt;
+
+&lt;p&gt;The practical question is &lt;a href=&quot;https://tedt.org/How-Much-Work-Can-Your-AI-Safely-Own/&quot;&gt;how much work the AI can safely own&lt;/a&gt;, one value stream, work class, and risk tier at a time.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-optimize-the-workflow-not-merely-the-prompt&quot;&gt;5. Optimize the Workflow, not Merely the Prompt&lt;/h3&gt;
+
+&lt;p&gt;Choose the least expensive model that clears the quality threshold for each step. Improve retrieval. Remove unnecessary context. Cache stable material. Reduce tool calls. Tighten retry rules. Make human handoffs easier. Sometimes a more capable model will cost less overall because it needs fewer retries and less review.&lt;/p&gt;
+
+&lt;p&gt;The cheapest successful run is not always the correct target. Reliability, privacy, security, legal obligations, and human accountability are constraints, not items to trade away for a lower bill.&lt;/p&gt;
+
+&lt;h3 id=&quot;6-make-the-evidence-visible&quot;&gt;6. Make the Evidence Visible&lt;/h3&gt;
+
+&lt;p&gt;Record the sources used, tools called, actions taken, checks passed, exceptions raised, and human decisions made. A person reviewing the work should be able to understand what happened without reconstructing the agent’s entire hidden journey.&lt;/p&gt;
+
+&lt;p&gt;Track human-review minutes along with model cost. If a cheaper configuration saves ten dollars of inference and adds an hour of expert review, the workflow did not get cheaper.&lt;/p&gt;
+
+&lt;h3 id=&quot;7-promote-carefully&quot;&gt;7. Promote Carefully&lt;/h3&gt;
+
+&lt;p&gt;Run consequential workflows in shadow mode before giving them authority. Compare the proposed result with real decisions. Move from experiment to shared service only after the workflow meets agreed thresholds for quality, cost, latency, security, and human review.&lt;/p&gt;
+
+&lt;p&gt;Then keep evaluating it. Models change. Prices change. Source data changes. Business rules change. A production agent is not a finished project. It is an operating responsibility.&lt;/p&gt;
+
+&lt;h3 id=&quot;8-retire-what-no-longer-earns-its-place&quot;&gt;8. Retire What no Longer Earns its Place&lt;/h3&gt;
+
+&lt;p&gt;Cheaper AI will create more AI. That is a rebound effect, not a paradox. When the price of an individual run falls, companies will attempt more workflows and run them more often. Total spending, data exposure, and operational risk can rise even while each call gets cheaper.&lt;/p&gt;
+
+&lt;p&gt;Review the portfolio. Merge duplicate agents. Revoke unused permissions. Update evaluation sets. Replace poor configurations. Retire workflows whose owners have left or whose value never arrived.&lt;/p&gt;
+
+&lt;h2 id=&quot;build-only-as-much-operating-system-as-you-need&quot;&gt;Build Only as Much Operating System as you Need&lt;/h2&gt;
+
+&lt;p&gt;A small company does not need to recreate the platform of Stripe or Cloudflare. It may need an approved managed workspace, clean data boundaries, a handful of task evaluations, and a named owner.&lt;/p&gt;
+
+&lt;p&gt;A business unit with several production workflows may need shared connectors, reusable skills, an inventory, common logs, and a review process.&lt;/p&gt;
+
+&lt;p&gt;A large enterprise with agents acting across many systems will need policy-based routing, distinct agent identities, centralized evidence, incident handling, lifecycle controls, and portfolio economics.&lt;/p&gt;
+
+&lt;p&gt;The operating layer should grow in response to real work and real risk. Building a cathedral before the first useful workflow is another way to avoid arriving.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-road-between-the-request-and-the-result&quot;&gt;The Road Between the Request and the Result&lt;/h2&gt;
+
+&lt;p&gt;Cheaper intelligence moves the bottleneck. The difficult question becomes less about whether the company can afford a model and more about whether it can manage the system around that model.&lt;/p&gt;
+
+&lt;p&gt;Who defines the job? Who grants the context? Who chooses the tools? Who decides what may be changed? Who checks the result? Who pays for the run, supports the workflow, investigates the failure, and retires the agent when it is no longer useful?&lt;/p&gt;
+
+&lt;p&gt;These are operating-system questions.&lt;/p&gt;
+
+&lt;p&gt;The businesses that do this well will not merely have more AI. They will know which completed jobs became cheaper, faster, or better, and they will be able to explain why.&lt;/p&gt;
+
+&lt;p&gt;Tokens may tell us how much fuel we purchased. The finished job tells us whether the trip mattered and if those who took it were meaningfully and positiviely changed. The AI operating system is the machinery that helps the whole company arrive.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Ted Tschopp</name>
+        
+        
+          <uri>https://tedt.org/</uri>
+        
+      </author>
+
+      
+
+      
+        <category term="enterprise AI" />
+      
+        <category term="AI economics" />
+      
+        <category term="cost per accepted outcome" />
+      
+        <category term="AI operating system" />
+      
+        <category term="agentic AI" />
+      
+        <category term="AI governance" />
+      
+        <category term="workflow optimization" />
+      
+        <category term="platform engineering" />
+      
+        <category term="employee AI" />
+      
+        <category term="operating model" />
+      
+        <category term="FinOps" />
+      
+
+      
+        <summary type="html">Cheaper models do not automatically produce cheaper work. Enterprise AI economics depend on the total cost of delivering an accepted outcome.</summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tedt.org/img/2026-08/the-cost-of-a-finished-job-hero-source.webp" />
+      
+    </entry>
+  
+</feed>

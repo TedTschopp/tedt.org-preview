@@ -1,0 +1,152 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Ted Tschopp (Mastodon Lite)",
+  "home_page_url": "https://preview.tedt.org/",
+  "feed_url": "https://preview.tedt.org/feed-mastodon.json",
+  "description": "Technology, theology, and creativity converge in this insightful exploration by Ted Tschopp, who navigates the intricate relationship between these topics in the digital age. From dissecting how technology is reshaping religious practices and ethics to sharing cutting-edge trends in UI/UX design, collaboration tools, and digital storytelling, the author provides a multifaceted analysis. Written with a unique and engaging blend of humor, reflection, and curiosity, this work invites readers to ponder and discuss these connections, offering a contemplative lens on modern innovation and cultural evolution.",
+  "icon": "https://tedt.org/img/apple-touch-icon-144x144.webp",
+  "favicon": "https://preview.tedt.org/favicon.ico",
+  "expired": false,
+  
+  "author":  {
+    "name": "Ted Tschopp",
+    "url": "https://tedt.org/profile/",
+    "avatar": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g"
+  },
+  
+  "items": [
+  {
+      "id": "/This-Isnt-a-Storm-This-Is-the-Weather/",
+      "title": "This Isn't a Storm. This Is the Weather.",
+      
+      "summary": "We are preparing for a storm when we should be learning to operate in the new weather.",
+      
+      "content_text": "We are preparing for a storm when we should be learning to operate in the new weather. https://preview.tedt.org/This-Isnt-a-Storm-This-Is-the-Weather/",
+      "url": "https://preview.tedt.org/This-Isnt-a-Storm-This-Is-the-Weather/",
+  "image": "https://tedt.org/img/2026-09/Weather-vs-Storm.webp",
+      "tags": ["Sophocles","Antigone","leadership","organizational change","AI adoption","operating model","adaptability"],"date_published": "2026-09-28T00:00:00-07:00",
+      "date_modified": "2026-09-28T00:00:00-07:00","author":{"avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","name":"Ted Tschopp","url":"https://tedt.org/"}},
+  {
+      "id": "/When-AI-Moves-Faster-Than-the-Organization/",
+      "title": "When AI Moves Faster Than the Organization",
+      
+      "summary": "We should evaluate the capability of the organization we are assembling around AI, including the people who remain responsible for its work.",
+      
+      "content_text": "We should evaluate the capability of the organization we are assembling around AI, including the people who remain responsible for its work. https://preview.tedt.org/When-AI-Moves-Faster-Than-the-Organization/",
+      "url": "https://preview.tedt.org/When-AI-Moves-Faster-Than-the-Organization/",
+  "image": "https://tedt.org/img/2026-09/Lego-cat-story.webp",
+      "tags": ["enterprise AI","agentic AI","collective intelligence","operating model","scenario planning","AI governance","value stream","evidence-based evaluation"],"date_published": "2026-09-26T00:00:00-07:00",
+      "date_modified": "2026-09-26T00:00:00-07:00","author":{"avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","name":"Ted Tschopp","url":"https://tedt.org/"}},
+  {
+      "id": "/When-AI-Evaluators-Also-Sell-AI-Adoption/",
+      "title": "When AI Evaluators Also Sell AI Adoption",
+      
+      "summary": "When an AI evaluator also sells adoption, buyers need evidence that inconvenient findings can reach decision-makers and change a deployment decision.",
+      
+      "content_text": "When an AI evaluator also sells adoption, buyers need evidence that inconvenient findings can reach decision-makers and change a deployment decision. https://preview.tedt.org/When-AI-Evaluators-Also-Sell-AI-Adoption/",
+      "url": "https://preview.tedt.org/When-AI-Evaluators-Also-Sell-AI-Adoption/",
+  "image": "https://tedt.org/img/2026-09/AI-Evaluators-Selling-Adoption.webp",
+      "tags": ["AI evaluation","AI governance","AI safety","embedded evaluation","evaluator independence","enterprise procurement","Anthropic","Accenture"],"date_published": "2026-09-19T00:00:00-07:00",
+      "date_modified": "2026-09-19T00:00:00-07:00","author":{"name":"Ted Tschopp","url":"https://tedt.org/"}},
+  {
+      "id": "/Beyond-the-Mirror/",
+      "title": "Beyond the Mirror: Principles for Work in the Age of AI",
+      
+      "summary": "AI can take on more information work, but it cannot decide what work should mean for people. This manifesto argues for shared purpose, a living commons, coordinated autonomy, and shared gains as the foundations of communal work.",
+      
+      "content_text": "AI can take on more information work, but it cannot decide what work should mean for people. This manifesto argues for shared purpose, a living commons, coordinated autonomy, and shared gains as the foundations of communal work. https://preview.tedt.org/Beyond-the-Mirror/",
+      "url": "https://preview.tedt.org/Beyond-the-Mirror/",
+  "image": "https://tedt.org/img/2026-09/Thru-the-Mirror-The-Future-of-work.webp",
+      "tags": ["future of work","human-ai collaboration","knowledge commons","organizational design","coordinated autonomy","shared gains","community"],"date_published": "2026-09-11T00:00:00-07:00",
+      "date_modified": "2026-09-11T00:00:00-07:00","author":{"avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","name":"Ted Tschopp","url":"https://tedt.org/"}},
+  {
+      "id": "/slides/openai-hugging-face-wiki/",
+      "title": "OpenAI, Hugging Face & Wikis: Recent Developments",
+      
+      "summary": "",
+      
+      "content_text": "https://preview.tedt.org/slides/openai-hugging-face-wiki/",
+      "url": "https://preview.tedt.org/slides/openai-hugging-face-wiki/",
+  "image": "https://preview.tedt.org/slides/decks/openai-hugging-face-wiki/slide-preview.png",
+      "date_published": "2026-09-10T00:00:00-07:00",
+      "date_modified": "2026-09-10T00:00:00-07:00","author":{"name":"Ted Tschopp","url":"https://tedt.org/profile/","uri":"https://tedt.org/profile/","avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","givenname":"Ted","familyname":"Tschopp","othernames":"Þeodor Tʃopp | टेड चप | Фёдор Чоп | تد شُپ | Թեդ Չոպպ | Ted Çop | டெட் சாப் | טעד טשאָפּ | Τεντ Τσοπ | 테드 촙 | 特德·察普 | テッド・チョッパ | ტედ ჩოპი | เท็ด ชอพ | ເທດ ຊອບ | ടെഡ് ചോപ്പ് | টেড চপ | ཏེཌ་ ཅོཔ། | ቴድ ቾፕ | ᏖᏗ ᏦᏇ | ᛏᛖᛞ ᛏᛋᚲᛟᛈᛈ | 𐌀𐌄𐌃 𐌕𐌔𐌂𐌏𐌐𐌐 | Ⱅⰵⰴ ⱌⱁⱂⱂ | ܬܝܕ ܟܘܦ | ᠲᠡᠳᠡᠳ ᠴᠣᠫ | ᑌᑎ ᒍᐳᐱ | ꕚꔳ ꗍꖛ | ߕߋߘ ߞߐߔߔ | 𐔓𐔖𐔆 𐔓𐔀𐔚𐔚 | 𐎚𐎄𐎆 𐎚𐎌𐎒𐎒 | 𐎄𐎓𐎆 𐎚𐎔𐎒𐎒 | 𐤕𐤄𐤃 𐤕𐤔𐤐𐤐 | 𐤕𐤃𐤄 𐤕𐤔𐤏𐤐 | 𐎚𐎄𐎆 𐎚𐎘𐎔𐎔 | 𒋼𒁺𒁍 𒋼𒊭𒉺𒉺 | 𓏏𓂧𓂝 𓏏𓊃𓍿𓊪 | ⲧⲉⲇ ⲧϣⲟⲡⲡ | 𐌕𐌄𐌃 𐌕𐌔𐌎𐌐𐌐 | 𐤈𐤃𐤄 𐤈𐤔𐤐𐤐 | 𐌕𐌄𐌃 𐌕𐌔𐌏𐌐𐌐 | 𐌕𐌄𐌃 𐌕𐌔𐌐𐌐 | 𐎄𐎕𐎆 𐎚𐎑𐎔𐎔 | 𐔓𐔖𐔆 𐔓𐔀𐔚𐔚 | 𐀳𐀂𐀅 𐀳𐀴𐀞 | 𐱃𐰀𐰓 𐱃𐰴𐰯 | 𑀢𑁂𑀤𑁆 𑀘𑁄𑀧𑁆 | 𐨟𐨂𐨡 𐨖𐨎𐨿 | 𐦚𐦱𐦟 𐦚𐦷𐦣 | 𐭓𐭐𐭃 𐭓𐭱𐭕𐭕 | 𐭲𐭩𐭣 𐭲𐭱𐭯𐭯 | ᚈᚓᚇ ᚈᚄᚉᚑᚚᚚ | 𒋼𒁺𒁍 𒋼𒊭𒉺𒉺 | ᛏᛖᛞ ᛏᛋᚲᛟᛈᛈ | تيد تشوب | ટેડ ચોક્પ | ਟੇਡ ਚੋਪ | ಟೆಡ್ ಚೊಪ್ | ටෙඩ් චොප් | တက် ချော့ပ် | តេដ ឆប | ꦠꦺꦢ꧀ ꦕꦺꦴꦥ꧀ | ᬢᭂᬤ᭄ ᬘᭀᬧ᭄ | ᜆᜒᜇ᜔ ᜆ᜔ᜐᜓᜉ᜔ | ᏖᏗ ᏣᏊ | ꄊꄮ ꍏꀠ | ଟେଡ୍ ଚୋପ୍ | ⵜⴻⴷ ⵛⵓⵒ | 𐐓𐐯𐐼 𐐟𐐙𐐱𐐹 | 𐑑𐑧𐑛 𐑗𐑪𐑐 | 𐘳𐘂𐘅 𐘳𐘴𐘞 | 𐠔𐠁𐠊 𐠔𐠷𐠡 | 𐊗𐊁𐊅 𐊗𐊐𐊓 | 𐊴𐊭𐊺 𐊴𐋄𐊸 | 𐢞𐢉𐢅 𐢞𐢝𐢘 | ࠕࠄࠃ ࠕࠔࠐࠐ | 𐫤𐫏𐫝 𐫤𐫘𐫖 | ꡈꡦ ꡐꡡꡌ | ꯇꯦꯗ ꯆꯣꯄ | ꨓꨯꨕ ꨌꨱꨚ | ᨲᩮᨯ᩠ ᨩᩮᩫ᩠ | ꪔꫀꪒ ꪊꪮꪚ | ᯖᯩᯑ᯲ ᯙᯬᯇ᯲ | ꥆꥍꤴ ꥓ꥏꥒ | ᨈᨙᨉᨛ ᨌᨚᨄᨛ | ᮒᮨᮓ᮪ ᮎᮧᮕ᮪ | ᜦᜒᜇ᜴ ᜰᜳᜉ᜴ | ᝆᝒᝇ᝔ ᝌᝓᝉ᝔ | ꠔꠦꠖ ꠌꠥꠙ | 𑂞𑂵𑂠 𑂒𑂷𑂣 | 𑆠𑆼𑆢𑇀 𑆖𑆾𑆥𑇀 | 𑚔𑚵𑚖 𑚏𑚴𑚞 | 𑲌𑲹𑲏 𑱰𑲿𑱱 | 𑊢𑋐𑊦 𑊓𑋒𑊪 | 𑈋𑈸𑈍𑈴 𑈑𑈺𑈞𑈴 | 𑅐𑅬𑅒 𑅘𑅺𑅛 | 𑘝𑘿𑘟 𑘓𑘽𑘨 | 𑜔𑜦𑜕 𑜒𑜩𑜞 | 𑣕𑣈𑣙 𑣌𑣏𑣗 | 𞠔𞠀𞠙 𞠌𞠁𞠖 | 𑫎𑫟𑫒 𑫏𑫝𑫐 | 𐓰𐒰𐓈 𐓍𐒷𐓄 | 𞤚𞤫𞤣 𞤷𞤮𞥄 | 𖫐𖫪𖫓 𖫗𖫩𖫞 | 𛰙𛱎𛰣 𛲄𛱖𛱐 |  ","biography":["I'm **Ted Tschopp**, a Senior Enterprise Architect based in Los Angeles, working at the intersection of **enterprise architecture, artificial intelligence, software strategy, and digital automation**.","At **Southern California Edison**, I help shape the architecture strategy for AI, software, and enterprise products that support one of the nation’s largest electric utilities. My work sits where **strategy meets execution**: platforms, guardrails, operating models, governance, risk, developer experience, and the practical realities of making ambitious technology useful, resilient, and sustainable inside a large organization.","I've spent **25+ years at SCE** helping teams navigate complex technology change. The part of enterprise architecture I care about most is not the diagram. It is the design discipline that makes systems usable, governable, sustainable, and welcoming for the people who depend on them and the teams who build them.","Before joining Edison, I owned a business featured in *Wired Magazine*, founded one of the largest J.R.R. Tolkien community websites, and worked in automotive market research. That mix of technology, storytelling, community-building, and analysis still shapes how I think about systems today.","I love working in technology because it lets me watch the future arrive in real time. Some of the things I have worked on were science fiction when I was in school. Now they are platform problems, governance problems, people problems, and architecture problems — which is where the interesting work begins.","Unless otherwise stated, everything here reflects my own views."],"email":"ted@tschopp.org","phonenumber":null,"keybaseio_username":"tedtschopp","twitter_username":"TedTschopp","twitter":"TedTschopp","github_username":"TedTschopp","linkedin_username":"tedtschopp","facebook_username":"ted.tschopp","google_username":"TedTschopp","youtube_username":"TedTschopp","pinterest_username":"TedTschopp","reddit_username":"tedtschopp","instagram_username":"tedtschopp","quora_username":"Ted-Tschopp","indiewebcamp_username":"Www.tedt.org","mastodon_username":"TedT@twit.social","mastodon_user_id":109286944787814820,"threads_username":"TedTschopp@threads.net","same_as":["https://www.linkedin.com/in/tedtschopp","https://github.com/TedTschopp","https://twit.social/@TedT","https://bsky.app/profile/tedt.org","https://twitter.com/TedTschopp","https://www.youtube.com/channel/UC4Q8pXroTVyXrIxg2u82pwg"],"knows_about":["Enterprise architecture","Enterprise artificial intelligence","AI governance","Software and platform strategy","Digital automation","Technology-enabled organizational change","Digital communities and storytelling","Swiss folklore","Tabletop role-playing game design"],"works_for":{"name":"Southern California Edison","url":"https://www.sce.com/"}}},
+  {
+      "id": "/Energy-and-Water-Usage-for-Models/",
+      "title": "How Much Energy and Water Does AI Use?",
+      
+      "summary": "AI uses electricity and water, but the impact depends on the task, the model, and the facility. Familiar comparisons help explain the scale.",
+      
+      "content_text": "AI uses electricity and water, but the impact depends on the task, the model, and the facility. Familiar comparisons help explain the scale. https://preview.tedt.org/Energy-and-Water-Usage-for-Models/",
+      "url": "https://preview.tedt.org/Energy-and-Water-Usage-for-Models/",
+  "image": "https://tedt.org/img/2026-09/Energy-and-Water-Usage-for-Models.webp",
+      "tags": ["AI energy use","AI water use","model training","AI inference","data centers","cooling","heat recovery","sustainability"],"date_published": "2026-09-06T00:00:00-07:00",
+      "date_modified": "2026-09-06T00:00:00-07:00","author":{"avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","name":"Ted Tschopp","url":"https://tedt.org/"}},
+  {
+      "id": "/The-Same-Model-Different-Rules/",
+      "title": "The Same Model, Different Rules",
+      
+      "summary": "AI procurement must define not only which model is approved, but also its access rules, data custody, interruption response, and exit arrangements.",
+      
+      "content_text": "AI procurement must define not only which model is approved, but also its access rules, data custody, interruption response, and exit arrangements. https://preview.tedt.org/The-Same-Model-Different-Rules/",
+      "url": "https://preview.tedt.org/The-Same-Model-Different-Rules/",
+  "image": "https://tedt.org/img/2026-09/iPhone-Pearl.webp",
+      "tags": ["enterprise AI","AI procurement","AI governance","model access","operational resilience","service continuity","vendor risk","data custody","access controls","AI portability"],"date_published": "2026-09-05T09:00:00-07:00",
+      "date_modified": "2026-09-05T09:00:00-07:00","author":{"avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","name":"Ted Tschopp","url":"https://tedt.org/"}},
+  {
+      "id": "/Model-Portability-Is-Not-AI-Portability/",
+      "title": "Model Portability Is Not AI Portability",
+      
+      "summary": "Large enterprises are learning how to switch models. Moving a working business process without losing quality, controls, or money is a different problem.",
+      
+      "content_text": "Large enterprises are learning how to switch models. Moving a working business process without losing quality, controls, or money is a different problem. https://preview.tedt.org/Model-Portability-Is-Not-AI-Portability/",
+      "url": "https://preview.tedt.org/Model-Portability-Is-Not-AI-Portability/",
+  "image": "https://tedt.org/img/2026-08/The-System-Behind-the-Engine.webp",
+      "tags": ["enterprise AI","AI portability","model portability","multi-model gateways","AI agent harness","AI governance","vendor lock-in","workflow portability","AI operating model","model migration","platform engineering","technology contracts"],"date_published": "2026-08-28T09:00:00-07:00",
+      "date_modified": "2026-08-28T09:00:00-07:00","author":{"avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","name":"Ted Tschopp","url":"https://tedt.org/"}},
+  {
+      "id": "/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/",
+      "title": "Dev, Test, and Prod Still Matter: What Gets Deployed Has Changed",
+      
+      "summary": "Dev, Test, and Prod still matter for AI agents, but promotion gates must now govern the artifact, authority, state, and evidence together.",
+      
+      "content_text": "Dev, Test, and Prod still matter for AI agents, but promotion gates must now govern the artifact, authority, state, and evidence together. https://preview.tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/",
+      "url": "https://preview.tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/",
+  "image": "https://tedt.org/img/2026-08/Dev-Test-Prod-AI.webp",
+      "tags": ["AI agents","agentic AI","software delivery","DevSecOps","environment promotion","AI governance","AI security","least privilege","state management","enterprise architecture"],"date_published": "2026-08-22T08:00:00-07:00",
+      "date_modified": "2026-08-22T08:00:00-07:00","author":{"avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","name":"Ted Tschopp","url":"https://tedt.org/"}},
+  {
+      "id": "/The-Cost-of-a-Finished-Job/",
+      "title": "The Cost of a Finished Job",
+      
+      "summary": "Cheaper models do not automatically produce cheaper work. Enterprise AI economics depend on the total cost of delivering an accepted outcome.",
+      
+      "content_text": "Cheaper models do not automatically produce cheaper work. Enterprise AI economics depend on the total cost of delivering an accepted outcome. https://preview.tedt.org/The-Cost-of-a-Finished-Job/",
+      "url": "https://preview.tedt.org/The-Cost-of-a-Finished-Job/",
+  "image": "https://tedt.org/img/2026-08/the-cost-of-a-finished-job-hero-source.webp",
+      "tags": ["enterprise AI","AI economics","cost per accepted outcome","AI operating system","agentic AI","AI governance","workflow optimization","platform engineering","employee AI","operating model","FinOps"],"date_published": "2026-08-16T09:00:00-07:00",
+      "date_modified": "2026-08-16T09:00:00-07:00","author":{"avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","name":"Ted Tschopp","url":"https://tedt.org/"}},
+  {
+      "id": "/slides/the-sandbox-was-not-the-boundary/",
+      "title": "The Sandbox Was Not the Boundary",
+      
+      "summary": "",
+      
+      "content_text": "https://preview.tedt.org/slides/the-sandbox-was-not-the-boundary/",
+      "url": "https://preview.tedt.org/slides/the-sandbox-was-not-the-boundary/",
+  "image": "https://preview.tedt.org/slides/decks/the-sandbox-was-not-the-boundary/slide-preview.png",
+      "date_published": "2026-08-13T00:00:00-07:00",
+      "date_modified": "2026-08-13T00:00:00-07:00","author":{"name":"Ted Tschopp","url":"https://tedt.org/profile/","uri":"https://tedt.org/profile/","avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","givenname":"Ted","familyname":"Tschopp","othernames":"Þeodor Tʃopp | टेड चप | Фёдор Чоп | تد شُپ | Թեդ Չոպպ | Ted Çop | டெட் சாப் | טעד טשאָפּ | Τεντ Τσοπ | 테드 촙 | 特德·察普 | テッド・チョッパ | ტედ ჩოპი | เท็ด ชอพ | ເທດ ຊອບ | ടെഡ് ചോപ്പ് | টেড চপ | ཏེཌ་ ཅོཔ། | ቴድ ቾፕ | ᏖᏗ ᏦᏇ | ᛏᛖᛞ ᛏᛋᚲᛟᛈᛈ | 𐌀𐌄𐌃 𐌕𐌔𐌂𐌏𐌐𐌐 | Ⱅⰵⰴ ⱌⱁⱂⱂ | ܬܝܕ ܟܘܦ | ᠲᠡᠳᠡᠳ ᠴᠣᠫ | ᑌᑎ ᒍᐳᐱ | ꕚꔳ ꗍꖛ | ߕߋߘ ߞߐߔߔ | 𐔓𐔖𐔆 𐔓𐔀𐔚𐔚 | 𐎚𐎄𐎆 𐎚𐎌𐎒𐎒 | 𐎄𐎓𐎆 𐎚𐎔𐎒𐎒 | 𐤕𐤄𐤃 𐤕𐤔𐤐𐤐 | 𐤕𐤃𐤄 𐤕𐤔𐤏𐤐 | 𐎚𐎄𐎆 𐎚𐎘𐎔𐎔 | 𒋼𒁺𒁍 𒋼𒊭𒉺𒉺 | 𓏏𓂧𓂝 𓏏𓊃𓍿𓊪 | ⲧⲉⲇ ⲧϣⲟⲡⲡ | 𐌕𐌄𐌃 𐌕𐌔𐌎𐌐𐌐 | 𐤈𐤃𐤄 𐤈𐤔𐤐𐤐 | 𐌕𐌄𐌃 𐌕𐌔𐌏𐌐𐌐 | 𐌕𐌄𐌃 𐌕𐌔𐌐𐌐 | 𐎄𐎕𐎆 𐎚𐎑𐎔𐎔 | 𐔓𐔖𐔆 𐔓𐔀𐔚𐔚 | 𐀳𐀂𐀅 𐀳𐀴𐀞 | 𐱃𐰀𐰓 𐱃𐰴𐰯 | 𑀢𑁂𑀤𑁆 𑀘𑁄𑀧𑁆 | 𐨟𐨂𐨡 𐨖𐨎𐨿 | 𐦚𐦱𐦟 𐦚𐦷𐦣 | 𐭓𐭐𐭃 𐭓𐭱𐭕𐭕 | 𐭲𐭩𐭣 𐭲𐭱𐭯𐭯 | ᚈᚓᚇ ᚈᚄᚉᚑᚚᚚ | 𒋼𒁺𒁍 𒋼𒊭𒉺𒉺 | ᛏᛖᛞ ᛏᛋᚲᛟᛈᛈ | تيد تشوب | ટેડ ચોક્પ | ਟੇਡ ਚੋਪ | ಟೆಡ್ ಚೊಪ್ | ටෙඩ් චොප් | တက် ချော့ပ် | តេដ ឆប | ꦠꦺꦢ꧀ ꦕꦺꦴꦥ꧀ | ᬢᭂᬤ᭄ ᬘᭀᬧ᭄ | ᜆᜒᜇ᜔ ᜆ᜔ᜐᜓᜉ᜔ | ᏖᏗ ᏣᏊ | ꄊꄮ ꍏꀠ | ଟେଡ୍ ଚୋପ୍ | ⵜⴻⴷ ⵛⵓⵒ | 𐐓𐐯𐐼 𐐟𐐙𐐱𐐹 | 𐑑𐑧𐑛 𐑗𐑪𐑐 | 𐘳𐘂𐘅 𐘳𐘴𐘞 | 𐠔𐠁𐠊 𐠔𐠷𐠡 | 𐊗𐊁𐊅 𐊗𐊐𐊓 | 𐊴𐊭𐊺 𐊴𐋄𐊸 | 𐢞𐢉𐢅 𐢞𐢝𐢘 | ࠕࠄࠃ ࠕࠔࠐࠐ | 𐫤𐫏𐫝 𐫤𐫘𐫖 | ꡈꡦ ꡐꡡꡌ | ꯇꯦꯗ ꯆꯣꯄ | ꨓꨯꨕ ꨌꨱꨚ | ᨲᩮᨯ᩠ ᨩᩮᩫ᩠ | ꪔꫀꪒ ꪊꪮꪚ | ᯖᯩᯑ᯲ ᯙᯬᯇ᯲ | ꥆꥍꤴ ꥓ꥏꥒ | ᨈᨙᨉᨛ ᨌᨚᨄᨛ | ᮒᮨᮓ᮪ ᮎᮧᮕ᮪ | ᜦᜒᜇ᜴ ᜰᜳᜉ᜴ | ᝆᝒᝇ᝔ ᝌᝓᝉ᝔ | ꠔꠦꠖ ꠌꠥꠙ | 𑂞𑂵𑂠 𑂒𑂷𑂣 | 𑆠𑆼𑆢𑇀 𑆖𑆾𑆥𑇀 | 𑚔𑚵𑚖 𑚏𑚴𑚞 | 𑲌𑲹𑲏 𑱰𑲿𑱱 | 𑊢𑋐𑊦 𑊓𑋒𑊪 | 𑈋𑈸𑈍𑈴 𑈑𑈺𑈞𑈴 | 𑅐𑅬𑅒 𑅘𑅺𑅛 | 𑘝𑘿𑘟 𑘓𑘽𑘨 | 𑜔𑜦𑜕 𑜒𑜩𑜞 | 𑣕𑣈𑣙 𑣌𑣏𑣗 | 𞠔𞠀𞠙 𞠌𞠁𞠖 | 𑫎𑫟𑫒 𑫏𑫝𑫐 | 𐓰𐒰𐓈 𐓍𐒷𐓄 | 𞤚𞤫𞤣 𞤷𞤮𞥄 | 𖫐𖫪𖫓 𖫗𖫩𖫞 | 𛰙𛱎𛰣 𛲄𛱖𛱐 |  ","biography":["I'm **Ted Tschopp**, a Senior Enterprise Architect based in Los Angeles, working at the intersection of **enterprise architecture, artificial intelligence, software strategy, and digital automation**.","At **Southern California Edison**, I help shape the architecture strategy for AI, software, and enterprise products that support one of the nation’s largest electric utilities. My work sits where **strategy meets execution**: platforms, guardrails, operating models, governance, risk, developer experience, and the practical realities of making ambitious technology useful, resilient, and sustainable inside a large organization.","I've spent **25+ years at SCE** helping teams navigate complex technology change. The part of enterprise architecture I care about most is not the diagram. It is the design discipline that makes systems usable, governable, sustainable, and welcoming for the people who depend on them and the teams who build them.","Before joining Edison, I owned a business featured in *Wired Magazine*, founded one of the largest J.R.R. Tolkien community websites, and worked in automotive market research. That mix of technology, storytelling, community-building, and analysis still shapes how I think about systems today.","I love working in technology because it lets me watch the future arrive in real time. Some of the things I have worked on were science fiction when I was in school. Now they are platform problems, governance problems, people problems, and architecture problems — which is where the interesting work begins.","Unless otherwise stated, everything here reflects my own views."],"email":"ted@tschopp.org","phonenumber":null,"keybaseio_username":"tedtschopp","twitter_username":"TedTschopp","twitter":"TedTschopp","github_username":"TedTschopp","linkedin_username":"tedtschopp","facebook_username":"ted.tschopp","google_username":"TedTschopp","youtube_username":"TedTschopp","pinterest_username":"TedTschopp","reddit_username":"tedtschopp","instagram_username":"tedtschopp","quora_username":"Ted-Tschopp","indiewebcamp_username":"Www.tedt.org","mastodon_username":"TedT@twit.social","mastodon_user_id":109286944787814820,"threads_username":"TedTschopp@threads.net","same_as":["https://www.linkedin.com/in/tedtschopp","https://github.com/TedTschopp","https://twit.social/@TedT","https://bsky.app/profile/tedt.org","https://twitter.com/TedTschopp","https://www.youtube.com/channel/UC4Q8pXroTVyXrIxg2u82pwg"],"knows_about":["Enterprise architecture","Enterprise artificial intelligence","AI governance","Software and platform strategy","Digital automation","Technology-enabled organizational change","Digital communities and storytelling","Swiss folklore","Tabletop role-playing game design"],"works_for":{"name":"Southern California Edison","url":"https://www.sce.com/"}}},
+  {
+      "id": "/The-Sandbox-Was-Not-the-Boundary/",
+      "title": "The Sandbox Was Not the Boundary",
+      
+      "summary": "The OpenAI–Hugging Face incident shows why an agent's boundary must include proxy services, persistent state, task-failure behavior, and the authority to restart after an incident.",
+      
+      "content_text": "The OpenAI–Hugging Face incident shows why an agent's boundary must include proxy services, persistent state, task-failure behavior, and the authority to restart after an incident. https://preview.tedt.org/The-Sandbox-Was-Not-the-Boundary/",
+      "url": "https://preview.tedt.org/The-Sandbox-Was-Not-the-Boundary/",
+  "image": "https://tedt.org/img/2026-08/sandbox-boundary-hero-04-cross-run-shared-state.webp",
+      "tags": ["agentic AI","AI security","cybersecurity","AI agents","sandboxing","indirect internet access","Artifactory","server-side request forgery","incident response","model lineage","AI governance","automation controls"],"date_published": "2026-08-08T09:00:00-07:00",
+      "date_modified": "2026-08-08T09:00:00-07:00","author":{"avatar":"https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g","name":"Ted Tschopp","url":"https://tedt.org/"}}
+  
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "jekyll_preview_build": "passed",
+  "jekyll_production_config_build": "passed_without_deployment",
+  "browser_scenarios_passed": 60,
+  "browser_validation_note": "58 passing scenarios in the final broad run; both bestiary scenarios passed after correcting the test to the existing .html permalink.",
+  "html_pages_noindex": 1275,
+  "internal_hub_links_checked": 878,
+  "legacy_sitemap_paths_preserved": 1090,
+  "analytics": "disabled",
+  "tools_css_sync": "passed",
+  "javascript_syntax": "passed",
+  "visual_review": "desktop 1440px and phone 390px"
+}

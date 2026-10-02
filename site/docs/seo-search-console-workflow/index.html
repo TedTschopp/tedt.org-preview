@@ -1,0 +1,37 @@
+<h1 id="search-console-seo-prioritization-workflow">Search Console SEO prioritization workflow</h1>
+
+<p>Use real Search Console performance data to decide which titles and pages to improve. Character counts are warning signals, not ranking rules.</p>
+
+<h2 id="export">Export</h2>
+
+<ol>
+  <li>Open <strong>Search results → Performance</strong> for the <code class="language-plaintext highlighter-rouge">tedt.org</code> property.</li>
+  <li>Select a 90-day comparison window when evaluating a sustained change.</li>
+  <li>Open the <strong>Pages</strong> tab and export CSV.</li>
+  <li>Save the export outside the repository if it contains private performance data.</li>
+</ol>
+
+<h2 id="generate-the-working-queue">Generate the working queue</h2>
+
+<p>Build the site, then run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll build
+bundle <span class="nb">exec </span>ruby scripts/analyze_search_console_performance.rb <span class="se">\</span>
+  <span class="nt">--pages</span> /path/to/Pages.csv <span class="se">\</span>
+  <span class="nt">--site</span> _site <span class="se">\</span>
+  <span class="nt">--output</span> reports/seo/search-console
+</code></pre></div></div>
+
+<p>The report prioritizes pages with substantial impressions, low CTR, and average positions 4–20. It also shows the current rendered title and description lengths.</p>
+
+<h2 id="apply-changes">Apply changes</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">seo_title:</code> for a concise search title when the visible <code class="language-plaintext highlighter-rouge">title:</code> is intentionally longer.</li>
+  <li>Preserve the visible H1 unless the page itself needs editorial revision.</li>
+  <li>Improve content only when it better answers the queries producing impressions.</li>
+  <li>Add contextual links from the appropriate topic hub to promising pages in positions 10–20.</li>
+  <li>Compare 28- and 90-day performance after Google has recrawled the changed URLs.</li>
+</ul>
+
+<p>Do not commit raw Search Console exports unless they are intentionally approved for publication.</p>

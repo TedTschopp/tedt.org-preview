@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <!-- We need to be able to differentiate between when we are rendering the homepage and the current page's full url -->
+
+
+
+
+
+<!-- strip HTML Content and empty spaces out of the pages content -->
+ 
+
+
+
+
+
+
+
+<!-- Calculate the pages description if one isn't present -->
+
+
+
+
+<!-- Category work -->
+
+
+
+
+
+
+
+
+<!-- mf-bookmark-of -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- This needs to be fixed -->
+
+
+
+
+
+
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: blob: https:; font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; connect-src 'self' https://tedtschopp.github.io; frame-src 'none'; media-src 'self' blob:; worker-src 'self' blob:; manifest-src 'self'">
+
+
+  <meta name="color-scheme" content="light dark">
+<script>
+(function () {
+  'use strict';
+
+  var STORAGE_KEY = 'color-scheme';
+
+  function getCookie(name) {
+    var value = '; ' + document.cookie;
+    var parts = value.split('; ' + name + '=');
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  }
+
+  function normalizePreference(value) {
+    if (!value) return 'auto';
+    var v = String(value).toLowerCase().trim();
+
+    // Support pepelsbey-style string as a persisted value
+    if (v === 'light dark') return 'auto';
+
+    if (v === 'light' || v === 'dark' || v === 'auto') return v;
+
+    // Support older boolean-ish / short forms
+    if (v === 'system') return 'auto';
+
+    return 'auto';
+  }
+
+  function ensureColorSchemeMeta() {
+    var meta = document.querySelector('meta[name="color-scheme"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'color-scheme');
+      document.head.appendChild(meta);
+    }
+    return meta;
+  }
+
+  function getPrefersDark() {
+    try {
+      return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function readPreference() {
+    // 1) localStorage (new)
+    try {
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) return normalizePreference(stored);
+    } catch (e) {}
+
+    // 2) legacy cookies (old)
+    var legacy = getCookie('theme') || getCookie('site_theme');
+    if (legacy) return normalizePreference(legacy);
+
+    // 3) default
+    return 'auto';
+  }
+
+  function applyPreference(preference) {
+    var pref = normalizePreference(preference);
+    var meta = ensureColorSchemeMeta();
+    var html = document.documentElement;
+
+    var prefersDark = getPrefersDark();
+
+    var metaContent;
+    var bsTheme;
+
+    if (pref === 'light') {
+      metaContent = 'light';
+      bsTheme = 'light';
+    } else if (pref === 'dark') {
+      metaContent = 'dark';
+      bsTheme = 'dark';
+    } else {
+      metaContent = 'light dark';
+      bsTheme = prefersDark ? 'dark' : 'light';
+    }
+
+    meta.setAttribute('content', metaContent);
+    html.setAttribute('data-bs-theme', bsTheme);
+
+    // Optional: a stable marker for other scripts (no CSS dependence)
+    html.setAttribute('data-color-scheme', pref);
+
+    return pref;
+  }
+
+  var currentPreference = applyPreference(readPreference());
+
+  // Expose a tiny API for the bottom-of-body wiring script.
+  window.__TedColorScheme = {
+    STORAGE_KEY: STORAGE_KEY,
+    get: function () { return currentPreference; },
+    set: function (next) { currentPreference = applyPreference(next); return currentPreference; },
+    refreshAuto: function () {
+      if (currentPreference === 'auto') {
+        currentPreference = applyPreference('auto');
+      }
+      return currentPreference;
+    }
+  };
+})();
+</script>
+
+      
+    <!-- IndieAuth.com -->
+    
+
+            
+              <link href="https://keybase.io/tedtschopp" rel="me">
+            
+
+            
+                <link href="https://github.com/TedTschopp/" rel="me">
+            
+            
+                <link href="https://www.linkedin.com/in/tedtschopp/" rel="me">
+            
+            
+                <link href="https://twitter.com/TedTschopp" rel="me">
+            
+            
+                <link href="https://www.facebook.com/ted.tschopp" rel="me">
+            
+            
+                <link href="https://plus.google.com/u/0/+TedTschopp" rel="me">
+            
+            
+                <link href="https://www.youtube.com/user/TedTschopp/" rel="me">
+            
+            
+                <link href="https://www.pinterest.com/TedTschopp/" rel="me">
+            
+            
+                <link href="https://www.reddit.com/user/tedtschopp/" rel="me">
+            
+            
+                <link href="https://www.instagram.com/tedtschopp/" rel="me">
+            
+            
+                <link href="https://www.quora.com/profile/Ted-Tschopp/" rel="me">
+            
+            
+                <link href="https://indieweb.org/User:Www.tedt.org/" rel="me">
+            
+    
+    
+    <!-- Webmentions -->
+    <link rel="webmention" href="https://webmention.io/tedt.org/webmention" />
+    <link rel="pingback" href="https://webmention.io/tedt.org/xmlrpc" />
+
+    <!-- Indieauth.com/ 
+         MICROPUB_TOKEN_ENDPOINT Required
+         The token endpoint to verify the micropub token against. See: https://indieweb.org/token-endpoint
+    -->
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <!--- <link href="https://micropub-to-github-for-ted.herokuapp.com/micropub/main" rel="micropub"> --->
+
+  	
+<!-- legacy site.siteurl removed -->
+<!--  full-page-url = https://preview.tedt.org/inside-ai/ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>Inside AI: Explore How Transformers Work | Ted Tschopp</title>
+
+  <!-- TODO: Add Multiple Authors -->
+  <meta name="author" content="Ted Tschopp">
+  <link rel="author" href="https://preview.tedt.org/humans.txt">
+  <link rel="copyright" href="https://preview.tedt.org/Copyright/">
+  
+  
+  <link rel="canonical" href="https://preview.tedt.org/inside-ai/" />
+
+
+
+
+
+
+
+
+  <!-- Mastodon Meta Data-->
+  
+    
+  <meta name="fediverse:creator" content="@TedT@twit.social">
+    
+  <meta name="fediverse:creator" content="@Ted@tschopp.net">
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Follow a prompt through GPT-2 with an interactive transformer diagram. Explore tokens, attention, and next-token probabilities, then try live inference in yo...">
+<meta name="abstract" content="Ted Tschopp's Homepage">
+
+  
+    <meta name="keywords" content="Technology, Theology, Creativity, Religion, digital age, UI/UX, Collaboration tools, Storytelling">
+  
+
+
+
+
+<meta property="og:image" content="https://tedt.org/img/inside-ai/social-preview.png">
+<meta property="og:image:alt" content="Inside AI, an interactive guide to tokens, attention, and the next word.">
+
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image:width" content="1200">
+  <meta name="twitter:image:height" content="630">
+
+<meta property="og:site_name" content="Ted Tschopp's Homepage">
+
+  <meta property="og:title" content="Inside AI: Explore How Transformers Work | Ted Tschopp">
+  <meta property="og:description" content="Follow a prompt through GPT-2 with an interactive transformer diagram. Explore tokens, attention, and next-token probabilities, then try live inference in your browser."><!-- desc-sanitizer-v2 -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://preview.tedt.org/inside-ai/">
+
+<meta property="og:locale" content="en_US">
+<meta property="fb:app_id" content="1939132006351436">
+<meta name="twitter:site" content="@TedTschopp">
+
+  <meta name="twitter:creator" content="@TedTschopp">
+
+<meta name="twitter:title" content="Inside AI: Explore How Transformers Work | Ted Tschopp"><meta name="twitter:description" content="Follow a prompt through GPT-2 with an interactive transformer diagram. Explore tokens, attention, and next-token probabilities, then try live inference in your browser.">
+
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:image" content="https://tedt.org/img/inside-ai/social-preview.png">
+  <meta name="twitter:image:alt" content="Inside AI, an interactive guide to tokens, attention, and the next word.">
+
+<meta name="twitter:url" content="https://preview.tedt.org/inside-ai/">
+
+
+  <meta property="article:published_time" content="2026-09-27T00:00:00-07:00">
+
+
+  <meta property="article:modified_time" content="2026-09-27T00:00:00-07:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://preview.tedt.org/#person",
+      "name": "Ted Tschopp",
+      "url": "https://preview.tedt.org/profile/",
+      "image": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+      "givenName": "Ted",
+      "familyName": "Tschopp",
+      "jobTitle": "Enterprise Architect",
+      "sameAs": ["https://www.linkedin.com/in/tedtschopp","https://github.com/TedTschopp","https://twit.social/@TedT","https://bsky.app/profile/tedt.org","https://twitter.com/TedTschopp","https://www.youtube.com/channel/UC4Q8pXroTVyXrIxg2u82pwg"],
+      "knowsAbout": ["Enterprise architecture","Enterprise artificial intelligence","AI governance","Software and platform strategy","Digital automation","Technology-enabled organizational change","Digital communities and storytelling","Swiss folklore","Tabletop role-playing game design"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Southern California Edison",
+        "url": "https://www.sce.com/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://preview.tedt.org/#website",
+      "url": "https://preview.tedt.org/",
+      "name": "Ted Tschopp",
+      "description": "Technology, theology, and creativity converge in this insightful exploration by Ted Tschopp, who navigates the intricate relationship between these topics in the digital age. From dissecting how technology is reshaping religious practices and ethics to sharing cutting-edge trends in UI/UX design, collaboration tools, and digital storytelling, the author provides a multifaceted analysis. Written with a unique and engaging blend of humor, reflection, and curiosity, this work invites readers to ponder and discuss these connections, offering a contemplative lens on modern innovation and cultural evolution.",
+      "publisher": { "@id": "https://preview.tedt.org/#person" }
+    },
+    
+    {
+      "@type": "WebApplication",
+      "@id": "https://preview.tedt.org/inside-ai/#webpage",
+      "url": "https://preview.tedt.org/inside-ai/",
+      "name": "Inside AI: Explore a Transformer",
+      "description": "Follow a prompt through GPT-2 with an interactive transformer diagram. Explore tokens, attention, and next-token probabilities, then try live inference in your browser.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "isPartOf": { "@id": "https://preview.tedt.org/#website" },
+      "publisher": { "@id": "https://preview.tedt.org/#person" },
+      "image": "https://tedt.org/img/inside-ai/social-preview.png",
+      "breadcrumb": { "@id": "https://preview.tedt.org/inside-ai/#breadcrumb" }
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://preview.tedt.org/inside-ai/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://preview.tedt.org/"
+        },
+        
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Inside AI: Explore a Transformer",
+          "item": "https://preview.tedt.org/inside-ai/"
+        }
+      ]
+    }
+    
+  ]
+}
+</script>
+
+    <!-- Favicon Meta Tags.  -->
+  <link rel="shortcut icon" href="https://tedt.org/img/favicon.ico">
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-196x196.webp" sizes="196x196" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-96x96.webp" sizes="96x96" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-32x32.webp" sizes="32x32" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-16x16.webp" sizes="16x16" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-128.webp" sizes="128x128" />
+
+
+    <!-- Apple iOS Settings. -->
+    <!--Sets whether a web application runs in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable"          content="yes">
+    <!-- Color of the status bar -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Web App Name for the Shortcut -->
+    <meta name="apple-mobile-web-app-title"            content="Inside AI: Explore a Transformer">
+    <!-- Do Not Detect Phone Numbers -->
+    <meta name="format-detection"                      content="telephone=no">
+
+    <!-- iPhone icons -->
+    <!-- Apple touch icons (all inside head) -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://tedt.org/img/apple-touch-icon-57x57.webp" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://tedt.org/img/apple-touch-icon-114x114.webp" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://tedt.org/img/apple-touch-icon-72x72.webp" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://tedt.org/img/apple-touch-icon-144x144.webp" />
+    <link rel="apple-touch-icon" sizes="60x60" href="https://tedt.org/img/apple-touch-icon-60x60.webp" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://tedt.org/img/apple-touch-icon-120x120.webp" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://tedt.org/img/apple-touch-icon-76x76.webp" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://tedt.org/img/apple-touch-icon-152x152.webp" />
+
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="https://tedt.org/img/mstile-144x144.webp" />
+    <meta name="msapplication-square70x70logo" content="https://tedt.org/img/mstile-70x70.webp" />
+    <meta name="msapplication-square150x150logo" content="https://tedt.org/img/mstile-150x150.webp" />
+    <meta name="msapplication-wide310x150logo" content="https://tedt.org/img/mstile-310x150.webp" />
+    <meta name="msapplication-square310x310logo" content="https://tedt.org/img/mstile-310x310.webp" />
+
+    <!-- Google Chrome. -->
+
+    <meta name="google" value="notranslate">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Pinterest. -->
+    <!-- Prevents sharing of content by Pinterest users. -->
+    <!-- <meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!"> -->
+    <!-- Pinterest Verify -->
+    <meta name="p:domain_verify" content="98d8bdfab96a340e5a4f03f7a4303f0e"/>
+
+
+
+      <link rel="alternate" type="application/rss+xml"  title="RSS 2.0"    href="https://preview.tedt.org/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom 0.3"   href="https://preview.tedt.org/atom.xml" />
+    <link rel="alternate" type="application/json"     title="JSON"       href="https://preview.tedt.org/feed.json" />
+
+  <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/bootstrap-build.css">
+  <link rel="stylesheet" href="/css/shared-fonts.css">
+  <link rel="stylesheet" href="/css/logo-and-company-fonts.css">
+  <link rel="stylesheet" href="/inside-ai/assets/inside-ai.css">
+  <link rel="stylesheet" href="/css/inside-ai.css">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ia-page">
+  <a class="ia-skip" href="#inside-ai-main">Skip to the main content</a>
+  <a class="ia-skip-link" href="#main-content">Skip to content</a>
+<nav class="navbar navbar-expand-xl fixed-top bg-dark navbar-dark ia-navbar" aria-label="Primary">
+  <div class="container-fluid">
+    <a class="navbar-brand u-url" rel="me" href="/">
+      <img src="https://tedt.org/img/home/logo-Tschopp.svg" height="48" width="48" alt="Ted Tschopp home">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse flex-grow-1" id="navbarNavDarkDropdown">
+      <div class="navbar-nav ms-auto" role="list">
+        
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/essays/">Essays</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="essaysDropdownToggle" aria-label="Show Essays menu" aria-controls="essaysDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="essaysDropdownMenu" aria-labelledby="essaysDropdownToggle">
+      <li><a class="dropdown-item" href="/essays/">Essays Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/essays/#ai-architecture">AI &amp; Enterprise Architecture</a></li><li><a class="dropdown-item" href="/essays/#work-leadership">Work &amp; Leadership</a></li><li><a class="dropdown-item" href="/essays/#technology-science">Technology &amp; Science</a></li><li><a class="dropdown-item" href="/essays/#faith-philosophy">Faith &amp; Philosophy</a></li><li><a class="dropdown-item" href="/essays/#life-culture">Life &amp; Culture</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/stories/">Stories &amp; Folklore</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="storiesDropdownToggle" aria-label="Show Stories &amp; Folklore menu" aria-controls="storiesDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="storiesDropdownMenu" aria-labelledby="storiesDropdownToggle">
+      <li><a class="dropdown-item" href="/stories/">Stories &amp; Folklore Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/stories/#swiss-folklore">Swiss Folklore</a></li><li><a class="dropdown-item" href="/stories/#original-writing">Original Writing</a></li><li><a class="dropdown-item" href="/stories/#poetry-lyrics">Poetry &amp; Lyrics</a></li><li><a class="dropdown-item" href="/stories/#tolkien-fandom">Tolkien &amp; Fandom</a></li><li><a class="dropdown-item" href="/stories/#writing-tools">Writing Tools</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/games/">Games &amp; Worlds</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="gamesDropdownToggle" aria-label="Show Games &amp; Worlds menu" aria-controls="gamesDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="gamesDropdownMenu" aria-labelledby="gamesDropdownToggle">
+      <li><a class="dropdown-item" href="/games/">Games &amp; Worlds Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/games/#marchen-engine">The Märchen Engine</a></li><li><a class="dropdown-item" href="/games/#campaigns-systems">Campaigns &amp; Systems</a></li><li><a class="dropdown-item" href="/games/#bestiary-reference">Bestiary &amp; Reference</a></li><li><a class="dropdown-item" href="/games/#worldbuilding-maps">Worldbuilding &amp; Maps</a></li><li><a class="dropdown-item" href="/games/#gm-tools">GM Tools</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/tools/">Tools</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="toolsDropdownToggle" aria-label="Show Tools menu" aria-controls="toolsDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="toolsDropdownMenu" aria-labelledby="toolsDropdownToggle">
+      <li><a class="dropdown-item" href="/tools/">Tools Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/tools/#everyday">Everyday &amp; Productivity</a></li><li><a class="dropdown-item" href="/tools/#writing">Writing, Text &amp; Code</a></li><li><a class="dropdown-item" href="/tools/#images">Images &amp; Design</a></li><li><a class="dropdown-item" href="/tools/#maps">Maps &amp; Generators</a></li><li><a class="dropdown-item" href="/tools/#ai">AI Tools &amp; Library</a></li><li><a class="dropdown-item" href="/tools/#social">Social Tools</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/learn/">Learn</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="learnDropdownToggle" aria-label="Show Learn menu" aria-controls="learnDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="learnDropdownMenu" aria-labelledby="learnDropdownToggle">
+      <li><a class="dropdown-item" href="/learn/">Learn Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/learn/#inside-ai">Inside AI</a></li><li><a class="dropdown-item" href="/learn/#game-theory">Game Theory Playground</a></li><li><a class="dropdown-item" href="/learn/#math">Math in Plain English</a></li><li><a class="dropdown-item" href="/learn/#presentations">Talks &amp; Presentations</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/about-ted/">About</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="aboutDropdownToggle" aria-label="Show About menu" aria-controls="aboutDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="aboutDropdownMenu" aria-labelledby="aboutDropdownToggle">
+      <li><a class="dropdown-item" href="/about-ted/">About Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/profile/">About Ted</a></li><li><a class="dropdown-item" href="/career/">Career &amp; Resume</a></li><li><a class="dropdown-item" href="/about-ted/#projects">Selected Work &amp; Projects</a></li><li><a class="dropdown-item" href="/about-ted/#contact">Contact</a></li><li><a class="dropdown-item" href="/about-ted/#editorial-standards">Editorial Standards</a></li>
+    </ul>
+  </div>
+
+<div class="nav-item ia-nav-utility" role="listitem"><a class="nav-link menu-item" href="/search/">Search</a></div>
+<div class="nav-item ia-nav-utility" role="listitem"><a class="nav-link menu-item" href="/subscribe/">Subscribe</a></div>
+
+        <div class="nav-item" role="listitem">
+          <div id="colorSchemeToggle" class="scheme-switcher scheme-switcher--icons" role="group" aria-label="Color scheme">
+            <button type="button" class="scheme-switcher__button" title="Light" aria-label="Light" aria-pressed="false" data-color-scheme="light"><span aria-hidden="true">&#9728;</span></button>
+            <button type="button" class="scheme-switcher__button" title="System" aria-label="System" aria-pressed="false" data-color-scheme="auto"><span aria-hidden="true">&#128187;</span></button>
+            <button type="button" class="scheme-switcher__button" title="Dark" aria-label="Dark" aria-pressed="false" data-color-scheme="dark"><span aria-hidden="true">&#9790;</span></button>
+          </div>
+        </div>
+        <div class="nav-item d-none d-lg-flex" role="listitem" data-toc-visibility-container>
+          <div id="tocVisibilityToggle" class="scheme-switcher scheme-switcher--icons" role="group" aria-label="Table of contents">
+            <button type="button" class="scheme-switcher__button" title="Show TOC" aria-label="Show TOC" aria-pressed="false" data-toc-visibility="show"><span aria-hidden="true">&#9776;</span></button>
+            <button type="button" class="scheme-switcher__button" title="Hide TOC" aria-label="Hide TOC" aria-pressed="false" data-toc-visibility="hide"><span aria-hidden="true">&#10006;</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<aside class="site-preview-banner" aria-label="Site preview"><strong>Preview</strong><span>Explore the proposed layout.</span><a href="https://tedt.org/">View the Current Site <span aria-hidden="true">↗</span></a></aside>
+
+
+
+  <main id="main-content" tabindex="-1" id="inside-ai-main" class="ia-shell" tabindex="-1">
+    <header class="ia-hero">
+  <p class="ia-eyebrow">Ted’s Public Workbench <span aria-hidden="true">/</span> Interactive Learning</p>
+  <h1>Inside AI</h1>
+  <p class="ia-lead">Follow a sentence through a transformer.</p>
+  <p class="ia-intro">A language model builds an answer one token at a time. Look inside the calculation: how text becomes numbers, how attention connects the pieces, and how the next token is chosen. Change a setting and see what moves.</p>
+  <nav class="ia-actions" aria-label="Choose how to explore Inside AI">
+    <a class="ia-button" href="#inside-ai-guide">Start with the guided explanation <span aria-hidden="true">→</span></a>
+    <a href="#inside-ai-explorer">Open the explorer</a>
+  </nav>
+  <p class="ia-meta">GPT-2 <span aria-hidden="true">·</span> Prepared examples first <span aria-hidden="true">·</span> Optional live inference in your browser</p>
+  <section class="ia-starters" aria-labelledby="inside-ai-starters-title">
+    <h2 id="inside-ai-starters-title">Three Things to Try</h2>
+    <ol>
+      <li><a href="#inside-ai-tokens">Inspect tokenization</a><p>Compare a familiar word with an unusual name. Notice where the pieces split.</p></li>
+      <li><a href="#inside-ai-attention">Compare attention heads</a><p>Keep the same sentence and token. Look at which connections change.</p></li>
+      <li><a href="#inside-ai-sampling">Change sampling settings</a><p>Adjust one setting at a time and watch the candidate probabilities.</p></li>
+    </ol>
+  </section>
+</header>
+
+<section class="ia-explorer" id="inside-ai-explorer" aria-labelledby="inside-ai-explorer-title">
+  <div class="ia-section-heading">
+    <div>
+      <p class="ia-eyebrow">The Interactive Model</p>
+      <h2 id="inside-ai-explorer-title">Follow the Next Token</h2>
+    </div>
+    <a href="#inside-ai-guide">Read the steps below</a>
+  </div>
+  <p class="ia-intro">Begin with a prepared example. Select a token or an attention connection to inspect the calculation. Live mode downloads the model after you choose to load it; the explorer shows its progress and lets you cancel.</p>
+  <div id="inside-ai-app"></div>
+  <p id="inside-ai-load-error" class="ia-notice" role="alert" hidden>The interactive explorer could not load. Reload the page to try again, or keep reading the guide below.</p>
+  <noscript><p class="ia-notice">Turn on JavaScript to use the explorer. The complete guided explanation below is available without it.</p></noscript>
+  <p class="ia-privacy">Your text and model computations stay in this browser. Live mode downloads model files; this page does not send your prompts or record your session.</p>
+</section>
+
+<section id="inside-ai-guide" class="ia-guide" aria-labelledby="inside-ai-guide-title">
+  <div class="ia-section-heading">
+    <div>
+      <p class="ia-eyebrow">A Guided Explanation</p>
+      <h2 id="inside-ai-guide-title">From Text to the Next Token</h2>
+    </div>
+    <p class="ia-meta">Read in order, or follow a question.</p>
+  </div>
+  <nav class="ia-guide-nav" aria-label="Transformer explanation steps">
+    <a href="#inside-ai-tokens">1. Tokens</a>
+    <a href="#inside-ai-embeddings">2. Embeddings</a>
+    <a href="#inside-ai-attention">3. Attention</a>
+    <a href="#inside-ai-blocks">4. Transformer blocks</a>
+    <a href="#inside-ai-probabilities">5. Probabilities</a>
+    <a href="#inside-ai-sampling">6. Sampling</a>
+    <a href="#inside-ai-limits">7. What this shows</a>
+  </nav>
+  <div class="ia-lessons">
+    <section id="inside-ai-tokens" class="ia-lesson" aria-labelledby="inside-ai-tokens-title">
+      <p class="ia-step" aria-hidden="true">01</p>
+      <div>
+        <h3 id="inside-ai-tokens-title">Split the Text Into Tokens</h3>
+        <p>A tokenizer turns your text into pieces from a fixed vocabulary. A token can be a whole word, part of a word, punctuation, or text that includes a leading space. The same visible word can therefore have different tokenizations in different contexts.</p>
+        <p>Each token receives a numeric ID. An ID is a vocabulary lookup key, not a score: a larger number does not mean a more important word.</p>
+        <p class="ia-try"><strong>Try it:</strong> Compare an ordinary word with an unusual name. Inspect the token pieces before looking at the prediction.</p>
+      </div>
+    </section>
+    <section id="inside-ai-embeddings" class="ia-lesson" aria-labelledby="inside-ai-embeddings-title">
+      <p class="ia-step" aria-hidden="true">02</p>
+      <div>
+        <h3 id="inside-ai-embeddings-title">Give Each Token a Vector and a Position</h3>
+        <p>The model looks up a learned list of numbers, called an <strong>embedding</strong>, for each token ID. GPT-2 adds a learned position embedding so the calculation can distinguish the first token from the fifth.</p>
+        <p>These vectors begin the model’s working representation of the text. Individual coordinates are learned values; they do not come with reliable labels such as “kindness” or “certainty.” A colored cell in the diagram is a number, not a named idea.</p>
+        <p class="ia-try"><strong>Look for:</strong> The separate token and position contributions. Follow their combined vector into the first transformer block.</p>
+      </div>
+    </section>
+    <section id="inside-ai-attention" class="ia-lesson" aria-labelledby="inside-ai-attention-title">
+      <p class="ia-step" aria-hidden="true">03</p>
+      <div>
+        <h3 id="inside-ai-attention-title">Use Attention to Combine Context</h3>
+        <p>Each attention head makes three projections of the input vectors: <strong>queries</strong>, <strong>keys</strong>, and <strong>values</strong>. Comparing a token’s query with the available keys produces scores. Softmax turns the scores into weights, and those weights determine how much of each value vector to combine.</p>
+        <p>GPT-2 uses causal attention: a token can use itself and earlier tokens, but it cannot look ahead. Several heads do this in parallel with different learned projections. Their outputs are combined and projected back into the model’s working representation.</p>
+        <details class="ia-math">
+          <summary>Read the attention equation</summary>
+          <p class="ia-equation"><code>Attention(Q, K, V) = softmax(QKᵀ / √dₖ + M)V</code></p>
+          <p><strong>QKᵀ</strong> compares queries with keys. Dividing by the square root of the key dimension keeps the scores on a useful scale. The causal mask <strong>M</strong> rules out future positions. <strong>Softmax</strong> makes the permitted weights add to one, and multiplying by <strong>V</strong> forms their weighted combination.</p>
+        </details>
+        <p class="ia-try"><strong>Try it:</strong> Select a token and compare its attention weights across heads. A large weight shows a strong connection in that calculation; it does not by itself explain the entire prediction.</p>
+      </div>
+    </section>
+    <section id="inside-ai-blocks" class="ia-lesson" aria-labelledby="inside-ai-blocks-title">
+      <p class="ia-step" aria-hidden="true">04</p>
+      <div>
+        <h3 id="inside-ai-blocks-title">Refine the Representation in Each Block</h3>
+        <p>Attention is one part of a transformer block. Layer normalization adjusts the scale of the working values. A feed-forward network applies learned transformations and a nonlinear activation to each token position.</p>
+        <p>Residual connections add a block’s updates to the existing representation. Repeating the blocks lets later calculations work with the changes made by earlier ones. The model’s weights remain fixed during this demonstration: generating text is inference, not training.</p>
+        <p class="ia-try"><strong>Look for:</strong> The path around each transformation. That is the residual connection carrying the existing representation forward.</p>
+      </div>
+    </section>
+    <section id="inside-ai-probabilities" class="ia-lesson" aria-labelledby="inside-ai-probabilities-title">
+      <p class="ia-step" aria-hidden="true">05</p>
+      <div>
+        <h3 id="inside-ai-probabilities-title">Score the Possible Next Tokens</h3>
+        <p>The final representation at the last position is mapped to a score for every token in the vocabulary. These scores are called <strong>logits</strong>. Softmax converts them into a probability distribution whose values add to one.</p>
+        <p>A high probability means the token is favored as a continuation under this model and context. It is not a probability that a statement is true. The visible candidate list shows only part of the vocabulary unless the explorer explicitly says otherwise.</p>
+        <p class="ia-try"><strong>Try it:</strong> Compare two prompts that differ in one token. Watch how the highest-ranked continuations change.</p>
+      </div>
+    </section>
+    <section id="inside-ai-sampling" class="ia-lesson" aria-labelledby="inside-ai-sampling-title">
+      <p class="ia-step" aria-hidden="true">06</p>
+      <div>
+        <h3 id="inside-ai-sampling-title">Choose a Token, Then Repeat</h3>
+        <p>A generation rule selects the next token from the distribution. Greedy selection chooses the highest-scoring token. Sampling can choose another candidate according to its probability.</p>
+        <dl class="ia-definitions">
+          <dt>Temperature</dt><dd>Rescales the logits before softmax. A lower positive temperature concentrates probability on leading candidates; a higher value spreads it more broadly.</dd>
+          <dt>Top-k</dt><dd>Keeps only the k highest-ranked candidates before sampling, then renormalizes their probabilities.</dd>
+          <dt>Top-p</dt><dd>Keeps a set of leading candidates whose cumulative probability reaches the selected threshold, then renormalizes. The number kept depends on the distribution.</dd>
+        </dl>
+        <p>The chosen token is appended to the context. The model then calculates another next-token distribution. An answer that appears all at once in a chat window is built through repeated steps like these.</p>
+        <p class="ia-try"><strong>Try it:</strong> Change one sampling control at a time. Notice whether it changes the ranking, the eligible candidates, or their relative probabilities.</p>
+      </div>
+    </section>
+    <section id="inside-ai-limits" class="ia-lesson" aria-labelledby="inside-ai-limits-title">
+      <p class="ia-step" aria-hidden="true">07</p>
+      <div>
+        <h3 id="inside-ai-limits-title">Know What the Picture Shows</h3>
+        <p>This explorer uses GPT-2 to make transformer mechanics visible. Modern language models can use different architectures, tokenizers, training methods, context lengths, and generation rules. The diagram is a teaching view of one model, not a complete picture of every AI system.</p>
+        <p>Prepared examples show recorded model results. Live mode runs the downloaded model in your browser. Illustrative vectors and simplified diagrams are labeled where they are used; they should not be read as measurements of a live prompt.</p>
+        <p>The explorer limits context to 32 tokens to keep the visualization manageable. Text generation can be inaccurate, biased, or offensive. Use the results to inspect a calculation rather than as a source of factual answers.</p>
+        <p class="ia-try"><strong>Keep asking:</strong> Which numbers did the model produce, which choices did the generation rule make, and which parts did the diagram simplify?</p>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="ia-related" aria-labelledby="inside-ai-related-title">
+  <h2 id="inside-ai-related-title">Keep Exploring</h2>
+  <p>Use the <a href="/math-guide/">Math Symbols, in Plain English guide</a> to read the notation. Try the <a href="/game-theory/">Game Theory Playground</a> to explore how changing a rule changes a result, or browse <a href="/category/ai/">Ted’s writing about artificial intelligence</a>.</p>
+</section>
+
+<section class="ia-credits" id="inside-ai-credits" aria-labelledby="inside-ai-credits-title">
+  <h2 id="inside-ai-credits-title">Inspiration</h2>
+  <p>This page was inspired by and adapted from <a href="https://poloclub.github.io/transformer-explainer/">Transformer Explainer</a> by the <a href="https://poloclub.github.io/">Polo Club of Data Science</a>. My adaptation adds this site’s design, guided explanations, and browser-loading controls. I plan on embedding this further into the educational and informational sections of my website moving forward.</p>
+  <!-- Upstream source revision: bfe50afba10b9b560b84143ee1107d977defa74f.
+       https://github.com/poloclub/transformer-explainer/tree/bfe50afba10b9b560b84143ee1107d977defa74f
+       Updated Sept. 27, 2026. License and provenance: _apps/inside-ai/README.md. -->
+</section>
+
+  </main>
+  <!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bd-footer py-4 py-md-5 mt-5">
+  <div class="container footer-shell py-4 py-md-5 px-4 px-md-3 h-card vcard" id="hcard-ted-tschopp">
+    <div class="row g-4 g-xl-5 align-items-start footer-main-row">
+      <div class="col-12 col-lg-4 col-xl-3">
+        <section class="footer-profile-card text-center text-lg-start">
+          <div class="footer-avatar-wrap mb-3">
+            <img src="https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g" class="footer-avatar rounded-circle img-thumbnail intro-image-avatar photo u-photo" alt="Photo of Ted Tschopp">
+          </div>
+          <a class="footer-name-link d-inline-flex align-items-center justify-content-center justify-content-lg-start mb-2 text-decoration-none u-url u-uid" href="https://tedt.org/profile/" rel="me">
+            <span class="h4 mb-0 fs-5 fnp-name">
+              
+                <span class="p-given-name">Ted</span>
+                <span class="p-family-name">Tschopp</span>
+              
+            </span>
+          </a>
+          
+            <p class="h5 p-job-title mb-1">Enterprise Architect</p>
+          
+          
+            <p class="h5 footer-location mb-0">
+              <span class="p-locality">Los Angeles</span>
+              , <span class="p-region">California</span>
+              , <span class="p-country-name">USA</span>
+            </p>
+          
+          <ul class="list-unstyled small footer-profile-details mb-0"><li>
+              <span class="footer-profile-label">Website</span>
+              <a href="https://tedt.org/profile/" class="u-url" rel="me">tedt.org/profile/</a>
+            </li><li>
+                <span class="footer-profile-label">Email</span>
+                <a href="mailto:ted@tschopp.org" class="u-email">ted@tschopp.org</a>
+              </li><li>
+                <span class="footer-profile-label">Fediverse</span>
+                <a href="https://twit.social/@TedT" rel="me">@TedT@twit.social</a>
+              </li></ul>
+        </section>
+      </div>
+
+      <div class="col-12 col-lg-8 col-xl-9">
+        <div class="row g-4 g-xl-5 align-items-start">
+          <div class="col-12 col-xl-4">
+            <section class="footer-bio-block h-100">
+              <p class="h5 footer-section-title">About Ted</p>
+              <ul class="list-unstyled small p-note footer-bio-list mb-0">
+                  <li>I’m <strong>Ted Tschopp</strong>, a Senior Enterprise Architect based in Los Angeles, working at the intersection of <strong>enterprise architecture, artificial intelligence, software strategy, and digital automation</strong>.</li>
+                  <li>At <strong>Southern California Edison</strong>, I help shape the architecture strategy for AI, software, and enterprise products that support one of the nation’s largest electric utilities. My work sits where <strong>strategy meets execution</strong>: platforms, guardrails, operating models, governance, risk, developer experience, and the practical realities of making ambitious technology useful, resilient, and sustainable inside a large organization.</li>
+                  <li>I’ve spent <strong>25+ years at SCE</strong> helping teams navigate complex technology change. The part of enterprise architecture I care about most is not the diagram. It is the design discipline that makes systems usable, governable, sustainable, and welcoming for the people who depend on them and the teams who build them.</li>
+                  <li>Before joining Edison, I owned a business featured in <em>Wired Magazine</em>, founded one of the largest J.R.R. Tolkien community websites, and worked in automotive market research. That mix of technology, storytelling, community-building, and analysis still shapes how I think about systems today.</li>
+                  <li>I love working in technology because it lets me watch the future arrive in real time. Some of the things I have worked on were science fiction when I was in school. Now they are platform problems, governance problems, people problems, and architecture problems — which is where the interesting work begins.</li>
+                  <li>Unless otherwise stated, everything here reflects my own views.</li><li class="display-1 d-flex justify-content-center footer-housemark">
+                  <img src="https://tedt.org/img/familymark/Family-White-Brush-Calligraphy-3.png" alt="Tschopp family mark" class="footer-housemark-image" loading="lazy" decoding="async">
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="col-12 col-xl-8">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-4 footer-link-groups">
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">About Me</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://www.tedt.org"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fas fa-home fa-lg fa-fw fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Website</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://medium.com/@TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #00ab6c; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fab fa-medium-m fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Medium</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://indieweb.org/User:Www.tedt.org"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-regular fa-window-maximize fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Indie<wbr>web</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://keybase.io/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #4866b0; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-keybase fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Key<wbr>base</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="mailto:ted@tedt.org"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-solid fa-envelope fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Email</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.meetup.com/members//45846/"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #ED1C40; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-meetup fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Meetup</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://foursquare.com/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #0072b1; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-foursquare fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Foursquare</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Support Me</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://buymeacoffee.com/TedT"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #FFDD00; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-solid fa-mug-hot fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Buy<wbr>Me<wbr>A<wbr>Coffee</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Social Media</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://web.brid.gy/r/https://tedt.org/"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-solid fa-bridge fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">web.<wbr>brid.<wbr>gy</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://twit.social/@TedT"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #595aff; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-mastodon fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Mastodon</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://bsky.app/profile/tedt.org"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #0085FF; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-bluesky fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Blue<wbr>Sky</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://threads.net/@TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-brands fa-threads fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Threads</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.facebook.com/ted.tschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #3b5998; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-facebook fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Face<wbr>book</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.instagram.com/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #DD2A7B; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-instagram fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Insta<wbr>gram</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://m.me/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #006AFF; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-facebook-messenger fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Messenger</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://twitter.com/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #1DA1F2; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-x-twitter fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Twitter</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.linkedin.com/in/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #2867B2; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-linkedin-in fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Linked<wbr>In</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.snapchat.com/add/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #FFFC00; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-snapchat-ghost fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Snap<wbr>chat</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://reddit.com/u/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #FF4500; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-reddit-alien fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Reddit</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Creative</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://www.goodreads.com/user/show/856383-ted-tschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #e9e5cd; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-goodreads fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Good<wbr>reads</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://pinterest.com/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #E60023; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-pinterest fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Pin<wbr>terest</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.tumblr.com/blog/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #35465c; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-tumblr fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Tumblr</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.quora.com/profile/Ted-Tschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #B92B27; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-quora fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Quora</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.youtube.com/channel/UC4Q8pXroTVyXrIxg2u82pwg"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #ff0000; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-youtube fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">You<wbr>Tube</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://twitch.tv/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #9147fe; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-twitch fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Twitch</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://vimeo.com/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #1ab7ea; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-vimeo-v fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Vimeo</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.soundcloud.com/ted-tschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #FE5000; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-soundcloud fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Sound<wbr>Cloud</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://suno.com/@tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-solid fa-music fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Suno</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.midjourney.com/app/users/074b5e95-1e8a-465f-9a7f-921e11670eb5/"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #e6dfd3; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-solid fa-sailboat fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Mid<wbr>journey</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Coding</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://github.com/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #6e5494; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-github fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Git<wbr>Hub</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://huggingface.co/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #6e5494; color: var(--footer-link-icon-color);" aria-hidden="true">🤗</span>
+                              
+                              <span class="footer-link-text">Hugging Face</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://dev.to/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #ffffff; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-dev fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Dev.to</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Gaming</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://steamcommunity.com/id/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #66c0f4; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-steam fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Steam</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://account.xbox.com/en-us/profile?gamertag=/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #107C10; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-xbox fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">xBox</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.gog.com/u/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #86328A; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-solid fa-gamepad fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">GoG</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row footer-meta-row align-items-center gy-3">
+      <div class="col-12 col-lg-5 text-center text-lg-start">
+        <ul class="list-inline footer-meta-links mb-0">
+          <li class="list-inline-item"><a href="https://preview.tedt.org/About/">About</a></li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item"><a href="https://preview.tedt.org/Terms-of-Use/">Terms of Use</a></li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item"><a href="https://preview.tedt.org/Privacy-Policy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-lg-7 text-center text-lg-end">
+        <p class="text-muted small mb-0">Copyright &copy; Ted Tschopp 2003 - <script>document.write(new Date().getFullYear())</script>. All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+               <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" 
+                     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" 
+                     crossorigin="anonymous"></script> --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+                                                                                    <!-- <script src="/js/bootstrap.bundle.min.js"></script> -->
+
+              <!-- Popper.js - not needed with bootstrap.bundle.min.js -->
+              <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> -->
+
+              <!-- Bootstrap separate JS - replaced with bundle above -->
+              <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" crossorigin="anonymous"></script> -->
+
+              
+  <script>
+(function () {
+  'use strict';
+
+  var api = window.__TedColorScheme;
+  if (!api) return;
+
+  var STORAGE_KEY = api.STORAGE_KEY || 'color-scheme';
+
+  function setLocalStorage(value) {
+    try {
+      localStorage.setItem(STORAGE_KEY, value);
+    } catch (e) {}
+  }
+
+  function deleteCookie(name) {
+    document.cookie = name + '=; path=/; max-age=0';
+  }
+
+  function migrateLegacyCookies(nextPreference) {
+    // Stop old 2-state logic from fighting the new 3-state logic.
+    // We keep compatibility by clearing known legacy cookie names.
+    deleteCookie('theme');
+    deleteCookie('site_theme');
+
+    // Persist only via localStorage going forward.
+    setLocalStorage(nextPreference);
+  }
+
+  function setPressedState(container, preference) {
+    if (!container) return;
+    var buttons = container.querySelectorAll('button[data-color-scheme]');
+    buttons.forEach(function (btn) {
+      var v = (btn.getAttribute('data-color-scheme') || '').toLowerCase();
+      btn.setAttribute('aria-pressed', v === preference ? 'true' : 'false');
+    });
+  }
+
+  function setup(container) {
+    if (!container || container.dataset.enhanced === 'true') return;
+
+    function applyAndSync(nextPreference) {
+      var applied = api.set(nextPreference);
+      migrateLegacyCookies(applied);
+      setPressedState(container, applied);
+    }
+
+    container.addEventListener('click', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('button[data-color-scheme]') : null;
+      if (!btn) return;
+      e.preventDefault();
+      var nextPreference = btn.getAttribute('data-color-scheme');
+      applyAndSync(nextPreference);
+    });
+
+    // Initial state
+    setPressedState(container, api.get());
+
+    // When OS scheme changes, update Bootstrap theme if in Auto.
+    try {
+      var mql = window.matchMedia('(prefers-color-scheme: dark)');
+      var handler = function () {
+        var pref = api.refreshAuto();
+        setPressedState(container, pref);
+      };
+      if (mql && mql.addEventListener) mql.addEventListener('change', handler);
+      else if (mql && mql.addListener) mql.addListener(handler);
+    } catch (e) {}
+
+    container.dataset.enhanced = 'true';
+  }
+
+  function init() {
+    var container = document.getElementById('colorSchemeToggle');
+    setup(container);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+  <script type="module" src="/inside-ai/assets/inside-ai.js" onerror="document.getElementById('inside-ai-load-error').hidden = false;"></script>
+</body>
+</html>

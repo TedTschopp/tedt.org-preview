@@ -1,0 +1,33 @@
+---
+layout: library
+title: "Tools"
+description: "Find browser tools for writing, images, everyday tasks, AI, maps, and tabletop games."
+permalink: /tools/
+section: tools
+no_toc: true
+---
+<div class="container ia-container">
+<nav class="ia-breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Tools</span></nav>
+<header class="ia-section-header"><p class="ia-eyebrow">Useful Things From the Workbench</p><h1>Tools</h1><p class="ia-lead">Find a tool by what you want to do. Each entry explains its purpose, links to the application, and shows its development status.</p><nav class="ia-jump-links" aria-label="Tool groups">{% for group in site.data.tool_groups %}<a href="#{{ group.id }}">{{ group.title | escape }}</a>{% endfor %}</nav></header>
+<form class="ia-tool-filters" id="tool-filters" role="search" aria-label="Filter tools">
+<div><label for="tool-search">Search tools</label><input class="form-control" id="tool-search" type="search" placeholder="Try plotting, images, AI, or maps" autocomplete="off"></div>
+<div><label for="tool-status">Development status</label><select class="form-select" id="tool-status"><option value="">All statuses</option>{% assign statuses = site.tools | map: 'status' | uniq | sort %}{% for status in statuses %}<option value="{{ status | escape }}">{{ status | capitalize | escape }}</option>{% endfor %}</select></div>
+<p id="tool-count" class="ia-small" role="status" aria-live="polite">{{ site.tools | size }} tools in the directory.</p>
+</form>
+<p id="tools-empty" hidden>No tools match those filters. Try another search or choose all statuses.</p>
+{% assign tools = site.tools | sort: 'title' %}
+{% for group in site.data.tool_groups %}
+<section class="ia-tool-section" id="{{ group.id }}" aria-labelledby="tool-group-{{ group.id }}"><div class="ia-section-heading"><div><h2 id="tool-group-{{ group.id }}">{{ group.title | escape }}</h2><p>{{ group.description | escape }}</p></div>{% if group.id == 'ai' %}<div class="ia-jump-links"><a href="https://ai.tedt.org/">AI Library ↗</a><a href="{{ '/assessments/' | relative_url }}">AI Assessments</a></div>{% endif %}</div>
+<div class="ia-tool-grid">
+{% for tool in tools %}{% assign tool_id = tool.path | split: '/' | last | remove: '.md' %}{% if group.tools contains tool_id %}
+<article class="ia-tool-card" data-tool-status="{{ tool.status | escape }}">
+<p class="ia-eyebrow">{{ tool.tool_type | default: 'Tool' | replace: 'webapp', 'Browser Tool' | escape }}{% if tool.featured %}<span class="ia-featured">Featured</span>{% endif %}</p>
+<h3><a href="{{ tool.url | relative_url }}">{{ tool.title | escape }}</a></h3><p>{{ tool.summary | escape }}</p>
+<div class="ia-tool-meta"><span class="ia-status">{{ tool.status | capitalize | escape }}</span><span>{{ tool.last_modified | default: tool.date | date: '%b %Y' }}</span></div>
+<div class="ia-tool-actions"><a href="{{ tool.url | relative_url }}">Details</a>{% if tool.links.live %}<a href="{% if tool.links.live contains '://' %}{{ tool.links.live }}{% else %}{{ tool.links.live | relative_url }}{% endif %}">{% if tool.status == 'under development' %}View the Project{% else %}Open Tool{% endif %} <span aria-hidden="true">↗</span></a>{% endif %}</div>
+</article>
+{% endif %}{% endfor %}
+</div></section>
+{% endfor %}
+</div>
+<script src="{{ '/js/tool-directory.js' | relative_url }}" defer></script>

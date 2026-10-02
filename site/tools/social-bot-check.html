@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- We need to be able to differentiate between when we are rendering the homepage and the current page's full url -->
+
+
+
+
+
+<!-- strip HTML Content and empty spaces out of the pages content -->
+ 
+
+
+
+
+
+
+
+<!-- Calculate the pages description if one isn't present -->
+
+
+
+
+<!-- Category work -->
+
+
+
+
+
+
+
+
+<!-- mf-bookmark-of -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- This needs to be fixed -->
+
+
+
+
+
+
+
+  	
+<!-- legacy site.siteurl removed -->
+<!--  full-page-url = https://preview.tedt.org/tools/social-bot-check.html -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>Social Bot Check — Bluesky and Mastodon</title>
+
+  <!-- TODO: Add Multiple Authors -->
+  <meta name="author" content="Ted Tschopp">
+  <link rel="author" href="https://preview.tedt.org/humans.txt">
+  <link rel="copyright" href="https://preview.tedt.org/Copyright/">
+  
+  
+  <link rel="canonical" href="https://preview.tedt.org/tools/social-bot-check.html" />
+
+
+
+
+
+
+
+
+  <!-- Mastodon Meta Data-->
+  
+    
+  <meta name="fediverse:creator" content="@TedT@twit.social">
+    
+  <meta name="fediverse:creator" content="@Ted@tschopp.net">
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Inspect public Bluesky and Mastodon accounts for posting and reply patterns. Read the thresholds, review linked evidence, and download the report. No login r...">
+<meta name="abstract" content="Ted Tschopp's Homepage">
+
+  
+    <meta name="keywords" content="Technology, Theology, Creativity, Religion, digital age, UI/UX, Collaboration tools, Storytelling">
+  
+
+
+
+
+<meta property="og:image" content="https://tedt.org/img/Site-Logo.webp">
+<meta property="og:image:alt" content="Ted Tschopp’s site logo">
+
+<meta property="og:site_name" content="Ted Tschopp's Homepage">
+
+  <meta property="og:title" content="Social Bot Check — Bluesky and Mastodon">
+  <meta property="og:description" content="Inspect public Bluesky and Mastodon accounts for posting and reply patterns. Read the thresholds, review linked evidence, and download the report. No login required."><!-- desc-sanitizer-v2 -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://preview.tedt.org/tools/social-bot-check.html">
+
+<meta property="og:locale" content="en_US">
+<meta property="fb:app_id" content="1939132006351436">
+<meta name="twitter:site" content="@TedTschopp">
+
+  <meta name="twitter:creator" content="@TedTschopp">
+
+<meta name="twitter:title" content="Social Bot Check — Bluesky and Mastodon"><meta name="twitter:description" content="Inspect public Bluesky and Mastodon accounts for posting and reply patterns. Read the thresholds, review linked evidence, and download the report. No login required.">
+
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:image" content="https://tedt.org/img/Site-Logo.webp">
+  <meta name="twitter:image:alt" content="Ted Tschopp’s site logo">
+
+<meta name="twitter:url" content="https://preview.tedt.org/tools/social-bot-check.html">
+
+
+  <meta property="article:published_time" content="2026-10-01T00:00:00-07:00">
+
+
+  <meta property="article:modified_time" content="2026-10-01T00:00:00-07:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://preview.tedt.org/#person",
+      "name": "Ted Tschopp",
+      "url": "https://preview.tedt.org/profile/",
+      "image": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+      "givenName": "Ted",
+      "familyName": "Tschopp",
+      "jobTitle": "Enterprise Architect",
+      "sameAs": ["https://www.linkedin.com/in/tedtschopp","https://github.com/TedTschopp","https://twit.social/@TedT","https://bsky.app/profile/tedt.org","https://twitter.com/TedTschopp","https://www.youtube.com/channel/UC4Q8pXroTVyXrIxg2u82pwg"],
+      "knowsAbout": ["Enterprise architecture","Enterprise artificial intelligence","AI governance","Software and platform strategy","Digital automation","Technology-enabled organizational change","Digital communities and storytelling","Swiss folklore","Tabletop role-playing game design"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Southern California Edison",
+        "url": "https://www.sce.com/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://preview.tedt.org/#website",
+      "url": "https://preview.tedt.org/",
+      "name": "Ted Tschopp",
+      "description": "Technology, theology, and creativity converge in this insightful exploration by Ted Tschopp, who navigates the intricate relationship between these topics in the digital age. From dissecting how technology is reshaping religious practices and ethics to sharing cutting-edge trends in UI/UX design, collaboration tools, and digital storytelling, the author provides a multifaceted analysis. Written with a unique and engaging blend of humor, reflection, and curiosity, this work invites readers to ponder and discuss these connections, offering a contemplative lens on modern innovation and cultural evolution.",
+      "publisher": { "@id": "https://preview.tedt.org/#person" }
+    },
+    
+    {
+      "@type": "WebPage",
+      "@id": "https://preview.tedt.org/tools/social-bot-check.html#webpage",
+      "url": "https://preview.tedt.org/tools/social-bot-check.html",
+      "name": "Social Bot Check",
+      "description": "Inspect public Bluesky and Mastodon accounts for posting and reply patterns. Read the thresholds, review linked evidence, and download the report. No login required.",
+      "isPartOf": { "@id": "https://preview.tedt.org/#website" },
+      "publisher": { "@id": "https://preview.tedt.org/#person" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://tedt.org/img/Site-Logo.webp" },
+      "breadcrumb": { "@id": "https://preview.tedt.org/tools/social-bot-check.html#breadcrumb" }
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://preview.tedt.org/tools/social-bot-check.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://preview.tedt.org/"
+        },
+        
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Social Bot Check",
+          "item": "https://preview.tedt.org/tools/social-bot-check.html"
+        }
+      ]
+    }
+    
+  ]
+}
+</script>
+
+    <!-- Favicon Meta Tags.  -->
+  <link rel="shortcut icon" href="https://tedt.org/img/favicon.ico">
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-196x196.webp" sizes="196x196" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-96x96.webp" sizes="96x96" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-32x32.webp" sizes="32x32" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-16x16.webp" sizes="16x16" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-128.webp" sizes="128x128" />
+
+
+    <!-- Apple iOS Settings. -->
+    <!--Sets whether a web application runs in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable"          content="yes">
+    <!-- Color of the status bar -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Web App Name for the Shortcut -->
+    <meta name="apple-mobile-web-app-title"            content="Social Bot Check">
+    <!-- Do Not Detect Phone Numbers -->
+    <meta name="format-detection"                      content="telephone=no">
+
+    <!-- iPhone icons -->
+    <!-- Apple touch icons (all inside head) -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://tedt.org/img/apple-touch-icon-57x57.webp" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://tedt.org/img/apple-touch-icon-114x114.webp" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://tedt.org/img/apple-touch-icon-72x72.webp" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://tedt.org/img/apple-touch-icon-144x144.webp" />
+    <link rel="apple-touch-icon" sizes="60x60" href="https://tedt.org/img/apple-touch-icon-60x60.webp" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://tedt.org/img/apple-touch-icon-120x120.webp" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://tedt.org/img/apple-touch-icon-76x76.webp" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://tedt.org/img/apple-touch-icon-152x152.webp" />
+
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="https://tedt.org/img/mstile-144x144.webp" />
+    <meta name="msapplication-square70x70logo" content="https://tedt.org/img/mstile-70x70.webp" />
+    <meta name="msapplication-square150x150logo" content="https://tedt.org/img/mstile-150x150.webp" />
+    <meta name="msapplication-wide310x150logo" content="https://tedt.org/img/mstile-310x150.webp" />
+    <meta name="msapplication-square310x310logo" content="https://tedt.org/img/mstile-310x310.webp" />
+
+    <!-- Google Chrome. -->
+
+    <meta name="google" value="notranslate">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Pinterest. -->
+    <!-- Prevents sharing of content by Pinterest users. -->
+    <!-- <meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!"> -->
+    <!-- Pinterest Verify -->
+    <meta name="p:domain_verify" content="98d8bdfab96a340e5a4f03f7a4303f0e"/>
+
+
+
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="/tools/assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/tools/colors_and_type.css">
+  <link rel="stylesheet" href="/tools/social-bot-check/social-bot-check.css">
+  <script type="module" src="/tools/social-bot-check/app.js"></script>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <a class="skip-link" href="#checker">Skip to account checker</a>
+  <div class="shell">
+    <nav class="topbar" aria-label="Tools navigation">
+      <a class="brand" href="/tools/?sort=published" aria-label="Ted’s Tools home">
+        <span class="markbox" aria-hidden="true">tt<span>.</span></span>
+        <span>Ted’s <mark>Tools</mark></span>
+      </a>
+      <a href="/">tedt.org</a>
+    </nav>
+
+    <main id="checker">
+      <header class="page-head">
+        <p class="eyebrow">Public Account Patterns</p>
+        <h1 class="t-tool-title">Social <mark>Bot Check</mark></h1>
+        <p class="intro">Look closer at how an account posts and replies. Check its public activity on Bluesky or Mastodon, then read the evidence behind each pattern.</p>
+        <p class="head-meta"><span>Bluesky + Mastodon</span><span>No login required</span><span>Updated October 1, 2026</span></p>
+      </header>
+
+      <section class="panel input-panel" aria-labelledby="input-title">
+        <div class="panel-head">
+          <h2 id="input-title">Check an Account</h2>
+          <span class="panel-note">Public posts only</span>
+        </div>
+        <form id="check-form" class="form-body">
+          <div class="form-grid">
+            <div class="field">
+              <label for="platform">Site</label>
+              <select id="platform" name="platform">
+                <option value="bluesky">Bluesky</option>
+                <option value="mastodon">Mastodon</option>
+              </select>
+            </div>
+            <div class="field account-field">
+              <label for="account">Account or profile URL</label>
+              <input id="account" name="user" type="text" required maxlength="300" placeholder="@tedt.org or a Bluesky profile URL" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="account-help">
+            </div>
+            <div class="field">
+              <label for="scan-limit">Scan up to</label>
+              <select id="scan-limit" name="limit">
+                <option value="100">100 posts</option>
+                <option value="500" selected>500 posts</option>
+                <option value="1000">1,000 posts</option>
+              </select>
+            </div>
+          </div>
+          <p id="account-help" class="hint">Enter a Bluesky handle, profile URL, post URL, or DID.</p>
+          <div class="actions">
+            <button id="check-button" class="button primary" type="submit">Check account</button>
+            <button id="example-button" class="button secondary" type="button">Use Ted’s account</button>
+            <button id="cancel-button" class="button secondary" type="button" hidden>Cancel</button>
+          </div>
+          <p class="hint boundary">Your browser requests public data directly from the selected site. Analysis runs here; no password or API key is needed.</p>
+        </form>
+        <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">Ready. Choose a site and enter an account.</p>
+      </section>
+
+      <noscript><p class="notice">Enable JavaScript to fetch public posts and run the account checks.</p></noscript>
+
+      <section id="empty-state" class="empty-state" aria-labelledby="empty-title">
+        <h2 id="empty-title">A Closer Look, With Receipts</h2>
+        <div class="guide-grid">
+          <div><span class="step">01</span><h3>Read the Pattern</h3><p>See reply timing, repetition, posting volume, and activity across the day.</p></div>
+          <div><span class="step">02</span><h3>Check the Evidence</h3><p>Every check states its threshold, sample size, and other possible explanations.</p></div>
+          <div><span class="step">03</span><h3>Open the Posts</h3><p>Follow the original posts and judge them in context. Keep a copy of the report if useful.</p></div>
+        </div>
+      </section>
+
+      <div id="results" hidden>
+        <section id="overview" class="panel" aria-label="Account overview"></section>
+        <section id="assessment" class="assessment" aria-label="Pattern summary"></section>
+        <section id="coverage" class="coverage" aria-label="Sample coverage"></section>
+
+        <div class="report-actions actions">
+          <button id="copy-link" class="button secondary" type="button">Copy link</button>
+          <button id="download-report" class="button secondary" type="button">Download JSON report</button>
+          <label id="report-link-field" class="field" hidden>Report link<input id="report-link" type="url" readonly></label>
+        </div>
+
+        <div class="report-grid">
+          <section class="panel" aria-labelledby="signals-title">
+            <div class="panel-head"><h2 id="signals-title">Signals and Thresholds</h2><span class="panel-note">Open a check for details</span></div>
+            <div id="signals"></div>
+          </section>
+          <div class="report-sidebar">
+            <section class="panel" aria-labelledby="activity-title">
+              <div class="panel-head"><h2 id="activity-title">Activity by Hour</h2><span class="panel-note">UTC</span></div>
+              <div id="activity" class="panel-body"></div>
+            </section>
+            <section class="panel" aria-labelledby="mix-title">
+              <div class="panel-head"><h2 id="mix-title">What It Posts</h2></div>
+              <div id="post-mix" class="panel-body"></div>
+            </section>
+            <section class="panel" aria-labelledby="examples-title">
+              <div class="panel-head"><h2 id="examples-title">Posts to Review</h2></div>
+              <div id="examples" class="panel-body"></div>
+            </section>
+          </div>
+        </div>
+
+        <section class="panel posts-panel" aria-labelledby="posts-title">
+          <div class="panel-head"><h2 id="posts-title" tabindex="-1">Scanned Posts</h2><span id="posts-count" class="panel-note"></span></div>
+          <div class="post-controls panel-body">
+            <div class="field"><label for="post-filter">Show</label><select id="post-filter"><option value="all">All activity</option><option value="replies">Replies</option><option value="original">Top-level posts</option><option value="boosts">Boosts and reposts</option><option value="flagged">Posts with observed signals</option></select></div>
+            <label class="field" for="post-search">Find text<input id="post-search" type="search" placeholder="Search the scanned text"></label>
+            <button id="clear-post-filter" class="button secondary" type="button" hidden>Clear signal filter</button>
+          </div>
+          <p id="active-filter" class="filter-note" role="status" hidden></p>
+          <ol id="posts" class="post-list"></ol>
+          <div class="panel-body"><button id="more-posts" class="button secondary" type="button" hidden>Show 50 more</button></div>
+        </section>
+      </div>
+
+      <section class="method" aria-labelledby="method-title">
+        <h2 id="method-title">How to Read This</h2>
+        <p>These checks identify patterns worth reviewing. They do not determine whether a person, a bot, or an AI wrote the posts. A check that does not trigger says only that the configured pattern was not observed.</p>
+        <details>
+          <summary>Data, platform differences, and limits</summary>
+          <p>Bluesky provides the profile, author feed, and available parent posts through its public API. Mastodon provides the profile and public statuses from the server in the account address; up to 40 recent unique parent posts are fetched for reply context. Deleted, blocked, private, and unavailable posts are outside the sample.</p>
+          <p>Boosts and reposts are shown separately from the account’s own writing. Activity charts use the creation dates in the available posts and show UTC; the account’s time zone is unknown. Negative reply delays are excluded. Edited Mastodon replies are excluded from timing checks because the original text may have changed.</p>
+          <p>Mastodon servers choose their own public API and browser access policies. A server that requires authentication or blocks cross-origin requests cannot be checked here. The report marks missing data and partial scans explicitly.</p>
+          <p>Behavior checks are counted, without a probability score. Profile declarations and Bluesky record formatting are reported separately. Client formatting, third-party apps, and account self-declarations do not establish AI authorship.</p>
+          <p>No report is stored by this tool. A shared link contains the site, account, and scan limit; opening it runs a fresh check. The JSON download captures the current report and its visible public post text.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built for Ted’s Tools.</p>
+      <a href="/tools/?sort=published">← All tools</a>
+    </footer>
+  </div>
+</body>
+</html>

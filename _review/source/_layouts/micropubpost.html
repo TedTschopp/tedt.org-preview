@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    {% include utility/calculate-variables.html %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <!-- IndieAuth and WebMentions Metadata -->
+    {% include seo/indieauth-webmentions-metadata.html %}
+
+    <!-- SEO Metadata -->
+    {% include seo/meta-data-seo.html %}
+
+    <!-- PWA Header Includes -->
+    {% include pwa/pwa-header-includes.html %}
+
+    <!-- News Feed Meta Tags. -->
+    {% include feeds/feeds.html %}
+
+    <!-- START OF CSS INCLUDE -->
+
+  {% include assets/all-css-includes.html %}
+
+
+    <!-- Scripts that need to be at the end of the header -->
+    {% include assets/scripts.html %}
+
+  </head>
+
+  <body>
+  {%- comment -%} Removed skip link per user request. {%- endcomment -%}
+    <!-- Legacy Browser Redirect & Google Tag Manager -->
+    {% include layout/top-of-body.html %}
+
+    {% include layout/top-nav-bar.html %}
+
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-12">
+              <!-- Blog Post -->
+
+                <main id="main-content" tabindex="-1" class="h-entry" role="main">
+                  <!-- Title -->
+                  {% assign micropub_permalink = page.mf-syndication[0] | default: page.url | relative_url %}
+                  {% assign __micropub_primary_category = page.category | default: page.categories[0] | default: '' | to_s | strip %}
+                  {% if __micropub_primary_category != '' %}
+                    {% capture __micropub_slug %}{% include category/map-category-to-registry.html key=__micropub_primary_category %}{% endcapture %}
+                    {% assign __micropub_slug = __micropub_slug | strip %}
+                    {% if __micropub_slug == '' %}{% assign __micropub_slug = __micropub_primary_category | slugify %}{% endif %}
+                    {% assign __micropub_entry = site.data.category_registry[__micropub_slug] %}
+                  {% endif %}
+                  {% if __micropub_entry %}
+                    {% capture __micropub_title_html %}<a href="{{ micropub_permalink }}">{{ micropub_post_title }}</a>{% endcapture %}
+                    {% include category/category-palette-apply.html entry=__micropub_entry slug=__micropub_slug raw=__micropub_primary_category title_html=__micropub_title_html wrapper_class='micropub-hero category-theme no-underline mb-2' title_tag='h1' title_class='p-name lead mb-0' %}
+                  {% else %}
+                    <h1 class="p-name lead"><a href="{{ micropub_permalink }}">{{ micropub_post_title }}</a></h1>
+                  {% endif %}
+
+                  <p class="lead">{% include utility/content-credits.html page=page %}</p>
+
+                  <hr>
+
+                  {% include content/publish-and-update-date-time-v2.html %}
+
+                  <i class="fa-regular fa-comments" aria-hidden="true"></i>&nbsp;<a href="{{ page.url }}#disqus_thread">&nbsp;Comments</a></br>
+
+                  <img class="webmention-svg" height="1em" src="{{ site.url }}/img/webmention-logo.svg" alt="Webmention logo">&nbsp;<a href="{{ page.url }}#webmention_thread">&nbsp;Webmentions</a></br>
+
+                  <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>&nbsp;Catagories:
+                  {% assign categories = page-categories-collection %}
+                  {% for category in categories %}<span class="p-category">
+                      {% capture thiscategory %}{{ category | strip | capitalize }}{% endcapture %}
+                      {% if forloop.length == 1 %}
+                          {{thiscategory}}
+                      {% elsif forloop.last and forloop.length == 2 %}
+                          and {{thiscategory}}
+                      {% elsif forloop.last %}
+                          and {{thiscategory}}
+                      {% else %}
+                          {{thiscategory}}, 
+                      {% endif %}
+                      {% if thiscategory == "draft" or thiscategory == "Draft" %}
+                          {% assign this_is_a_draft = true %}
+                      {% endif %}</span>
+                  {% endfor %}</br>
+
+                  <span class="hidden aria-hidden u-url">{{ site.url }}{{ page.url }}</span>
+
+                    <!--
+                        TODO: Implement Smart Cropping on the images to make sure they are a minimum height, 
+                        and still stay responsive: https://29a.ch/2014/04/03/smartcrop-content-aware-image-cropping
+
+                        -->
+
+                  {% if page.mf-photo %}
+                    {% for photo in page.mf-photo %}
+                      <figure>
+                          <img class="img-responsive img-thumbnail" src="{{photo}}" alt="Check-in photo {{ forloop.index }} of {{ page.mf-photo.size }}">
+                      </figure>
+                    {% endfor %}
+                  {% endif %}
+
+                  {% if draw-map == true %}
+                  {% comment %} <!--
+                                                   mf-location - {{ mf-location }} 
+                                              mf-location-full - {{ mf-location-full }}
+                                             mf-location-short - {{ mf-location-short }}
+                                                  map-name-one - {{ map-name-one }}
+                                                  map-name-two - {{ map-name-two }}
+                                                      draw-map - {{ draw-map }}
+                                                  draw-map-one - {{ draw-map-one }}
+                                                  draw-map-two - {{ draw-map-two }}
+                                      mf-checkin-facility-name - {{ mf-checkin-facility-name }}
+                            page.mf-checkin[0].properties.name - {{ page.mf-checkin[0].properties.name }}
+                                               mf-checkin-type - {{ mf-checkin-type }}
+                                                mf-checkin-url - {{ mf-checkin-url }}
+                                      mf-checkin-facility-name - {{ mf-checkin-facility-name }}
+                                       mf-checkin-facility-url - {{ mf-checkin-facility-url }}
+                                  mf-checkin-facility-latitude - {{ mf-checkin-facility-latitude }}
+                                 mf-checkin-facility-longitude - {{ mf-checkin-facility-longitude }}
+                            mf-checkin-facility-street-address - {{ mf-checkin-facility-street-address }}
+                                      mf-checkin-facility-city - {{ mf-checkin-facility-city }}
+                                              mf-checkin-state - {{ mf-checkin-state }}
+                                            mf-checkin-country - {{ mf-checkin-country }}
+                                           mf-checkin-zip-code - {{ mf-checkin-zip-code }}
+                                                    mf-checkin - {{ mf-checkin }} 
+                                       page.mf-checkin[0].type - {{ page.mf-checkin[0].type}}
+                                      page.mf-checkin[0].value - {{ page.mf-checkin[0].value }}
+                            page.mf-checkin[0].properties.name - {{ page.mf-checkin[0].properties.name }}
+                             page.mf-checkin[0].properties.url - {{ page.mf-checkin[0].properties.url }}
+                        page.mf-checkin[0].properties.latitude - {{ page.mf-checkin[0].properties.latitude }}
+                       page.mf-checkin[0].properties.longitude - {{ page.mf-checkin[0].properties.longitude }}
+                  page.mf-checkin[0].properties.street-address - {{ page.mf-checkin[0].properties.street-address }}
+                        page.mf-checkin[0].properties.locality - {{ page.mf-checkin[0].properties.locality }}
+                          page.mf-checkin[0].properties.region - {{ page.mf-checkin[0].properties.region }}
+                    page.mf-checkin[0].properties.country-name - {{ page.mf-checkin[0].properties.country-name }}
+                     page.mf-checkin[0].properties.postal-code - {{ page.mf-checkin[0].properties.postal-code }} -->
+                  {% endcomment %}
+
+
+                    <div id="mapid" 
+                         data-lat-one="{{ map-latitude-one }}" 
+                         data-lon-one="{{ map-longitude-one }}"
+                         {% if draw-map-two == true %}data-lat-two="{{ map-latitude-two }}" data-lon-two="{{ map-longitude-two }}"{% endif %}>
+                    </div>
+          <script>
+            // Obtain coordinates from data attributes to avoid Liquid math parsing edge cases with hyphenated names
+            const mapEl = document.getElementById('mapid');
+            const MAP_LAT_ONE = parseFloat(mapEl.dataset.latOne);
+            const MAP_LON_ONE = parseFloat(mapEl.dataset.lonOne);
+            const HAS_SECOND = mapEl.dataset.latTwo !== undefined && mapEl.dataset.lonTwo !== undefined;
+            let MAP_LAT_TWO, MAP_LON_TWO;
+            if (HAS_SECOND) {
+              MAP_LAT_TWO = parseFloat(mapEl.dataset.latTwo);
+              MAP_LON_TWO = parseFloat(mapEl.dataset.lonTwo);
+            }
+            var mymap = L.map('mapid')
+                   .setView([ MAP_LAT_ONE, MAP_LON_ONE ], 15);
+                        L.tileLayer(
+                          'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.webp', {attribution: 
+                          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'})
+                         .addTo(mymap);
+
+                        L.marker([ MAP_LAT_ONE, MAP_LON_ONE ])
+                         .addTo(mymap)
+                         .bindPopup("<b>{{ map-name-one }}</b>")
+                         .openPopup();
+
+                        /* Liquid conditional controls second marker presence */
+                        {% if draw-map-two == true %}
+                        if (HAS_SECOND) {
+                          L.marker([ MAP_LAT_TWO, MAP_LON_TWO ])
+                           .addTo(mymap)
+                           .bindPopup("<b>{{ map-name-two }}</b>")
+                           .openPopup();
+                        }
+                        {% endif %}
+
+                        var popup = L.popup();
+                    </script>
+                  {% endif %}
+
+                  <hr>
+                  {% if stripped-content == null or stripped-content == empty %}                  
+                  {% else %}
+                  <!-- Post Content -->
+
+                  <div id="toc"></div>  
+                  {% assign __micropub_content = content | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' | replace: '<H1', '<H2' | replace: '</H1>', '</H2>' %}
+                  <span class="e-content">{{ __micropub_content | lazy_images_except_first }}</span>
+                  <hr>
+                  {% endif %}
+                </main>
+ 
+
+                <!--Next and Previous Articles -->
+                {% include content/next-and-previous.html %}
+
+                <hr>
+                {% if page.mastodon-post-id and page.mastodon-post-id != '' %}
+                  {% include social/comments-mastodon-tree.html %}
+                {% endif %}
+
+                {% include social/comments-webmentions.html %}
+
+            </div>
+            
+            
+        </div>
+
+        <!-- /.row -->
+
+        <hr>
+    </div>
+    <!-- /.container -->
+
+
+
+  <!-- Footer -->
+  {% include layout/footer.html %}
+
+  <!-- Bootstrap core JavaScript -->
+  {% include assets/js-bottom-of-body.html %}
+  </body>
+
+</html>

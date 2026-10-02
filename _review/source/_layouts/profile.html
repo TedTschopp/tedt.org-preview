@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+
+    {% include utility/calculate-variables.html %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <!-- IndieAuth and WebMentions Metadata -->
+    {% include seo/indieauth-webmentions-metadata.html %}
+
+    <!-- SEO Metadata -->
+    {% include seo/meta-data-seo.html %}
+
+    <!-- PWA Header Includes -->
+    {% include pwa/pwa-header-includes.html %}
+
+    <!-- News Feed Meta Tags. -->
+    {% include feeds/feeds.html %}
+
+    <!-- START OF CSS INCLUDE -->
+    {% include assets/all-css-includes.html %}
+    <!-- END OF CSS INCLUDE -->
+
+    <!-- Scripts that need to be at the end of the header -->
+    {% include assets/scripts.html %}
+
+  </head>
+  <body style="scroll-padding-top: 70px;" data-bs-spy="scroll" data-bs-target="#navbarNavDarkDropdown" data-bs-offset="70">
+    {% include layout/top-nav-bar.html %}
+
+    <main id="main-content" tabindex="-1" class="container py-4" role="main">
+      <h1>{{ page.title | default: "Ted Tschopp's Profile" }}</h1>
+      {% assign __profile_content = content | markdownify | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' | replace: '<H1', '<H2' | replace: '</H1>', '</H2>' %}
+      {{ __profile_content }}
+    </main>
+
+    {% include layout/footer.html %}
+
+  <!-- Bootstrap core JavaScript -->
+  {% include assets/js-bottom-of-body.html %}
+
+  </body>
+</html>

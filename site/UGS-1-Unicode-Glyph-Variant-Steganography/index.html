@@ -1,0 +1,3237 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" class="layout-post-debug">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- We need to be able to differentiate between when we are rendering the homepage and the current page's full url -->
+
+
+
+
+
+<!-- strip HTML Content and empty spaces out of the pages content -->
+ 
+
+
+
+
+
+
+
+<!-- Calculate the pages description if one isn't present -->
+
+
+
+
+<!-- Category work -->
+
+
+
+
+
+
+
+
+<!-- mf-bookmark-of -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- This needs to be fixed -->
+
+
+
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <!-- IndieAuth and WebMentions Metadata -->
+        
+    <!-- IndieAuth.com -->
+    
+
+            
+              <link href="https://keybase.io/tedtschopp" rel="me">
+            
+
+            
+                <link href="https://github.com/TedTschopp/" rel="me">
+            
+            
+                <link href="https://www.linkedin.com/in/tedtschopp/" rel="me">
+            
+            
+                <link href="https://twitter.com/TedTschopp" rel="me">
+            
+            
+                <link href="https://www.facebook.com/ted.tschopp" rel="me">
+            
+            
+                <link href="https://plus.google.com/u/0/+TedTschopp" rel="me">
+            
+            
+                <link href="https://www.youtube.com/user/TedTschopp/" rel="me">
+            
+            
+                <link href="https://www.pinterest.com/TedTschopp/" rel="me">
+            
+            
+                <link href="https://www.reddit.com/user/tedtschopp/" rel="me">
+            
+            
+                <link href="https://www.instagram.com/tedtschopp/" rel="me">
+            
+            
+                <link href="https://www.quora.com/profile/Ted-Tschopp/" rel="me">
+            
+            
+                <link href="https://indieweb.org/User:Www.tedt.org/" rel="me">
+            
+    
+    
+    <!-- Webmentions -->
+    <link rel="webmention" href="https://webmention.io/tedt.org/webmention" />
+    <link rel="pingback" href="https://webmention.io/tedt.org/xmlrpc" />
+
+    <!-- Indieauth.com/ 
+         MICROPUB_TOKEN_ENDPOINT Required
+         The token endpoint to verify the micropub token against. See: https://indieweb.org/token-endpoint
+    -->
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <!--- <link href="https://micropub-to-github-for-ted.herokuapp.com/micropub/main" rel="micropub"> --->
+
+
+    <!-- SEO Metadata -->
+    	
+<!-- legacy site.siteurl removed -->
+<!--  full-page-url = https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>UGS-1: Unicode Glyph-Variant Steganography, Version 1.1 | Ted Tschopp</title>
+
+  <!-- TODO: Add Multiple Authors -->
+  <meta name="author" content="Ted Tschopp">
+  <link rel="author" href="https://preview.tedt.org/humans.txt">
+  <link rel="copyright" href="https://preview.tedt.org/Copyright/">
+  
+  
+  <link rel="canonical" href="https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/" />
+
+
+
+
+
+
+
+
+  <!-- Mastodon Meta Data-->
+  
+    
+  <meta name="fediverse:creator" content="@TedT@twit.social">
+    
+  <meta name="fediverse:creator" content="@Ted@tschopp.net">
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="UGS-1 is a Unicode glyph-variant steganography specification that hides framed byte payloads in visible text using Latin and Cyrillic homoglyphs, CRC validat...">
+<meta name="abstract" content="Ted Tschopp's Homepage">
+
+  <meta name="keywords" content="Unicode glyph-variant steganography, UGS-1 specification, homoglyph steganography, Unicode confusables, Cyrillic homoglyph encoding, hidden payload in text, CRC-16 CCITT-FALSE, Unicode security mechanisms, structured text warning, steganography detector">
+  
+
+
+
+
+<meta property="og:image" content="https://tedt.org/img/2026-07/UGS-1.webp">
+<meta property="og:image:alt" content="Technical infographic for UGS-1 Unicode Glyph-Variant Steganography, showing Latin and Cyrillic homoglyph code points, visible text, glyph-variant text, protocol layers, and hidden payload bits.">
+
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta name="twitter:image:width" content="1672">
+  <meta name="twitter:image:height" content="941">
+
+<meta property="og:site_name" content="Ted Tschopp's Homepage">
+
+  <meta property="og:title" content="UGS-1: Unicode Glyph-Variant Steganography, Version 1.1 | Ted Tschopp">
+  <meta property="og:description" content="UGS-1 is a Unicode glyph-variant steganography specification that hides framed byte payloads in visible text using Latin and Cyrillic homoglyphs, CRC validation, strict and scan decoding, capacity rules, byte-oriented APIs, and detector guidance."><!-- desc-sanitizer-v2 -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/">
+
+<meta property="og:locale" content="en_US">
+<meta property="fb:app_id" content="1939132006351436">
+<meta name="twitter:site" content="@TedTschopp">
+
+  <meta name="twitter:creator" content="@TedTschopp">
+
+<meta name="twitter:title" content="UGS-1: Unicode Glyph-Variant Steganography, Version 1.1 | Ted Tschopp"><meta name="twitter:description" content="UGS-1 is a Unicode glyph-variant steganography specification that hides framed byte payloads in visible text using Latin and Cyrillic homoglyphs, CRC validation, strict and scan decoding, capacity rules, byte-oriented APIs, and detector guidance.">
+
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:image" content="https://tedt.org/img/2026-07/UGS-1.webp">
+  <meta name="twitter:image:alt" content="Technical infographic for UGS-1 Unicode Glyph-Variant Steganography, showing Latin and Cyrillic homoglyph code points, visible text, glyph-variant text, protocol layers, and hidden payload bits.">
+
+<meta name="twitter:url" content="https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/">
+
+
+  <meta property="article:published_time" content="2026-07-04T00:00:00-07:00">
+
+
+  <meta property="article:modified_time" content="2026-07-04T00:00:00-07:00">
+
+
+  
+  <meta property="article:section" content="Computers">
+
+
+  <meta property="article:tag" content="unicode"><meta property="article:tag" content="steganography"><meta property="article:tag" content="homoglyphs"><meta property="article:tag" content="confusables"><meta property="article:tag" content="text encoding"><meta property="article:tag" content="security"><meta property="article:tag" content="specifications"><meta property="article:tag" content="crc16">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://preview.tedt.org/#person",
+      "name": "Ted Tschopp",
+      "url": "https://preview.tedt.org/profile/",
+      "image": "https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g",
+      "givenName": "Ted",
+      "familyName": "Tschopp",
+      "jobTitle": "Enterprise Architect",
+      "sameAs": ["https://www.linkedin.com/in/tedtschopp","https://github.com/TedTschopp","https://twit.social/@TedT","https://bsky.app/profile/tedt.org","https://twitter.com/TedTschopp","https://www.youtube.com/channel/UC4Q8pXroTVyXrIxg2u82pwg"],
+      "knowsAbout": ["Enterprise architecture","Enterprise artificial intelligence","AI governance","Software and platform strategy","Digital automation","Technology-enabled organizational change","Digital communities and storytelling","Swiss folklore","Tabletop role-playing game design"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Southern California Edison",
+        "url": "https://www.sce.com/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://preview.tedt.org/#website",
+      "url": "https://preview.tedt.org/",
+      "name": "Ted Tschopp",
+      "description": "Technology, theology, and creativity converge in this insightful exploration by Ted Tschopp, who navigates the intricate relationship between these topics in the digital age. From dissecting how technology is reshaping religious practices and ethics to sharing cutting-edge trends in UI/UX design, collaboration tools, and digital storytelling, the author provides a multifaceted analysis. Written with a unique and engaging blend of humor, reflection, and curiosity, this work invites readers to ponder and discuss these connections, offering a contemplative lens on modern innovation and cultural evolution.",
+      "publisher": { "@id": "https://preview.tedt.org/#person" }
+    },
+    
+    {
+      "@type": "BlogPosting",
+      "@id": "https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/#article",
+      "url": "https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/#webpage" },
+      "headline": "UGS-1: Unicode Glyph-Variant Steganography, Version 1.1",
+      "description": "UGS-1 is a Unicode glyph-variant steganography specification that hides framed byte payloads in visible text using Latin and Cyrillic homoglyphs, CRC validation, strict and scan decoding, capacity rules, byte-oriented APIs, and detector guidance.",
+      "alternativeHeadline": "A deterministic, low-bandwidth Unicode homoglyph profile for hiding framed byte payloads in visible text",
+      "image": ["https://tedt.org/img/2026-07/UGS-1.webp"],
+      "datePublished": "2026-07-04T00:00:00-07:00",
+      "dateModified": "2026-07-04T00:00:00-07:00",
+      "author": [
+        
+        
+          
+          
+          { "@id": "https://preview.tedt.org/#person" }
+          
+        
+        
+      ],
+      
+      
+      "publisher": { "@id": "https://preview.tedt.org/#person" },
+      "isPartOf": { "@id": "https://preview.tedt.org/#website" },
+      "keywords": "unicode, steganography, homoglyphs, confusables, text encoding, security, specifications, crc16",
+      "articleSection": "Computers",
+      "breadcrumb": { "@id": "https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/#breadcrumb" }
+    },
+    
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://preview.tedt.org/"
+        },
+        
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Computers",
+          "item": "https://preview.tedt.org/category/computers/"
+        },
+        
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "UGS-1: Unicode Glyph-Variant Steganography, Version 1.1",
+          "item": "https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/"
+        }
+      ]
+    }
+    
+  ]
+}
+</script>
+
+    <!-- Favicon Meta Tags.  -->
+  <link rel="shortcut icon" href="https://tedt.org/img/favicon.ico">
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-196x196.webp" sizes="196x196" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-96x96.webp" sizes="96x96" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-32x32.webp" sizes="32x32" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-16x16.webp" sizes="16x16" />
+  <link rel="icon" type="image/png" href="https://tedt.org/img/favicon-128.webp" sizes="128x128" />
+
+
+    <!-- Apple iOS Settings. -->
+    <!--Sets whether a web application runs in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable"          content="yes">
+    <!-- Color of the status bar -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Web App Name for the Shortcut -->
+    <meta name="apple-mobile-web-app-title"            content="UGS-1: Unicode Glyph-Variant Steganography, Version 1.1">
+    <!-- Do Not Detect Phone Numbers -->
+    <meta name="format-detection"                      content="telephone=no">
+
+    <!-- iPhone icons -->
+    <!-- Apple touch icons (all inside head) -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://tedt.org/img/apple-touch-icon-57x57.webp" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://tedt.org/img/apple-touch-icon-114x114.webp" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://tedt.org/img/apple-touch-icon-72x72.webp" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://tedt.org/img/apple-touch-icon-144x144.webp" />
+    <link rel="apple-touch-icon" sizes="60x60" href="https://tedt.org/img/apple-touch-icon-60x60.webp" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://tedt.org/img/apple-touch-icon-120x120.webp" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://tedt.org/img/apple-touch-icon-76x76.webp" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://tedt.org/img/apple-touch-icon-152x152.webp" />
+
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="https://tedt.org/img/mstile-144x144.webp" />
+    <meta name="msapplication-square70x70logo" content="https://tedt.org/img/mstile-70x70.webp" />
+    <meta name="msapplication-square150x150logo" content="https://tedt.org/img/mstile-150x150.webp" />
+    <meta name="msapplication-wide310x150logo" content="https://tedt.org/img/mstile-310x150.webp" />
+    <meta name="msapplication-square310x310logo" content="https://tedt.org/img/mstile-310x310.webp" />
+
+    <!-- Google Chrome. -->
+
+    <meta name="google" value="notranslate">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Pinterest. -->
+    <!-- Prevents sharing of content by Pinterest users. -->
+    <!-- <meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!"> -->
+    <!-- Pinterest Verify -->
+    <meta name="p:domain_verify" content="98d8bdfab96a340e5a4f03f7a4303f0e"/>
+
+
+
+
+    <!-- PWA Header Includes -->
+    
+
+
+
+    <!-- News Feed Meta Tags. -->
+        <link rel="alternate" type="application/rss+xml"  title="RSS 2.0"    href="https://preview.tedt.org/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom 0.3"   href="https://preview.tedt.org/atom.xml" />
+    <link rel="alternate" type="application/json"     title="JSON"       href="https://preview.tedt.org/feed.json" />
+
+
+    
+    
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://webmention.io; img-src 'self' data: blob: https:; font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com https://www.googletagmanager.com https://cse.google.com https://static.cloudflareinsights.com https://www.clarity.ms https://scripts.clarity.ms; connect-src 'self' https:; frame-src 'self' https://www.youtube.com; media-src 'self' blob: https:; worker-src 'self' blob:; manifest-src 'self'">
+
+
+    <link rel="stylesheet" href="/css/information-architecture.css">
+
+    <meta name="color-scheme" content="light dark">
+<script>
+(function () {
+  'use strict';
+
+  var STORAGE_KEY = 'color-scheme';
+
+  function getCookie(name) {
+    var value = '; ' + document.cookie;
+    var parts = value.split('; ' + name + '=');
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  }
+
+  function normalizePreference(value) {
+    if (!value) return 'auto';
+    var v = String(value).toLowerCase().trim();
+
+    // Support pepelsbey-style string as a persisted value
+    if (v === 'light dark') return 'auto';
+
+    if (v === 'light' || v === 'dark' || v === 'auto') return v;
+
+    // Support older boolean-ish / short forms
+    if (v === 'system') return 'auto';
+
+    return 'auto';
+  }
+
+  function ensureColorSchemeMeta() {
+    var meta = document.querySelector('meta[name="color-scheme"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'color-scheme');
+      document.head.appendChild(meta);
+    }
+    return meta;
+  }
+
+  function getPrefersDark() {
+    try {
+      return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function readPreference() {
+    // 1) localStorage (new)
+    try {
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) return normalizePreference(stored);
+    } catch (e) {}
+
+    // 2) legacy cookies (old)
+    var legacy = getCookie('theme') || getCookie('site_theme');
+    if (legacy) return normalizePreference(legacy);
+
+    // 3) default
+    return 'auto';
+  }
+
+  function applyPreference(preference) {
+    var pref = normalizePreference(preference);
+    var meta = ensureColorSchemeMeta();
+    var html = document.documentElement;
+
+    var prefersDark = getPrefersDark();
+
+    var metaContent;
+    var bsTheme;
+
+    if (pref === 'light') {
+      metaContent = 'light';
+      bsTheme = 'light';
+    } else if (pref === 'dark') {
+      metaContent = 'dark';
+      bsTheme = 'dark';
+    } else {
+      metaContent = 'light dark';
+      bsTheme = prefersDark ? 'dark' : 'light';
+    }
+
+    meta.setAttribute('content', metaContent);
+    html.setAttribute('data-bs-theme', bsTheme);
+
+    // Optional: a stable marker for other scripts (no CSS dependence)
+    html.setAttribute('data-color-scheme', pref);
+
+    return pref;
+  }
+
+  var currentPreference = applyPreference(readPreference());
+
+  // Expose a tiny API for the bottom-of-body wiring script.
+  window.__TedColorScheme = {
+    STORAGE_KEY: STORAGE_KEY,
+    get: function () { return currentPreference; },
+    set: function (next) { currentPreference = applyPreference(next); return currentPreference; },
+    refreshAuto: function () {
+      if (currentPreference === 'auto') {
+        currentPreference = applyPreference('auto');
+      }
+      return currentPreference;
+    }
+  };
+})();
+</script>
+
+
+    <!-- Font Awesome CDN (primary icon set). Local fallback removed per request; restore by uncommenting include below if ever needed. -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" /><!-- Global Bootstrap 5.3 CSS File from SCSS-->
+        <!-- NOTE: Keep the three base CSS includes (bootstrap + fonts) in sync with /tools/lib/tedt-org-tools.css.
+            Enforced by: tests/check_tools_css_sync.rb -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-build.css">
+
+    <!-- Shared fonts: keep the sitewide bundle lean; decorative fonts load conditionally below. -->
+    <link rel="stylesheet" type="text/css" href="/css/shared-fonts.css">
+
+    <!-- Logos: Consolidate all Logo Fonts here -->
+    <link rel="stylesheet" type="text/css" href="/css/logo-and-company-fonts.css">
+
+    <!-- Custom CSS -->
+    
+    
+    
+        
+        <link rel="stylesheet" type="text/css" href="/css/content-decorative-fonts.css">
+        <link rel="stylesheet" type="text/css" href="/css/blog-post.css">
+        <link rel="stylesheet" type="text/css" href="/css/solarized-dark.css" >
+        <link rel="stylesheet" type="text/css" href="/css/comments-Mastodon.css">
+        <link rel="stylesheet" type="text/css" href="/css/web-mention.css">
+        <link rel="stylesheet" type="text/css" href="/css/Winerlink.css">
+        <link rel="stylesheet" type="text/css" href="/css/table-of-contents.css">
+    
+
+    
+
+    <style>
+        .text-truncate-5 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            line-clamp: 5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 5 lines to keep card heights consistent */
+            line-height: 1.5em; /* line height basis */
+            height: 7.5em;      /* 1.5em * 5 */
+            min-height: 7.5em;  /* enforce minimum to avoid shrinking if shorter */
+        }
+        .text-truncate-4 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 4 lines */
+            line-height: 1.5em;
+            height: 6em;       /* 1.5em * 4 */
+            min-height: 6em;
+        }
+        .text-truncate-3 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;  
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 3 lines */
+            line-height: 1.5em;
+            height: 4.5em;    /* 1.5em * 3 */
+            min-height: 4.5em;
+        }
+        .text-truncate-2 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 2 lines */
+            line-height: 1.5em;
+            height: 3em;      /* 1.5em * 2 */
+            min-height: 3em;
+        }
+        .text-truncate-1 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Fixed height: always exactly 1 line */
+            line-height: 1.5em;
+            height: 1.5em;    /* 1.5em * 1 */
+            min-height: 1.5em;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .stroke-glow-text {
+                color: rgb(176, 175, 172);
+                text-shadow:
+                    -1px -1px 0 rgb(0,0,0),
+                    1px -1px 0 rgb(0,0,0),
+                    -1px  1px 0 rgb(0,0,0),
+                    1px  1px 0 rgb(0,0,0),
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .stroke-glow-text {
+                color: rgb(176, 175, 172);
+                text-shadow:
+                    -1px -1px 0 rgb(0,0,0),
+                    1px -1px 0 rgb(0,0,0),
+                    -1px  1px 0 rgb(0,0,02),
+                    1px  1px 0 rgb(0,0,0),
+            }
+        }
+
+        /* --- Accessibility Contrast Helpers (WCAG) --- */
+        .category-title.wrapped-by-theme { text-shadow: 0 0 2px rgba(0,0,0,0.75), 0 0 3px rgba(0,0,0,0.85); }
+        [data-bs-theme="dark"] .category-title.wrapped-by-theme { mix-blend-mode: normal; }
+        /* Specific contrast tuning for problematic palette tokens (axe color-contrast) */
+        .category-title.wrapped-by-theme.MCC { filter: brightness(1.05) saturate(1.1); }
+        .category-title.wrapped-by-theme.GammaWorld { filter: brightness(0.92); }
+
+        /* Smooth reflow when toggling Table of Contents */
+        #main_content_col { transition: width .25s ease, flex-basis .25s ease; }
+        /* Remove the internal ms-4 gap when TOC card is hidden to avoid orphaned space */
+        #table-of-contents-card.hidden { display:none !important; }
+        /* If additional margin adjustments needed, hook via .toc-hidden-margin */
+        .toc-hidden-margin { margin-left:0 !important; }
+
+        /* TOC Card fade / slide animation */
+        #table-of-contents-card { transition: opacity .28s ease, transform .28s ease; }
+        #table-of-contents-card.toc-animating-in-start { opacity:0; transform: translateY(8px); }
+        #table-of-contents-card.toc-animating-in { opacity:1; transform: translateY(0); }
+        #table-of-contents-card.toc-animating-out { opacity:0; transform: translateY(-8px); }
+
+        /* Toggle button pressed state (persistent) */
+        button[aria-pressed] {
+            transition: background-color .15s ease, box-shadow .15s ease, transform .08s ease;            
+            position: relative;
+        }
+        /* Base override to ensure consistent starting background (respect existing text-bg-secondary classes) */
+        button[aria-pressed="false"].text-bg-secondary {
+            background-color: var(--bs-secondary-bg) !important;
+            color: var(--bs-secondary-color) !important;
+        }
+        /* Pressed state: swap to primary color & subtle inset shadow to simulate a depressed surface */
+        button[aria-pressed="true"].text-bg-secondary {
+            background-color: var(--bs-primary) !important;
+            color: var(--bs-light) !important;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,.35), inset 0 0 0 1px rgba(0,0,0,.4);
+            transform: translateY(1px) scale(.96);
+        }
+        /* Icon inherits text color */
+        button[aria-pressed] i { color: inherit !important; }
+        /* Focus outline kept for accessibility; enhance contrast on pressed */
+        button[aria-pressed="true"].text-bg-secondary:focus-visible { outline: 2px solid var(--bs-light); outline-offset: 2px; }
+            /* Hover states */
+            button[aria-pressed="false"].text-bg-secondary:hover {
+                background-color: var(--bs-secondary) !important;
+                filter: brightness(1.25);
+                color: var(--bs-nav-link-color) !important;
+                z-index: 2; /* prevent overlap visual bleed into neighbor */
+            }
+            button[aria-pressed="true"].text-bg-secondary:hover {
+                filter: brightness(1.08);
+            }
+            button[aria-pressed].text-bg-secondary:focus-visible { outline: 2px solid var(--bs-primary); outline-offset: 2px; }
+            button[aria-pressed="true"].text-bg-secondary:focus-visible { outline-color: var(--bs-light); }
+
+        /* --- Light / Auto / Dark segmented switcher (pepelsbey-style, Bootstrap colors) --- */
+        .scheme-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            padding: 2px;
+            border: 2px solid var(--bs-nav-link-color);
+            border-radius: var(--bs-border-radius-pill);
+            background: transparent;
+            /* Keep visible regardless of surrounding background */
+            color: var(--bs-white);
+        }
+        .scheme-switcher .scheme-switcher__button {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            border-radius: var(--bs-border-radius-pill);
+            color: inherit;
+            font: inherit;
+            line-height: 1;
+            padding: 0 .65rem;
+            min-height: 44px;
+            cursor: pointer;
+            transition: background-color .15s ease, color .15s ease;
+        }
+        .scheme-switcher .scheme-switcher__button:hover {
+            color: var(--bs-navbar-hover-color, var(--bs-body-color));
+        }
+        .scheme-switcher .scheme-switcher__button[aria-pressed="true"] {
+            background-color: var(--bs-primary);
+            color: var(--bs-light);
+        }
+        .scheme-switcher .scheme-switcher__button[aria-pressed="true"]:hover {
+            filter: brightness(1.05);
+        }
+        .scheme-switcher .scheme-switcher__button:focus-visible {
+            outline: 2px solid var(--bs-primary);
+            outline-offset: 2px;
+        }
+        .scheme-switcher--icons .scheme-switcher__button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            padding: 0;
+        }
+        .scheme-switcher--icons .scheme-switcher__icon {
+            display: inline-block;
+            line-height: 1;
+            font-size: 1.1rem;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .scheme-switcher .scheme-switcher__button { transition: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            button[aria-pressed] { transition: none; }
+        }
+
+    </style>
+
+    <!-- WCAG contrast utility styles -->
+    <link rel="stylesheet" href="/css/WCAG.css">
+
+    <!-- Prompts/mobile overflow fixes (plain CSS, keep last to win specificity by order) -->
+    <link rel="stylesheet" type="text/css" href="/css/prompts-overrides.css">
+
+
+
+    <!-- Scripts that need to be at the end of the header -->
+        <!-- jQuery - Load early to ensure availability -->
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" 
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+            crossorigin="anonymous">
+        </script>
+
+
+
+
+
+    
+    
+
+    <!-- Webmentions code -->
+    <script src="/js/webmention.js/static/webmention.js"  data-comments-are-reactions="true" async></script>
+
+    <!-- Start of Rough Notation Code --->
+    <!-- <script src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js"></script> -->
+
+
+    <!-- Winerlinks code-->
+    <script src="/js/winerlinks.js" async></script>
+
+    <!-- blurhash - load conditionally to avoid module errors -->
+    <script>
+        // Only load blurhash if we're in a proper browser context
+        try {
+            // Check if we're in a browser context and blurhash isn't already loaded
+            if (typeof window !== 'undefined' && typeof window.BlurHash === 'undefined') {
+                // Store original values
+                const originalModule = window.module;
+                const originalExports = window.exports;
+                
+                // Create a temporary module environment for the library
+                window.module = { exports: {} };
+                window.exports = window.module.exports;
+                
+                // Load the script dynamically
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/blurhash@2.0.5/dist/index.min.js';
+                script.async = true;
+                script.onload = function() {
+                    // Extract the blurhash functions from module.exports and make them globally available
+                    if (window.module && window.module.exports) {
+                        window.BlurHash = window.module.exports;
+                        // Also expose individual functions globally for easier access
+                        if (window.module.exports.decode) {
+                            window.decode = window.module.exports.decode;
+                        }
+                        if (window.module.exports.encode) {
+                            window.encode = window.module.exports.encode;
+                        }
+                    }
+                    
+                    // Restore original values
+                    if (originalModule !== undefined) {
+                        window.module = originalModule;
+                    } else {
+                        delete window.module;
+                    }
+                    if (originalExports !== undefined) {
+                        window.exports = originalExports;
+                    } else {
+                        delete window.exports;
+                    }
+                };
+                script.onerror = function() {
+                    console.warn('BlurHash library failed to load - image lazy loading may not work optimally');
+                    // Restore original values on error too
+                    if (originalModule !== undefined) {
+                        window.module = originalModule;
+                    } else {
+                        delete window.module;
+                    }
+                    if (originalExports !== undefined) {
+                        window.exports = originalExports;
+                    } else {
+                        delete window.exports;
+                    }
+                };
+                document.head.appendChild(script);
+            }
+        } catch (e) {
+            console.warn('BlurHash loading skipped due to compatibility issues:', e);
+        }
+    </script>
+
+    <!-- Main-site analytics baseline -->
+    
+
+
+    
+
+
+
+
+
+    
+
+        
+        
+        
+        
+        
+                
+        <style>
+            #table-of-contents-card .btn-outline-secondary {
+                --bs-btn-color: var(--bs-primary-text-emphasis);
+                --bs-btn-border-color: var(--bs-primary-text-emphasis);
+                --bs-btn-hover-color: var(--bs-white);
+                --bs-btn-hover-bg: var(--bs-primary);
+                --bs-btn-hover-border-color: var(--bs-primary);
+                --bs-btn-active-color: var(--bs-white);
+                --bs-btn-active-bg: var(--bs-primary-text-emphasis);
+                --bs-btn-active-border-color: var(--bs-primary-text-emphasis);
+                --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+            }
+        </style>
+  <meta name="robots" content="noindex, nofollow">
+</head>
+    <body style="scroll-padding-top: 70px;" data-bs-spy="scroll" data-bs-target="#navbarNavDarkDropdown" data-bs-offset="70"><a class="ia-skip-link" href="#main-content">Skip to content</a>
+<nav class="navbar navbar-expand-xl fixed-top bg-dark navbar-dark ia-navbar" aria-label="Primary">
+  <div class="container-fluid">
+    <a class="navbar-brand u-url" rel="me" href="/">
+      <img src="https://tedt.org/img/home/logo-Tschopp.svg" height="48" width="48" alt="Ted Tschopp home">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse flex-grow-1" id="navbarNavDarkDropdown">
+      <div class="navbar-nav ms-auto" role="list">
+        
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/essays/">Essays</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="essaysDropdownToggle" aria-label="Show Essays menu" aria-controls="essaysDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="essaysDropdownMenu" aria-labelledby="essaysDropdownToggle">
+      <li><a class="dropdown-item" href="/essays/">Essays Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/essays/#ai-architecture">AI &amp; Enterprise Architecture</a></li><li><a class="dropdown-item" href="/essays/#work-leadership">Work &amp; Leadership</a></li><li><a class="dropdown-item" href="/essays/#technology-science">Technology &amp; Science</a></li><li><a class="dropdown-item" href="/essays/#faith-philosophy">Faith &amp; Philosophy</a></li><li><a class="dropdown-item" href="/essays/#life-culture">Life &amp; Culture</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/stories/">Stories &amp; Folklore</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="storiesDropdownToggle" aria-label="Show Stories &amp; Folklore menu" aria-controls="storiesDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="storiesDropdownMenu" aria-labelledby="storiesDropdownToggle">
+      <li><a class="dropdown-item" href="/stories/">Stories &amp; Folklore Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/stories/#swiss-folklore">Swiss Folklore</a></li><li><a class="dropdown-item" href="/stories/#original-writing">Original Writing</a></li><li><a class="dropdown-item" href="/stories/#poetry-lyrics">Poetry &amp; Lyrics</a></li><li><a class="dropdown-item" href="/stories/#tolkien-fandom">Tolkien &amp; Fandom</a></li><li><a class="dropdown-item" href="/stories/#writing-tools">Writing Tools</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/games/">Games &amp; Worlds</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="gamesDropdownToggle" aria-label="Show Games &amp; Worlds menu" aria-controls="gamesDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="gamesDropdownMenu" aria-labelledby="gamesDropdownToggle">
+      <li><a class="dropdown-item" href="/games/">Games &amp; Worlds Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/games/#marchen-engine">The Märchen Engine</a></li><li><a class="dropdown-item" href="/games/#campaigns-systems">Campaigns &amp; Systems</a></li><li><a class="dropdown-item" href="/games/#bestiary-reference">Bestiary &amp; Reference</a></li><li><a class="dropdown-item" href="/games/#worldbuilding-maps">Worldbuilding &amp; Maps</a></li><li><a class="dropdown-item" href="/games/#gm-tools">GM Tools</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/tools/">Tools</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="toolsDropdownToggle" aria-label="Show Tools menu" aria-controls="toolsDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="toolsDropdownMenu" aria-labelledby="toolsDropdownToggle">
+      <li><a class="dropdown-item" href="/tools/">Tools Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/tools/#everyday">Everyday &amp; Productivity</a></li><li><a class="dropdown-item" href="/tools/#writing">Writing, Text &amp; Code</a></li><li><a class="dropdown-item" href="/tools/#images">Images &amp; Design</a></li><li><a class="dropdown-item" href="/tools/#maps">Maps &amp; Generators</a></li><li><a class="dropdown-item" href="/tools/#ai">AI Tools &amp; Library</a></li><li><a class="dropdown-item" href="/tools/#social">Social Tools</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/learn/">Learn</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="learnDropdownToggle" aria-label="Show Learn menu" aria-controls="learnDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="learnDropdownMenu" aria-labelledby="learnDropdownToggle">
+      <li><a class="dropdown-item" href="/learn/">Learn Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/learn/#inside-ai">Inside AI</a></li><li><a class="dropdown-item" href="/learn/#game-theory">Game Theory Playground</a></li><li><a class="dropdown-item" href="/learn/#math">Math in Plain English</a></li><li><a class="dropdown-item" href="/learn/#presentations">Talks &amp; Presentations</a></li>
+    </ul>
+  </div>
+
+  
+  
+  <div class="nav-item dropdown ia-nav-item" role="listitem">
+    <a class="nav-link menu-item ia-nav-link" href="/about-ted/">About</a>
+    <button type="button" class="nav-link ia-nav-disclosure dropdown-toggle" id="aboutDropdownToggle" aria-label="Show About menu" aria-controls="aboutDropdownMenu" aria-expanded="false" data-bs-toggle="dropdown"></button>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="aboutDropdownMenu" aria-labelledby="aboutDropdownToggle">
+      <li><a class="dropdown-item" href="/about-ted/">About Overview</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="/profile/">About Ted</a></li><li><a class="dropdown-item" href="/career/">Career &amp; Resume</a></li><li><a class="dropdown-item" href="/about-ted/#projects">Selected Work &amp; Projects</a></li><li><a class="dropdown-item" href="/about-ted/#contact">Contact</a></li><li><a class="dropdown-item" href="/about-ted/#editorial-standards">Editorial Standards</a></li>
+    </ul>
+  </div>
+
+<div class="nav-item ia-nav-utility" role="listitem"><a class="nav-link menu-item" href="/search/">Search</a></div>
+<div class="nav-item ia-nav-utility" role="listitem"><a class="nav-link menu-item" href="/subscribe/">Subscribe</a></div>
+
+        <div class="nav-item" role="listitem">
+          <div id="colorSchemeToggle" class="scheme-switcher scheme-switcher--icons" role="group" aria-label="Color scheme">
+            <button type="button" class="scheme-switcher__button" title="Light" aria-label="Light" aria-pressed="false" data-color-scheme="light"><span aria-hidden="true">&#9728;</span></button>
+            <button type="button" class="scheme-switcher__button" title="System" aria-label="System" aria-pressed="false" data-color-scheme="auto"><span aria-hidden="true">&#128187;</span></button>
+            <button type="button" class="scheme-switcher__button" title="Dark" aria-label="Dark" aria-pressed="false" data-color-scheme="dark"><span aria-hidden="true">&#9790;</span></button>
+          </div>
+        </div>
+        <div class="nav-item d-none d-lg-flex" role="listitem" data-toc-visibility-container>
+          <div id="tocVisibilityToggle" class="scheme-switcher scheme-switcher--icons" role="group" aria-label="Table of contents">
+            <button type="button" class="scheme-switcher__button" title="Show TOC" aria-label="Show TOC" aria-pressed="false" data-toc-visibility="show"><span aria-hidden="true">&#9776;</span></button>
+            <button type="button" class="scheme-switcher__button" title="Hide TOC" aria-label="Hide TOC" aria-pressed="false" data-toc-visibility="hide"><span aria-hidden="true">&#10006;</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<aside class="site-preview-banner" aria-label="Site preview"><strong>Preview</strong><span>Explore the proposed layout.</span><a href="https://tedt.org/">View the Current Site <span aria-hidden="true">↗</span></a></aside>
+
+
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row w-100">
+            <!-- Blog Post Content Column -->
+            <div class="col-12 col-lg-9 col-xxl-9" id="content-column">
+                <!-- Blog Post -->
+                
+                
+                <main id="main-content" tabindex="-1" class="h-entry" role="main">
+
+                    <div class="card h-100 no-padding">
+                        
+                        
+                        <div class="card h-100">
+                            
+                                <img src="https://tedt.org/img/2026-07/UGS-1.webp"
+  alt="Technical infographic for UGS-1 Unicode Glyph-Variant Steganography, showing Latin and Cyrillic homoglyph code points, visible text, glyph-variant text, protocol layers, and hidden payload bits."
+  class="card-img-top w-100 d-block"
+  width="1672"
+  height="941"
+  srcset="https://tedt.org/img/generated/responsive/2026-07/UGS-1--480w.webp 480w, https://tedt.org/img/generated/responsive/2026-07/UGS-1--768w.webp 768w, https://tedt.org/img/generated/responsive/2026-07/UGS-1--1200w.webp 1200w, https://tedt.org/img/generated/responsive/2026-07/UGS-1--1456w.webp 1456w, https://tedt.org/img/2026-07/UGS-1.webp 1672w"
+  sizes="(min-width: 1400px) 960px, (min-width: 992px) 75vw, 100vw"
+  loading="eager"
+  decoding="async"
+  fetchpriority="high">
+
+                            
+                            <div class="card-body pt-3 pb-3 ps-4 pe-4">
+                                <div class="post-hero mb-2">
+                                    <h1 class="p-name card-title post-title mb-1">UGS-1: Unicode Glyph-Variant Steganography, Version 1.1</h1>
+                                    
+                                        <p class="card-subtitle h2 mb-2 fw-normal post-subtitle text-body-secondary">A deterministic, low-bandwidth Unicode homoglyph profile for hiding framed byte payloads in visible text</p>
+                                    
+                                </div>
+                                <div class="small text-body-secondary mb-1">
+                                    <span class="card-text"><span class="content-credits"><span class="content-credit content-credit-author">Author: <span class="author-byline"><a rel="author" class="p-author h-card" href="/profile/"><img src="https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g" class="u-photo author-avatar" loading="lazy" alt="Ted Tschopp avatar" style="width: 1.5em; height: 1.5em; border-radius: 50%; vertical-align: middle; margin-right: 0.25em;">Ted Tschopp</a></span></span></span>
+</span>
+                                </div>
+                                
+                                    <div class="small text-body-secondary image-credits">
+                                        <cite>UGS-1 Unicode Glyph-Variant Steganography</cite>:&nbsp;an image by<span class="vcard"><address style="display:inline;" class="author"><a rel="author" target="_blank" class="url fn n" href="https://tedt.org/">Ted Tschopp</a></address></span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                        <div class="card-body pt-1 p-4 h-100">
+                           
+                            <span class="hidden aria-hidden u-url">https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/</span><div id="main_content_col" class="col-12">
+                                    
+                                        <aside id="table-of-contents-card" class="mb-3">
+                                            <div class="card h-100 no-padding"><div class="card-body pt-3 pb-2 ps-4 pe-4">
+                                                    <div class="d-flex align-items-center justify-content-between gap-3">
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+
+                                                        <a class="text-decoration-none h3 mb-0" name="Top-of-Table-of-Contents" id="Top-of-Table-of-Contents" href="#Top-of-Table-of-Contents">Table of Contents</a>
+
+                                                        <button id="btnToggleTocInline" type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleShowTableOfContents()" aria-pressed="true" aria-controls="insert-table-of-contents-here" aria-label="Hide table of contents">Hide</button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card-body pt-0 ps-4" id="insert-table-of-contents-here"></div>
+                                            </div>
+                                        </aside>
+                                    
+                                    <div class="article e-content position-relative" id="main_content">
+                                        
+                                        <h2 id="1-status-and-security-notice">1. Status and Security Notice</h2>
+
+<p>UGS-1 is a deterministic, low-bandwidth steganographic encoding for hiding a byte payload inside visible text by replacing selected Latin characters with visually similar Unicode characters.</p>
+
+<p>UGS-1 is not encryption, authentication, or tamper protection. The CRC in this specification only detects accidental corruption. Anyone who understands the format can alter the payload and recompute the CRC.</p>
+
+<p>If secrecy or tamper resistance is required, applications should encrypt and authenticate the payload before placing it in a UGS-1 frame, for example with an AEAD scheme.</p>
+
+<p>UGS-1 data is fragile. Editors, messaging systems, source-control tools, spellcheckers, security gateways, LLM rewrites, transliteration tools, ASCII sanitizers, and confusable-character detectors may modify or remove the channel.</p>
+
+<p>Unicode’s own security guidance discusses confusable characters and mechanisms for detecting them, so UGS-1 should be treated as a technique with security implications.</p>
+
+<p>Reference: https://www.unicode.org/reports/tr39/</p>
+
+<hr />
+
+<h2 id="2-goal">2. Goal</h2>
+
+<p>UGS-1 embeds a hidden byte payload inside visible text.</p>
+
+<p>Conceptual example:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Latin a      U+0061  encodes bit 0
+Cyrillic а   U+0430  encodes bit 1
+</code></pre></div></div>
+
+<p>Both glyphs may appear visually similar:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a
+</code></pre></div></div>
+
+<p>But they are different Unicode code points.</p>
+
+<p>UGS-1 profile H1 encodes one bit per eligible visible character.</p>
+
+<hr />
+
+<h2 id="3-non-goals">3. Non-Goals</h2>
+
+<p>UGS-1 does not provide:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>confidentiality
+authentication
+integrity against deliberate tampering
+plausible deniability
+robust survival through arbitrary text processing
+high bandwidth
+</code></pre></div></div>
+
+<p>UGS-1 is intended to be simple, deterministic, testable, and easy to detect or remove when needed.</p>
+
+<hr />
+
+<h2 id="4-terminology">4. Terminology</h2>
+
+<p><strong>Cover text</strong><br />
+The visible text before embedding.</p>
+
+<p><strong>Carrier text</strong><br />
+The visible text after embedding.</p>
+
+<p><strong>Payload</strong><br />
+The hidden message as raw bytes.</p>
+
+<p><strong>Text payload</strong><br />
+A payload interpreted as UTF-8 text.</p>
+
+<p><strong>Eligible character</strong><br />
+A code point that appears in the UGS-1 H1 homoglyph table.</p>
+
+<p><strong>Zero variant</strong><br />
+The ordinary Latin code point used to encode bit <code class="language-plaintext highlighter-rouge">0</code>.</p>
+
+<p><strong>One variant</strong><br />
+The visually similar Unicode code point used to encode bit <code class="language-plaintext highlighter-rouge">1</code>.</p>
+
+<p><strong>Frame</strong><br />
+The structured binary data embedded into the carrier text.</p>
+
+<p><strong>Variant reset</strong><br />
+The process of replacing UGS-1 one variants with their corresponding zero variants before embedding. This is UGS-specific and must not be confused with Unicode normalization.</p>
+
+<hr />
+
+<h2 id="5-required-unicode-handling">5. Required Unicode Handling</h2>
+
+<p>Implementations MUST operate on Unicode scalar values or code points, not encoded bytes.</p>
+
+<p>Implementations MUST NOT iterate through UTF-16 strings in a way that incorrectly splits surrogate pairs. Profile H1 only uses BMP code points, but code-point handling keeps implementations portable.</p>
+
+<p>Implementations MUST NOT normalize, case-fold, transliterate, ASCII-clean, confusable-map, or sanitize the carrier text after embedding.</p>
+
+<p>Unicode normalization forms such as NFC, NFD, NFKC, and NFKD do not generally fold Cyrillic homoglyphs into Latin letters. However, other security and text-processing systems may do so. The larger practical risks are transliteration, ASCII filtering, confusable-skeleton mapping, spellcheck, OCR, LLM rewriting, and security sanitization.</p>
+
+<p>Implementations SHOULD test the intended transport channel before use.</p>
+
+<p>Reference: https://www.unicode.org/reports/tr15/</p>
+
+<hr />
+
+<h2 id="6-structured-text-warning">6. Structured Text Warning</h2>
+
+<p>Applications SHOULD avoid embedding into syntax-sensitive regions, including:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>URLs
+email addresses
+domain names
+source code
+identifiers
+HTML tags and attributes
+Markdown syntax
+JSON keys
+YAML keys
+CSV headers
+shell commands
+database queries
+filenames
+cryptographic material
+</code></pre></div></div>
+
+<p>For HTML, XML, Markdown, or rich-text formats, applications SHOULD embed only in visible prose text nodes, not in markup or syntax.</p>
+
+<p>Replacing Latin letters with homoglyphs can preserve visual appearance while changing program behavior.</p>
+
+<hr />
+
+<h2 id="7-profile-h1-binary-homoglyph-encoding">7. Profile H1: Binary Homoglyph Encoding</h2>
+
+<p>UGS-1 H1 encodes one bit per eligible character.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bit 0 -&gt; use the Latin zero variant
+bit 1 -&gt; use the homoglyph one variant
+</code></pre></div></div>
+
+<h3 id="71-mandatory-homoglyph-table">7.1 Mandatory Homoglyph Table</h3>
+
+<p>All UGS-1 H1 implementations MUST support this exact table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bit 0 Latin</th>
+      <th style="text-align: right">Code point</th>
+      <th>Bit 1 homoglyph</th>
+      <th style="text-align: right">Code point</th>
+      <th>Bit-1 character name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">A</code></td>
+      <td style="text-align: right">U+0041</td>
+      <td><code class="language-plaintext highlighter-rouge">А</code></td>
+      <td style="text-align: right">U+0410</td>
+      <td>Cyrillic Capital Letter A</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">a</code></td>
+      <td style="text-align: right">U+0061</td>
+      <td><code class="language-plaintext highlighter-rouge">а</code></td>
+      <td style="text-align: right">U+0430</td>
+      <td>Cyrillic Small Letter A</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">B</code></td>
+      <td style="text-align: right">U+0042</td>
+      <td><code class="language-plaintext highlighter-rouge">В</code></td>
+      <td style="text-align: right">U+0412</td>
+      <td>Cyrillic Capital Letter Ve</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">C</code></td>
+      <td style="text-align: right">U+0043</td>
+      <td><code class="language-plaintext highlighter-rouge">С</code></td>
+      <td style="text-align: right">U+0421</td>
+      <td>Cyrillic Capital Letter Es</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">c</code></td>
+      <td style="text-align: right">U+0063</td>
+      <td><code class="language-plaintext highlighter-rouge">с</code></td>
+      <td style="text-align: right">U+0441</td>
+      <td>Cyrillic Small Letter Es</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">E</code></td>
+      <td style="text-align: right">U+0045</td>
+      <td><code class="language-plaintext highlighter-rouge">Е</code></td>
+      <td style="text-align: right">U+0415</td>
+      <td>Cyrillic Capital Letter Ie</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">e</code></td>
+      <td style="text-align: right">U+0065</td>
+      <td><code class="language-plaintext highlighter-rouge">е</code></td>
+      <td style="text-align: right">U+0435</td>
+      <td>Cyrillic Small Letter Ie</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">H</code></td>
+      <td style="text-align: right">U+0048</td>
+      <td><code class="language-plaintext highlighter-rouge">Н</code></td>
+      <td style="text-align: right">U+041D</td>
+      <td>Cyrillic Capital Letter En</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">I</code></td>
+      <td style="text-align: right">U+0049</td>
+      <td><code class="language-plaintext highlighter-rouge">І</code></td>
+      <td style="text-align: right">U+0406</td>
+      <td>Cyrillic Capital Letter Byelorussian-Ukrainian I</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">i</code></td>
+      <td style="text-align: right">U+0069</td>
+      <td><code class="language-plaintext highlighter-rouge">і</code></td>
+      <td style="text-align: right">U+0456</td>
+      <td>Cyrillic Small Letter Byelorussian-Ukrainian I</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">J</code></td>
+      <td style="text-align: right">U+004A</td>
+      <td><code class="language-plaintext highlighter-rouge">Ј</code></td>
+      <td style="text-align: right">U+0408</td>
+      <td>Cyrillic Capital Letter Je</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">j</code></td>
+      <td style="text-align: right">U+006A</td>
+      <td><code class="language-plaintext highlighter-rouge">ј</code></td>
+      <td style="text-align: right">U+0458</td>
+      <td>Cyrillic Small Letter Je</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">K</code></td>
+      <td style="text-align: right">U+004B</td>
+      <td><code class="language-plaintext highlighter-rouge">К</code></td>
+      <td style="text-align: right">U+041A</td>
+      <td>Cyrillic Capital Letter Ka</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">M</code></td>
+      <td style="text-align: right">U+004D</td>
+      <td><code class="language-plaintext highlighter-rouge">М</code></td>
+      <td style="text-align: right">U+041C</td>
+      <td>Cyrillic Capital Letter Em</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">O</code></td>
+      <td style="text-align: right">U+004F</td>
+      <td><code class="language-plaintext highlighter-rouge">О</code></td>
+      <td style="text-align: right">U+041E</td>
+      <td>Cyrillic Capital Letter O</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">o</code></td>
+      <td style="text-align: right">U+006F</td>
+      <td><code class="language-plaintext highlighter-rouge">о</code></td>
+      <td style="text-align: right">U+043E</td>
+      <td>Cyrillic Small Letter O</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">P</code></td>
+      <td style="text-align: right">U+0050</td>
+      <td><code class="language-plaintext highlighter-rouge">Р</code></td>
+      <td style="text-align: right">U+0420</td>
+      <td>Cyrillic Capital Letter Er</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">p</code></td>
+      <td style="text-align: right">U+0070</td>
+      <td><code class="language-plaintext highlighter-rouge">р</code></td>
+      <td style="text-align: right">U+0440</td>
+      <td>Cyrillic Small Letter Er</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">T</code></td>
+      <td style="text-align: right">U+0054</td>
+      <td><code class="language-plaintext highlighter-rouge">Т</code></td>
+      <td style="text-align: right">U+0422</td>
+      <td>Cyrillic Capital Letter Te</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">X</code></td>
+      <td style="text-align: right">U+0058</td>
+      <td><code class="language-plaintext highlighter-rouge">Х</code></td>
+      <td style="text-align: right">U+0425</td>
+      <td>Cyrillic Capital Letter Ha</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x</code></td>
+      <td style="text-align: right">U+0078</td>
+      <td><code class="language-plaintext highlighter-rouge">х</code></td>
+      <td style="text-align: right">U+0445</td>
+      <td>Cyrillic Small Letter Ha</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">y</code></td>
+      <td style="text-align: right">U+0079</td>
+      <td><code class="language-plaintext highlighter-rouge">у</code></td>
+      <td style="text-align: right">U+0443</td>
+      <td>Cyrillic Small Letter U</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This table intentionally avoids many tempting lookalikes that are more font-dependent.</p>
+
+<hr />
+
+<h2 id="8-frame-format">8. Frame Format</h2>
+
+<p>The payload is wrapped in a binary frame.</p>
+
+<p>All multi-bit fields are encoded most-significant bit first.</p>
+
+<p>All multi-byte integers are encoded big-endian.</p>
+
+<h3 id="81-layout">8.1 Layout</h3>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MAGIC          16 bits
+VERSION         4 bits
+FLAGS           4 bits
+LENGTH         24 bits
+PAYLOAD      8 * LENGTH bits
+CRC16          16 bits
+</code></pre></div></div>
+
+<p>Total overhead:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>64 bits
+</code></pre></div></div>
+
+<p>Required capacity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>required_bits = 64 + 8 * payload_length_in_bytes
+</code></pre></div></div>
+
+<h3 id="82-magic">8.2 MAGIC</h3>
+
+<p>Fixed value:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0xAD53
+</code></pre></div></div>
+
+<p>Binary:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10101101 01010011
+</code></pre></div></div>
+
+<h3 id="83-version">8.3 VERSION</h3>
+
+<p>For this specification:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0x1
+</code></pre></div></div>
+
+<p>Encoded as 4 bits:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0001
+</code></pre></div></div>
+
+<h3 id="84-flags">8.4 FLAGS</h3>
+
+<p>For this specification:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0x0
+</code></pre></div></div>
+
+<p>Encoded as 4 bits:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0000
+</code></pre></div></div>
+
+<p>All nonzero flag values are reserved.</p>
+
+<p>A decoder MUST reject frames with unknown nonzero flags unless explicitly configured to support an extension.</p>
+
+<h3 id="85-length">8.5 LENGTH</h3>
+
+<p><code class="language-plaintext highlighter-rouge">LENGTH</code> is a 24-bit unsigned integer.</p>
+
+<p>It gives the number of payload bytes.</p>
+
+<p>Maximum representable payload size:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>16,777,215 bytes
+</code></pre></div></div>
+
+<p>Practical payload size is usually much smaller because the cover text must contain enough eligible characters.</p>
+
+<p>Decoders SHOULD support a configurable maximum accepted payload size.</p>
+
+<h3 id="86-payload">8.6 PAYLOAD</h3>
+
+<p>The payload is raw bytes.</p>
+
+<p>For ordinary text messages, the payload MUST be UTF-8 encoded text without a byte-order mark.</p>
+
+<h3 id="87-crc16">8.7 CRC16</h3>
+
+<p>CRC-16/CCITT-FALSE is computed over:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VERSION_FLAGS || LENGTH || PAYLOAD
+</code></pre></div></div>
+
+<p>Where:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VERSION_FLAGS = one byte: high nibble VERSION, low nibble FLAGS
+</code></pre></div></div>
+
+<p>For UGS-1 v1 with flags 0:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VERSION_FLAGS = 0x10
+</code></pre></div></div>
+
+<p>CRC parameters:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name:       CRC-16/CCITT-FALSE
+Width:      16
+Polynomial: 0x1021
+Initial:    0xFFFF
+RefIn:      false
+RefOut:     false
+XorOut:     0x0000
+Output:     big-endian
+</code></pre></div></div>
+
+<p>Normative pseudocode:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function crc16_ccitt_false(bytes):
+    crc = 0xFFFF
+
+    for b in bytes:
+        crc = crc XOR (b &lt;&lt; 8)
+
+        repeat 8 times:
+            if (crc AND 0x8000) != 0:
+                crc = ((crc &lt;&lt; 1) XOR 0x1021) AND 0xFFFF
+            else:
+                crc = (crc &lt;&lt; 1) AND 0xFFFF
+
+    return crc
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="9-payload-preparation">9. Payload Preparation</h2>
+
+<p>For a text message:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>payload_bytes = UTF8_ENCODE(hidden_message)
+</code></pre></div></div>
+
+<p>Then construct:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version_flags = 0x10
+length         = 24-bit big-endian byte length
+crc_input      = version_flags || length || payload_bytes
+crc            = CRC16_CCITT_FALSE(crc_input)
+frame_bytes    = 0xAD 0x53 || version_flags || length || payload_bytes || crc
+frame_bits     = frame_bytes as bits, MSB first
+</code></pre></div></div>
+
+<p>Example hidden message:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OK
+</code></pre></div></div>
+
+<p>UTF-8 payload bytes:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4F 4B
+</code></pre></div></div>
+
+<p>Frame bytes:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AD 53 10 00 00 02 4F 4B 9E A9
+</code></pre></div></div>
+
+<p>Frame bits:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10101101 01010011 00010000 00000000 00000000
+00000010 01001111 01001011 10011110 10101001
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="10-encoder-algorithm">10. Encoder Algorithm</h2>
+
+<p>Input:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cover_text
+payload_bytes
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>carrier_text
+</code></pre></div></div>
+
+<p>Algorithm:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Build the UGS-1 frame.
+
+2. Convert frame bytes to frame bits, MSB first.
+
+3. Reset UGS-1 variants in the cover text:
+   For every code point:
+       if it is a one variant from the H1 table:
+           replace it with its corresponding zero variant
+       else:
+           leave it unchanged
+
+4. Count capacity:
+       capacity_bits = number of code points in the reset cover text
+                       that are zero variants in the H1 table
+
+5. If capacity_bits &lt; frame_bits.length:
+       fail with INSUFFICIENT_CAPACITY
+
+6. Initialize bit_index = 0.
+
+7. For each code point cp in the reset cover text:
+
+       if cp is not a zero variant in the H1 table:
+           output cp
+           continue
+
+       if bit_index &gt;= frame_bits.length:
+           output cp
+           continue
+
+       bit = frame_bits[bit_index]
+
+       if bit == 0:
+           output cp
+
+       if bit == 1:
+           output corresponding one variant
+
+       bit_index = bit_index + 1
+
+8. Return the output text.
+</code></pre></div></div>
+
+<p>The encoder MUST NOT alter non-eligible characters except when resetting recognized one variants to their corresponding zero variants.</p>
+
+<p>The encoder SHOULD reset variants before embedding so that accidental pre-existing homoglyphs do not become hidden bits.</p>
+
+<hr />
+
+<h2 id="11-decoder-algorithm">11. Decoder Algorithm</h2>
+
+<p>Input:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>carrier_text
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>payload_bytes
+</code></pre></div></div>
+
+<h3 id="111-bit-extraction">11.1 Bit Extraction</h3>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Initialize bits = empty list.
+
+2. For each code point cp in carrier_text:
+
+       if cp is a zero variant in the H1 table:
+           append bit 0 to bits
+
+       else if cp is a one variant in the H1 table:
+           append bit 1 to bits
+
+       else:
+           ignore cp
+</code></pre></div></div>
+
+<h3 id="112-strict-frame-decode">11.2 Strict Frame Decode</h3>
+
+<p>Strict mode assumes the frame starts at the first extracted bit.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. If bits.length &lt; 64:
+       fail with NO_FRAME
+
+2. Read first 16 bits as MAGIC.
+       If MAGIC != 0xAD53:
+           fail with BAD_MAGIC
+
+3. Read next 4 bits as VERSION.
+       If VERSION != 1:
+           fail with UNSUPPORTED_VERSION
+
+4. Read next 4 bits as FLAGS.
+       If FLAGS != 0:
+           fail with UNSUPPORTED_FLAGS
+
+5. Read next 24 bits as LENGTH.
+
+6. required_bits = 64 + 8 * LENGTH
+
+7. If required_bits &gt; bits.length:
+       fail with INCOMPLETE_FRAME
+
+8. If LENGTH exceeds the implementation's configured maximum payload size:
+       fail with PAYLOAD_TOO_LARGE
+
+9. Read PAYLOAD as LENGTH bytes.
+
+10. Read CRC16.
+
+11. Recompute CRC16 over:
+       VERSION_FLAGS || LENGTH || PAYLOAD
+
+12. If computed CRC16 != stored CRC16:
+       fail with BAD_CRC
+
+13. Ignore extracted bits after the parsed frame.
+
+14. Return PAYLOAD.
+</code></pre></div></div>
+
+<p>A stricter application MAY reject trailing one bits after the parsed frame, but that behavior is not required for UGS-1 compatibility.</p>
+
+<p>If the caller expects text, decode PAYLOAD as UTF-8. If UTF-8 decoding fails, return <code class="language-plaintext highlighter-rouge">INVALID_UTF8</code>.</p>
+
+<hr />
+
+<h2 id="12-optional-scan-mode">12. Optional Scan Mode</h2>
+
+<p>Strict mode is deterministic, but it fails if visible text appears before the embedded frame and that preceding text contains eligible characters.</p>
+
+<p>Scan mode searches for a valid frame at any extracted-bit offset.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Extract all bits from the carrier text.
+
+2. For offset from 0 to bits.length - 64:
+
+       if bits[offset : offset + 16] != MAGIC:
+           continue
+
+       Try to parse a frame beginning at offset.
+
+       Before allocating payload storage:
+           read LENGTH
+           compute required_bits
+           ensure required_bits &lt;= bits.length - offset
+           ensure LENGTH &lt;= configured maximum payload size
+
+       If version, flags, length, and CRC are valid:
+           return the decoded payload and the bit offset
+
+3. If no valid frame is found:
+       fail with NO_VALID_FRAME
+</code></pre></div></div>
+
+<p>Because the frame uses both a 16-bit magic value and a 16-bit CRC, accidental false positives are unlikely in ordinary text. They are not impossible.</p>
+
+<p>Applications that need stronger false-positive resistance should use a larger checksum or authenticated payload wrapper.</p>
+
+<hr />
+
+<h2 id="13-capacity-rules">13. Capacity Rules</h2>
+
+<p>For profile H1:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 eligible character = 1 hidden bit
+</code></pre></div></div>
+
+<p>Required capacity:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>64 + 8 * payload_length
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Payload</th>
+      <th style="text-align: right">Payload bytes</th>
+      <th style="text-align: right">Required eligible characters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>empty payload</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">64</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">OK</code></td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">80</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hello</code></td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">104</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">meet at 9</code></td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">136</td>
+    </tr>
+    <tr>
+      <td>100-byte message</td>
+      <td style="text-align: right">100</td>
+      <td style="text-align: right">864</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A practical encoder SHOULD report:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>capacity_bits
+required_bits
+unused_capacity_bits
+max_payload_bytes
+</code></pre></div></div>
+
+<p>Where:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if capacity_bits &lt; 64:
+    max_payload_bytes = 0
+else:
+    max_payload_bytes = floor((capacity_bits - 64) / 8)
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="14-worked-test-vector">14. Worked Test Vector</h2>
+
+<h3 id="141-hidden-message">14.1 Hidden Message</h3>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OK
+</code></pre></div></div>
+
+<h3 id="142-payload-bytes">14.2 Payload Bytes</h3>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4F 4B
+</code></pre></div></div>
+
+<h3 id="143-full-frame-bytes">14.3 Full Frame Bytes</h3>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AD 53 10 00 00 02 4F 4B 9E A9
+</code></pre></div></div>
+
+<h3 id="144-full-frame-bits">14.4 Full Frame Bits</h3>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10101101 01010011 00010000 00000000 00000000
+00000010 01001111 01001011 10011110 10101001
+</code></pre></div></div>
+
+<h3 id="145-minimal-cover-text">14.5 Minimal Cover Text</h3>
+
+<p>Use 80 Latin <code class="language-plaintext highlighter-rouge">a</code> characters:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+</code></pre></div></div>
+
+<p>Since <code class="language-plaintext highlighter-rouge">a</code> is an eligible character, each <code class="language-plaintext highlighter-rouge">a</code> can encode one bit.</p>
+
+<h3 id="146-encoded-carrier-as-escapes">14.6 Encoded Carrier as Escapes</h3>
+
+<p>For this test vector:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bit 0 -&gt; a        U+0061
+bit 1 -&gt; \u0430   Cyrillic small а
+</code></pre></div></div>
+
+<p>Encoded carrier, shown as escape groups:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\u0430a\u0430a\u0430\u0430a\u0430
+a\u0430a\u0430aa\u0430\u0430
+aaa\u0430aaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaa\u0430a
+a\u0430aa\u0430\u0430\u0430\u0430
+a\u0430aa\u0430a\u0430\u0430
+\u0430aa\u0430\u0430\u0430\u0430a
+\u0430a\u0430a\u0430aa\u0430
+</code></pre></div></div>
+
+<p>A correct decoder should recover:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OK
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="15-error-codes">15. Error Codes</h2>
+
+<p>Implementations SHOULD expose these distinct errors:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSUFFICIENT_CAPACITY
+NO_FRAME
+BAD_MAGIC
+UNSUPPORTED_VERSION
+UNSUPPORTED_FLAGS
+INCOMPLETE_FRAME
+PAYLOAD_TOO_LARGE
+BAD_CRC
+INVALID_UTF8
+NO_VALID_FRAME
+</code></pre></div></div>
+
+<p>For privacy or simplicity, user-facing applications MAY collapse these into a generic result such as:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no valid hidden message found
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="16-recommended-api-shape">16. Recommended API Shape</h2>
+
+<p>Implementations SHOULD expose byte-oriented primitives first:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>encode_bytes(cover_text, payload_bytes) -&gt; carrier_text
+
+decode_bytes(carrier_text, mode = "strict" | "scan") -&gt; {
+    payload_bytes,
+    offset_bits optional
+}
+
+capacity(cover_text) -&gt; {
+    capacity_bits,
+    max_payload_bytes
+}
+</code></pre></div></div>
+
+<p>UTF-8 convenience wrappers MAY be provided:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>encode_text(cover_text, hidden_text) -&gt; carrier_text
+
+decode_text(carrier_text, mode = "strict" | "scan") -&gt; hidden_text
+</code></pre></div></div>
+
+<p>The text wrappers MUST encode and decode payloads as UTF-8 without a byte-order mark.</p>
+
+<hr />
+
+<h2 id="17-optional-extension-zero-width-profile-z1">17. Optional Extension: Zero-Width Profile Z1</h2>
+
+<p>Z1 is not part of mandatory UGS-1 H1 compatibility.</p>
+
+<p>It may be useful when cover text lacks enough homoglyph-capable characters.</p>
+
+<p>Unicode includes zero-width format characters such as:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>U+200B ZERO WIDTH SPACE
+U+200C ZERO WIDTH NON-JOINER
+U+200D ZERO WIDTH JOINER
+</code></pre></div></div>
+
+<p>A simple Z1 profile could be:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bit 0 -&gt; U+200B ZERO WIDTH SPACE
+bit 1 -&gt; U+200C ZERO WIDTH NON-JOINER
+</code></pre></div></div>
+
+<p>A Z1 encoder would insert one zero-width character between visible code points.</p>
+
+<p>However, Z1 is often more fragile than H1 because messaging systems, editors, and security tools commonly strip invisible format characters.</p>
+
+<p>Variation selectors are another possible channel, but they are also fragile and can interact with rendering behavior.</p>
+
+<p>For a dependable first implementation, use H1.</p>
+
+<p>References:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://www.unicode.org/charts/nameslist/n_2000.html
+https://www.unicode.org/versions/Unicode16.0.0/core-spec/chapter-23/
+https://www.unicode.org/reports/tr37/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="18-detector-and-sanitizer">18. Detector and Sanitizer</h2>
+
+<p>A companion detector can reveal or remove UGS-1 data.</p>
+
+<h3 id="181-reveal-mode">18.1 Reveal Mode</h3>
+
+<p>For every code point:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if code point is a one variant:
+    display it as [1:U+XXXX]
+else if code point is a zero variant:
+    display it as [0:U+XXXX]
+else:
+    display normally
+</code></pre></div></div>
+
+<p>Reveal mode is useful for debugging, auditing, and teaching.</p>
+
+<h3 id="182-strip-mode">18.2 Strip Mode</h3>
+
+<p>For every code point:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if code point is a one variant:
+    replace it with the corresponding zero variant
+else:
+    keep it unchanged
+</code></pre></div></div>
+
+<p>Strip mode removes the H1 hidden channel while preserving the intended Latin visible text.</p>
+
+<p>This is useful defensively because mixed-script confusables are a known Unicode security concern.</p>
+
+<p>Reference: https://www.unicode.org/reports/tr39/</p>
+
+<hr />
+
+<h2 id="19-implementation-checklist">19. Implementation Checklist</h2>
+
+<p>A conforming UGS-1 H1 implementation MUST:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ ] Use the mandatory H1 homoglyph table exactly.
+[ ] Operate on Unicode code points.
+[ ] Provide byte payload support.
+[ ] Encode text payloads as UTF-8 without BOM when using text wrappers.
+[ ] Build the exact frame format.
+[ ] Use MAGIC = 0xAD53.
+[ ] Use VERSION = 1.
+[ ] Use FLAGS = 0.
+[ ] Use 24-bit big-endian payload length.
+[ ] Use CRC-16/CCITT-FALSE.
+[ ] Encode bits MSB-first.
+[ ] Encode one bit per eligible character.
+[ ] Reset recognized one variants before embedding.
+[ ] Reject bad magic.
+[ ] Reject unsupported version.
+[ ] Reject unsupported flags.
+[ ] Reject incomplete frames.
+[ ] Reject oversized payloads according to implementation limits.
+[ ] Reject bad CRC.
+[ ] Avoid post-encoding normalization, transliteration, or sanitization.
+</code></pre></div></div>
+
+<p>A robust implementation SHOULD also:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ ] Provide scan mode.
+[ ] Provide reveal mode.
+[ ] Provide strip mode.
+[ ] Report capacity before encoding.
+[ ] Avoid syntax-sensitive regions in structured text.
+[ ] Support a configurable maximum decode payload size.
+[ ] Clearly state that CRC16 is not authentication.
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="20-prior-art-and-related-work--informative">20. Prior Art and Related Work — Informative</h2>
+
+<h3 id="201-scope-of-this-section">20.1 Scope of This Section</h3>
+
+<p>UGS-1 does <strong>not</strong> claim novelty over the broad idea of hiding information in text by using Unicode look-alikes, invisible characters, or whitespace variants. Prior work exists in Unicode security, IDN homograph attacks, text watermarking, Unicode homoglyph substitution, Unicode space-character hiding, and zero-width-character steganography. The purpose of UGS-1 is narrower: it defines a <strong>small, deterministic, interoperable profile</strong> with a fixed homoglyph table, a byte-oriented frame, a length field, versioning, CRC validation, strict decoding, scan decoding, and explicit capacity/error behavior.</p>
+
+<p>This section is a non-exhaustive prior-art and related-work note, not a legal patent-clearance opinion.</p>
+
+<h3 id="202-unicode-visual-confusability-and-homograph-security">20.2 Unicode Visual Confusability and Homograph Security</h3>
+
+<p>Unicode visual confusability is a well-documented security issue. Unicode Technical Report #36 describes visual spoofing as relying on different Unicode strings whose appearance in common fonts and screen sizes is close enough that users can mistake one for another. It also notes that Internationalized Domain Names increase opportunities for visual spoofing because the usable character repertoire is much larger than ASCII. (<a href="https://www.unicode.org/reports/tr36/tr36-10.html" title="UTR #36: Unicode Security Considerations">Unicode</a>)</p>
+
+<p>Unicode Technical Standard #39 defines mechanisms for detecting visually confusable strings. It defines skeleton-based confusable detection, classifies confusables as single-script, mixed-script, or whole-script, and gives the canonical example of <code class="language-plaintext highlighter-rouge">paypal</code> versus <code class="language-plaintext highlighter-rouge">pаypаl</code>, where the second string contains U+0430 CYRILLIC SMALL LETTER A. (<a href="https://www.unicode.org/reports/tr39/" title="UTS #39: Unicode Security Mechanisms">Unicode</a>)</p>
+
+<p>The IDN homograph attack literature predates UGS-1 by decades. Gabrilovich and Gontmakher’s 2002 “The Homograph Attack” framed character resemblance as a security problem rather than merely a typographic nuisance, and discussed non-Latin substitutions that could make domain names appear authentic while resolving differently.  Later measurement work on IDN homographs describes Unicode homoglyphs as visually similar characters that can be abused to create spoofing domains, and notes that Gabrilovich and Gontmakher demonstrated an IDN homograph using Russian letters in 2002. (<a href="https://arxiv.org/pdf/1909.07539" title="ShamFinder: An Automated Frameworkfor Detecting IDN Homographs">arXiv</a>)</p>
+
+<p>UGS-1 intentionally uses the same underlying property—different code points with similar glyphs—but for a framed steganographic/watermarking channel rather than for identifiers or domain-name spoofing. Implementations SHOULD NOT use UGS-1 inside security-sensitive identifiers such as domains, usernames, package names, certificates, executable filenames, payment addresses, or login prompts.</p>
+
+<h3 id="203-homoglyph-based-text-watermarking-and-steganography">20.3 Homoglyph-Based Text Watermarking and Steganography</h3>
+
+<p>Academic work has already proposed Unicode homoglyph substitution for text watermarking. Rizzo, Bertini, and Montesi’s 2016 paper, “Content-preserving Text Watermarking through Unicode Homoglyph Substitution,” proposes a text watermarking technique based on substituting homoglyph characters for Latin symbols, using alternative Unicode symbols to preserve visual indistinguishability and text length. (<a href="https://www.researchgate.net/publication/308044170_Content-preserving_Text_Watermarking_through_Unicode_Homoglyph_Substitution" title="Content-preserving Text Watermarking through Unicode Homoglyph Substitution | Request PDF">ResearchGate</a>)</p>
+
+<p>Follow-on work on fine-grain text watermarking uses homoglyph substitution for Latin symbols and whitespaces to protect small portions of text, while preserving visual indistinguishability and length. That work explicitly treats text watermarking as difficult because text has low embedding capacity and limited safe transformation space. (<a href="https://manara.qnl.qa/articles/journal_contribution/Fine-grain_watermarking_for_intellectual_property_protection/25904404" title="Item - Fine-grain watermarking for intellectual property protection - Figshare">Manara</a>)</p>
+
+<p>Hosmani, Bhat, and Chandrasekaran’s “Dual Stage Text Steganography Using Unicode Homoglyphs” is another direct related work. Its abstract describes a text steganography approach combining space manipulation, linguistic translation, and Unicode homoglyphs, implemented in Python. (<a href="https://www.researchgate.net/publication/300555812_Dual_Stage_Text_Steganography_Using_Unicode_Homoglyphs" title="Dual Stage Text Steganography Using Unicode Homoglyphs">ResearchGate</a>)</p>
+
+<p>There are also practical implementations. The <code class="language-plaintext highlighter-rouge">stegtext</code> project describes hiding text inside text by replacing ASCII characters with visually similar Unicode homoglyphs. Its documentation gives the same basic bit model used by UGS-1: leaving an eligible character unchanged can represent <code class="language-plaintext highlighter-rouge">0</code>, while swapping it with a visually identical homoglyph can represent <code class="language-plaintext highlighter-rouge">1</code>; it also notes that characters with multiple homoglyphs can encode more than one bit. (<a href="https://github.com/btimby/stegtext" title="GitHub - btimby/stegtext: Steganography · GitHub">GitHub</a>)</p>
+
+<p>UGS-1 differs from these systems by deliberately choosing a conservative <strong>one-bit-per-character</strong> profile, a fixed mandatory table, a binary frame, a magic value, version and flags fields, a 24-bit payload length, CRC-16 validation, and specified decoder error behavior.</p>
+
+<h3 id="204-unicode-whitespace-zero-width-and-invisible-character-channels">20.4 Unicode Whitespace, Zero-Width, and Invisible-Character Channels</h3>
+
+<p>Unicode text hiding is not limited to homoglyph substitution. UniSpaCh, published in 2012, uses Unicode space characters inserted into inter-word, inter-sentence, end-of-line, and paragraph spacing to encode external information in Microsoft Word documents, while aiming to improve imperceptibility and embedding efficiency. (<a href="https://www.sciencedirect.com/science/article/abs/pii/S0164121211003177?utm_source=chatgpt.com" title="UniSpaCh: A text-based data hiding method using Unicode ...">ScienceDirect</a>)</p>
+
+<p>More recent whitespace-replacement watermarking work similarly hides byte-encoded sequences in unformatted text by substituting conventional whitespace with visually similar Unicode spaces. The 2025 HICSS paper by Hellmeier, Qarawlus, Norkowski, and Howar reports a proof-of-concept multiplatform implementation and evaluates robustness, capacity, and visibility. (<a href="https://www.researchgate.net/publication/388026221_A_Hidden_Digital_Text_Watermarking_Method_Using_Unicode_Whitespace_Replacement" title="(PDF) A Hidden Digital Text Watermarking Method Using Unicode Whitespace Replacement">ResearchGate</a>)</p>
+
+<p>Zero-width-character steganography is another established related family. The 330k Unicode steganography tool exposes text and binary encode/decode APIs and uses characters such as U+200C, U+200D, U+202C, and U+FEFF, while noting that U+200B may be deleted by Gmail in browser-sent mail. (<a href="https://330k.github.io/misc_tools/unicode_steganography.html" title="Unicode Steganography with Zero-Width Characters">330k</a>) StegCloak is a JavaScript steganography tool that hides secrets inside text using special invisible Unicode characters, with optional compression, AES-256-CTR encryption, and HMAC integrity. (<a href="https://github.com/kurolabs/stegcloak" title="GitHub - KuroLabs/stegcloak: Hide secrets with invisible characters in plain text securely using passwords ‍♂️⭐ · GitHub">GitHub</a>)</p>
+
+<p>UGS-1’s primary H1 profile is therefore best understood as a <strong>homoglyph profile</strong>, not a general Unicode steganography invention. The optional Z1 profile belongs to the older zero-width/invisible-character family and should be treated as more fragile in copy/paste, email, messaging, search indexing, normalization, and security-filtering pipelines.</p>
+
+<h3 id="205-normalization-sanitization-and-defensive-detection">20.5 Normalization, Sanitization, and Defensive Detection</h3>
+
+<p>Unicode normalization is directly relevant to UGS-1 robustness. Unicode Standard Annex #15 defines normalization forms so equivalent strings can have unique binary representations; any process that normalizes, folds, transliterates, maps confusables, removes default-ignorable characters, or enforces a restricted character repertoire can alter or destroy a Unicode steganographic channel. (<a href="https://www.unicode.org/reports/tr15/" title="UAX #15: Unicode Normalization Forms">Unicode</a>)</p>
+
+<p>Defensive systems can detect or neutralize UGS-1-like channels by using Unicode confusable data, skeleton mappings, mixed-script detection, or explicit canonicalization of known homoglyph pairs. Unicode Technical Standard #39 provides the standard basis for confusable detection and includes mappings such as Cyrillic small es to Latin <code class="language-plaintext highlighter-rouge">c</code>. (<a href="https://www.unicode.org/reports/tr39/" title="UTS #39: Unicode Security Mechanisms">Unicode</a>)</p>
+
+<p>A UGS-1 implementation SHOULD therefore include reveal and strip tooling. Reveal tooling helps auditors see code-point substitutions; strip tooling replaces UGS-1 one-variants with their Latin zero-variants, preserving visible text while removing the hidden channel.</p>
+
+<h3 id="206-ugs-1-positioning">20.6 UGS-1 Positioning</h3>
+
+<p>UGS-1 should be positioned as an <strong>interoperability profile</strong> for a known class of Unicode text steganography and watermarking techniques. It standardizes one conservative way to frame, embed, decode, validate, and strip a hidden byte payload using Unicode homoglyph variants.</p>
+
+<p>UGS-1 is not encryption. It does not provide confidentiality unless the payload is encrypted before embedding. It is also not robust against determined sanitization, paraphrasing, transliteration, OCR, Unicode confusable canonicalization, or manual replacement of suspicious non-Latin code points.</p>
+
+<p>Appropriate uses include controlled watermarking experiments, puzzles, protocol demonstrations, document-provenance research, educational security examples, and defensive testing. Inappropriate uses include spoofing identifiers, phishing, bypassing safety filters, hiding executable instructions, concealing policy-violating content, or impersonating trusted parties.</p>
+
+<h3 id="207-informative-references">20.7 Informative References</h3>
+
+<p><strong>[UTR36]</strong> Unicode Consortium, <em>Unicode Technical Report #36: Unicode Security Considerations</em>. Discusses visual spoofing, confusable strings, and IDN-related security risks. (<a href="https://www.unicode.org/reports/tr36/tr36-10.html" title="UTR #36: Unicode Security Considerations">Unicode</a>)</p>
+
+<p><strong>[UTS39]</strong> Unicode Consortium, <em>Unicode Technical Standard #39: Unicode Security Mechanisms</em>. Defines confusable detection, skeleton mappings, mixed-script confusables, and related data files. (<a href="https://www.unicode.org/reports/tr39/" title="UTS #39: Unicode Security Mechanisms">Unicode</a>)</p>
+
+<p><strong>[UAX15]</strong> Unicode Consortium, <em>Unicode Standard Annex #15: Unicode Normalization Forms</em>. Defines normalization forms and explains how equivalent Unicode strings can be represented consistently. (<a href="https://www.unicode.org/reports/tr15/" title="UAX #15: Unicode Normalization Forms">Unicode</a>)</p>
+
+<p><strong>[Gabrilovich2002]</strong> Evgeniy Gabrilovich and Alex Gontmakher, <em>The Homograph Attack</em>, Communications of the ACM, 2002. Early security treatment of visually confusable characters in domain-name spoofing.</p>
+
+<p><strong>[Rizzo2016]</strong> Stefano Giovanni Rizzo, Flavio Bertini, and Danilo Montesi, <em>Content-preserving Text Watermarking through Unicode Homoglyph Substitution</em>, IDEAS 2016. Proposes watermarking through Unicode homoglyph substitution for Latin symbols. (<a href="https://www.researchgate.net/publication/308044170_Content-preserving_Text_Watermarking_through_Unicode_Homoglyph_Substitution" title="Content-preserving Text Watermarking through Unicode Homoglyph Substitution | Request PDF">ResearchGate</a>)</p>
+
+<p><strong>[Rizzo2019]</strong> Rizzo et al., <em>Fine-grain watermarking for intellectual property protection</em>, EURASIP Journal on Information Security, 2019. Extends homoglyph/whitespace substitution for fine-grained document watermarking. (<a href="https://manara.qnl.qa/articles/journal_contribution/Fine-grain_watermarking_for_intellectual_property_protection/25904404" title="Item - Fine-grain watermarking for intellectual property protection - Figshare">Manara</a>)</p>
+
+<p><strong>[Hosmani2015]</strong> Sachin Hosmani, H. G. Rama Bhat, and K. Chandrasekaran, <em>Dual Stage Text Steganography Using Unicode Homoglyphs</em>, 2015. Combines space manipulation, linguistic translation, and Unicode homoglyphs. (<a href="https://www.researchgate.net/publication/300555812_Dual_Stage_Text_Steganography_Using_Unicode_Homoglyphs" title="Dual Stage Text Steganography Using Unicode Homoglyphs">ResearchGate</a>)</p>
+
+<p><strong>[UniSpaCh2012]</strong> Lip Yee Por, Koksheik Wong, and Kok Onn Chee, <em>UniSpaCh: A text-based data hiding method using Unicode space characters</em>, Journal of Systems and Software, 2012. Uses Unicode space characters for text-based data hiding. (<a href="https://www.sciencedirect.com/science/article/abs/pii/S0164121211003177?utm_source=chatgpt.com" title="UniSpaCh: A text-based data hiding method using Unicode ...">ScienceDirect</a>)</p>
+
+<p><strong>[Hellmeier2025]</strong> Hellmeier, Qarawlus, Norkowski, and Howar, <em>A Hidden Digital Text Watermarking Method Using Unicode Whitespace Replacement</em>, HICSS 2025. Replaces conventional whitespace with visually similar Unicode spaces to hide byte-encoded data. (<a href="https://www.researchgate.net/publication/388026221_A_Hidden_Digital_Text_Watermarking_Method_Using_Unicode_Whitespace_Replacement" title="(PDF) A Hidden Digital Text Watermarking Method Using Unicode Whitespace Replacement">ResearchGate</a>)</p>
+
+<p><strong>[stegtext]</strong> <code class="language-plaintext highlighter-rouge">btimby/stegtext</code>, practical Unicode homoglyph steganography implementation using ASCII-to-homoglyph character swaps. (<a href="https://github.com/btimby/stegtext" title="GitHub - btimby/stegtext: Steganography · GitHub">GitHub</a>)</p>
+
+<p><strong>[StegCloak]</strong> <code class="language-plaintext highlighter-rouge">KuroLabs/stegcloak</code>, practical zero-width Unicode steganography implementation with compression, encryption, and integrity options. (<a href="https://github.com/kurolabs/stegcloak" title="GitHub - KuroLabs/stegcloak: Hide secrets with invisible characters in plain text securely using passwords ‍♂️⭐ · GitHub">GitHub</a>)</p>
+
+<p><strong>[330kUnicodeStego]</strong> 330k Unicode Steganography with Zero-Width Characters, browser-based zero-width text/binary encoder and decoder. (<a href="https://330k.github.io/misc_tools/unicode_steganography.html" title="Unicode Steganography with Zero-Width Characters">330k</a>)</p>
+
+
+                                        
+                                    </div>
+                                </div></div>
+                    </div>
+                </main>
+
+                
+
+                <section id="webmentions-section" class="webmentions-content">
+    <h2 id="Webmentions-Header">Webmentions</h2>
+    <p>Connect your blog or website to this post via <a href="https://www.w3.org/TR/webmention/">Webmentions</a>. Link to this article and your response will appear below, fostering a web-wide discussion. Supports comments, likes, and reposts from any Webmention-enabled site.</p>
+  
+    <p id="webmentions-comments-list"></p>
+    <div id="webmentions-comments-wrapper">
+      <noscript><p>Loading comments relies on JavaScript. Try enabling JavaScript and reloading.</p></noscript>
+    </div>
+    <noscript>You need JavaScript to view the comments.</noscript>
+
+    <div class="well">
+        <form class="webmention-form ui form" action="https://webmention.io/tedt.org/webmention" method="post">
+            <div class="fields">
+                <div class="twelve wide field">
+                    <label>Have you written a <a href="https://indieweb.org/responses">response</a> to this? Let me know the URL:</label><br>
+                    <input type="url" name="source" class="url" aria-label="URL of your response" placeholder="https://your-site.example/post" required>
+                    <label>&nbsp;</label>
+                    <input type="submit" class="ui submit button" value="Send Webmention">
+                </div>
+            </div>
+            <div class="status hidden">
+                <div class="ui message"></div>
+            </div>
+            <input type="hidden" name="target" value="/UGS-1-Unicode-Glyph-Variant-Steganography/">
+        </form>
+        <style>
+            #webmentions img { max-height: 1.2em; margin-right: -1ex; }
+        </style>
+        <div id="webmentions" class="webmentions">
+        </div>
+    </div>
+</section>
+
+                <!--Next and Previous Articles -->
+                
+
+
+
+<hr>
+
+<div class="container">
+	<section>
+		<div class="container h-100 position-relative" style="top: -1.5em;">
+			<div class="row gy-5 gy-lg-0 row-cols-1 row-cols-md-2 row-cols-lg-2">
+				<div class="col">
+					<div class="card h-100">
+						<div class="card-body pt-5 p-4">
+							
+							<div class="row g-0 h-100">
+								<div class="col-md-4">
+									<img src="https://tedt.org/img/2026-06/The-Backlog-Doesnt-Blink.webp"
+  alt="Previous article image"
+  class="img-fluid rounded-start"
+  width="1672"
+  height="941"
+  srcset="https://tedt.org/img/generated/responsive/2026-06/The-Backlog-Doesnt-Blink--480w.webp 480w, https://tedt.org/img/generated/responsive/2026-06/The-Backlog-Doesnt-Blink--768w.webp 768w, https://tedt.org/img/generated/responsive/2026-06/The-Backlog-Doesnt-Blink--1200w.webp 1200w, https://tedt.org/img/generated/responsive/2026-06/The-Backlog-Doesnt-Blink--1456w.webp 1456w, https://tedt.org/img/2026-06/The-Backlog-Doesnt-Blink.webp 1672w"
+  sizes="(min-width: 768px) 25vw, 50vw"
+  loading="lazy"
+  decoding="async">
+
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<p class="h5 card-title"><a href="/The-Backlog-Doesnt-Blink/" class="prev"><i class="fa-solid fa-angles-left" aria-hidden="true"></i> The Backlog Doesn't Blink</a></p>
+										<p class="card-text">A tense musical-theater response number about IT delivery, queue pressure, and the people carrying enterprise risk</p>
+										
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100">
+						<div class="card-body pt-5 p-4">
+
+							<div class="row g-0 h-100">
+								<div class="col-md-8">
+									<div class="card-body">
+										<p class="h5 card-title"><a href="/House-Ventara-of-Alell-and-the-Caerleon-March/" class="next">House Ventara of Alell and the Caerleon March <i class="fa-solid fa-angles-right" aria-hidden="true"></i></a></p>
+										<p class="card-text">A Traveller noble house profile for biological stewardship, hidden Orion patronage, noble identity, and frontier intrigue</p>
+										
+									</div>
+								</div>
+								<div class="col-md-4">
+									<img src="https://tedt.org/img/2026-07/house-ventara.webp"
+  alt="Next article image"
+  class="img-fluid rounded-start"
+  width="1672"
+  height="941"
+  srcset="https://tedt.org/img/generated/responsive/2026-07/house-ventara--480w.webp 480w, https://tedt.org/img/generated/responsive/2026-07/house-ventara--768w.webp 768w, https://tedt.org/img/generated/responsive/2026-07/house-ventara--1200w.webp 1200w, https://tedt.org/img/generated/responsive/2026-07/house-ventara--1456w.webp 1456w, https://tedt.org/img/2026-07/house-ventara.webp 1672w"
+  sizes="(min-width: 768px) 25vw, 50vw"
+  loading="lazy"
+  decoding="async">
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  </div>
+
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-12 col-lg-3 col-xxl-3">
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <div class="post-categories">
+                        <div class="col-12">
+
+                            
+                            
+
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                <div class="card h-100">
+                                    <div class="col-12">
+                                        <div class="card h-100 position-relative">
+                                            
+                                            <img src="https://tedt.org/img/categories/computers.webp"
+  alt="Computers"
+  class="card-img-top w-100 d-block"
+  width="1904"
+  height="640"
+  srcset="https://tedt.org/img/generated/responsive/categories/computers--480w.webp 480w, https://tedt.org/img/generated/responsive/categories/computers--768w.webp 768w, https://tedt.org/img/generated/responsive/categories/computers--1200w.webp 1200w, https://tedt.org/img/generated/responsive/categories/computers--1456w.webp 1456w, https://tedt.org/img/categories/computers.webp 1904w"
+  sizes="(min-width: 992px) 25vw, 100vw"
+  loading="lazy"
+  decoding="async">
+
+                                            <div class="card-img-overlay d-flex flex-column align-items-start justify-content-end p-0 ps-2">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); z-index: 1;" ></div>
+                                                
+                                                <p class="card-title h3" style="z-index: 2; position: relative;"><a class="text-decoration-none" href="https://preview.tedt.org/category/computers/"><span class="p-category">Computers</span> <span class="category-emoji" role="img" aria-label="Computers" title="Computers" data-cat="computers">💻</span></a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body pt-1 pb-1 p-4">
+
+                                        
+                                        
+
+                                                                                
+
+                                        
+                                            <p class="card-text h6 mb-0 text-decoration-none"><a href="https://preview.tedt.org/Dev-Test-and-Prod-Still-Matter-What-Gets-Deployed-Has-Changed/">Dev, Test, and Prod Still Matter: What Gets Deployed Has Changed</a></p>
+                                            
+                                                <p class="card-text">Dev, Test, and Prod still matter for AI agents, but release gates must govern artifacts, authority, state, and evidence, not...</p>
+                                            
+                                        
+                                            <p class="card-text h6 mb-0 text-decoration-none"><a href="https://preview.tedt.org/The-Sandbox-Was-Not-the-Boundary/">The Sandbox Was Not the Boundary</a></p>
+                                            
+                                                <p class="card-text">The OpenAI–Hugging Face incident shows how proxy services, persistent state, and completion pressure can extend an AI agent beyond its...</p>
+                                            
+                                        
+                                            <p class="card-text h6 mb-0 text-decoration-none"><a href="https://preview.tedt.org/UGS-1-Unicode-Glyph-Variant-Steganography/">UGS-1: Unicode Glyph-Variant Steganography, Version 1.1</a></p>
+                                            
+                                                <p class="card-text">A technical specification for Unicode glyph-variant steganography using Latin/Cyrillic homoglyphs, framed byte payloads, CRC validation, capacity rules, scan mode, detector...</p>
+                                            
+                                        
+                                            <p class="card-text h6 mb-0 text-decoration-none"><a href="https://preview.tedt.org/The-Backlog-Doesnt-Blink/">The Backlog Doesn't Blink</a></p>
+                                            
+                                                <p class="card-text">A hip-hop musical-theater song lyric about IT delivery, backlog pressure, enterprise risk, compliance, security, legacy systems, QA, citizen builders, and...</p>
+                                            
+                                        
+                                            <p class="card-text h6 mb-0 text-decoration-none"><a href="https://preview.tedt.org/Shadow-App-Serenade/">Shadow App Serenade</a></p>
+                                            
+                                                <p class="card-text">A hip-hop musical-theater song lyric about shadow apps, citizen builders, hidden automation, business-critical workarounds, governance, support, and enterprise IT.</p>
+                                            
+                                                                                
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bd-footer py-4 py-md-5 mt-5">
+  <div class="container footer-shell py-4 py-md-5 px-4 px-md-3 h-card vcard" id="hcard-ted-tschopp">
+    <div class="row g-4 g-xl-5 align-items-start footer-main-row">
+      <div class="col-12 col-lg-4 col-xl-3">
+        <section class="footer-profile-card text-center text-lg-start">
+          <div class="footer-avatar-wrap mb-3">
+            <img src="https://secure.gravatar.com/avatar/a76b4d6291cecb3a738896a971bfb903?s=512&d=mp&r=g" class="footer-avatar rounded-circle img-thumbnail intro-image-avatar photo u-photo" alt="Photo of Ted Tschopp">
+          </div>
+          <a class="footer-name-link d-inline-flex align-items-center justify-content-center justify-content-lg-start mb-2 text-decoration-none u-url u-uid" href="https://tedt.org/profile/" rel="me">
+            <span class="h4 mb-0 fs-5 fnp-name">
+              
+                <span class="p-given-name">Ted</span>
+                <span class="p-family-name">Tschopp</span>
+              
+            </span>
+          </a>
+          
+            <p class="h5 p-job-title mb-1">Enterprise Architect</p>
+          
+          
+            <p class="h5 footer-location mb-0">
+              <span class="p-locality">Los Angeles</span>
+              , <span class="p-region">California</span>
+              , <span class="p-country-name">USA</span>
+            </p>
+          
+          <ul class="list-unstyled small footer-profile-details mb-0"><li>
+              <span class="footer-profile-label">Website</span>
+              <a href="https://tedt.org/profile/" class="u-url" rel="me">tedt.org/profile/</a>
+            </li><li>
+                <span class="footer-profile-label">Email</span>
+                <a href="mailto:ted@tschopp.org" class="u-email">ted@tschopp.org</a>
+              </li><li>
+                <span class="footer-profile-label">Fediverse</span>
+                <a href="https://twit.social/@TedT" rel="me">@TedT@twit.social</a>
+              </li></ul>
+        </section>
+      </div>
+
+      <div class="col-12 col-lg-8 col-xl-9">
+        <div class="row g-4 g-xl-5 align-items-start">
+          <div class="col-12 col-xl-4">
+            <section class="footer-bio-block h-100">
+              <p class="h5 footer-section-title">About Ted</p>
+              <ul class="list-unstyled small p-note footer-bio-list mb-0">
+                  <li>I’m <strong>Ted Tschopp</strong>, a Senior Enterprise Architect based in Los Angeles, working at the intersection of <strong>enterprise architecture, artificial intelligence, software strategy, and digital automation</strong>.</li>
+                  <li>At <strong>Southern California Edison</strong>, I help shape the architecture strategy for AI, software, and enterprise products that support one of the nation’s largest electric utilities. My work sits where <strong>strategy meets execution</strong>: platforms, guardrails, operating models, governance, risk, developer experience, and the practical realities of making ambitious technology useful, resilient, and sustainable inside a large organization.</li>
+                  <li>I’ve spent <strong>25+ years at SCE</strong> helping teams navigate complex technology change. The part of enterprise architecture I care about most is not the diagram. It is the design discipline that makes systems usable, governable, sustainable, and welcoming for the people who depend on them and the teams who build them.</li>
+                  <li>Before joining Edison, I owned a business featured in <em>Wired Magazine</em>, founded one of the largest J.R.R. Tolkien community websites, and worked in automotive market research. That mix of technology, storytelling, community-building, and analysis still shapes how I think about systems today.</li>
+                  <li>I love working in technology because it lets me watch the future arrive in real time. Some of the things I have worked on were science fiction when I was in school. Now they are platform problems, governance problems, people problems, and architecture problems — which is where the interesting work begins.</li>
+                  <li>Unless otherwise stated, everything here reflects my own views.</li><li class="display-1 d-flex justify-content-center footer-housemark">
+                  <img src="https://tedt.org/img/familymark/Family-White-Brush-Calligraphy-3.png" alt="Tschopp family mark" class="footer-housemark-image" loading="lazy" decoding="async">
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="col-12 col-xl-8">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-4 footer-link-groups">
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">About Me</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://www.tedt.org"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fas fa-home fa-lg fa-fw fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Website</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://medium.com/@TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #00ab6c; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fab fa-medium-m fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Medium</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://indieweb.org/User:Www.tedt.org"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-regular fa-window-maximize fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Indie<wbr>web</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://keybase.io/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #4866b0; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-keybase fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Key<wbr>base</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="mailto:ted@tedt.org"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-solid fa-envelope fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Email</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.meetup.com/members//45846/"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #ED1C40; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-meetup fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Meetup</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://foursquare.com/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #0072b1; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-foursquare fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Foursquare</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Support Me</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://buymeacoffee.com/TedT"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #FFDD00; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-solid fa-mug-hot fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Buy<wbr>Me<wbr>A<wbr>Coffee</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Social Media</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://web.brid.gy/r/https://tedt.org/"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-solid fa-bridge fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">web.<wbr>brid.<wbr>gy</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://twit.social/@TedT"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #595aff; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-mastodon fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Mastodon</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://bsky.app/profile/tedt.org"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #0085FF; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-bluesky fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Blue<wbr>Sky</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://threads.net/@TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-brands fa-threads fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Threads</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.facebook.com/ted.tschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #3b5998; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-facebook fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Face<wbr>book</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.instagram.com/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #DD2A7B; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-instagram fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Insta<wbr>gram</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://m.me/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #006AFF; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-facebook-messenger fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Messenger</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://twitter.com/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #1DA1F2; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-x-twitter fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Twitter</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.linkedin.com/in/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #2867B2; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-linkedin-in fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Linked<wbr>In</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.snapchat.com/add/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #FFFC00; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-snapchat-ghost fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Snap<wbr>chat</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://reddit.com/u/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #FF4500; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-reddit-alien fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Reddit</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Creative</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://www.goodreads.com/user/show/856383-ted-tschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #e9e5cd; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-goodreads fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Good<wbr>reads</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://pinterest.com/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #E60023; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-pinterest fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Pin<wbr>terest</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.tumblr.com/blog/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #35465c; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-tumblr fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Tumblr</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.quora.com/profile/Ted-Tschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #B92B27; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-quora fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Quora</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.youtube.com/channel/UC4Q8pXroTVyXrIxg2u82pwg"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #ff0000; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-youtube fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">You<wbr>Tube</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://twitch.tv/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #9147fe; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-twitch fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Twitch</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://vimeo.com/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #1ab7ea; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-vimeo-v fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Vimeo</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.soundcloud.com/ted-tschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #FE5000; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-soundcloud fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Sound<wbr>Cloud</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://suno.com/@tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" aria-hidden="true">
+                                  <i class="fa-solid fa-music fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Suno</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.midjourney.com/app/users/074b5e95-1e8a-465f-9a7f-921e11670eb5/"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #e6dfd3; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-solid fa-sailboat fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Mid<wbr>journey</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Coding</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://github.com/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #6e5494; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-github fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Git<wbr>Hub</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://huggingface.co/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #6e5494; color: var(--footer-link-icon-color);" aria-hidden="true">🤗</span>
+                              
+                              <span class="footer-link-text">Hugging Face</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://dev.to/tedtschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #ffffff; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-dev fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Dev.to</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+                <div class="col footer-link-group">
+                  <section>
+                    <p class="h5 footer-section-title">Gaming</p>
+                    <ul class="list-unstyled mb-0"><li class="mb-2">
+                            <a href="https://steamcommunity.com/id/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #66c0f4; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-steam fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">Steam</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://account.xbox.com/en-us/profile?gamertag=/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #107C10; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-brands fa-xbox fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">xBox</span>
+                            </a>
+                          </li><li class="mb-2">
+                            <a href="https://www.gog.com/u/TedTschopp"
+                              rel="me"
+                              class="u-url footer-link">
+                              
+                              
+                                <span class="footer-link-icon" style="--footer-link-icon-color: #86328A; color: var(--footer-link-icon-color);" aria-hidden="true">
+                                  <i class="fa-solid fa-gamepad fa-lg fa-fw"></i>
+                                </span>
+                              
+                              <span class="footer-link-text">GoG</span>
+                            </a>
+                          </li></ul>
+                  </section>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row footer-meta-row align-items-center gy-3">
+      <div class="col-12 col-lg-5 text-center text-lg-start">
+        <ul class="list-inline footer-meta-links mb-0">
+          <li class="list-inline-item"><a href="https://preview.tedt.org/About/">About</a></li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item"><a href="https://preview.tedt.org/Terms-of-Use/">Terms of Use</a></li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item"><a href="https://preview.tedt.org/Privacy-Policy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-lg-7 text-center text-lg-end">
+        <p class="text-muted small mb-0">Copyright &copy; Ted Tschopp 2003 - <script>document.write(new Date().getFullYear())</script>. All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Bootstrap (jQuery is now loaded in head via scripts.html) -->
+                 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" 
+                     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" 
+                     crossorigin="anonymous"></script> --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+                                                                                    <!-- <script src="/js/bootstrap.bundle.min.js"></script> -->
+
+              <!-- Popper.js - not needed with bootstrap.bundle.min.js -->
+              <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> -->
+
+              <!-- Bootstrap separate JS - replaced with bundle above -->
+              <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" crossorigin="anonymous"></script> -->
+
+              
+
+    <!-- Native Light / Auto / Dark scheme toggle (pepelsbey-style UX) -->
+    <script>
+(function () {
+  'use strict';
+
+  var api = window.__TedColorScheme;
+  if (!api) return;
+
+  var STORAGE_KEY = api.STORAGE_KEY || 'color-scheme';
+
+  function setLocalStorage(value) {
+    try {
+      localStorage.setItem(STORAGE_KEY, value);
+    } catch (e) {}
+  }
+
+  function deleteCookie(name) {
+    document.cookie = name + '=; path=/; max-age=0';
+  }
+
+  function migrateLegacyCookies(nextPreference) {
+    // Stop old 2-state logic from fighting the new 3-state logic.
+    // We keep compatibility by clearing known legacy cookie names.
+    deleteCookie('theme');
+    deleteCookie('site_theme');
+
+    // Persist only via localStorage going forward.
+    setLocalStorage(nextPreference);
+  }
+
+  function setPressedState(container, preference) {
+    if (!container) return;
+    var buttons = container.querySelectorAll('button[data-color-scheme]');
+    buttons.forEach(function (btn) {
+      var v = (btn.getAttribute('data-color-scheme') || '').toLowerCase();
+      btn.setAttribute('aria-pressed', v === preference ? 'true' : 'false');
+    });
+  }
+
+  function setup(container) {
+    if (!container || container.dataset.enhanced === 'true') return;
+
+    function applyAndSync(nextPreference) {
+      var applied = api.set(nextPreference);
+      migrateLegacyCookies(applied);
+      setPressedState(container, applied);
+    }
+
+    container.addEventListener('click', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('button[data-color-scheme]') : null;
+      if (!btn) return;
+      e.preventDefault();
+      var nextPreference = btn.getAttribute('data-color-scheme');
+      applyAndSync(nextPreference);
+    });
+
+    // Initial state
+    setPressedState(container, api.get());
+
+    // When OS scheme changes, update Bootstrap theme if in Auto.
+    try {
+      var mql = window.matchMedia('(prefers-color-scheme: dark)');
+      var handler = function () {
+        var pref = api.refreshAuto();
+        setPressedState(container, pref);
+      };
+      if (mql && mql.addEventListener) mql.addEventListener('change', handler);
+      else if (mql && mql.addListener) mql.addListener(handler);
+    } catch (e) {}
+
+    container.dataset.enhanced = 'true';
+  }
+
+  function init() {
+    var container = document.getElementById('colorSchemeToggle');
+    setup(container);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
+    <!-- Unified Toggle Module (Pilcrow, TOC Arrows, TOC Card) -->
+    <script>
+      const ToggleManager = (function(){
+        // --- Cookie helpers ---
+        function getCookie(name){
+          const value = '; ' + document.cookie;
+            const parts = value.split('; ' + name + '=');
+            if(parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+        function setCookie(name,val){ document.cookie = `${name}=${val}; path=/; max-age=31536000`; }
+
+        // State
+        let pilcrowVisible = getCookie('pilcrowVisible') === 'true';
+        let tocArrowsVisible = getCookie('tocArrowsVisible') === 'true';
+        let tocHideCount = parseInt(getCookie('tableOfContentsHideCount') || '0', 10);
+        const explicitTocCookie = getCookie('tableOfContentsVisible');
+        const userPrefersTocHidden = tocHideCount >= 3;
+        let tableOfContentsVisible = explicitTocCookie !== null ? (explicitTocCookie === 'true') : !userPrefersTocHidden || (window.matchMedia('(max-width: 991.98px)').matches);
+
+        // --- Utility DOM helpers ---
+        function swapIconWeight(iconEl, active, solidWhenActive=true){
+          if(!iconEl) return;
+          if(solidWhenActive){
+            if(active){ iconEl.classList.add('fa-solid'); iconEl.classList.remove('fa-regular'); }
+            else { iconEl.classList.add('fa-regular'); iconEl.classList.remove('fa-solid'); }
+          } else {
+            // Reverse logic if needed for a future toggle
+            if(active){ iconEl.classList.add('fa-regular'); iconEl.classList.remove('fa-solid'); }
+            else { iconEl.classList.add('fa-solid'); iconEl.classList.remove('fa-regular'); }
+          }
+        }
+        function setPressed(btn, pressed){
+          if(!btn) return;
+          btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+        }
+
+        // --- Pilcrow ---
+        function applyPilcrow(){
+          document.querySelectorAll('.Winerlink').forEach(l => l.style.display = pilcrowVisible ? 'inline' : 'none');
+          const btn = document.getElementById('btnTogglePilcrow');
+          if(btn){
+            setPressed(btn, pilcrowVisible);
+            swapIconWeight(btn.querySelector('i[data-swap-icon]'), pilcrowVisible);
+          }
+        }
+        function togglePilcrow(){
+          pilcrowVisible = !pilcrowVisible;
+          setCookie('pilcrowVisible', pilcrowVisible);
+          applyPilcrow();
+        }
+        function setupPilcrowObserver(){
+          const observer = new MutationObserver(muts => {
+            for(const m of muts){ if(m.addedNodes.length){ applyPilcrow(); break; } }
+          });
+          observer.observe(document.body, { childList:true, subtree:true });
+        }
+
+        // --- TOC Arrows ---
+        function applyTocArrows(){
+          document.querySelectorAll('h1 a[href="#Top-of-Table-of-Contents"], h2 a[href="#Top-of-Table-of-Contents"], h3 a[href="#Top-of-Table-of-Contents"], h4 a[href="#Top-of-Table-of-Contents"], h5 a[href="#Top-of-Table-of-Contents"], h6 a[href="#Top-of-Table-of-Contents"]').forEach(a => {
+            a.style.display = tocArrowsVisible ? 'inline-block' : 'none';
+          });
+          const btn = document.getElementById('btnToggleTocArrows');
+          if(btn){
+            setPressed(btn, tocArrowsVisible);
+            swapIconWeight(btn.querySelector('i[data-swap-icon]'), tocArrowsVisible);
+          }
+        }
+        function toggleTocArrows(){
+          tocArrowsVisible = !tocArrowsVisible;
+          setCookie('tocArrowsVisible', tocArrowsVisible);
+          applyTocArrows();
+        }
+        function setupTocArrowsObserver(){
+          const obs = new MutationObserver(applyTocArrows);
+          obs.observe(document.body, { childList:true, subtree:true });
+        }
+
+        // --- TOC Card ---
+
+        function setDisabled(el, disabled){
+          if(!el) return;
+          if(disabled){
+            el.setAttribute('aria-disabled', 'true');
+            el.setAttribute('disabled', 'disabled');
+          } else {
+            el.removeAttribute('aria-disabled');
+            el.removeAttribute('disabled');
+          }
+        }
+
+        function applyTocToggleButtons(disabled){
+          // New segmented control (Show/Hide) in navbar
+          const toggleGroup = document.getElementById('tocVisibilityToggle');
+          if(toggleGroup){
+            const toggleContainer = toggleGroup.closest('[data-toc-visibility-container]');
+            const showBtn = toggleGroup.querySelector('button[data-toc-visibility="show"]');
+            const hideBtn = toggleGroup.querySelector('button[data-toc-visibility="hide"]');
+
+            if(toggleContainer){
+              toggleContainer.hidden = !!disabled;
+              if(disabled){
+                toggleContainer.style.display = 'none';
+              } else {
+                toggleContainer.style.removeProperty('display');
+              }
+            }
+
+            setDisabled(showBtn, !!disabled);
+            setDisabled(hideBtn, !!disabled);
+
+            if(!disabled){
+              setPressed(showBtn, !!tableOfContentsVisible);
+              setPressed(hideBtn, !tableOfContentsVisible);
+            } else {
+              setPressed(showBtn, false);
+              setPressed(hideBtn, false);
+            }
+          }
+
+          // Back-compat: older single-button toggle (if present)
+          const legacyBtn = document.getElementById('btnToggleTocCard');
+          if(legacyBtn){
+            setDisabled(legacyBtn, !!disabled);
+            if(!disabled){
+              setPressed(legacyBtn, tableOfContentsVisible);
+              legacyBtn.title = tableOfContentsVisible ? 'Hide TOC' : 'Show TOC';
+              legacyBtn.setAttribute('aria-label', legacyBtn.title);
+            } else {
+              setPressed(legacyBtn, false);
+            }
+          }
+
+          // Inline TOC button within the TOC card header
+          const inlineBtn = document.getElementById('btnToggleTocInline');
+          if(inlineBtn){
+            setDisabled(inlineBtn, !!disabled);
+            if(!disabled){
+              inlineBtn.setAttribute('aria-pressed', tableOfContentsVisible ? 'true' : 'false');
+              inlineBtn.setAttribute('aria-expanded', tableOfContentsVisible ? 'true' : 'false');
+              inlineBtn.textContent = tableOfContentsVisible ? 'Hide' : 'Show';
+              inlineBtn.title = tableOfContentsVisible ? 'Hide table of contents' : 'Show table of contents';
+              inlineBtn.setAttribute('aria-label', inlineBtn.title);
+            } else {
+              inlineBtn.setAttribute('aria-pressed', 'false');
+              inlineBtn.setAttribute('aria-expanded', 'false');
+              inlineBtn.textContent = 'Show';
+            }
+          }
+        }
+
+        function applyTocCard(){
+          const tocCard = document.getElementById('table-of-contents-card');
+          const tocBody = document.getElementById('insert-table-of-contents-here');
+          if(!tocCard){
+            applyTocToggleButtons(true);
+            return;
+          }
+          if(!tocBody){
+            applyTocToggleButtons(true);
+            return;
+          }
+          applyTocToggleButtons(false);
+          // Manage visibility of the TOC content area (keep the header visible).
+          if(tableOfContentsVisible){
+            tocBody.classList.remove('d-none');
+          } else {
+            tocBody.classList.add('d-none');
+          }
+          // Button UI is managed by applyTocToggleButtons().
+        }
+
+        function setTocCardVisible(nextVisible){
+          tableOfContentsVisible = !!nextVisible;
+          setCookie('tableOfContentsVisible', tableOfContentsVisible);
+          if(!tableOfContentsVisible){
+            tocHideCount += 1;
+            setCookie('tableOfContentsHideCount', tocHideCount);
+          }
+          applyTocCard();
+        }
+        function toggleTocCard(){
+          setTocCardVisible(!tableOfContentsVisible);
+        }
+
+        function setupTocCardButtons(){
+          const toggleGroup = document.getElementById('tocVisibilityToggle');
+          if(!toggleGroup || toggleGroup.dataset.enhanced === 'true') return;
+
+          toggleGroup.addEventListener('click', function(e){
+            const btn = e.target && e.target.closest ? e.target.closest('button[data-toc-visibility]') : null;
+            if(!btn) return;
+            e.preventDefault();
+            const mode = (btn.getAttribute('data-toc-visibility') || '').toLowerCase();
+            if(mode === 'show') setTocCardVisible(true);
+            if(mode === 'hide') setTocCardVisible(false);
+          });
+
+          toggleGroup.dataset.enhanced = 'true';
+        }
+
+        // --- Public API ---
+        function init(){
+          applyPilcrow();
+          applyTocArrows();
+          applyTocCard();
+          setupPilcrowObserver();
+          setupTocArrowsObserver();
+          setupTocCardButtons();
+          // Expose global handlers expected by existing onclick attributes
+          window.togglePilcrow = togglePilcrow;
+          window.toggleBackToTableofContents = toggleTocArrows;
+          window.toggleShowTableOfContents = toggleTocCard;
+        }
+        return { init };
+      })();
+
+      document.addEventListener('DOMContentLoaded', ToggleManager.init);
+    </script>
+
+
+    <!-- Bottom of the Body include core JavaScript -->
+  
+
+    
+        <script src="/js/add-winer-links-and-header-links.js"></script>
+    
+<script src="/js/information-architecture.js" defer></script>
+
+
+  </body>
+</html>

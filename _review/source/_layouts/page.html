@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" class="layout-page">
+  <head>
+    <meta charset="utf-8">
+
+    {% include utility/calculate-variables.html %}
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <!-- IndieAuth and WebMentions Metadata -->
+    {% include seo/indieauth-webmentions-metadata.html %}
+
+    <!-- SEO Metadata -->
+    {% include seo/meta-data-seo.html %}
+
+    <!-- PWA Header Includes -->
+    {% include pwa/pwa-header-includes.html %}
+
+    <!-- News Feed Meta Tags. -->
+    {% include feeds/feeds.html %}
+
+    {% include assets/all-css-includes.html %}
+
+    <!-- Scripts that need to be at the end of the header -->
+    {% include assets/scripts.html %}
+    {% capture __math_flag %}{{ page.math | default: '' }}{% endcapture %}
+    {% capture __mathjax_flag %}{{ page.mathjax | default: '' }}{% endcapture %}
+    {% assign __math_flag = __math_flag | strip | downcase %}
+    {% assign __mathjax_flag = __mathjax_flag | strip | downcase %}
+    {% if page.math == true or __math_flag == 'true' or __math_flag == '1' or page.mathjax == true or __mathjax_flag == 'true' or __mathjax_flag == '1' %}
+        {% include assets/mathjax.html %}
+    {% endif %}
+    {% if page.mermaid == true or page.mermaid == 'true' %}
+        {% include assets/mermaid.html %}
+    {% endif %}
+  </head>
+  <body style="scroll-padding-top: 70px;" data-bs-spy="scroll" data-bs-target="#navbarNavDarkDropdown" data-bs-offset="70">
+    {% include layout/top-nav-bar.html %}
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row w-100">
+            <!-- Main Content Column -->
+            <div class="col-12" id="content-column">
+                <!-- Page Content -->
+                <main id="main-content" tabindex="-1" role="main">
+                    <div class="py-4">
+                        {% assign __page_primary_category = page.category | default: page.categories[0] | default: '' | to_s | strip %}
+                        {% if __page_primary_category != '' %}
+                            {% capture __page_slug %}{% include category/map-category-to-registry.html key=__page_primary_category %}{% endcapture %}
+                            {% assign __page_slug = __page_slug | strip %}
+                            {% if __page_slug == '' %}{% assign __page_slug = __page_primary_category | slugify %}{% endif %}
+                            {% assign __page_entry = site.data.category_registry[__page_slug] %}
+                        {% endif %}
+                        {% if __page_entry %}
+                            {% include category/category-palette-apply.html entry=__page_entry slug=__page_slug raw=__page_primary_category title=page.title subtitle=page.description wrapper_class='page-hero category-theme mb-4' title_tag='h1' title_class='mb-2' subtitle_tag='p' subtitle_class='lead mb-0' %}
+                        {% else %}
+                            <h1 class="mb-4">{{ page.title }}</h1>
+                            {% if page.description %}
+                                <p class="lead">{{ page.description }}</p>
+                            {% endif %}
+                        {% endif %}
+                        {% assign __page_content = content | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' | replace: '<H1', '<H2' | replace: '</H1>', '</H2>' %}
+                        {{ __page_content | lazy_images_except_first }}
+                    </div>
+                </main>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <!-- Footer -->
+    {% include layout/footer.html %}
+
+    <!-- Bootstrap core JavaScript -->
+    {% include assets/js-bottom-of-body.html %}
+
+  </body>
+</html>

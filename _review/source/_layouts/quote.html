@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+
+    {% include utility/calculate-variables.html %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <!-- IndieAuth and WebMentions Metadata -->
+    {% include seo/indieauth-webmentions-metadata.html %}
+
+    <!-- SEO Metadata -->
+    {% include seo/meta-data-seo.html %}
+
+    <!-- PWA Header Includes -->
+    {% include pwa/pwa-header-includes.html %}
+
+    <!-- News Feed Meta Tags. -->
+    {% include feeds/feeds.html %}
+
+    {% include assets/all-css-includes.html %}
+
+    <!-- Scripts that need to be at the end of the header -->
+    {% include assets/scripts.html %}
+    {%- comment -%}
+      Auto-title logic: If no explicit page.title, derive from author + first words of quote.
+    {%- endcomment -%}
+    {% unless page.title %}
+      {% assign __q_plain = page.quote | strip | strip_html | replace: '\n', ' ' %}
+      {% assign __q_words = __q_plain | split: ' ' %}
+      {% assign __q_snip = __q_words | slice: 0, 6 | join: ' ' %}
+      {% assign __derived_title = page.author | append: ': "' | append: __q_snip | append: '…"' %}
+    {% endunless %}
+  </head>
+  <body style="scroll-padding-top: 70px;" data-bs-spy="scroll" data-bs-target="#navbarNavDarkDropdown" data-bs-offset="70">
+  {%- comment -%} Removed skip link per user request. {%- endcomment -%}
+    {% include layout/top-nav-bar.html %}
+
+    <div class="container">
+      <div class="row w-100">
+        <div class="col-12 col-lg-9 col-xxl-9" id="content-column">
+          <main id="main-content" tabindex="-1" class="h-entry" role="main">
+            <article class="card h-100 no-padding">
+              {% include utility/resolve-image-variables.html item=page allow_fallback=false %}
+              {% if image_has_explicit_source %}
+                {% include utility/responsive-image.html src=image_URL alt=image_alt class="card-img-top w-100 d-block" sizes="(min-width: 1400px) 960px, (min-width: 992px) 75vw, 100vw" lcp=true %}
+              {% endif %}
+              <div class="card-body pt-3 p-4 h-100">
+                {% if image_has_explicit_source %}
+                  <div class="small text-body-secondary image-credits mb-3">
+                    {% include utility/render-image-credit.html %}
+                  </div>
+                {% endif %}
+                {%- comment -%} Title & meta {%- endcomment -%}
+                <header class="mb-3">
+                  {% assign __primary_category = page.categories | first %}
+                  {% if __primary_category %}
+                    {% capture __slug %}{% include category/map-category-to-registry.html key=__primary_category %}{% endcapture %}
+                    {% assign __slug = __slug | strip %}
+                    {% assign __primary_category_text = __primary_category | to_s | strip %}
+                    {% if __slug == '' and __primary_category_text != '' %}{% assign __slug = __primary_category_text | slugify %}{% endif %}
+                    {% assign __entry = site.data.category_registry[__slug] %}
+                  {% endif %}
+                    {% if __entry %}
+                      {% if page.title %}
+                        {% include category/category-palette-apply.html entry=__entry slug=__slug raw=__primary_category title=page.title title_tag='h1' title_class='p-name card-title post-title' wrapper_class='quote-hero category-theme no-underline' %}
+                      {% else %}
+                        {% include category/category-palette-apply.html entry=__entry slug=__slug raw=__primary_category title=__derived_title title_tag='h1' title_class='p-name card-title post-title' wrapper_class='quote-hero category-theme no-underline' %}
+                      {% endif %}
+                  {% else %}
+                    {% if page.title %}
+                      <h1 class="p-name card-title">{{ page.title }}</h1>
+                    {% else %}
+                      <h1 class="p-name card-title">{{ __derived_title }}</h1>
+                    {% endif %}
+                  {% endif %}
+                  {% assign __web_published = page.web_published_at | default: page.date %}
+                  {% assign __web_modified = page.web_modified_at | default: page.last_modified_at | default: page.update | default: page.updated %}
+                  <p class="card-subtitle text-muted mb-2">
+                    Published <time class="dt-published" datetime="{{ __web_published | date_to_xmlschema }}">{{ __web_published | date: "%B %d, %Y" }}</time>
+                    {% if page.web_published_at %}
+                      <span class="ms-2">Source date:
+                        {% if page.original-date %}
+                          {{ page.original-date }}
+                        {% else %}
+                          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+                        {% endif %}
+                      </span>
+                    {% endif %}
+                    {% if __web_modified and __web_modified != __web_published %}
+                      <span class="ms-2">Website updated <time class="dt-updated" datetime="{{ __web_modified | date_to_xmlschema }}">{{ __web_modified | date: "%B %d, %Y" }}</time></span>
+                    {% endif %}
+                  </p>
+                  {% if page.source-url and page.source %}
+                    <p class="mb-2">Source: <a class="u-url" href="{{ page.source-url }}" target="_new" rel="noopener">{{ page.source }}</a></p>
+                  {% elsif page.source %}
+                    <p class="mb-2">Source: {{ page.source }}</p>
+                  {% endif %}
+                </header>
+
+                {%- comment -%} Quote block {%- endcomment -%}
+                {% assign __quote_text = page.quote | default: page.content %}
+                {% if page.author.name %}
+                  {% assign __quote_author_name = page.author.name %}
+                  {% assign __quote_author_url = page.author.url | default: page.author.uri %}
+                {% elsif site.authors[page.author] %}
+                  {% assign __quote_author_record = site.authors[page.author] %}
+                  {% assign __quote_author_name = __quote_author_record.name %}
+                  {% assign __quote_author_url = __quote_author_record.url | default: __quote_author_record.uri %}
+                {% else %}
+                  {% assign __quote_author_name = page.author | default: 'Unknown' %}
+                  {% assign __quote_author_url = nil %}
+                {% endif %}
+                <figure class="mb-4">
+                  <blockquote class="blockquote fs-4">{{ __quote_text | markdownify }}</blockquote>
+                  <figcaption class="blockquote-footer mt-2">
+                    <span class="quote-source-author">Quote by
+                      <cite>{% if __quote_author_url %}<a href="{{ __quote_author_url }}">{{ __quote_author_name }}</a>{% else %}{{ __quote_author_name }}{% endif %}</cite>
+                    </span>
+                    {% if page.tags and page.tags != '' %}<span class="ms-2">• {{ page.tags }}</span>{% endif %}
+                  </figcaption>
+                </figure>
+
+                <p class="small text-body-secondary content-credits">
+                  <span class="content-credit content-credit-curator">Curated by <a class="p-curator h-card" href="{{ '/profile/' | relative_url }}">{{ site.profile.name | default: 'Ted Tschopp' }}</a></span>
+                  {% if page.source %}<span aria-hidden="true"> · </span><span>Source: {{ page.source }}</span>{% endif %}
+                </p>
+
+                {%- if page.content and page.content != '' and page.content != page.quote -%}
+                  <div class="mt-4 e-content" id="main_content">
+                    {% assign __quote_content = page.content | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' | replace: '<H1', '<H2' | replace: '</H1>', '</H2>' %}
+                    {{ __quote_content | lazy_images_except_first }}
+                  </div>
+                {%- else -%}
+                  <div id="main_content"></div>
+                {%- endif -%}
+
+                <!-- Categories / taxonomy -->
+                {% if page.categories %}
+                  <div class="mt-4 small">
+                    <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                    {% assign categories = page.categories %}
+                    {% for category in categories %}
+                      {% capture thiscategory %}{{ category | strip }}{% endcapture %}
+                      {% capture __slug %}{% include category/map-category-to-registry.html key=thiscategory %}{% endcapture %}
+                      {% assign __slug = __slug | strip %}
+                      {% if __slug == '' and thiscategory != '' %}{% assign __slug = thiscategory | slugify %}{% endif %}
+                      {% assign __entry = site.data.category_registry[__slug] %}
+                      {% if __entry and __entry.category_home_page %}
+                        {% assign __href = __entry.category_home_page %}
+                      {% else %}
+                        {% assign __href = '/category/' | append: __slug | append: '/' %}
+                      {% endif %}
+                      <a class="text-decoration-none" href="{{ site.url }}{{ __href }}">{% include category/category-emoji.html category=thiscategory %} {{ thiscategory }}</a>{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                <span class="hidden aria-hidden u-url">{{ site.url }}{{ page.url }}</span>
+              </div>
+            </article>
+
+            <hr>
+            {% if page.mastodon-post-id and page.mastodon-post-id != '' %}
+              {% include social/comments-mastodon-tree.html %}
+            {% endif %}
+            {% include social/comments-webmentions.html %}
+            <hr>
+            {% include content/next-and-previous.html %}
+          </main>
+        </div>
+
+        <div class="col-12 col-lg-3 col-xxl-3">
+          <!-- Sidebar: latest in Quotes category (or current categories) -->
+          <div class="well">
+            <div class="post-categories">
+              {% assign sidebar_cats = page.categories | default: 'Quotes' %}
+              {% for category in sidebar_cats %}
+                {% capture __s_slug %}{% include category/map-category-to-registry.html key=category %}{% endcapture %}
+                {% assign __s_slug = __s_slug | strip %}
+                {% assign __sidebar_category_text = category | to_s | strip %}
+                {% if __s_slug == '' and __sidebar_category_text != '' %}{% assign __s_slug = __sidebar_category_text | slugify %}{% endif %}
+                {% assign __s_entry = site.data.category_registry[__s_slug] %}
+                {% if __s_entry and __s_entry.category_home_page %}
+                  {% assign __s_href = __s_entry.category_home_page %}
+                {% else %}
+                  {% assign __s_href = '/category/' | append: __s_slug | append: '/' %}
+                {% endif %}
+                <div class="card h-100 mb-3">
+                  <div class="card-body pt-2 pb-2 p-4">
+                    <h4 class="card-title mb-2"><a class="text-decoration-none" href="{{ site.url }}{{ __s_href }}">{{ category }}</a></h4>
+        {%- comment -%}
+          Dynamic recent items list:
+          - Collect latest posts that share this category (e.g., "Quotes").
+          - Exclude the current page.
+          - Limit to 8.
+          Whitespace is trimmed using Liquid hyphen syntax (e.g., {%- tag -%}) to avoid stray text nodes that
+          previously upset HTMLProofer list validation.
+        {%- endcomment -%}
+        {%- comment -%}
+          Optimized: use precomputed site.recent_by_category (already newest-first & truncated)
+          Fallback: site.categories[category] (Jekyll built-in) then sort locally.
+        {%- endcomment -%}
+        {%- assign __cat_posts = site.recent_by_category[category] -%}
+        {%- if __cat_posts == nil or __cat_posts == empty -%}
+          {%- assign __cat_posts = site.categories[category] | sort: 'date' | reverse -%}
+        {%- endif -%}
+        <div class="recent-quotes" role="list" aria-label="Recent quotes">
+          {%- assign __shown = 0 -%}
+          {%- for p in __cat_posts -%}
+            {%- if p.url != page.url and __shown < 8 -%}
+              <div role="listitem" class="mb-1"><a href="{{ p.url | relative_url }}" class="text-decoration-none">{{ p.title | default: p.slug }}</a></div>
+              {%- assign __shown = __shown | plus: 1 -%}
+            {%- endif -%}
+            {%- if __shown == 8 -%}{% break %}{%- endif -%}
+          {%- endfor -%}
+          {%- if __shown == 0 -%}
+            <div role="listitem" class="mb-1 text-muted">No other recent items.</div>
+          {%- endif -%}
+        </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    {% include layout/footer.html %}
+    {% include assets/js-bottom-of-body.html %}
+  </body>
+</html>

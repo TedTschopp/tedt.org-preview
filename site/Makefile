@@ -1,0 +1,82 @@
+.PHONY: build normalize validate_mastodon feed_check feed_diff legacy_check length_report recent_cache_check tools_css_sync_check assessments_check call_to_action_alert_check category_title_font_check profile_render_check substack_check proofer proofer_advisory a11y_check qa quality_gate all clean gw-export gw-diff docs-toc check-toc repo_guard
+
+repo_guard:
+	ruby tests/repo_guard.rb
+
+tools_css_sync_check:
+	ruby tests/check_tools_css_sync.rb
+
+assessments_check:
+	ruby tests/check_assessments.rb
+
+call_to_action_alert_check:
+	bundle exec ruby tests/check_call_to_action_alert.rb
+
+category_title_font_check:
+	ruby tests/check_category_title_fonts.rb
+
+profile_render_check:
+	ruby tests/check_profile_rendering.rb
+
+substack_check:
+	bundle exec ruby tests/check_substack_bridge.rb
+
+build:
+	bundle exec jekyll build --quiet
+
+normalize:
+	ruby _code/normalize_dates.rb
+
+validate_mastodon:
+	ruby tests/validate_mastodon_feed.rb
+
+feed_check:
+	ruby tests/check_feed_integrity.rb
+
+feed_diff:
+	ruby tests/diff_feeds.rb
+
+legacy_check:
+	ruby tests/check_no_legacy_siteurl.rb
+
+length_report:
+	ruby tests/report_mastodon_feed_lengths.rb
+
+recent_cache_check:
+	ruby tests/check_recent_by_category_cache.rb
+
+proofer:
+	bundle exec htmlproofer ./_site --check-html --allow-missing-href $(if $(SKIP_EXTERNAL),--disable-external,)
+
+proofer_advisory:
+	@echo "[advisory] Running HTMLProofer; failures will be reported but will not fail this target."
+	@bundle exec htmlproofer ./_site --check-html --allow-missing-href $(if $(SKIP_EXTERNAL),--disable-external,) || true
+
+a11y_check:
+	npm run test:a11y
+
+qa: repo_guard normalize build legacy_check feed_check validate_mastodon feed_diff length_report recent_cache_check tools_css_sync_check assessments_check call_to_action_alert_check category_title_font_check profile_render_check substack_check
+
+quality_gate: qa a11y_check
+	$(MAKE) SKIP_EXTERNAL=1 proofer_advisory
+
+all: quality_gate
+
+clean:
+	rm -rf _site
+
+# Gamma World export utilities
+gw-export:
+	python3 _code/export_gamma_world_to_csv.py
+
+# Compare two Gamma World export CSV snapshots (usage: make gw-diff A=old.csv B=new.csv)
+gw-diff:
+	@if [ -z "$(A)" ] || [ -z "$(B)" ]; then echo "Usage: make gw-diff A=path/to/old.csv B=path/to/new.csv"; exit 1; fi; \
+	python3 _code/diff_gamma_world_exports.py --old "$(A)" --new "$(B)"
+
+# Documentation utilities
+docs-toc:
+	python3 _code/update_readme_toc.py --write
+
+check-toc:
+	python3 _code/update_readme_toc.py --check
