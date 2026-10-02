@@ -1108,6 +1108,31 @@ index 000000000..2342768a7
 +  {%- unless url_last == '/' or url_last == '=' -%}/{%- endunless -%}
 +  {{- profile_link.Username -}}
 +{%- endif -%}
+diff --git a/_includes/utility/responsive-image.html b/_includes/utility/responsive-image.html
+index 84a9da9c7..bfd046452 100644
+--- a/_includes/utility/responsive-image.html
++++ b/_includes/utility/responsive-image.html
+@@ -4,7 +4,8 @@ Render a local WebP with intrinsic dimensions and generated responsive variants.
+ Required:
+   src, alt
+ Optional:
+-  class, style, sizes, loading, lcp, id, extra_attributes
++  class, style, sizes, loading, lcp, id, extra_attributes,
++  width, height (intrinsic dimensions when the image is not in the manifest)
+ 
+ Set lcp=true only for the single image expected to be the page's LCP element.
+ Other images default to lazy loading and asynchronous decoding.
+@@ -46,7 +47,9 @@ Other images default to lazy loading and asynchronous decoding.
+   width="{{ _responsive_manifest.width }}"
+   height="{{ _responsive_manifest.height }}"
+   srcset="{% for variant in _responsive_manifest.variants %}{{ variant.path | relative_url | uri_escape }} {{ variant.width }}w{% unless forloop.last %}, {% endunless %}{% endfor %}"
+-  sizes="{{ _responsive_sizes | escape }}"{% endif %}
++  sizes="{{ _responsive_sizes | escape }}"{% elsif include.width and include.height %}
++  width="{{ include.width | escape }}"
++  height="{{ include.height | escape }}"{% endif %}
+   loading="{{ _responsive_loading }}"
+   decoding="async"{% if _responsive_is_lcp %}
+   fetchpriority="high"{% endif %}{% if include.extra_attributes %}
 diff --git a/_layouts/category.html b/_layouts/category.html
 index f21b1fe1e..30b4e1bc4 100644
 --- a/_layouts/category.html
@@ -2058,12 +2083,38 @@ index 342ca8034..40b81514c 100644
 +  </div>
 +  {% if page.screenshots %}<section class="ia-home-section"><h2>Screenshots</h2>{% for shot in page.screenshots %}{% include utility/responsive-image.html src=shot alt=page.title class="ia-tool-screenshot" sizes="(min-width: 1200px) 1184px, 100vw" %}{% endfor %}</section>{% endif %}
  </article>
+diff --git a/_posts/AI/2026-09-11-Beyond-the-Mirror.md b/_posts/AI/2026-09-11-Beyond-the-Mirror.md
+index fa9c902b2..8bd1a951f 100644
+--- a/_posts/AI/2026-09-11-Beyond-the-Mirror.md
++++ b/_posts/AI/2026-09-11-Beyond-the-Mirror.md
+@@ -50,6 +50,8 @@ keywords:
+ no_toc: true
+ 
+ image: /img/2026-09/Thru-the-Mirror-The-Future-of-work.webp
++image_width: 1672
++image_height: 940
+ image-alt: "A person steps through an oval mirror from a dim office into a sunlit library where people gather around a shared table."
+ image-title: "Through the Mirror: The Future of Work"
+ image-description: "A person approaches a large oval mirror in a dim office lined with desks and filing shelves. Through the mirror, sunlight fills a timber-framed library where people gather around a wooden table surrounded by books and plants, with an empty chair waiting for another participant."
+diff --git a/_posts/AI/2026-09-28-This-Isnt-a-Storm-This-Is-the-Weather.md b/_posts/AI/2026-09-28-This-Isnt-a-Storm-This-Is-the-Weather.md
+index e9abb048d..9699e1d41 100644
+--- a/_posts/AI/2026-09-28-This-Isnt-a-Storm-This-Is-the-Weather.md
++++ b/_posts/AI/2026-09-28-This-Isnt-a-Storm-This-Is-the-Weather.md
+@@ -27,6 +27,8 @@ tags:
+ - adaptability
+ 
+ image: "/img/2026-09/Weather-vs-Storm.webp"
++image_width: 1672
++image_height: 941
+ image-alt: "Weather versus storm: adapting to the conditions around us."
+ image-title: "This Isn't a Storm. This Is the Weather."
+ 
 diff --git a/_sass/components/_information-architecture.scss b/_sass/components/_information-architecture.scss
 new file mode 100644
-index 000000000..54f1742bd
+index 000000000..90f021dfe
 --- /dev/null
 +++ b/_sass/components/_information-architecture.scss
-@@ -0,0 +1,277 @@
+@@ -0,0 +1,281 @@
 +/* Public Workbench: token-based editorial pages and shared chrome. */
 +@import "workbench-tokens";
 +.library-site { background: var(--ia-paper); color: var(--ia-ink); padding-top: 70px; font-family: var(--font-sans); font-size: 18px; line-height: 1.65; }
@@ -2225,6 +2276,9 @@ index 000000000..54f1742bd
 +.ia-actions > a, .ia-shelf a, .ia-jump-links a, .ia-breadcrumb a, .ia-tool-actions a { display: inline-flex; align-items: center; gap: .25rem; min-height: var(--target-min); }
 +.ia-tool-actions { justify-content: flex-start; flex-wrap: wrap; }
 +.ia-writing-row { grid-template-columns: 8.5rem minmax(0, 1fr) 1rem; }
++.ia-writing-row--illustrated { grid-template-columns: 8.5rem 10.5rem minmax(0, 1fr) 1rem; gap: var(--space-5); }
++.ia-writing-image { display: block; align-self: start; border-radius: var(--radius-sm); }
++.ia-writing-image img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: var(--image-focus, 50% 50%); border-radius: var(--radius-sm); }
 +.ia-writing-row time, .ia-tool-meta time { font-family: var(--font-mono); }
 +.ia-tool-meta { flex-wrap: wrap; font-size: .7rem; }
 +.ia-status--active, .ia-status--maintained { color: var(--signal-success); }
@@ -2339,6 +2393,7 @@ index 000000000..54f1742bd
 +  .ia-shelf-lead--portrait img { width: 160px; aspect-ratio: 1; }
 +  .ia-elsewhere-list, .ia-elsewhere-groups { grid-template-columns: 1fr; }
 +  .ia-tool-detail-body, .ia-writing-row { grid-template-columns: 1fr; }
++  .ia-writing-row--illustrated { gap: var(--space-3); }
 +}
 +@media (prefers-reduced-motion: reduce) { .ia-navbar *, .ia-footer * { scroll-behavior: auto !important; transition: none !important; } }
 diff --git a/_sass/components/_workbench-tokens.scss b/_sass/components/_workbench-tokens.scss
@@ -3036,16 +3091,16 @@ index 000000000..41a9de39f
 +no_toc: true
 +---
 diff --git a/index.html b/index.html
-index 34cdbbb75..ca32d6f5e 100644
+index 34cdbbb75..a0c7aed55 100644
 --- a/index.html
 +++ b/index.html
-@@ -1,5 +1,55 @@
+@@ -1,5 +1,65 @@
  ---
 -layout: default
 -title: "Ted Tschopp | AI Strategy & Enterprise Architecture"
 -description: "Explore AI strategy, enterprise architecture, software systems, technology, theology, creative projects, and tabletop role-playing design by Ted Tschopp."
 +layout: library
-+title: "Ted Tschopp — Technology, Stories, and Imagined Worlds"
++title: "Ted Tschopp — Technology, Stories, & Imagined Worlds"
 +description: "Essays, stories, tabletop worlds, practical tools, and interactive learning from Ted Tschopp."
 +permalink: /
  ---
@@ -3053,7 +3108,7 @@ index 34cdbbb75..ca32d6f5e 100644
 +  <header class="ia-home-hero">
 +    <div>
 +      <p class="ia-eyebrow">Ted Tschopp’s public workbench</p>
-+      <h1 class="display-1">Technology, Stories,<br>and Imagined Worlds.</h1>
++      <h1 class="display-1">Technology, Stories,<br>&amp; Imagined Worlds.</h1>
 +      <p class="ia-lead">I’m an enterprise architect, a storyteller, and a curious maker. This is where I share what I’m thinking about, what I’m building, and the worlds I’m exploring.</p>
 +      <div class="ia-actions"><a class="btn btn-primary" href="#explore">Find Your Way In</a><a class="ia-text-link" href="{{ '/about-ted/' | relative_url }}">Meet Ted <span aria-hidden="true">↗</span></a></div>
 +    </div>
@@ -3089,7 +3144,17 @@ index 34cdbbb75..ca32d6f5e 100644
 +    {% for post in site.posts %}
 +      {% unless post.categories contains 'Bestiary' or post.categories contains 'Prompts' or post.categories contains 'Home' or post.categories contains 'Draft' or post.categories contains 'Slides' %}
 +        {% if post.title != blank and post.layout != 'reveal-integrated' and post.layout != 'slide-deck' %}
-+        <article class="ia-writing-row"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time><div><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3><p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 175 | escape }}</p></div><span aria-hidden="true">↗</span></article>
++        {% include utility/resolve-image-variables.html item=post allow_fallback=false %}
++        <article class="ia-writing-row{% if image_has_explicit_source and image_has_resolved_source %} ia-writing-row--illustrated{% endif %}">
++          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
++          {% if image_has_explicit_source and image_has_resolved_source %}
++          <a class="ia-writing-image" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title | escape }}">
++            {% include utility/responsive-image.html src=image_URL alt=image_alt width=post.image_width height=post.image_height sizes="(max-width: 767px) calc(100vw - 2.5rem), 168px" %}
++          </a>
++          {% endif %}
++          <div><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3><p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 175 | escape }}</p></div>
++          <span aria-hidden="true">↗</span>
++        </article>
 +        {% assign shown = shown | plus: 1 %}{% if shown == 6 %}{% break %}{% endif %}
 +        {% endif %}
 +      {% endunless %}
@@ -3704,10 +3769,10 @@ index f565e1ef8..5e72cbae9 100644
            await toggler.click();
 diff --git a/tests/a11y/public-workbench.spec.ts b/tests/a11y/public-workbench.spec.ts
 new file mode 100644
-index 000000000..80e9bc387
+index 000000000..d4992333a
 --- /dev/null
 +++ b/tests/a11y/public-workbench.spec.ts
-@@ -0,0 +1,97 @@
+@@ -0,0 +1,130 @@
 +import { test, expect } from '@playwright/test';
 +import AxeBuilder from '@axe-core/playwright';
 +
@@ -3792,6 +3857,39 @@ index 000000000..80e9bc387
 +  await expect(page.locator('main img')).toHaveCount(0);
 +  await expect(page.getByRole('link', { name: 'View the Project', exact: false })).toHaveAttribute('href', 'https://plotto.tedt.org/');
 +});
++
++for (const width of [1440, 390]) {
++  test(`New Writing shows each article's image and fits at ${width}px`, async ({ page }) => {
++    await page.setViewportSize({ width, height: 1000 });
++    await page.goto('/');
++    await expect(page.locator('main h1')).toHaveText('Technology, Stories,& Imagined Worlds.');
++    await expect(page).toHaveTitle(/Technology, Stories, & Imagined Worlds/);
++    const rows = page.locator('.ia-writing-list article');
++    await expect(rows).toHaveCount(6);
++    for (const row of await rows.all()) {
++      const image = row.locator('img');
++      await expect(image).toHaveCount(1);
++      await expect(image).toHaveAttribute('alt', /\S+/);
++      await expect(image).toHaveAttribute('loading', 'lazy');
++      await expect(row.locator('.ia-writing-image')).toHaveAttribute('href', (await row.locator('h3 a').getAttribute('href'))!);
++      await image.scrollIntoViewIfNeeded();
++      await expect.poll(() => image.evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
++      const dimensions = await image.evaluate(el => {
++        const img = el as HTMLImageElement;
++        return [Number(img.getAttribute('width')), Number(img.getAttribute('height')), img.naturalWidth, img.naturalHeight];
++      });
++      expect(dimensions.slice(0, 2)).toEqual(dimensions.slice(2));
++      const imageBox = await image.boundingBox();
++      const rowBox = await row.boundingBox();
++      expect(imageBox!.width).toBeGreaterThanOrEqual(44);
++      expect(imageBox!.height).toBeGreaterThanOrEqual(44);
++      expect(imageBox!.width / imageBox!.height).toBeCloseTo(16 / 9, 1);
++      expect(imageBox!.x).toBeGreaterThanOrEqual(rowBox!.x);
++      expect(imageBox!.x + imageBox!.width).toBeLessThanOrEqual(rowBox!.x + rowBox!.width + 1);
++    }
++    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
++  });
++}
 +
 +test('footer and controls fit a narrow phone in both themes', async ({ page }) => {
 +  await page.setViewportSize({ width: 320, height: 850 });
