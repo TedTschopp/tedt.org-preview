@@ -28,7 +28,7 @@ The package reuses published img and media files from tedt.org, removes authorin
 - Existing articles, folklore, reference pages, assessments, and slide URLs.
 - Navigation on a phone, keyboard disclosure controls, and light/dark themes.
 - The Public Workbench design: Cal Sans headings at weight 400, Inter body copy, Paper and Night color tokens, underlined links, clear theme controls, and readable profile links.
-- Search indexing and analytics disabled in the preview.
+- Search indexing disabled in the preview. The publication packager enables the shared GA4, Clarity, and Cloudflare analytics v1 runtime. Legacy per-site analytics initialization remains disabled.
 
 ## Where to Edit
 

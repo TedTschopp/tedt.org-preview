@@ -57,7 +57,7 @@ def main():
         if len(doc.robots) != 1 or "noindex" not in doc.robots[0]:
             errors.append(f"Missing or conflicting noindex: {file.relative_to(root)}")
         if any(re.search(r"googletagmanager\.com|clarity\.ms|cloudflareinsights\.com/beacon", src) for src in doc.scripts):
-            errors.append(f"Analytics loaded: {file.relative_to(root)}")
+            errors.append(f"Competing direct analytics loaded: {file.relative_to(root)}")
 
     checked_links = 0
     for hub in HUBS:
