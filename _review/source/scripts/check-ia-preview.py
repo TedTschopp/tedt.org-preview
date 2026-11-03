@@ -89,7 +89,7 @@ def main():
     if errors:
         raise SystemExit("\n".join(errors))
     print(json.dumps({"html_noindex": full_html, "hub_links": checked_links,
-                      "legacy_paths_preserved": legacy_count, "analytics": "disabled"}, indent=2))
+                      "legacy_paths_preserved": legacy_count, "analytics": "shared v1"}, indent=2))
 
 
 if __name__ == "__main__":

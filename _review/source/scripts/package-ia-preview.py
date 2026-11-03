@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Package an already-built IA preview for a separate GitHub Pages repository."""
 import argparse
+import subprocess
+import sys
 import json
 import re
 import shutil
@@ -62,6 +64,7 @@ def main():
     (destination / "CNAME").write_text("preview.tedt.org\n")
     # Let crawlers read the noindex directive; do not advertise a preview sitemap.
     (destination / "robots.txt").write_text("User-agent: *\nDisallow: /*.json$\nDisallow: /*.xml$\n")
+    subprocess.run([sys.executable, str(Path(__file__).with_name("site_analytics.py")), str(destination)], check=True)
     files = [path for path in destination.rglob("*") if path.is_file()]
     total = sum(path.stat().st_size for path in files)
     if total >= 1024**3:

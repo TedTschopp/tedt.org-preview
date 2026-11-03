@@ -8,7 +8,7 @@ The navigation groups the site into Essays, Stories & Folklore, Games & Worlds, 
 
 ## Repository Layout
 
-- `site/`: the compiled, deployment-ready preview. Every HTML page is marked noindex; analytics and service-worker delivery are disabled. Existing public media is loaded from tedt.org to keep the preview within GitHub Pages limits.
+- `site/`: the compiled, deployment-ready preview. Every HTML page is marked noindex; shared visitor analytics is enabled and service-worker delivery is disabled. Existing public media is loaded from tedt.org to keep the preview within GitHub Pages limits.
 - `_review/source/`: all changed Jekyll source files, with their original paths.
 - `_review/source.patch`: the complete change against the production repository baseline.
 - `_review/manifest.json`: baseline and source commit identities.
@@ -22,3 +22,7 @@ Start with the home page, follow each section hub, try tool filtering and site s
 For source changes, use the isolated `codex/ia-preview` branch in the original Jekyll repository. The source patch can also be applied to the baseline commit recorded in `_review/manifest.json` in a separate checkout. Build with `_config.yml,_config.preview.yml`, run the packager and preview checker in `_review/source/scripts/`, and replace `site/` with the resulting package. See `_review/source/docs/ia-preview.md` for the workflow and cutover instructions.
 
 Do not copy preview configuration into a production deployment. Approval of this preview is separate from a request to cut over tedt.org.
+
+## Shared Visitor Analytics
+
+Published HTML uses the deferred TedT.org analytics v1 runtime for GA4, Microsoft Clarity, and Cloudflare Web Analytics. Authentication/payment operations, API responses, and independent downloads are excluded. Run `python3 scripts/site_analytics.py site --mode standard --check` on the final publication directory. Configuration and the integration contract are maintained at https://github.com/TedTschopp/tedt.org/blob/main/docs/analytics.md.
